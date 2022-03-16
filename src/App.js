@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useReducer } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Auth, UserInfo } from './allContext'
+import { HomePage, ProfilePage, LoginPage, RegisterPage, DashboardPage } from './pages'
+import { authReducer, authState, userReducer, userState } from './reducer'
+import ProtectedRoute from './routes/ProtectedRoute'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [stateAuth, dispatchAuth] = useReducer(authReducer, authState)
+    const [stateUser, dispatchUser] = useReducer(userReducer, userState)
+
+    return (
+        <div>
+            <Auth.Provider value={{ stateAuth, dispatchAuth }}>
+                <UserInfo.Provider value={{ stateUser, dispatchUser }}>
+                    <Router>
+                        <Switch>
+                            <Route path="/" exact={true} component={HomePage} />
+                            <ProtectedRoute path="/dashboard" component={DashboardPage} />
+                            <ProtectedRoute path="/profile" component={ProfilePage} />
+                            <Route path="/login" component={LoginPage} />
+                            <Route path="/register" component={RegisterPage} />
+                        </Switch>
+                    </Router>
+                </UserInfo.Provider>
+            </Auth.Provider>
+        </div>
+    )
 }
 
-export default App;
+export default App
