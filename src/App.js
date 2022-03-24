@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Auth, UserInfo } from './allContext'
-import { ProfilePage, LoginPage, RegisterPage, DashboardPage } from './pages'
+import { ProfilePage, LoginPage, RegisterPage, DashboardPage, HomePage } from './pages'
 import { authReducer, authState, userReducer, userState } from './reducer'
 import ProtectedRoute from './routes/ProtectedRoute'
 
@@ -15,8 +15,8 @@ const App = () => {
                 <UserInfo.Provider value={{ stateUser, dispatchUser }}>
                     <Router>
                         <Switch>
-                            {/* <Route path="/" exact={true} component={HomePage} /> */}
-                            <ProtectedRoute path="/" exact={true} component={DashboardPage} />
+                            <Route path="/" exact={true} component={HomePage} />
+                            <ProtectedRoute path="/dashboard" exact={true} component={DashboardPage} />
                             <ProtectedRoute path="/profile" component={ProfilePage} />
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />

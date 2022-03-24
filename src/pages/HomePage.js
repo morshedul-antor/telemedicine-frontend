@@ -1,7 +1,9 @@
+import { Home } from '../components'
+
 const HomePage = () => {
     return (
         <div>
-            <code>Home page underconstruction</code>
+            <Home />
         </div>
     )
 }
