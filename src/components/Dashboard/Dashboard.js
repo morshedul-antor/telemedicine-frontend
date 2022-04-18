@@ -4,6 +4,7 @@ import { Snapshot, Appointment } from '.'
 import docCover from '../../assets/img/background-doc-table.jpg'
 import doc from '../../assets/img/docstock.jpg'
 import { Sidebar } from '../Nav'
+import ProfileHeader from '../ProfileHeader/ProfileHeader'
 import classes from './Dashboard.module.css'
 
 const Dashboard = () => {
@@ -45,7 +46,6 @@ const Dashboard = () => {
                         <p>Dhaka</p>
                     </div>
                 </div>
-
                 <Snapshot />
                 <Appointment />
             </div>
