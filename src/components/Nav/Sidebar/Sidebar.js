@@ -29,8 +29,8 @@ const Sidebar = () => {
                 </Link>
             </div>
             <ul>
-                <li className={location.pathname === '/dashboard' ? classes.active : ''}>
-                    <Link to="/dashboard">
+                <li className={location.pathname === '/' ? classes.active : ''}>
+                    <Link to="/">
                         <FontAwesomeIcon icon={faTableColumns} /> Dashboard
                     </Link>
                 </li>
