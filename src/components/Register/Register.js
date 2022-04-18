@@ -23,7 +23,8 @@ const Register = () => {
 
     const history = useHistory()
 
-    const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
+    // const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
+    const apiV1 = process.env.REACT_APP_API_V1
 
     const submit = async (e) => {
         e.preventDefault()
@@ -33,7 +34,7 @@ const Register = () => {
             return
         }
 
-        let registrationFetch = await fetch(`${api}/signup`, {
+        let registrationFetch = await fetch(`${apiV1}/signup`, {
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ const Register = () => {
         let registrationJson = await registrationFetch.json()
 
         if (registrationFetch.ok) {
-            let patientFetch = await fetch(`${api}/patient`, {
+            let patientFetch = await fetch(`${apiV1}/patient`, {
                 headers: {
                     Accept: 'appllication/json',
                     'Content-Type': 'application/json',
