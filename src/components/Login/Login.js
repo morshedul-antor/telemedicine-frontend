@@ -19,7 +19,8 @@ const Login = () => {
 
     const [alert, setAlert] = useState([])
 
-    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
+    // const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
+    const apiV1 = process.env.REACT_APP_API_V1
 
     const submit = async (e) => {
         e.preventDefault()
@@ -50,7 +51,7 @@ const Login = () => {
             dispatchAuth({ type: 'token', payload: loginJson.access_token })
 
             if (stateAuth.auth === true) {
-                history.push('/dashboard')
+                history.push('/')
             }
         }
     }
@@ -58,7 +59,7 @@ const Login = () => {
     // if already logged in
     useEffect(() => {
         if (stateAuth.auth === true) {
-            history.push('/dashboard')
+            history.push('/')
         }
     }, [stateAuth, history])
 
