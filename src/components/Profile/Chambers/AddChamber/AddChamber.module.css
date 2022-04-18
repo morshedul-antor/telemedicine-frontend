@@ -1,0 +1,17 @@
+.addChamber {
+    position: absolute;
+    right: 25px;
+}
+.addChamber > button {
+    cursor: pointer;
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    display: block;
+    padding: 10px 25px;
+    border-radius: 2px;
+    margin: 20px 0;
+}
+.addChamber > button:hover {
+    box-shadow: 1px 3px 10px var(--grey2);
+}

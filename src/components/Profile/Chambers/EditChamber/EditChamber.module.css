@@ -1,0 +1,89 @@
+.editChamber > button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--primary);
+    /* display: block; */
+    display: inline;
+    padding: 1px 2px;
+    border-radius: 2px;
+    margin: 0px 0;
+}
+.editChamber > button:hover {
+    box-shadow: 1px 3px 10px var(--grey2);
+}
+
+.formPopup {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    max-width: 600px;
+    min-width: 300px;
+}
+.chamberForm {
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: 1px 3px 10px var(--grey2);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.chamberForm > h2 {
+    color: var(--dark-blue);
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+/* .chamberForm .content {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+} */
+.chamberForm .content form > label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: 10px;
+    background: var(--white);
+    padding: 0 2px;
+}
+.chamberForm form > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--secondary);
+    outline: 0;
+    display: block;
+    margin: 0 0 10px 0;
+    border-radius: 2px;
+    padding: 7px 10px;
+    width: 70%;
+}
+.chamberForm form > input:focus {
+    outline: 0;
+}
+.chamberForm form > button {
+    cursor: pointer;
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 2px;
+    margin: 20px 30px;
+}
+.chamberForm form > button:hover {
+    box-shadow: 1px 3px 10px var(--grey2);
+}
