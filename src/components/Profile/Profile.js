@@ -8,7 +8,6 @@ import ProfileCard from './ProfileCard/ProfileCard'
 
 const Profile = () => {
     const [doctorDetail, setDoctorDetail] = useState({})
-    const [chamberInfo, setChamberInfo] = useState({})
 
     const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
@@ -35,25 +34,6 @@ const Profile = () => {
         } catch (e) {}
     }, [apiV1, token])
 
-    useEffect(() => {
-        let chamberFunc = async () => {
-            let chamberFetch = await fetch(`${apiV1}/doctors/chamber/`, {
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                method: 'GET',
-            })
-            let chamberJson = await chamberFetch.json()
-            if (chamberFetch.ok) {
-                setChamberInfo(chamberJson)
-            }
-        }
-        try {
-            chamberFunc()
-        } catch (e) {}
-    }, [apiV1, token])
     return (
         <div className={classes.Profile}>
             <div>
@@ -62,7 +42,7 @@ const Profile = () => {
             <div>
                 <ProfileHeader userDetail={doctorDetail} />
                 <ProfileCard />
-                <Chambers chamberDetail={chamberInfo} />
+                <Chambers />
             </div>
         </div>
     )

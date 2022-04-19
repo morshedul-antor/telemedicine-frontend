@@ -32,24 +32,9 @@
     border-radius: 0 0 10px 10px;
 }
 
-/* .Chambers .body > p {
-    cursor: pointer;
+.btn > button {
     border: none;
-    color: var(--red);
-    display: inline-block;
-    padding: 1px 2px;
+    background: none;
+    margin: 0px 5px;
     border-radius: 2px;
-    margin: 0px 0;
-} */
-.chambers .body > p .btn {
-    display: inline;
 }
-/* .Chambers > .body button {
-    cursor: pointer;
-    border: none;
-    color: var(--primary);
-    display: inline-block;
-    padding: 1px 2px;
-    border-radius: 2px;
-    margin: 0px 0;
-} */

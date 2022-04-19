@@ -5,7 +5,7 @@
     height: 10px;
     margin: 0px 0 0px 0px;
 }
-.switch > input {
+.switch > button {
     opacity: 0;
     height: 0;
     width: 0;
@@ -32,9 +32,9 @@
     background: var(--white);
     transition: 300ms;
 }
-.switch > input:checked + span::before {
+.switch > button + span::before {
     transform: translateX(20px);
 }
-.switch > input:checked + span {
+.switch > button:active + span {
     background: var(--green);
 }

@@ -1,9 +1,17 @@
-import AddChanberForm from './AddChamberForm/AddChamberForm'
+import AddChamberForm from './AddChamberForm/AddChamberForm'
 
-const AddChamber = () => {
+const AddChamber = ({ addChamber, name, setName, detail, setDetail, chamberPopup, setChamberPopup }) => {
     return (
         <div>
-            <AddChanberForm />
+            <AddChamberForm
+                addChamber={addChamber}
+                name={name}
+                setName={setName}
+                detail={detail}
+                setDetail={setDetail}
+                chamberPopup={chamberPopup}
+                setChamberPopup={setChamberPopup}
+            />
         </div>
     )
 }

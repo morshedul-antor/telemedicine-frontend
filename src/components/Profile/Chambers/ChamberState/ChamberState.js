@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import { Auth } from '../../../../allContext'
 import classes from './ChamberState.module.css'
 
-const ChamberState = () => {
+const ChamberState = ({ chamberId }) => {
     const { stateAuth } = useContext(Auth)
 
     const [isActive, setIsActive] = useState(false)
@@ -10,25 +10,25 @@ const ChamberState = () => {
 
     const token = stateAuth.token
 
-    const toggle = async (e) => {
+    const activateChamberFunc = async (e) => {
         e.preventDefault()
-        let chamberUpdateFetch = await fetch(`${apiV1}/doctors/chamber/active/{id}`, {
+        console.log('api fetch')
+        let activateChamberFetch = await fetch(`${apiV1}/doctors/chamber/active/${chamberId}`, {
             headers: {
-                Accept: 'appllication/json',
-                'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
             },
-            dataType: 'json',
             method: 'PUT',
-            body: JSON.stringify({
-                isActive,
-            }),
         })
+        let activeJson = await activateChamberFetch.json()
+        console.log(activeJson)
+        if (activateChamberFetch.ok) {
+            setIsActive(true)
+        }
     }
     return (
         <div>
             <label className={classes.switch}>
-                <input type="checkbox" />
+                <button onClick={activateChamberFunc}> click</button>
                 <span></span>
             </label>
         </div>

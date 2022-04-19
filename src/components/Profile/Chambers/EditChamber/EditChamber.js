@@ -4,7 +4,7 @@ import { useState, useContext } from 'react'
 import { Auth } from '../../../../allContext'
 import classes from './EditChamber.module.css'
 
-const EditChamber = ({ chamberId }) => {
+const EditChamber = ({ chamberId, msg, setMsg }) => {
     const [editPrompt, setEditPrompt] = useState(false)
     const popup = () => {
         setEditPrompt(!editPrompt)
@@ -12,8 +12,10 @@ const EditChamber = ({ chamberId }) => {
 
     const { stateAuth } = useContext(Auth)
 
-    const [name, setName] = useState('')
-    const [detail, setDetail] = useState('')
+    // const [msg, setMsg] = useState({})
+
+    const [name, setName] = useState()
+    const [detail, setDetail] = useState()
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
@@ -33,6 +35,11 @@ const EditChamber = ({ chamberId }) => {
                 detail,
             }),
         })
+        const editJson = await editFetch.json()
+        if (editFetch.ok) {
+            setMsg([...msg, 'Chamber modified'])
+            setEditPrompt(!editPrompt)
+        }
     }
 
     return (
