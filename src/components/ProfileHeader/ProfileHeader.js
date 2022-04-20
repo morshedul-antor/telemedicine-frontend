@@ -6,8 +6,9 @@ import docCover from '../../assets/img/background-doc-table.jpg'
 import doc from '../../assets/img/docstock.jpg'
 import classes from './ProfileHeader.module.css'
 
-const ProfileHeader = ({ doctorDetail }) => {
+const ProfileHeader = ({ active }) => {
     const { stateUser } = useContext(UserInfo)
+
     return (
         <div>
             <div>
@@ -37,10 +38,8 @@ const ProfileHeader = ({ doctorDetail }) => {
                     </div>
                     <div>
                         <FontAwesomeIcon icon={faHouseChimneyMedical} />
-                        <h2>Chamber</h2>
-                        <p>Bananni L block</p>
-                        <p>26 no. house</p>
-                        <p>Dhaka</p>
+                        <h2>{active.name}</h2>
+                        <p>{active.detail}</p>
                     </div>
                 </div>
             </div>
