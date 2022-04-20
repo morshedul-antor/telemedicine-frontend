@@ -4,14 +4,14 @@ import ProfileHeader from '../ProfileHeader/ProfileHeader'
 import DoctorDetails from '../Settings/DoctorDetails/DoctorDetails'
 import classes from './Dashboard.module.css'
 
-const Dashboard = () => {
+const Dashboard = ({ active }) => {
     return (
         <div className={classes.Dashboard}>
             <div>
                 <Sidebar />
             </div>
             <div>
-                <ProfileHeader userDetail={DoctorDetails} />
+                <ProfileHeader active={active} />
                 <Snapshot />
                 <Appointment />
             </div>
