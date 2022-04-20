@@ -13,7 +13,7 @@ const ChamberState = ({ chamberId }) => {
     const activateChamberFunc = async (e) => {
         e.preventDefault()
         console.log('api fetch')
-        let activateChamberFetch = await fetch(`${apiV1}/doctors/chamber/active/${chamberId}`, {
+        let activateChamberFetch = await fetch(`${apiV1}/doctors/chamber/activate/${chamberId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -26,12 +26,10 @@ const ChamberState = ({ chamberId }) => {
         }
     }
     return (
-        <div>
-            <label className={classes.switch}>
-                <button onClick={activateChamberFunc}> click</button>
-                <span></span>
-            </label>
-        </div>
+        <label className={classes.switch}>
+            <button onClick={activateChamberFunc}> click</button>
+            <span></span>
+        </label>
     )
 }
 export default ChamberState

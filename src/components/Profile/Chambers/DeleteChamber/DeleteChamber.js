@@ -12,8 +12,6 @@ const DeleteChamber = ({ chamberId, msg, setMsg }) => {
 
     const { stateAuth } = useContext(Auth)
 
-    // const [msg, setMsg] = useState({})
-
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
 

@@ -32,9 +32,10 @@
     background: var(--white);
     transition: 300ms;
 }
-.switch > button + span::before {
+.switch > button:active + span::before {
     transform: translateX(20px);
 }
-.switch > button:active + span {
+.switch > button:active + span::after {
+    transform: translateX(20px);
     background: var(--green);
 }

@@ -4,7 +4,7 @@ import { useState, useContext } from 'react'
 import { Auth } from '../../../../allContext'
 import classes from './EditChamber.module.css'
 
-const EditChamber = ({ chamberId, msg, setMsg }) => {
+const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
     const [editPrompt, setEditPrompt] = useState(false)
     const popup = () => {
         setEditPrompt(!editPrompt)
@@ -12,10 +12,10 @@ const EditChamber = ({ chamberId, msg, setMsg }) => {
 
     const { stateAuth } = useContext(Auth)
 
-    // const [msg, setMsg] = useState({})
+    const chamberInfo = chamber
 
-    const [name, setName] = useState()
-    const [detail, setDetail] = useState()
+    const [name, setName] = useState(chamberInfo.name)
+    const [detail, setDetail] = useState(chamberInfo.detail)
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token

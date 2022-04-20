@@ -94,7 +94,12 @@ const Chambers = () => {
                                     </button>
 
                                     <button>
-                                        <EditChamber chamberId={chamber.id} msg={msg} setMsg={setMsg} />
+                                        <EditChamber
+                                            chamber={chamber}
+                                            chamberId={chamber.id}
+                                            msg={msg}
+                                            setMsg={setMsg}
+                                        />
                                     </button>
                                 </div>
                             </p>
