@@ -36,8 +36,6 @@ const Chambers = () => {
                 detail,
             }),
         })
-
-        const addJson = await addChamberFetch.json()
         if (addChamberFetch.ok) {
             setName('')
             setDetail('')
@@ -81,7 +79,7 @@ const Chambers = () => {
                 {data.map((chamber, i) => {
                     return (
                         <div className={classes.body} key={i}>
-                            <p>{i + 1}</p>
+                            <p>{chamber.id}</p>
                             <p>{chamber.name}</p>
                             <p>{chamber.detail}</p>
                             <p>
