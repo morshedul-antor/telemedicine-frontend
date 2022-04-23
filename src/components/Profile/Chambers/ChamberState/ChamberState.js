@@ -6,8 +6,9 @@ const ChamberState = ({ chamberId }) => {
     const { stateAuth } = useContext(Auth)
 
     const [isActive, setIsActive] = useState(false)
-    const apiV1 = process.env.REACT_APP_API_V1
+    const [msg, setMsg] = useState([])
 
+    const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
 
     const activateChamberFunc = async (e) => {
@@ -23,12 +24,13 @@ const ChamberState = ({ chamberId }) => {
         console.log(activeJson)
         if (activateChamberFetch.ok) {
             setIsActive(true)
+            setMsg(...msg, 'Chamber Activated')
         }
     }
     return (
         <label className={classes.switch}>
-            <button onClick={activateChamberFunc}> click</button>
-            <span></span>
+            <button onClick={activateChamberFunc}></button>
+            <span className={isActive === true ? `${classes.spanActive}` : `${classes.spanDeactive}`}></span>
         </label>
     )
 }

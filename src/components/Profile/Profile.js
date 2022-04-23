@@ -8,7 +8,6 @@ import ProfileCard from './ProfileCard/ProfileCard'
 
 const Profile = () => {
     const [doctorDetail, setDoctorDetail] = useState({})
-    const [activeChamber, setActiveChamber] = useState({})
 
     const { stateAuth } = useContext(Auth)
 
@@ -36,35 +35,13 @@ const Profile = () => {
         } catch (e) {}
     }, [apiV1, token])
 
-    useEffect(() => {
-        console.log('api fetching')
-        let activeChamberFunc = async (e) => {
-            let activeChamberFetch = await fetch(`${apiV1}/doctors/chamber/active`, {
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                method: 'GET',
-            })
-            let activeChamberJson = await activeChamberFetch.json()
-            console.log(activeChamberJson)
-            if (activeChamberFetch.ok) {
-                setActiveChamber(activeChamberJson)
-            }
-        }
-        try {
-            activeChamberFunc()
-        } catch (e) {}
-    }, [apiV1, token])
-
     return (
         <div className={classes.Profile}>
             <div>
                 <Sidebar />
             </div>
             <div>
-                <ProfileHeader active={activeChamber} />
+                <ProfileHeader />
                 <ProfileCard />
                 <Chambers />
             </div>
