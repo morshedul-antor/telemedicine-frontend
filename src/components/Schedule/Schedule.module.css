@@ -3,10 +3,10 @@
     display: grid;
     grid-template-columns: minmax(0, 20%) minmax(0, 30%) minmax(0, 50%);
     gap: 20px;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 .Wrapper {
-    background: var(--light);
+    background: none;
     min-height: 100vh;
 }
 
