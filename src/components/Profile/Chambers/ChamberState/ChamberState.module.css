@@ -35,7 +35,29 @@
 .switch > button:active + span::before {
     transform: translateX(20px);
 }
-.switch > button:active + span::after {
-    transform: translateX(20px);
+/* .switch > button:active + span {
     background: var(--green);
+} */
+
+.switch > .spanActive {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--green);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 300ms;
+}
+.switch > .spanDeactive {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--red);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 300ms;
 }
