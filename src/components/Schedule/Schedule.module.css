@@ -2,7 +2,7 @@
     background: var(--light);
     display: grid;
     grid-template-columns: minmax(0, 20%) minmax(0, 30%) minmax(0, 50%);
-    gap: 20px;
+    gap: 10px;
     min-height: 100vh;
 }
 .Wrapper {
@@ -11,37 +11,18 @@
 }
 
 .Wrapper > div {
-    min-height: 90vh;
+    min-height: 85vh;
     background: var(--white);
-    margin: 20px 20px 0 0;
+    margin: 20px 0px 0px 0px;
     border-radius: 10px;
     box-shadow: 3px 3px 15px var(--light-grey);
     padding: 40px 20px 20px 20px;
 }
-
-.Nav {
-    width: 100%;
-    border-bottom: 2px solid var(--secondary);
-    padding: 20px 20px 0px 20px;
-    box-sizing: border-box;
-    position: relative;
-}
-.Nav > span {
-    position: relative;
-    bottom: 8px;
-    padding: 10px 15px;
-    border-radius: 5px 5px 0 0;
-    border: 2px solid var(--secondary);
-    font-size: 14px;
-    cursor: pointer;
-    margin: 0 0 0 10px;
-}
-
-.deactiveNav {
+.WrapperLeft > div {
+    min-height: 85vh;
     background: var(--white);
-    color: var(--dark-blue);
-}
-.activeNav {
-    background: var(--secondary);
-    color: var(--white);
+    margin: 20px 10px 0px 0px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px var(--light-grey);
+    padding: 40px 20px 20px 20px;
 }

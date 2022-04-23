@@ -19,7 +19,7 @@ const ScheduleList = () => {
                 {sch.map((v, i) => {
                     return (
                         <div className={classes.body} key={i}>
-                            <p>{i}</p>
+                            <p>{i + 1}</p>
                             <p>{v.date}</p>
                             <p>{v.chambr}</p>
                             <p>{v.bookedBy}</p>
