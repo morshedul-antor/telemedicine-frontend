@@ -32,14 +32,14 @@ const ProfileHeader = ({ active }) => {
                                     border: '4px solid var(--white)',
                                     boxShadow: `0 3px 5px var(--grey2)`,
                                 }}></div>
-                            <h2>{stateUser?.info?.name}</h2>
+                            <h2>{stateUser.info?.name}</h2>
                             <p>{stateUser?.info?.bmdc}</p>
                         </div>
                     </div>
                     <div>
                         <FontAwesomeIcon icon={faHouseChimneyMedical} />
-                        <h2>{active.name}</h2>
-                        <p>{active.detail}</p>
+                        <h2>{active?.name}</h2>
+                        <p>{active?.detail}</p>
                     </div>
                 </div>
             </div>
