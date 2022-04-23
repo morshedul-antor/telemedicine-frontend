@@ -1,11 +1,11 @@
-.SeeCustomSchedule {
+.SelectDate {
     margin: 20px;
 }
-.SeeCustomSchedule > h2 {
+.SelectDate > h2 {
     color: var(--dark-blue);
 }
 
-.SeeCustomSchedule form > label {
+.SelectDate form > label {
     color: var(--dark-blue);
     font-size: 12px;
     margin: 0 0 0 10px;
@@ -15,7 +15,7 @@
     padding: 0 2px;
 }
 
-.SeeCustomSchedule form > input {
+.SelectDate form > input {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;

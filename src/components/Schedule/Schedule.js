@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Sidebar } from '../Nav'
-import AddSchedule from './AddSchedule/AddSchedule'
+import CreateSchedule from './CreateSchedule/CreateSchedule'
 import classes from './Schedule.module.css'
-import SeeCustomSchedule from './SeeCustomSchedule/SeeCustomSchedule'
+import ScheduleList from './ScheduleList/ScheduleList'
+import SelectDate from './SelectDate/SelectDate'
 
 const Schedule = () => {
     const [menu, setMenu] = useState(1)
@@ -17,7 +18,7 @@ const Schedule = () => {
                         <span
                             className={menu === 1 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                             onClick={(e) => setMenu(1)}>
-                            See custom Schedule
+                            Select date
                         </span>
 
                         <span
@@ -27,13 +28,13 @@ const Schedule = () => {
                         </span>
                     </div>
                     <div>
-                        {menu === 1 ? <SeeCustomSchedule /> : null}
-                        {/* {menu === 2 ? <SeeCustomSchedule /> : null} */}
+                        {menu === 1 ? <SelectDate /> : null}
+                        {/* {menu === 2 ? <SelectDate /> : null} */}
                     </div>
                 </div>
             </div>
-            <div className={classes.scheduleList}>
-                <h1>Custom Schedule list</h1>
+            <div className={classes.Wrapper}>
+                <ScheduleList />
             </div>
         </div>
     )

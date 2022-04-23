@@ -1,4 +1,4 @@
-import classes from './AddSchedule.module.css'
+import classes from './CreateSchedule.module.css'
 
 const AddSchedule = () => {}
 

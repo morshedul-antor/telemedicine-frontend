@@ -1,8 +1,8 @@
-import classes from './SeeCustomSchedule.module.css'
+import classes from './SelectDate.module.css'
 
-const SeeCustomSchedule = () => {
+const SelectDate = () => {
     return (
-        <div className={classes.SeeCustomSchedule}>
+        <div className={classes.SelectDate}>
             <h2>Select date</h2>
             <form>
                 <label>Date</label>
@@ -11,4 +11,4 @@ const SeeCustomSchedule = () => {
         </div>
     )
 }
-export default SeeCustomSchedule
+export default SelectDate

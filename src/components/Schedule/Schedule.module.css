@@ -1,9 +1,9 @@
 .Schedule {
     background: var(--light);
     display: grid;
-    grid-template-columns: minmax(0, 20%) minmax(0, 53%) minmax(0, 50%);
+    grid-template-columns: minmax(0, 20%) minmax(0, 30%) minmax(0, 50%);
     gap: 20px;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 .Wrapper {
     background: var(--light);
@@ -44,7 +44,4 @@
 .activeNav {
     background: var(--secondary);
     color: var(--white);
-}
-
-.Schedule > .scheduleList {
 }
