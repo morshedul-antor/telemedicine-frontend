@@ -14,6 +14,69 @@ const ProfileHeader = () => {
     const token = stateAuth.token
 
     const [activeChamber, setActiveChamber] = useState({})
+    const [doctorDetail, setDoctorDetail] = useState({})
+    const [qualification, setQualification] = useState({})
+    const [speciality, setSpeciality] = useState({})
+
+    useEffect(() => {
+        let infoFunc = async () => {
+            let infoFetch = await fetch(`${apiV1}/doctors/ `, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+            let infoJson = await infoFetch.json()
+            if (infoFetch.ok) {
+                setDoctorDetail(infoJson)
+            }
+        }
+        try {
+            infoFunc()
+        } catch (e) {}
+    }, [apiV1, token])
+
+    useEffect(() => {
+        let qualFunc = async () => {
+            let qualFetch = await fetch(`${apiV1}/doctors/qualifications `, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+            let qualJson = await qualFetch.json()
+            if (qualFetch.ok) {
+                setQualification(qualJson)
+            }
+        }
+        try {
+            qualFunc()
+        } catch (e) {}
+    }, [apiV1, token])
+
+    useEffect(() => {
+        let specialityFunc = async () => {
+            let specialityFetch = await fetch(`${apiV1}/doctors/specialities `, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+            let specialityJson = await specialityFetch.json()
+            if (specialityFetch.ok) {
+                setSpeciality(specialityJson)
+            }
+        }
+        try {
+            specialityFunc()
+        } catch (e) {}
+    }, [apiV1, token])
 
     useEffect(() => {
         let activeChamberFunc = async (e) => {
@@ -59,7 +122,9 @@ const ProfileHeader = () => {
                                     boxShadow: `0 3px 5px var(--grey2)`,
                                 }}></div>
                             <h2>{stateUser.info?.name}</h2>
-                            <p>{stateUser?.info?.bmdc}</p>
+                            <p>{doctorDetail.bmdc}</p>
+                            <p>{qualification?.qualification}</p>
+                            <p>{speciality?.speciality}</p>
                         </div>
                     </div>
                     <div>
