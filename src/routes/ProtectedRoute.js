@@ -1,5 +1,4 @@
 import { useContext, useEffect } from 'react'
-import env from 'react-dotenv'
 import { Route, Redirect } from 'react-router-dom'
 import { Auth, UserInfo } from '../allContext'
 
