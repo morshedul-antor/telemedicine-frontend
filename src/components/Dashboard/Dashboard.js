@@ -1,17 +1,16 @@
 import { Snapshot, Appointment } from '.'
 import { Sidebar } from '../Nav'
 import ProfileHeader from '../ProfileHeader/ProfileHeader'
-import DoctorDetails from '../Settings/DoctorDetails/DoctorDetails'
 import classes from './Dashboard.module.css'
 
-const Dashboard = ({ active }) => {
+const Dashboard = () => {
     return (
         <div className={classes.Dashboard}>
             <div>
                 <Sidebar />
             </div>
             <div>
-                <ProfileHeader active={active} />
+                <ProfileHeader />
                 <Snapshot />
                 <Appointment />
             </div>
