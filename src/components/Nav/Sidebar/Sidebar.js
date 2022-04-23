@@ -1,4 +1,4 @@
-import { faCog, faUser, faSignOutAlt, faTableColumns } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faUser, faSignOutAlt, faTableColumns, faClock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
 import env from 'react-dotenv'
@@ -37,14 +37,19 @@ const Sidebar = () => {
                 </a>
             </div>
             <ul>
-                <li className={location.pathname === '/dashboard' ? classes.active : ''}>
-                    <Link to="/dashboard">
+                <li className={location.pathname === '/' ? classes.active : ''}>
+                    <Link to="/">
                         <FontAwesomeIcon icon={faTableColumns} /> Dashboard
                     </Link>
                 </li>
                 <li className={location.pathname === '/profile' ? classes.active : ''}>
                     <Link to="/profile">
                         <FontAwesomeIcon icon={faUser} /> Profile
+                    </Link>
+                </li>
+                <li className={location.pathname === '/schedule' ? classes.active : ''}>
+                    <Link to="/schedule">
+                        <FontAwesomeIcon icon={faClock} /> Schedule
                     </Link>
                 </li>
             </ul>

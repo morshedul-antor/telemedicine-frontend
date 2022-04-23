@@ -1,0 +1,146 @@
+.addChamber {
+    position: absolute;
+    right: 25px;
+}
+.addChamber > button {
+    cursor: pointer;
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    display: block;
+    padding: 10px 25px;
+    border-radius: 2px;
+    margin: 20px 0;
+}
+.addChamber > button:hover {
+    box-shadow: 1px 3px 10px var(--grey2);
+}
+
+.formPopup {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+/* .formPopup > .overlay {
+    background: rgba(49, 49, 49, 0.8);
+} */
+.chamberForm {
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: 1px 3px 10px var(--grey2);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.msg {
+    padding: 5px 12px;
+    background: var(--red);
+    color: var(--white);
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 14px;
+    position: absolute;
+    justify-content: center;
+}
+.msg > span {
+    display: inline-block;
+    background: var(--white);
+    color: var(--red);
+    margin-left: 15px;
+    border-radius: 50px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.chamberForm > h2 {
+    color: var(--dark-blue);
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+.chamberForm .content {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+}
+.chamberForm .content form > label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: 10px;
+    background: var(--white);
+    padding: 0 2px;
+}
+.chamberForm form > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--secondary);
+    outline: 0;
+    display: block;
+    margin: 0 0 0px 0;
+    border-radius: 2px;
+    padding: 7px 90px;
+    width: 60%;
+}
+.chamberForm form > input:focus {
+    outline: 0;
+}
+.chamberForm form > button {
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 2px;
+    margin: 20px 20px;
+}
+.chamberForm form > button:hover {
+    box-shadow: 1px 3px 10px var(--grey2);
+}
+/* .chamberForm form > button > .close {
+    cursor: pointer;
+    border: none;
+    background: var(--red);
+    color: var(--white);
+    display: block;
+    padding: 10px 25px;
+    border-radius: 2px;
+    margin: 20px 0;
+} */
+
+/* .chamberForm form .close {
+    position: absolute;
+    right: 0px;
+}
+.chamberForm form .close > button {
+    cursor: pointer;
+    border: none;
+    background: var(--red);
+    color: var(--white);
+    display: block;
+    padding: 10px 25px;
+    border-radius: 2px;
+    margin: 20px 0;
+} */

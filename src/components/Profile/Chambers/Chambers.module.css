@@ -1,0 +1,40 @@
+.Chambers {
+    background: var(--white);
+    border-radius: 10px;
+    margin: 10px 20px 0 0;
+    box-shadow: 5px 5px 15px var(--grey2);
+}
+.head {
+    display: grid;
+    grid-template-columns: minmax(0, 10%) minmax(0, 30%) minmax(0, 40%) minmax(0, 10%) minmax(0, 10%);
+    color: var(--white);
+    background-image: linear-gradient(to right, var(--dark-blue), var(--primary), var(--secondary));
+    border-radius: 10px 10px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 15px;
+    margin: 40px 0 0 0;
+}
+.body {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 10%) minmax(0, 30%) minmax(0, 40%) minmax(0, 10%) minmax(0, 10%);
+    padding: 0 15px;
+}
+/* .Chambers > .body > p:nth-last-child(1) {
+    color: var(--primary);
+    cursor: pointer;
+} */
+.Chambers > .body:nth-child(odd) {
+    background: var(--light);
+}
+.Chambers > .body:nth-last-child(1) {
+    border-radius: 0 0 10px 10px;
+}
+
+.btn > button {
+    border: none;
+    background: none;
+    margin: 0px 5px;
+    border-radius: 2px;
+}

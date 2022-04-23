@@ -26,7 +26,12 @@ const Register = () => {
 
     const history = useHistory()
 
+<<<<<<< HEAD
     const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
+=======
+    // const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
+    const apiV1 = process.env.REACT_APP_API_V1
+>>>>>>> 13caefd84b01b1eb95efbf6d043f238f1c2eb6e6
 
     const submit = async (e) => {
         e.preventDefault()
@@ -36,7 +41,11 @@ const Register = () => {
             return
         }
 
+<<<<<<< HEAD
         let registrationFetch = await fetch(`${apiV1}/doctors/signup`, {
+=======
+        let registrationFetch = await fetch(`${apiV1}/signup`, {
+>>>>>>> 13caefd84b01b1eb95efbf6d043f238f1c2eb6e6
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
@@ -59,7 +68,33 @@ const Register = () => {
         // let registrationJson = await registrationFetch.json()
 
         if (registrationFetch.ok) {
+<<<<<<< HEAD
             history.push('/login')
+=======
+            let patientFetch = await fetch(`${apiV1}/patient`, {
+                headers: {
+                    Accept: 'appllication/json',
+                    'Content-Type': 'application/json',
+                },
+                dataType: 'json',
+                method: 'POST',
+                body: JSON.stringify({
+                    user_id: registrationJson.id,
+                    sex,
+                }),
+            })
+
+            // let patientJson = await patientFetch.json()
+            if (patientFetch.ok) {
+                history.push('/login')
+            } else {
+                let patErr = statusCheck(patientFetch, [
+                    { sts: 400, msg: 'User email/phone number or Password not correct.' },
+                    { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
+                ])
+                setAlert([...alert, patErr.msg])
+            }
+>>>>>>> 13caefd84b01b1eb95efbf6d043f238f1c2eb6e6
         } else {
             let regErr = statusCheck(registrationFetch, [
                 { sts: 400, msg: 'User email/phone number or Password not correct.' },
