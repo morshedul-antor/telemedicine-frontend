@@ -10,14 +10,13 @@ const Schedule = () => {
                 <Sidebar />
             </div>
             <div className={classes.Wrapper}>
-                <div>
+                <div className={classes.WrapperRight}>
                     <div>
                         <CreateSchedule />
                     </div>
+                    <div></div>
                 </div>
-            </div>
-            <div className={classes.WrapperLeft}>
-                <div>
+                <div className={classes.WrapperLeft}>
                     <ScheduleList />
                 </div>
             </div>

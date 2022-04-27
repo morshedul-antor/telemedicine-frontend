@@ -1,28 +1,36 @@
 .Schedule {
     background: var(--light);
     display: grid;
-    grid-template-columns: minmax(0, 20%) minmax(0, 30%) minmax(0, 50%);
+    grid-template-columns: minmax(0, 20%) minmax(0, 80%);
     gap: 10px;
     min-height: 100vh;
 }
+
 .Wrapper {
-    background: none;
-    min-height: 100vh;
+    min-height: 85vh;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+    grid-gap: 10px;
+    margin: 10px 10px 10px 0px;
+    border-radius: 10px;
+    /* box-shadow: 3px 3px 15px var(--light-grey); */
+    padding: 40px 20px 20px 20px;
 }
 
-.Wrapper > div {
+.WrapperRight > div {
     min-height: 85vh;
-    background: var(--white);
-    margin: 20px 0px 0px 0px;
+    background: none;
+    position: relative;
+    margin: 0px 0px 0px 0px;
     border-radius: 10px;
-    box-shadow: 3px 3px 15px var(--light-grey);
-    padding: 40px 20px 20px 20px;
+    padding: 0 0 0 0;
 }
-.WrapperLeft > div {
+.WrapperLeft {
     min-height: 85vh;
-    background: var(--white);
-    margin: 20px 10px 0px 0px;
+    background: none;
+    position: relative;
+    margin: 0px 0px 0px 0px;
     border-radius: 10px;
-    box-shadow: 3px 3px 15px var(--light-grey);
-    padding: 40px 20px 20px 20px;
+    padding: 0 0 0 0;
 }

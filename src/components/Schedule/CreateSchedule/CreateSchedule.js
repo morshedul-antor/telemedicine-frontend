@@ -1,18 +1,20 @@
+import { useState } from 'react'
+import { Calendar } from 'react-calendar'
+import AddSlot from '../CreateSchedule/AddSlot/AddSlot'
+import './CreateSchedule.css'
 import classes from './CreateSchedule.module.css'
 
 const CreateSchedule = () => {
+    const [today, onChange] = useState(new Date())
+    console.log(today)
     return (
         <div className={classes.CreateSchedule}>
             <h2>Create Schedule</h2>
-            <form>
-                <label>Date</label>
-                <input type="date" />
+            <Calendar onChange={onChange} value={today} calendarType="Arabic" />
 
-                <label>Date</label>
-                <input type="time" />
-
-                <button>Create</button>
-            </form>
+            <div>
+                <AddSlot today={today} />
+            </div>
         </div>
     )
 }

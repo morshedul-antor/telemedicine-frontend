@@ -4,6 +4,15 @@ const ScheduleList = () => {
     let sch = [
         { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
         { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
     ]
     return (
         <div className={classes.ScheduleList}>
