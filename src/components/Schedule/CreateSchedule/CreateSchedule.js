@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Calendar } from 'react-calendar'
-import AddSlot from '../CreateSchedule/AddSlot/AddSlot'
 import './CreateSchedule.css'
 import classes from './CreateSchedule.module.css'
+import Slot from './Slot/Slot'
 
 const CreateSchedule = () => {
     const [today, onChange] = useState(new Date())
@@ -12,8 +12,12 @@ const CreateSchedule = () => {
             <h2>Create Schedule</h2>
             <Calendar onChange={onChange} value={today} calendarType="Arabic" />
 
-            <div>
+            {/* <div>
                 <AddSlot today={today} />
+            </div> */}
+
+            <div>
+                <Slot />
             </div>
         </div>
     )

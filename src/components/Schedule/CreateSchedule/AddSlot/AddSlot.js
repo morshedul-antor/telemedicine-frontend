@@ -5,7 +5,7 @@ const CreateSlot = (today) => {
     let slot = [
         { time: '11:30 AM' },
         { time: '12:30 PM' },
-        { time: '1:30 PM' },
+        { time: '01:30 PM' },
         { time: '03:30 PM' },
         { time: '03:30 PM' },
         { time: '03:30 PM' },

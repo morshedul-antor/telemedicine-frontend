@@ -133,7 +133,7 @@
 }
 .slotButtons > .slotButton > button:hover {
     cursor: pointer;
-    border: none;
+    border: 1px solid var(--secondary);
     background: var(--secondary);
     color: var(--white);
     padding: 5px 15px;
