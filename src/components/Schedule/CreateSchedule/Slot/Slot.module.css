@@ -3,7 +3,7 @@
 .slotForm > h2 {
     color: var(--dark-blue);
     text-align: center;
-    margin-top: 10px;
+    margin-top: 10x;
 }
 .slotForm .content {
     /* /* flex: 50%; */
@@ -46,9 +46,9 @@
     border: none;
     background: var(--secondary);
     color: var(--white);
-    padding: 6px;
-    width: 50px;
-    border-radius: 5px;
+    padding: 7px;
+    width: 60px;
+    border-radius: 2px;
 }
 
 .add > button:hover {

@@ -31,18 +31,15 @@ const Slot = () => {
                             <div>
                                 <input type="number" min="00" max="59" />
                             </div>
-                            {/* <div className={classes.AP}>
-                                <button>AM</button>
-                                <button>PM</button>
-                            </div> */}
                             <div className={classes.AP}>
                                 <select>
+                                    <option> </option>
                                     <option>AM</option>
                                     <option>PM</option>
                                 </select>
                             </div>
                             <div className={classes.add}>
-                                <button>Add</button>
+                                <button>create</button>
                             </div>
                         </div>
                     </form>

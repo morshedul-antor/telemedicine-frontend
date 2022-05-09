@@ -9,7 +9,7 @@ const Schedule = () => {
             <div>
                 <Sidebar />
             </div>
-            <div className={classes.Wrapper}>
+            {/* <div className={classes.Wrapper}>
                 <div className={classes.WrapperRight}>
                     <div>
                         <CreateSchedule />
@@ -19,7 +19,7 @@ const Schedule = () => {
                 <div className={classes.WrapperLeft}>
                     <ScheduleList />
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
