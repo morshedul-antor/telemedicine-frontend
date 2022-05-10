@@ -1,0 +1,45 @@
+.content {
+    margin-top: 10px;
+}
+.content > form > .timePicker > div {
+    display: inline-block;
+    margin: 0px 5px 0px 5px;
+}
+.content > form > .timePicker > div > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--secondary);
+    width: 50px;
+    font-size: 20px;
+    color: var(--dark-blue);
+    border-radius: 5px;
+    outline: 0;
+    text-align: center;
+}
+
+.content > form > .timePicker > .AP > select {
+    background: none;
+    border: 1px solid var(--secondary);
+    padding: 2px;
+    width: 55px;
+    font-size: 20px;
+    color: var(--dark-blue);
+    border-radius: 5px;
+    outline: 0;
+    text-align: center;
+}
+
+.add > button {
+    cursor: pointer;
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 7px;
+    width: 60px;
+    border-radius: 2px;
+}
+
+.add > button:hover {
+    box-shadow: 1px 3px 10px var(--grey2);
+}
