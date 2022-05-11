@@ -18,7 +18,8 @@
     box-shadow: 3px 3px 15px var(--light-grey); */
     padding: 40px 20px 20px 20px;
 }
-.Nav {
+
+/* .Nav {
     width: 100%;
     border-bottom: 2px solid var(--secondary);
     padding: 20px 20px 0 20px;
@@ -42,4 +43,30 @@
 .activeNav {
     background: var(--secondary);
     color: var(--white);
+} */
+
+.Nav {
+    background: none;
+    margin-top: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.Nav > span {
+    position: relative;
+    bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.deactiveNav {
+    background: var(--light);
+    color: var(--dark-blue);
+}
+.activeNav {
+    background: var(--white);
+    color: var(--secondary);
 }

@@ -67,7 +67,7 @@ const Chambers = () => {
     let data = Array.from(chamberInfo)
 
     return (
-        <div>
+        <div className={classes.ChamberPage}>
             <div className={classes.Chambers}>
                 <div className={classes.head}>
                     <p>ID</p>

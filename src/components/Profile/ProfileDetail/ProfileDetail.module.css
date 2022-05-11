@@ -1,7 +1,9 @@
 .ProfileDetail {
-    margin: 20px;
+    background: var(--white);
+    border: 1px solid var(--white);
 }
-.ProfileDetail form {
+
+/* .ProfileDetail form {
     display: inline-block;
 }
 
@@ -27,4 +29,4 @@
     border-radius: 2px;
     padding: 7px 10px;
     width: 70%;
-}
+} */
