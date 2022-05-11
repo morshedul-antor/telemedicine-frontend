@@ -1,0 +1,19 @@
+.chamberSelection {
+    margin-top: 10px;
+}
+.chamberSelection > label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    top: 10px;
+    background: var(--white);
+    padding: 0 2px;
+}
+.chamberSelection > select {
+    background: none;
+    border: 1px solid var(--secondary);
+    font-size: px;
+    color: var(--dark-blue);
+    border-radius: 2px;
+    outline: 0;
+    text-align: center;
+}

@@ -19,14 +19,17 @@ const Slot = () => {
     ]
     return (
         <div className={classes.Slot}>
-            <div className={classes.slotButtons}>
-                {slot.map((slot, i) => {
-                    return (
-                        <div className={classes.slotButton} key={i}>
-                            <button>{slot.time}</button>
-                        </div>
-                    )
-                })}
+            <div className={classes.slotHead}>Wednesday, May 11</div>
+            <div className={classes.slotBody}>
+                <div className={classes.slotButtons}>
+                    {slot.map((slot, i) => {
+                        return (
+                            <div className={classes.slotButton} key={i}>
+                                <button>{slot.time}</button>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )

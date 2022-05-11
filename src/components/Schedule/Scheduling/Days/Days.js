@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PreScheduling from '../PreScheduling/PreScheduling'
 import classes from './Days.module.css'
 
 const Days = () => {
@@ -12,12 +13,15 @@ const Days = () => {
                 {days.map((days, i) => {
                     return (
                         <span
-                            className={day === days ? `${classes.activeNav}` : `${classes.deactivenav}`}
+                            className={day === days ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                             onClick={(e) => setDay(days)}>
                             {days}
                         </span>
                     )
                 })}
+            </div>
+            <div>
+                <PreScheduling />
             </div>
         </div>
     )

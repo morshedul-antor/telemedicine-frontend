@@ -1,7 +1,21 @@
 /* SLOT */
-
+.Slot {
+    margin: 5px 5px;
+}
+.slotBody {
+    background: var(--white);
+}
+.slotHead {
+    color: var(--dark-blue);
+    background-image: linear-gradient(to right, var(--secondary), var(--grey2), var(--primary));
+    padding: 5px 15px;
+    border-radius: 2px 2px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
 .slotButtons {
-    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .slotButtons > .slotButton > button {

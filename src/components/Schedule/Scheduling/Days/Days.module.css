@@ -17,9 +17,9 @@
 
 .deactiveNav {
     background: var(--light);
-    color: var(--secondary);
+    color: var(--dark-blue);
 }
 .activeNav {
     background: var(--white);
-    color: var(--primary);
+    color: var(--secondary);
 }

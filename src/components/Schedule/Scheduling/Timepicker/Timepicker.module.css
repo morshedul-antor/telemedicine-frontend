@@ -3,7 +3,7 @@
 }
 .content > form > .timePicker > div {
     display: inline-block;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 5px 0px 0px;
 }
 .content > form > .timePicker > div > input {
     appearance: none;
