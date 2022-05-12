@@ -33,8 +33,11 @@ const OfflineForm = () => {
 
     let data = Array.from(chamberInfo)
     return (
-        <>
-            <>
+        <div>
+            <div className={classes.offlineForm}>
+                <div className={classes.timepicker}>
+                    <Timepicker />
+                </div>
                 <div className={classes.chamberSelection}>
                     <label htmlFor="chamberSelection">Chamber</label>
                     <select>
@@ -43,12 +46,8 @@ const OfflineForm = () => {
                         })}
                     </select>
                 </div>
-                <div className={classes.timepicker}>
-                    <label>Timepicker</label>
-                    <Timepicker />
-                </div>
-            </>
-        </>
+            </div>
+        </div>
     )
 }
 export default OfflineForm

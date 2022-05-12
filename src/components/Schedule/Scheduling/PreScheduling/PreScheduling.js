@@ -1,33 +1,39 @@
 import { useState } from 'react'
 import OfflineForm from './OfflineForm/OfflineForm'
 import OnlineForm from './OnlineForm/OnlineForm'
+import PreOnOfSlot from './PreOnOfSlot/PreOnOfSlot'
 import classes from './PreScheduling.module.css'
 
 const PreScheduling = () => {
-    const [activate, setActivate] = useState(0)
+    const [online, setOnline] = useState(1)
     return (
         <div>
             <div className={classes.scheduleForm}>
-                <div className={classes.onOff}>
-                    <div>
-                        <span
-                            className={activate === 0 ? `${classes.on}` : `${classes.off}`}
-                            onClick={(e) => setActivate(0)}>
-                            Online
-                        </span>
+                <div className={classes.preSchedule}>
+                    <div className={classes.onOff}>
+                        <div>
+                            <span
+                                className={online === 1 ? `${classes.on}` : `${classes.off}`}
+                                onClick={(e) => setOnline(1)}>
+                                Online
+                            </span>
+                        </div>
+                        <div>
+                            <span
+                                className={online === 0 ? `${classes.on}` : `${classes.off}`}
+                                onClick={(e) => setOnline(0)}>
+                                Offline
+                            </span>
+                        </div>
                     </div>
                     <div>
-                        <span
-                            className={activate === 1 ? `${classes.on}` : `${classes.off}`}
-                            onClick={(e) => setActivate(1)}>
-                            Offline
-                        </span>
+                        {online === 1 ? <OnlineForm /> : null}
+                        {online === 0 ? <OfflineForm /> : null}
                     </div>
                 </div>
-                <div>
-                    {activate === 0 ? <OnlineForm /> : null}
-                    {activate === 1 ? <OfflineForm /> : null}
-                </div>
+            </div>
+            <div className={classes.preSlots}>
+                <PreOnOfSlot />
             </div>
         </div>
     )

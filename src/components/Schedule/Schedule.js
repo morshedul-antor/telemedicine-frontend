@@ -25,10 +25,10 @@ const Schedule = () => {
             </div> */}
 
             <div className={classes.Wrapper}>
-                <div className={classes.WrapperRight}>
+                <div className={classes.WrapperLeft}>
                     <Scheduling />
                 </div>
-                <div className={classes.WrapperLeft}>
+                <div className={classes.WrapperRight}>
                     <TimeSlot />
                 </div>
             </div>

@@ -1,19 +1,23 @@
 /* SLOT */
 .Slot {
-    margin: 5px 5px 50px 5px;
+    margin: 10px 5px;
+    box-shadow: inset;
 }
 .slotBody {
     background: var(--white);
-    padding: 10px 0;
+    padding: 10px 10px;
 }
 .slotHead {
-    color: var(--white);
-    background-image: linear-gradient(to right, var(--dark-blue), var(--primary), var(--secondary));
+    color: var(--dark-blue);
+    background-image: linear-gradient(to right, var(--secondary), var(--grey2), var(--primary));
     padding: 5px 15px;
     border-radius: 2px 2px 0 0;
     font-size: 14px;
     font-weight: 600;
     text-align: center;
+}
+.slotButtons {
+    margin-bottom: 5px;
 }
 
 .slotButtons > .slotButton > button {
@@ -23,9 +27,8 @@
     color: var(--dark-blue);
     padding: 5px 10px;
     border-radius: 2px;
-    margin: 5px 3px;
-    border-radius: 3px;
-    letter-spacing: normal;
+    margin: 5px 5px;
+    border-radius: 2px;
     transition: 500ms;
 }
 .slotButtons > .slotButton > button:hover {

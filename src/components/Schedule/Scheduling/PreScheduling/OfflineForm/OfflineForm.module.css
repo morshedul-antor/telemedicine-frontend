@@ -1,17 +1,16 @@
 .chamberSelection {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .chamberSelection > label {
     color: var(--dark-blue);
-    font-size: 12px;
+    font-size: 15px;
     top: 10px;
-    background: var(--white);
     padding: 0 2px;
 }
 .chamberSelection > select {
     background: none;
     border: 1px solid var(--secondary);
-    font-size: px;
+    font-size: 15px;
     color: var(--dark-blue);
     border-radius: 2px;
     outline: 0;
