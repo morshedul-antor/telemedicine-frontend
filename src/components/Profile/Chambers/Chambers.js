@@ -72,15 +72,17 @@ const Chambers = () => {
                 <div className={classes.head}>
                     <p>ID</p>
                     <p>Name</p>
-                    <p>Detail</p>
+                    <p>District</p>
+                    <p>Chamber Address</p>
                     <p>Active</p>
                     <p>Action</p>
                 </div>
                 {data.map((chamber, i) => {
                     return (
                         <div className={classes.body} key={i}>
-                            <p>{chamber.id}</p>
+                            <p>{i + 1}</p>
                             <p>{chamber.name}</p>
+                            <p>District</p>
                             <p>{chamber.detail}</p>
                             <p>
                                 <ChamberState chamberId={chamber.id} />

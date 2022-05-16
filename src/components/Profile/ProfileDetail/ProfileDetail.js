@@ -75,13 +75,6 @@ const ProfileDetail = () => {
 
     return (
         <div className={classes.ProfileDetail}>
-            <p>
-                Git config commands: git config --global user.name "name" [set username] git config --global user.email
-                "abcd@xyz.com" [set email] git config user.name [see user name] git config user.email [see email] git
-                config --list [show all as list] Branch creation: git branch git checkout -b [Create and switch in to
-                the branch] git checkout --track origin/[branch_name] Branch creation while cloning the project: git
-                clone -b
-            </p>
             {/* <form>
                 <label htmlFor="name">Name</label>
                 <input id="name" type="text" value={stateUser.info.name} readOnly />
@@ -103,6 +96,7 @@ const ProfileDetail = () => {
                 <label htmlFor="name">BMDC</label>
                 <input id="name" type="text" value={doctorDetail.bmdc} readOnly />
             </form> */}
+            <div>{speciality.speciality}</div>
         </div>
     )
 }

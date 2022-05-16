@@ -1,7 +1,9 @@
+import { PublicProfile } from '../components'
+
 const HomePage = () => {
     return (
         <div>
-            <code>Home page underconstruction</code>
+            <PublicProfile />
         </div>
     )
 }

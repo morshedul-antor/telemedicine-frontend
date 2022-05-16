@@ -1,0 +1,75 @@
+.Page {
+    background: var(--light);
+    margin: 0;
+}
+.Container {
+    width: 70%;
+    height: 100vh;
+    margin: auto;
+    font-size: 14px;
+}
+.PublicProfile {
+    display: grid;
+    grid-template-rows: minmax(0, 50%) minmax(0, 50%);
+    gap: 10px;
+    margin: 10px;
+    min-height: 100vh;
+}
+
+.PublicProfile > .Header {
+    background: var(--white);
+    border: 1px solid var(--grey2);
+    border-radius: 10px;
+    grid-template-rows: minmax(0, 60%) minmax(0, 40%);
+    gap: 10px;
+}
+
+.PublicProfile > .Header > .BasicInfo {
+    color: var(--dark-blue);
+}
+
+.PublicProfile > .ProfileDetails {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+    gap: 10px;
+}
+
+.PublicProfile > .ProfileDetails > .Basic {
+    background: none;
+    margin: auto;
+    padding: 25px;
+}
+
+.PublicProfile > .ProfileDetails > .Basic > div {
+    padding: 20px;
+    border-bottom: 1px solid var(--grey2);
+}
+
+.PublicProfile > .ProfileDetails > .Basic > div > h3 {
+    color: var(--dark-blue);
+}
+
+.PublicProfile > .ProfileDetails > .Basic > div > ul {
+    color: var(--dark);
+}
+
+.PublicProfile > .ProfileDetails > .Professional {
+    background: none;
+    /* margin: auto; */
+    padding: 25px;
+}
+
+.PublicProfile > .ProfileDetails > .Professional div {
+    padding: 20px;
+    border-bottom: 1px solid var(--grey2);
+}
+
+.PublicProfile > .ProfileDetails > .Professional div h3 {
+    color: var(--dark-blue);
+}
+
+/* .PublicProfile > .ProfileDetails > .Professional div  {
+    padding: 20px;
+    border-bottom: 1px solid var(--grey2);
+} */

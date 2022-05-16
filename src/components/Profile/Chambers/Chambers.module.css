@@ -10,7 +10,7 @@
 }
 .head {
     display: grid;
-    grid-template-columns: minmax(0, 10%) minmax(0, 30%) minmax(0, 40%) minmax(0, 10%) minmax(0, 10%);
+    grid-template-columns: minmax(0, 10%) minmax(0, 20%) minmax(0, 20%) minmax(0, 30%) minmax(0, 10%) minmax(0, 10%);
     color: var(--white);
     background-image: linear-gradient(to right, var(--dark-blue), var(--primary), var(--secondary));
     border-radius: 2px 2px 0 0;
@@ -22,7 +22,7 @@
 .body {
     font-size: 12px;
     display: grid;
-    grid-template-columns: minmax(0, 10%) minmax(0, 30%) minmax(0, 40%) minmax(0, 10%) minmax(0, 10%);
+    grid-template-columns: minmax(0, 10%) minmax(0, 20%) minmax(0, 20%) minmax(0, 30%) minmax(0, 10%) minmax(0, 10%);
     padding: 0 15px;
 }
 /* .Chambers > .body > p:nth-last-child(1) {
