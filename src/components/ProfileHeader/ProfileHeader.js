@@ -123,8 +123,8 @@ const ProfileHeader = () => {
                                 }}></div>
                             <h2>{stateUser.info?.name}</h2>
                             <p>{doctorDetail.bmdc}</p>
-                            <p>{qualification?.qualification}</p>
-                            <p>{speciality?.speciality}</p>
+                            {/* <p>{qualification?.qualification}</p>
+                            <p>{speciality?.speciality}</p> */}
                         </div>
                     </div>
                     <div>
