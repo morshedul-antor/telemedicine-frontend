@@ -1,5 +1,3 @@
-import { faHouseChimneyMedical } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import docCover from '../../../assets/img/background-doc-table.jpg'
 import doc from '../../../assets/img/docstock.jpg'
 import classes from './ProfileHeader.module.css'

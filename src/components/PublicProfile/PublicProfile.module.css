@@ -1,11 +1,12 @@
 .Page {
     background: var(--light);
-    margin: 0;
+    border: 1px solid var(--light);
 }
 .Container {
-    width: 70%;
+    width: 60%;
     height: 100vh;
     margin: auto;
+    margin-top: 70px;
     font-size: 14px;
 }
 .PublicProfile {
@@ -25,7 +26,13 @@
 }
 
 .PublicProfile > .Header > .BasicInfo {
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+}
+
+.PublicProfile > .Header > .BasicInfo div {
     color: var(--dark-blue);
+    margin: 15px 40px;
 }
 
 .PublicProfile > .ProfileDetails {
@@ -37,8 +44,8 @@
 
 .PublicProfile > .ProfileDetails > .Basic {
     background: none;
-    margin: auto;
-    padding: 25px;
+    /* margin: auto; */
+    /* padding: 25px; */
 }
 
 .PublicProfile > .ProfileDetails > .Basic > div {
@@ -57,7 +64,7 @@
 .PublicProfile > .ProfileDetails > .Professional {
     background: none;
     /* margin: auto; */
-    padding: 25px;
+    /* padding: 25px; */
 }
 
 .PublicProfile > .ProfileDetails > .Professional div {
@@ -73,3 +80,6 @@
     padding: 20px;
     border-bottom: 1px solid var(--grey2);
 } */
+.PublicProfile > .ProfileDetails > .Professional div table tr td span {
+    color: var(--secondary);
+}

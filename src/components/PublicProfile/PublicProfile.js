@@ -1,9 +1,13 @@
+import Nav from '../Nav/TransparentNav/TransparentNav'
 import ProfileHeader from '../PublicProfile/ProfileHeader/ProfileHeader'
 import classes from './PublicProfile.module.css'
 
 const PublicProfile = () => {
     return (
         <div className={classes.Page}>
+            <>
+                <Nav />
+            </>
             <div className={classes.Container}>
                 <div className={classes.PublicProfile}>
                     <div className={classes.Header}>
@@ -11,9 +15,15 @@ const PublicProfile = () => {
                             <ProfileHeader />
                         </div>
                         <div className={classes.BasicInfo}>
-                            <h2>Dr. Jahid Hassan</h2>
-                            <p>jahid@gmail.com</p>
-                            <p>01511251489</p>
+                            <div>
+                                <h2>Dr. Jahid Hassan</h2>
+                                <p>jahid@gmail.com</p>
+                                <p>01511251489</p>
+                            </div>
+                            <div>
+                                <h2>BMDC</h2>
+                                <p>30223430</p>
+                            </div>
                         </div>
                     </div>
                     <div className={classes.ProfileDetails}>
@@ -41,13 +51,17 @@ const PublicProfile = () => {
                                         <td>Popular hospital</td>
                                         <td> </td>
                                         <td> </td>
-                                        <td>Mon-Tue</td>
+                                        <td>
+                                            <span>Mon-Tue</span>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Labaid Hospital</td>
                                         <td> </td>
                                         <td> </td>
-                                        <td>Mon-Tue</td>
+                                        <td>
+                                            <span>Mon-Tue</span>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
