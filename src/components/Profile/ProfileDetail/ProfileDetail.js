@@ -75,28 +75,25 @@ const ProfileDetail = () => {
 
     return (
         <div className={classes.ProfileDetail}>
-            {/* <form>
-                <label htmlFor="name">Name</label>
-                <input id="name" type="text" value={stateUser.info.name} readOnly />
+            <div className={classes.Basic}>
+                <div>
+                    <h3>Qualification</h3>
+                    <ul>
+                        <li>MBBS, Dhaka Medical College</li>
+                        <li>FRCS, BSMRMU</li>
+                    </ul>
+                </div>
+            </div>
 
-                <label htmlFor="email">Email</label>
-                <input id="email" type="text" value={stateUser.info.email} readOnly />
-
-                <label htmlFor="phone">Phone</label>
-                <input id="phone" type="text" value={stateUser.info.phone} readOnly />
-            </form>
-
-            <form>
-                <label htmlFor="name">Qualification</label>
-                <input id="name" type="text" value={qualification.qualification} readOnly />
-
-                <label htmlFor="name">Speciality</label>
-                <input id="name" type="text" value={speciality.speciality} readOnly />
-
-                <label htmlFor="name">BMDC</label>
-                <input id="name" type="text" value={doctorDetail.bmdc} readOnly />
-            </form> */}
-            <div>{speciality.speciality}</div>
+            <div className={classes.Basic}>
+                <div>
+                    <h3>Speciality</h3>
+                    <ul>
+                        <li>Cardiologist</li>
+                        <li>Neural Surgery</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }

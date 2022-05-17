@@ -1,32 +1,26 @@
 .ProfileDetail {
     background: var(--white);
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+    gap: 10px;
     border: 1px solid var(--white);
+    font-size: 14px;
 }
 
-/* .ProfileDetail form {
-    display: inline-block;
+.ProfileDetail > .Basic {
+    background: none;
+    padding: 20px;
 }
 
-.ProfileDetail form > label {
-    color: var(--dark-blue);
-    font-size: 12px;
-    margin: 0 0 0 10px;
-    position: relative;
-    top: 10px;
-    background: var(--light);
-    padding: 0 2px;
+.ProfileDetail > .Basic > div {
+    padding: 20px;
+    border-bottom: 1px solid var(--grey2);
 }
-.ProfileDetail form > input {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 1px solid var(--secondary);
+
+.ProfileDetail > .Basic > div > h3 {
     color: var(--dark-blue);
-    background: var(--light);
-    outline: 0;
-    display: block;
-    margin: 0 0 10px 0;
-    border-radius: 2px;
-    padding: 7px 10px;
-    width: 70%;
-} */
+}
+
+.ProfileDetail > .Basic > div > ul {
+    color: var(--dark);
+}
