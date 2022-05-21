@@ -10,13 +10,22 @@ const App = () => {
     const [stateAuth, dispatchAuth] = useReducer(authReducer, authState)
     const [stateUser, dispatchUser] = useReducer(userReducer, userState)
 
+    const hx = 'hxds100000'
+    const array = hx.split('s')
+
+    const [prefix, id] = array
+    const idInt = parseInt(id) + stateUser.info?.id
+
+    const url = prefix + idInt
+    // console.log(url)
+
     return (
         <div>
             <Auth.Provider value={{ stateAuth, dispatchAuth }}>
                 <UserInfo.Provider value={{ stateUser, dispatchUser }}>
                     <Router>
                         <Switch>
-                            <Route path="/" exact={true} component={HomePage} />
+                            <Route path={`/${url}`} exact={true} component={HomePage} />
                             <ProtectedRoute path="/home" exact={true} component={DashboardPage} />
                             <ProtectedRoute path="/profile" component={ProfilePage} />
                             <ProtectedRoute path="/settings" component={SettingsPage} />

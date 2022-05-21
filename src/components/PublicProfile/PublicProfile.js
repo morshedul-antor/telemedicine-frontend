@@ -1,8 +1,81 @@
+import { useContext, useEffect, useState } from 'react'
+import { UserInfo } from '../../allContext'
+import { Auth } from '../../allContext'
 import Nav from '../Nav/TransparentNav/TransparentNav'
 import ProfileHeader from '../PublicProfile/ProfileHeader/ProfileHeader'
 import classes from './PublicProfile.module.css'
 
 const PublicProfile = () => {
+    const { stateAuth } = useContext(Auth)
+    const { stateUser } = useContext(UserInfo)
+
+    const apiV1 = process.env.REACT_APP_API_V1
+    const token = stateAuth.token
+
+    const [doctorDetail, setDoctorDetail] = useState({})
+    const [qualification, setQualification] = useState({})
+    const [speciality, setSpeciality] = useState({})
+
+    useEffect(() => {
+        let infoFunc = async () => {
+            let infoFetch = await fetch(`${apiV1}/doctors/ `, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+            let infoJson = await infoFetch.json()
+            if (infoFetch.ok) {
+                setDoctorDetail(infoJson)
+            }
+        }
+        try {
+            infoFunc()
+        } catch (e) {}
+    }, [apiV1, token])
+
+    useEffect(() => {
+        let qualFunc = async () => {
+            let qualFetch = await fetch(`${apiV1}/doctors/qualifications `, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+            let qualJson = await qualFetch.json()
+            if (qualFetch.ok) {
+                setQualification(qualJson)
+            }
+        }
+        try {
+            qualFunc()
+        } catch (e) {}
+    }, [apiV1, token])
+
+    useEffect(() => {
+        let specialityFunc = async () => {
+            let specialityFetch = await fetch(`${apiV1}/doctors/specialities `, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+            let specialityJson = await specialityFetch.json()
+            if (specialityFetch.ok) {
+                setSpeciality(specialityJson)
+            }
+        }
+        try {
+            specialityFunc()
+        } catch (e) {}
+    }, [apiV1, token])
+
     return (
         <div className={classes.Page}>
             <>
@@ -16,13 +89,13 @@ const PublicProfile = () => {
                         </div>
                         <div className={classes.BasicInfo}>
                             <div>
-                                <h2>Dr. Jahid Hassan</h2>
-                                <p>jahid@gmail.com</p>
-                                <p>01511251489</p>
+                                <h2>{stateUser.info?.name}</h2>
+                                <p>{stateUser.info?.email}</p>
+                                <p>{stateUser.info?.phone}</p>
                             </div>
                             <div>
                                 <h2>BMDC</h2>
-                                <p>30223430</p>
+                                <p>{doctorDetail.bmdc}</p>
                             </div>
                         </div>
                     </div>
@@ -31,6 +104,7 @@ const PublicProfile = () => {
                             <div>
                                 <h3>Qualification</h3>
                                 <ul>
+                                    <li>{qualification.qualification}</li>
                                     <li>MBBS, Dhaka Medical College</li>
                                     <li>FRCS, BSMRMU</li>
                                 </ul>
@@ -38,6 +112,7 @@ const PublicProfile = () => {
                             <div>
                                 <h3>Speciality</h3>
                                 <ul>
+                                    <li>{speciality.speciality}</li>
                                     <li>Cardiologist</li>
                                     <li>Neural Surgery</li>
                                 </ul>
