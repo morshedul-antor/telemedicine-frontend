@@ -21,17 +21,30 @@ const Profile = () => {
                             <span
                                 className={menu === 1 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                                 onClick={(e) => setMenu(1)}>
-                                Info
+                                Detail
                             </span>
+
                             <span
                                 className={menu === 2 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                                 onClick={(e) => setMenu(2)}>
+                                Professional Info
+                            </span>
+
+                            <span
+                                className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(3)}>
+                                Achievement
+                            </span>
+
+                            <span
+                                className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(4)}>
                                 Chambers
                             </span>
                         </div>
                         <div>
                             {menu === 1 ? <ProfileDetail /> : null}
-                            {menu === 2 ? <Chambers /> : null}
+                            {menu === 4 ? <Chambers /> : null}
                         </div>
                     </div>
                 </div>

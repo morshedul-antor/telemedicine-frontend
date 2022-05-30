@@ -1,0 +1,98 @@
+.Speciality {
+    margin: 20px;
+}
+
+.Speciality > h2 {
+    color: var(--dark-blue);
+}
+
+.Speciality form {
+    border-bottom: 1px solid var(--secondary);
+}
+
+.Speciality form > label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: 10px;
+    background: var(--white);
+    padding: 0 2px;
+}
+
+.Speciality form > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--secondary);
+    outline: 0;
+    display: block;
+    margin: 0 0 10px 0;
+    border-radius: 2px;
+    padding: 7px 10px;
+    width: 40%;
+}
+
+.Speciality form > input:focus {
+    outline: 0;
+}
+.Speciality form > select {
+    border: 1px solid var(--secondary);
+    padding: 7px 20px;
+    background: var(--white);
+    color: var(--secondary);
+    border-radius: 2px;
+    margin: 10px 0 10px 30px;
+    position: relative;
+}
+.Speciality form > select:focus {
+    outline: 0;
+}
+.Speciality form > select + label {
+    position: relative;
+    top: 0;
+    left: -150px;
+}
+
+.Speciality form > button {
+    cursor: pointer;
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    display: block;
+    padding: 10px 25px;
+    border-radius: 2px;
+    margin: 20px 0;
+}
+.Speciality form > button:hover {
+    box-shadow: 1px 3px 10px var(--grey2);
+}
+
+.Speciality > .badge {
+    cursor: pointer;
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 2px;
+    margin-right: 20px;
+    height: 25px;
+    width: 10%;
+    font-size: 14px;
+    text-align: center;
+}
+
+.Speciality > .badge > button {
+    cursor: pointer;
+    color: var(--white);
+    background: none;
+    border: none;
+    border-radius: 50%;
+}
+
+.Speciality > .badge > button:hover {
+    color: var(--dark-blue);
+    background: var(--red);
+    border: none;
+}

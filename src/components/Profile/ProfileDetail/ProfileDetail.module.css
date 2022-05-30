@@ -23,4 +23,5 @@
 
 .ProfileDetail > .Basic > div > ul {
     color: var(--dark);
+    list-style-type: square;
 }

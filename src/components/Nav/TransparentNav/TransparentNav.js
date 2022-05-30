@@ -40,7 +40,7 @@ const TransparntNav = () => {
         <div className={classes.Navbar}>
             <div className={classes.Brand}>
                 {location.pathname !== '/profile' ? (
-                    <Link to="/">
+                    <Link to="/profile">
                         <img src={logo} alt="" />
                     </Link>
                 ) : null}

@@ -50,7 +50,10 @@
 .General form > input:focus {
     outline: 0;
 }
-.General form > select {
+
+/* previous form result */
+
+/* .General form > select {
     border: 1px solid var(--secondary);
     padding: 7px 20px;
     background: var(--white);
@@ -66,6 +69,32 @@
     position: relative;
     top: 0;
     left: -150px;
+} */
+
+.General form > select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--secondary);
+    background: none;
+    outline: 0;
+    display: block;
+    margin: 0 0 10px 0;
+    border-radius: 2px;
+    padding: 7px 10px;
+    width: 40%;
+}
+.General form > select:focus {
+    outline: 0;
+}
+.General form > select + label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: 10px;
+    background: var(--white);
+    padding: 0 2px;
 }
 
 .General form > button {

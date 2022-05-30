@@ -58,6 +58,7 @@ const Chambers = () => {
             if (chamberFetch.ok) {
                 setChamberInfo(chamberJson)
             }
+            console.log(chamberInfo)
         }
         try {
             chamberFunc()
