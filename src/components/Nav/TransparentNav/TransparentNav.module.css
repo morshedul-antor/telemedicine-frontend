@@ -1,0 +1,46 @@
+.Navbar {
+    background: var(--white);
+    position: fixed;
+    z-index: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Navbar > .Brand a img {
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+}
+
+.Navbar > .Brand p {
+    margin: 0;
+    color: var(--secondary);
+    font-size: small;
+    font-weight: 600;
+}
+
+.Navbar > .NavLink {
+    list-style: none;
+}
+
+.Navbar > .NavLink > div li {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+.Navbar > .NavLink > div li a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.Navbar > .NavLink > div li span {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 600;
+    cursor: pointer;
+}

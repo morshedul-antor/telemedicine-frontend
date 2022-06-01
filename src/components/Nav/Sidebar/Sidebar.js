@@ -1,4 +1,4 @@
-import { faCog, faUser, faSignOutAlt, faTableColumns } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faUser, faSignOutAlt, faTableColumns, faClock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
 import env from 'react-dotenv'
@@ -10,6 +10,14 @@ import classes from './Sidebar.module.css'
 const Sidebar = () => {
     const { stateAuth, dispatchAuth } = useContext(Auth)
     const { dispatchUser } = useContext(UserInfo)
+    const { stateUser } = useContext(UserInfo)
+
+    const hx = 'hxds100000'
+    const array = hx.split('s')
+
+    const [prefix, id] = array
+    const idInt = parseInt(id) + stateUser.info?.id
+    const url = prefix + idInt
 
     let location = useLocation()
 
@@ -24,7 +32,7 @@ const Sidebar = () => {
     return (
         <div className={classes.Sidebar} style={{ width: '20%' }}>
             <div className={classes.header}>
-                <Link to="/">
+                <Link to={`/${url}`}>
                     <img src={img} alt="" />
                     <h2>
                         Smart <span>Doctor</span>
@@ -37,14 +45,19 @@ const Sidebar = () => {
                 </a>
             </div>
             <ul>
-                <li className={location.pathname === '/dashboard' ? classes.active : ''}>
-                    <Link to="/dashboard">
+                <li className={location.pathname === '/home' ? classes.active : ''}>
+                    <Link to="/home">
                         <FontAwesomeIcon icon={faTableColumns} /> Dashboard
                     </Link>
                 </li>
                 <li className={location.pathname === '/profile' ? classes.active : ''}>
                     <Link to="/profile">
                         <FontAwesomeIcon icon={faUser} /> Profile
+                    </Link>
+                </li>
+                <li className={location.pathname === '/schedule' ? classes.active : ''}>
+                    <Link to="/schedule">
+                        <FontAwesomeIcon icon={faClock} /> Schedule
                     </Link>
                 </li>
             </ul>

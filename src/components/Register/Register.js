@@ -56,10 +56,32 @@ const Register = () => {
             }),
         })
 
-        // let registrationJson = await registrationFetch.json()
+        let registrationJson = await registrationFetch.json()
 
         if (registrationFetch.ok) {
-            history.push('/login')
+            let patientFetch = await fetch(`${apiV1}/patient`, {
+                headers: {
+                    Accept: 'appllication/json',
+                    'Content-Type': 'application/json',
+                },
+                dataType: 'json',
+                method: 'POST',
+                body: JSON.stringify({
+                    user_id: registrationJson.id,
+                    sex,
+                }),
+            })
+
+            // let patientJson = await patientFetch.json()
+            if (patientFetch.ok) {
+                history.push('/login')
+            } else {
+                let patErr = statusCheck(patientFetch, [
+                    { sts: 400, msg: 'User email/phone number or Password not correct.' },
+                    { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
+                ])
+                setAlert([...alert, patErr.msg])
+            }
         } else {
             let regErr = statusCheck(registrationFetch, [
                 { sts: 400, msg: 'User email/phone number or Password not correct.' },
