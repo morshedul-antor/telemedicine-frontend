@@ -15,19 +15,29 @@ const WorkplaceForm = () => {
             <div className={classes.WorkplaceForm}>
                 <button onClick={popup}>
                     <FontAwesomeIcon icon={faCirclePlus} />
-                    Add Workplace
+                    <span>Add Workplace</span>
                 </button>
             </div>
 
             {workpopup && (
                 <div className={classes.formPopup}>
                     <div onClick={workpopup}></div>
-                    <div className={classes.collegeForm}>
+                    <div className={classes.InstituteForm}>
                         <h2>Add another workplace</h2>
-                        <form>
-                            <button>Create</button>
-                            <button onClick={popup}>Close</button>
-                        </form>
+                        <div className={classes.Content}>
+                            <form>
+                                <label htmlFor="institution">Institution</label>
+                                <input id="institution" type="text" />
+
+                                <label htmlFor="location">Location</label>
+                                <input id="location" type="text" />
+
+                                <label htmlFor="position">Position</label>
+                                <input id="position" type="text" />
+                                <button>Add</button>
+                                <button onClick={popup}>Close</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             )}

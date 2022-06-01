@@ -1,7 +1,6 @@
 import AcademicForm from './AcademicForm/AcademicForm'
 import classes from './ProfessionalInfoEdit.module.css'
 import WorkplaceForm from './WorkplaceForm/WorkplaceForm'
-import WorkshopSeminarForm from './WorkshopSeminarForm/WorkshopSeminarForm'
 
 const ProfessionalInfoEdit = () => {
     return (
@@ -12,9 +11,6 @@ const ProfessionalInfoEdit = () => {
                 </div>
                 <div className={classes.Practice}>
                     <WorkplaceForm />
-                </div>
-                <div className={classes.Workshop}>
-                    <WorkshopSeminarForm />
                 </div>
             </div>
         </div>

@@ -15,19 +15,29 @@ const Academic = () => {
             <div className={classes.AcademicForm}>
                 <button onClick={popup}>
                     <FontAwesomeIcon icon={faCirclePlus} />
-                    Add academic info
+                    <span>Add academic info</span>
                 </button>
             </div>
 
             {acpopup && (
                 <div className={classes.formPopup}>
                     <div onClick={acpopup}></div>
-                    <div className={classes.collegeForm}>
-                        <h2>Add your Institution</h2>
-                        <form>
-                            <button>Create</button>
-                            <button onClick={popup}>Close</button>
-                        </form>
+                    <div className={classes.InstituteForm}>
+                        <h2>Add Academic Institution</h2>
+                        <div className={classes.Content}>
+                            <form>
+                                <label htmlFor="institution">Institution</label>
+                                <input id="institution" type="text" />
+
+                                <label htmlFor="degree">Degree</label>
+                                <input id="degree" type="text" />
+
+                                <label htmlFor="year">Year</label>
+                                <input id="year" type="year111" />
+                                <button>Add</button>
+                                <button onClick={popup}>Close</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             )}

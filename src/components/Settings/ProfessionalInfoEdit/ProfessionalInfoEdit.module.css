@@ -7,14 +7,14 @@
 
 .ProfessionalInfo > .Info {
     display: grid;
-    grid-template-columns: minmax(0, 33%) minmax(0, 33%) minmax(0, 33%);
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
     gap: 10px;
     min-height: 100vh;
 }
 
-.ProfessionalInfo > .Info > div {
+/* .ProfessionalInfo > .Info > div {
     border-right: 1px solid var(--secondary);
-}
+} */
 
 .ProfessionalInfo > .Info > div button {
     cursor: pointer;
