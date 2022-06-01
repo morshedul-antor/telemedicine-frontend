@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Sidebar } from '../Nav'
 import ProfileHeader from '../ProfileHeader/ProfileHeader'
 import Chambers from './Chambers/Chambers'
+import ProfessionalInfo from './ProfessionalInfo/ProfessionalInfo'
 import classes from './Profile.module.css'
 import ProfileDetail from './ProfileDetail/ProfileDetail'
 
@@ -44,6 +45,7 @@ const Profile = () => {
                         </div>
                         <div>
                             {menu === 1 ? <ProfileDetail /> : null}
+                            {menu === 2 ? <ProfessionalInfo /> : null}
                             {menu === 4 ? <Chambers /> : null}
                         </div>
                     </div>
