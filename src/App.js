@@ -25,7 +25,7 @@ const App = () => {
                 <UserInfo.Provider value={{ stateUser, dispatchUser }}>
                     <Router>
                         <Switch>
-                            <Route path={`/${url}`} exact={true} component={HomePage} />
+                            <Route path="/" exact={true} component={HomePage} />
                             <ProtectedRoute path="/home" exact={true} component={DashboardPage} />
                             <ProtectedRoute path="/profile" component={ProfilePage} />
                             <ProtectedRoute path="/settings" component={SettingsPage} />
