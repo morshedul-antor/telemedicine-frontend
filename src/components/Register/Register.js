@@ -18,20 +18,13 @@ const Register = () => {
     const [password, setPassword] = useState('')
     const [cnfPassword, setCnfPassword] = useState('')
     const [sex, setSex] = useState('male')
-    const [speciality, setSpeciality] = useState('')
-    const [qualification, setQualification] = useState('')
-    const [bmdc, setBmdc] = useState('')
 
     const [alert, setAlert] = useState([])
 
     const history = useHistory()
 
-<<<<<<< HEAD
-    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
-=======
     // const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
     const apiV1 = process.env.REACT_APP_API_V1
->>>>>>> 13caefd84b01b1eb95efbf6d043f238f1c2eb6e6
 
     const submit = async (e) => {
         e.preventDefault()
@@ -41,11 +34,7 @@ const Register = () => {
             return
         }
 
-<<<<<<< HEAD
-        let registrationFetch = await fetch(`${apiV1}/doctors/signup`, {
-=======
         let registrationFetch = await fetch(`${apiV1}/signup`, {
->>>>>>> 13caefd84b01b1eb95efbf6d043f238f1c2eb6e6
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
@@ -53,24 +42,19 @@ const Register = () => {
             dataType: 'json',
             method: 'POST',
             body: JSON.stringify({
-                name,
                 email,
                 phone,
-                sex,
+                is_active: true,
+                name,
                 password,
-                role_name: 'doctor',
-                speciality,
-                qualification,
-                bmdc: bmdc.toUpperCase(),
+                sex,
+                role: 'patient',
             }),
         })
 
-        // let registrationJson = await registrationFetch.json()
+        let registrationJson = await registrationFetch.json()
 
         if (registrationFetch.ok) {
-<<<<<<< HEAD
-            history.push('/login')
-=======
             let patientFetch = await fetch(`${apiV1}/patient`, {
                 headers: {
                     Accept: 'appllication/json',
@@ -94,21 +78,19 @@ const Register = () => {
                 ])
                 setAlert([...alert, patErr.msg])
             }
->>>>>>> 13caefd84b01b1eb95efbf6d043f238f1c2eb6e6
         } else {
-            let regErr = statusCheck(registrationFetch, [
+            let err = statusCheck(registrationFetch, [
                 { sts: 400, msg: 'User email/phone number or Password not correct.' },
-                { sts: 404, msg: 'User email/phone number or Password not correct.' },
                 { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
             ])
-            setAlert([...alert, regErr.msg])
+            setAlert([...alert, err.msg])
         }
     }
 
     // if already logged in
     useEffect(() => {
         if (stateAuth.auth === true) {
-            history.push('/dashboard')
+            history.push('/profile')
         }
     }, [stateAuth, history])
 
@@ -184,7 +166,7 @@ const Register = () => {
                                     <span></span>
                                 </div>
                                 <div>
-                                    <input type="text" onChange={(e) => setBmdc(e.target.value)} required />
+                                    <input type="text" onChange={(e) => setCnfPassword(e.target.value)} required />
                                     <label>
                                         <span>BMDC number</span>
                                     </label>
@@ -192,14 +174,14 @@ const Register = () => {
                             </div>
 
                             <div>
-                                <input type="text" onChange={(e) => setQualification(e.target.value)} required />
+                                <input type="text" onChange={(e) => setCnfPassword(e.target.value)} required />
                                 <label>
                                     <span>Qualifications</span>
                                 </label>
                             </div>
 
                             <div>
-                                <input type="text" onChange={(e) => setSpeciality(e.target.value)} required />
+                                <input type="text" onChange={(e) => setCnfPassword(e.target.value)} required />
                                 <label>
                                     <span>Speciality</span>
                                 </label>

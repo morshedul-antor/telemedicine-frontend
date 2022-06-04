@@ -1,40 +1,36 @@
-import { useState } from 'react'
 import { Sidebar } from '../Nav'
+import TimeSlot from '../Schedule/Scheduling/TimeSlot/TimeSlot'
 import CreateSchedule from './CreateSchedule/CreateSchedule'
+import Slot from './CreateSchedule/Slot/Slot'
 import classes from './Schedule.module.css'
 import ScheduleList from './ScheduleList/ScheduleList'
-import SelectDate from './SelectDate/SelectDate'
+import Scheduling from './Scheduling/Scheduling'
 
 const Schedule = () => {
-    const [menu, setMenu] = useState(1)
     return (
         <div className={classes.Schedule}>
             <div>
                 <Sidebar />
             </div>
-            <div className={classes.Wrapper}>
-                <div>
-                    <div className={classes.Nav}>
-                        <span
-                            className={menu === 1 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(1)}>
-                            Select date
-                        </span>
-
-                        <span
-                            className={menu === 2 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(2)}>
-                            Add Schedule
-                        </span>
-                    </div>
+            {/* <div className={classes.Wrapper}>
+                <div className={classes.WrapperRight}>
                     <div>
-                        {menu === 1 ? <SelectDate /> : null}
-                        {/* {menu === 2 ? <SelectDate /> : null} */}
+                        <CreateSchedule />
                     </div>
+                    <div></div>
                 </div>
-            </div>
+                <div className={classes.WrapperLeft}>
+                    <ScheduleList />
+                </div>
+            </div> */}
+
             <div className={classes.Wrapper}>
-                <ScheduleList />
+                <div className={classes.WrapperLeft}>
+                    <Scheduling />
+                </div>
+                <div className={classes.WrapperRight}>
+                    <TimeSlot />
+                </div>
             </div>
         </div>
     )

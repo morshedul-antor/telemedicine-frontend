@@ -1,0 +1,21 @@
+.header {
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+}
+
+.header > span {
+    bottom: 8px;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.off {
+    color: var(--dark-blue);
+}
+.on {
+    border-bottom: 5px solid var(--secondary);
+    color: var(--secondary);
+}

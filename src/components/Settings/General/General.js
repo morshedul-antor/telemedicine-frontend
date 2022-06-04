@@ -3,6 +3,7 @@ import { UserInfo, Auth } from '../../../allContext'
 import classes from './General.module.css'
 
 const General = () => {
+    const bg = ['A+', 'B+', 'A-', 'B-', 'AB+', 'AB-', 'O+', 'O-']
     const { stateAuth } = useContext(Auth)
     const { stateUser } = useContext(UserInfo)
     const userDetail = stateUser.info
@@ -54,6 +55,28 @@ const General = () => {
                 </p>
             ) : null}
 
+            {/* <form onSubmit={submit}>
+                <label htmlFor="name">Name</label>
+                <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+
+                <label htmlFor="email">Email</label>
+                <input id="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+                <label htmlFor="phone">Phone</label>
+                <input id="phone" type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
+
+                <label htmlFor="date">Date of Birth</label>
+                <input id="date" type="date" value={phone} onChange={(e) => setPhone(e.target.value)} />
+
+                <select id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <label htmlFor="sex">Sex</label>
+
+                <button>Update</button>
+            </form> */}
+
             <form onSubmit={submit}>
                 <label htmlFor="name">Name</label>
                 <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
@@ -64,11 +87,20 @@ const General = () => {
                 <label htmlFor="phone">Phone</label>
                 <input id="phone" type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
 
+                {/* <label htmlFor="date">Date of Birth</label>
+                <input id="date" type="date" value={phone} onChange={(e) => setPhone(e.target.value)} /> */}
+
+                {/* <select id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <label htmlFor="sex">Sex</label> */}
+
+                <label htmlFor="sex">Sex</label>
                 <select id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
-                <label htmlFor="sex">Sex</label>
 
                 <button>Update</button>
             </form>

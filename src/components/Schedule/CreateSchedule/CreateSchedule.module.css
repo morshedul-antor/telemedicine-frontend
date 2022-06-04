@@ -1,0 +1,7 @@
+.CreateSchedule {
+    margin: 50px;
+}
+.CreateSchedule > h2 {
+    color: var(--dark-blue);
+    text-align: center;
+}

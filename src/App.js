@@ -16,8 +16,8 @@ const App = () => {
                 <UserInfo.Provider value={{ stateUser, dispatchUser }}>
                     <Router>
                         <Switch>
-                            <Route path="/" exact={true} component={HomePage} />
-                            <ProtectedRoute path="/dashboard" exact={true} component={DashboardPage} />
+                            {/* <Route path="/" exact={true} component={HomePage} /> */}
+                            <ProtectedRoute path="/" exact={true} component={DashboardPage} />
                             <ProtectedRoute path="/profile" component={ProfilePage} />
                             <ProtectedRoute path="/settings" component={SettingsPage} />
                             <ProtectedRoute path="/schedule" component={SchedulePage} />

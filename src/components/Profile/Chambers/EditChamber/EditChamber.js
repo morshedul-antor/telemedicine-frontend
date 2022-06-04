@@ -35,7 +35,6 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
                 detail,
             }),
         })
-        const editJson = await editFetch.json()
         if (editFetch.ok) {
             setMsg([...msg, 'Chamber modified'])
             setEditPrompt(!editPrompt)

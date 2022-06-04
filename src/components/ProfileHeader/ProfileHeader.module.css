@@ -51,7 +51,7 @@
     font-weight: 500;
 }
 .headLeftWrapper > p {
-    position: absolute;
+    position: relative;
     margin: 0;
     top: 45px;
     left: 170px;

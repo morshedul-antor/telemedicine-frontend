@@ -36,8 +36,6 @@ const Chambers = () => {
                 detail,
             }),
         })
-
-        const addJson = await addChamberFetch.json()
         if (addChamberFetch.ok) {
             setName('')
             setDetail('')
@@ -60,6 +58,7 @@ const Chambers = () => {
             if (chamberFetch.ok) {
                 setChamberInfo(chamberJson)
             }
+            console.log(chamberInfo)
         }
         try {
             chamberFunc()
@@ -69,12 +68,13 @@ const Chambers = () => {
     let data = Array.from(chamberInfo)
 
     return (
-        <div>
+        <div className={classes.ChamberPage}>
             <div className={classes.Chambers}>
                 <div className={classes.head}>
                     <p>ID</p>
                     <p>Name</p>
-                    <p>Detail</p>
+                    <p>District</p>
+                    <p>Chamber Address</p>
                     <p>Active</p>
                     <p>Action</p>
                 </div>
@@ -83,6 +83,7 @@ const Chambers = () => {
                         <div className={classes.body} key={i}>
                             <p>{i + 1}</p>
                             <p>{chamber.name}</p>
+                            <p>District</p>
                             <p>{chamber.detail}</p>
                             <p>
                                 <ChamberState chamberId={chamber.id} />

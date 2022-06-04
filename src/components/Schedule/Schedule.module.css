@@ -1,47 +1,36 @@
 .Schedule {
     background: var(--light);
     display: grid;
-    grid-template-columns: minmax(0, 20%) minmax(0, 30%) minmax(0, 50%);
-    gap: 20px;
-    min-height: 80vh;
-}
-.Wrapper {
-    background: var(--light);
+    grid-template-columns: minmax(0, 20%) minmax(0, 80%);
+    gap: 10px;
     min-height: 100vh;
 }
 
-.Wrapper > div {
-    min-height: 90vh;
-    background: var(--white);
-    margin: 20px 20px 0 0;
+.Wrapper {
+    min-height: 85vh;
+    background: none;
+    display: grid;
+    grid-template-columns: minmax(0, 70%) minmax(0, 30%);
+    grid-gap: 10px;
+    margin: 10px 10px 10px 0px;
     border-radius: 10px;
-    box-shadow: 3px 3px 15px var(--light-grey);
+    /* box-shadow: 3px 3px 15px var(--light-grey); */
     padding: 40px 20px 20px 20px;
 }
 
-.Nav {
-    width: 100%;
-    border-bottom: 2px solid var(--secondary);
-    padding: 20px 20px 0px 20px;
-    box-sizing: border-box;
+.WrapperLeft {
+    min-height: 90vh;
     position: relative;
+    background: none;
+    margin: 0px 0px 0px 0px;
+    border-radius: 2px;
+    padding: 0 0 0 0;
 }
-.Nav > span {
+.WrapperRight {
+    min-height: 85vh;
     position: relative;
-    bottom: 8px;
-    padding: 10px 15px;
-    border-radius: 5px 5px 0 0;
-    border: 2px solid var(--secondary);
-    font-size: 14px;
-    cursor: pointer;
-    margin: 0 0 0 10px;
-}
-
-.deactiveNav {
-    background: var(--white);
-    color: var(--dark-blue);
-}
-.activeNav {
-    background: var(--secondary);
-    color: var(--white);
+    background: none;
+    margin: 0px 0px 0px 0px;
+    border-radius: 2px;
+    padding: 0 0 0 0;
 }

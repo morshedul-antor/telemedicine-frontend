@@ -4,6 +4,15 @@ const ScheduleList = () => {
     let sch = [
         { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
         { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
+        { no: 1, date: '22.01.22', chambr: 'Apollo Hospital', bookedBy: 'Myself', problem: 'fever for 5 days' },
     ]
     return (
         <div className={classes.ScheduleList}>
@@ -19,7 +28,7 @@ const ScheduleList = () => {
                 {sch.map((v, i) => {
                     return (
                         <div className={classes.body} key={i}>
-                            <p>{i}</p>
+                            <p>{i + 1}</p>
                             <p>{v.date}</p>
                             <p>{v.chambr}</p>
                             <p>{v.bookedBy}</p>

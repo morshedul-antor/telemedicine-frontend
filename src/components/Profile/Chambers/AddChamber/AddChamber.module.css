@@ -1,7 +1,7 @@
-.addChamber {
+/* .addChamber {
     position: absolute;
     right: 25px;
-}
+} */
 .addChamber > button {
     cursor: pointer;
     border: none;

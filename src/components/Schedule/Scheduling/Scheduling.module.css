@@ -1,0 +1,25 @@
+.Nav {
+    background: none;
+    margin-top: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.Nav > span {
+    position: relative;
+    bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.deactiveNav {
+    background: var(--light);
+    color: var(--dark-blue);
+}
+.activeNav {
+    background: var(--white);
+    color: var(--secondary);
+}

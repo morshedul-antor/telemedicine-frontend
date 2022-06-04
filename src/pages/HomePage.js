@@ -1,9 +1,9 @@
-import { Home } from '../components'
+import { PublicProfile } from '../components'
 
 const HomePage = () => {
     return (
         <div>
-            <Home />
+            <PublicProfile />
         </div>
     )
 }
