@@ -1,13 +1,14 @@
 import { faCog, faUser, faSignOutAlt, faTableColumns, faClock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
+import env from 'react-dotenv'
 import { Link, useLocation } from 'react-router-dom'
 import { Auth, UserInfo } from '../../../allContext'
 import img from '../.././../assets/img/logo.svg'
 import classes from './Sidebar.module.css'
 
 const Sidebar = () => {
-    const { dispatchAuth } = useContext(Auth)
+    const { stateAuth, dispatchAuth } = useContext(Auth)
     const { dispatchUser } = useContext(UserInfo)
     const { stateUser } = useContext(UserInfo)
 
@@ -19,6 +20,8 @@ const Sidebar = () => {
     const url = prefix + idInt
 
     let location = useLocation()
+
+    let epApi = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_EP_SITE : env.REACT_APP_EP_SITE
 
     const logout = (e) => {
         e.preventDefault()
@@ -35,6 +38,11 @@ const Sidebar = () => {
                         Smart <span>Doctor</span>
                     </h2>
                 </Link>
+            </div>
+            <div className={classes.ep}>
+                <a rel="noreferrer" target={'_blank'} href={`${epApi}/auth/${stateAuth.token}`}>
+                    E-Prescription
+                </a>
             </div>
             <ul>
                 <li className={location.pathname === '/home' ? classes.active : ''}>
