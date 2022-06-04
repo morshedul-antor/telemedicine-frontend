@@ -1,4 +1,4 @@
-import { PublicProfile } from '../components'
+import { PublicProfile } from '../components/PublicProfile'
 
 const HomePage = () => {
     return (
