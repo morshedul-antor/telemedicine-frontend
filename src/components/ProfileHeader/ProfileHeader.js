@@ -5,6 +5,7 @@ import { Auth, UserInfo } from '../../allContext'
 import docCover from '../../assets/img/background-doc-table.jpg'
 import doc from '../../assets/img/docstock.jpg'
 import classes from './ProfileHeader.module.css'
+import ProfilePictreUpload from './ProfilePictureUpload/ProfilePictureUpload'
 
 const ProfileHeader = () => {
     const { stateAuth } = useContext(Auth)
@@ -17,6 +18,32 @@ const ProfileHeader = () => {
     const [doctorDetail, setDoctorDetail] = useState({})
     const [qualification, setQualification] = useState({})
     const [speciality, setSpeciality] = useState({})
+    const [profileImage, setProfileImage] = useState({})
+    const [msg, setMsg] = useState([])
+
+    // Profile Picture Image API fetch
+    useEffect(() => {
+        let ProfileImgFunc = async () => {
+            let ppFetch = await fetch(`${apiV1}/profile-pic`, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+            let picJson = await ppFetch.json()
+
+            if (ppFetch.ok) {
+                setProfileImage(picJson.image_string)
+            }
+        }
+        try {
+            ProfileImgFunc()
+        } catch (e) {}
+    }, [apiV1, token, msg])
+
+    const profileImageUrl = 'http://127.0.0.1:8000/images/profile/' + profileImage
 
     useEffect(() => {
         let infoFunc = async () => {
@@ -100,17 +127,16 @@ const ProfileHeader = () => {
 
     return (
         <div>
-            <div>
-                <div
-                    className={classes.header}
-                    style={{
-                        background: `url(${docCover})`,
-                        backgroundPosition: 'center',
-                        backgroundSize: 'cover',
-                    }}>
-                    <div>
-                        <div className={classes.headLeftWrapper}>
-                            <div
+            <div
+                className={classes.header}
+                style={{
+                    background: `url(${docCover})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                }}>
+                <div>
+                    <div className={classes.headLeftWrapper}>
+                        {/* <div
                                 style={{
                                     background: `url(${doc})`,
                                     width: '150px',
@@ -120,18 +146,23 @@ const ProfileHeader = () => {
                                     borderRadius: '10px',
                                     border: '4px solid var(--white)',
                                     boxShadow: `0 3px 5px var(--grey2)`,
-                                }}></div>
-                            <h2>{stateUser.info?.name}</h2>
-                            <p>{doctorDetail.bmdc}</p>
-                            {/* <p>{qualification?.qualification}</p>
-                            <p>{speciality?.speciality}</p> */}
+                                }}></div> */}
+                        <div className={classes.ProfilePic}>
+                            <img className={classes.Image} src={profileImageUrl} alt="pp" />
+                            <>
+                                <ProfilePictreUpload msg={msg} setMsg={setMsg} />
+                            </>
                         </div>
+                        <h2>{stateUser.info?.name}</h2>
+                        <p>{doctorDetail.bmdc}</p>
+                        {/* <p>{qualification?.qualification}</p>
+                            <p>{speciality?.speciality}</p> */}
                     </div>
-                    <div>
-                        <FontAwesomeIcon icon={faHouseChimneyMedical} />
-                        <h2>{activeChamber?.name}</h2>
-                        <p>{activeChamber?.detail}</p>
-                    </div>
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={faHouseChimneyMedical} />
+                    <h2>{activeChamber?.name}</h2>
+                    <p>{activeChamber?.detail}</p>
                 </div>
             </div>
         </div>

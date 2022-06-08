@@ -57,6 +57,18 @@
     left: 170px;
     font-size: 14px;
 }
+
+.Image {
+    position: absolute;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    border: 4px solid var(--white);
+    box-shadow: 0 3px 5px var(--grey2);
+    display: block;
+    margin: 0 auto;
+}
 .header div:nth-child(2) > svg {
     position: absolute;
     top: 90px;
