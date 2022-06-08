@@ -1,0 +1,256 @@
+.Wrapper {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--white);
+}
+
+.nav {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+.nav .topNavbar {
+    background-color: var(--white);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0px 0px 10px var(--light);
+}
+
+.nav .topNavbar .logo {
+    font-size: 1.4em;
+    color: var(--secondary);
+    font-weight: 620;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.nav .topNavbar .logo:hover {
+    opacity: 0.7;
+}
+
+.logo .leaf {
+    position: absolute;
+    color: var(--green);
+    font-size: 12px;
+    margin-top: -6px;
+    margin-left: 12px;
+}
+
+.nav .topNavbar .navList {
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+.nav .topNavbar .navList a {
+    font-size: 16px;
+    color: var(--dark);
+    padding-left: 30px;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.nav .topNavbar .navList a:last-child {
+    background-color: var(--secondary);
+    margin-left: 30px;
+    padding: 10px 20px;
+    color: var(--white);
+    border-radius: 4px;
+}
+
+.nav .topNavbar .navList a:hover {
+    color: var(--secondary);
+}
+
+.nav .topNavbar .navList a:last-child:hover {
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.hero {
+}
+
+/* about */
+.aboutWrapper {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10em;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    grid-gap: 30px;
+}
+
+.about .box:first-child {
+    border: 1px solid var(--light-low);
+}
+
+.about .box .title {
+    margin-top: 2em;
+    font-size: 2.8em;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.about .box > p {
+    font-size: 1em;
+    color: var(--dark);
+    text-align: justify;
+}
+
+.about .box > img {
+    height: 20em;
+    opacity: 0.9;
+    margin-left: 4em;
+}
+
+/* service */
+.serviceWrapper {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10em;
+}
+
+.service {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2em;
+    grid-gap: 4em;
+}
+
+.service .box {
+    border-radius: 4px;
+    border: 1px solid var(--light);
+    background-color: var(--white);
+    box-shadow: 2px 4px 6px var(--light);
+    padding: 20px 30px;
+}
+
+.service .box .number {
+    font-size: 3em;
+    font-weight: 500;
+    margin-top: -10px;
+    color: var(--light);
+    opacity: 0.8;
+}
+
+.service .box .icon {
+    text-align: center;
+    height: 6em;
+    display: block;
+    margin: 0 auto;
+    margin-top: -4em;
+}
+
+.service .box .title {
+    margin-top: 1.6em;
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.service .box span {
+    display: block;
+    text-align: center;
+    color: var(--dark);
+    margin-top: -10px;
+    font-size: 14px;
+}
+
+.service .box button {
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 0.9em;
+    padding: 10px 20px;
+    display: block;
+    margin: 20px auto;
+    margin-top: 4em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.service .box:hover {
+    transition: 200ms;
+    cursor: pointer;
+    box-shadow: 10px 20px 30px var(--light);
+}
+
+.service .box button:hover {
+    opacity: 0.8;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+/* section */
+.sectionWrapper {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10em;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 2em;
+    grid-gap: 4em;
+}
+
+.section .box:first-child {
+    border-radius: 4px;
+    border: 1px solid var(--light);
+    background-color: var(--white);
+    box-shadow: 2px 4px 6px var(--light);
+}
+
+.section .boxContainer {
+    display: flex;
+    border: 1px solid var(--light);
+    box-shadow: 2px 4px 6px var(--light);
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin-bottom: 1.4em;
+}
+
+.section .boxContainer:hover {
+    transition: 200ms;
+    cursor: pointer;
+    box-shadow: 10px 20px 30px var(--light);
+}
+
+.section .box img {
+    height: 3em;
+    background-color: var(--secondary);
+    opacity: 0.9;
+    padding: 1.8em 2em;
+    border-radius: 10px;
+}
+
+.section .boxContainer > div {
+    margin-left: 2em;
+}
+
+.section .boxContainer .title {
+    color: var(--primary);
+    font-size: 1.4em;
+    margin-top: 2px;
+    margin-bottom: 6px;
+}
+
+.section .boxContainer > div > span {
+    display: block;
+    color: var(--dark);
+    font-size: 14px;
+}
