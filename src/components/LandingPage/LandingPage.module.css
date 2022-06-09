@@ -24,7 +24,7 @@
 
 .nav .topNavbar .logo {
     font-size: 1.4em;
-    color: var(--secondary);
+    color: var(--primary);
     font-weight: 620;
     margin-left: 30px;
     cursor: pointer;
@@ -86,7 +86,7 @@
 
 .about {
     display: grid;
-    grid-template-columns: 2fr 1.5fr;
+    grid-template-columns: 2fr 1fr;
     grid-gap: 30px;
 }
 
@@ -94,21 +94,65 @@
     border: 1px solid var(--light-low);
 }
 
-.about .box .title {
-    margin-top: 2em;
-    font-size: 2.8em;
+.about .box .title > p {
+    text-align: center;
+    margin-top: 1.2em;
+    font-size: 3em;
     font-weight: 500;
-    color: var(--secondary);
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: -2px;
+}
+
+.about .box .title > span {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--grey);
+    display: block;
 }
 
 .about .box > p {
     font-size: 1em;
     color: var(--dark);
-    text-align: justify;
+    text-align: center;
+}
+
+.about .buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.about .buttonContainer > button {
+    background-color: var(--secondary);
+    margin-left: 30px;
+    padding: 10px 40px;
+    color: var(--white);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.about .buttonContainer > button:hover {
+    opacity: 0.8;
+    transition: 200ms;
+}
+
+.about .box > .bgImg {
+    position: absolute;
+    height: 50em;
+    opacity: 0.8;
+    margin-left: -6em;
+    margin-top: -14em;
+    opacity: 0.04;
 }
 
 .about .box > img {
-    height: 20em;
+    height: 22em;
     opacity: 0.9;
     margin-left: 4em;
 }
@@ -117,7 +161,7 @@
 .serviceWrapper {
     width: 70%;
     margin: 0 auto;
-    margin-top: 10em;
+    margin-top: 1em;
 }
 
 .service {
@@ -198,7 +242,20 @@
 .sectionWrapper {
     width: 90%;
     margin: 0 auto;
-    margin-top: 10em;
+    margin-top: 4em;
+}
+
+.sectionWrapper .logo {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.sectionWrapper .logo > span {
+    font-size: 16px;
 }
 
 .section {
@@ -206,13 +263,6 @@
     grid-template-columns: 1fr 2fr;
     padding: 2em;
     grid-gap: 4em;
-}
-
-.section .box:first-child {
-    border-radius: 4px;
-    border: 1px solid var(--light);
-    background-color: var(--white);
-    box-shadow: 2px 4px 6px var(--light);
 }
 
 .section .boxContainer {
@@ -230,10 +280,17 @@
     box-shadow: 10px 20px 30px var(--light);
 }
 
-.section .box img {
+.section .box .iconAll {
+    height: 36em;
+    position: absolute;
+    margin-left: -12em;
+    margin-top: 2.8em;
+    z-index: -10;
+}
+
+.section .boxContainer .icon {
     height: 3em;
-    background-color: var(--secondary);
-    opacity: 0.9;
+    background-color: var(--primary);
     padding: 1.8em 2em;
     border-radius: 10px;
 }
@@ -247,10 +304,73 @@
     font-size: 1.4em;
     margin-top: 2px;
     margin-bottom: 6px;
+    font-weight: 500;
 }
 
 .section .boxContainer > div > span {
     display: block;
     color: var(--dark);
     font-size: 14px;
+}
+
+.footer {
+    position: relative;
+}
+
+.footer > .loveImg {
+    position: absolute;
+    z-index: 5;
+    height: 12em;
+    margin-top: 4em;
+    margin-left: 4em;
+}
+
+.footer > .footerImg1 {
+    width: 100%;
+    height: 18em;
+    position: absolute;
+}
+
+.footer > .footerImg2 {
+    width: 100%;
+    height: 17em;
+    position: absolute;
+    transform: scaleX(-1);
+    opacity: 0.1;
+}
+
+.footer > div {
+    position: absolute;
+    margin-top: 7.6%;
+    right: 11%;
+}
+
+.footer > div > p {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.footer > div > div {
+    font-size: 1em;
+    text-align: center;
+    margin-top: -1em;
+}
+
+.footer > div > div > img {
+    height: 24px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.footer > div > div > img:hover {
+    opacity: 0.7;
+}
+
+.footer > div > span {
+    color: var(--white);
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
 }
