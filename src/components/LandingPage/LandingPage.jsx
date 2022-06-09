@@ -4,11 +4,11 @@ import Love from '../../assets/img/LOVE.png'
 import a1 from '../../assets/img/a2.png'
 import bgDoc from '../../assets/img/background-doc-table.jpg'
 import bg from '../../assets/img/bg.jpg'
+import docAll from '../../assets/img/cds.png'
 import chamber from '../../assets/img/chamber.png'
 import data from '../../assets/img/data.png'
 import doc from '../../assets/img/doc.png'
-import docAll from '../../assets/img/docAll.png'
-import doctors from '../../assets/img/doctors.png'
+import doctors from '../../assets/img/docc.png'
 import ep from '../../assets/img/ep.png'
 import footerImg from '../../assets/img/footer.png'
 import pat from '../../assets/img/pat.png'
@@ -40,7 +40,7 @@ export default function LandingPage() {
                         <div className={classes.topNavbar}>
                             <div className={classes.logo}>Smart Doctor</div>
                             <div className={classes.navList}>
-                                <a href="#service">Services</a>
+                                <a href="#features">Features</a>
                                 <Link to="#">About</Link>
                                 <Link to="#">Demo</Link>
                                 <Link to="/login">Get Started</Link>
@@ -70,7 +70,7 @@ export default function LandingPage() {
                             </div>
                             <div className={classes.box}>
                                 <img src={a1} className={classes.bgImg} alt="" />
-                                <img src={doctors} alt="" />
+                                <img src={doctors} className={classes.docImg} alt="" />
                             </div>
                         </div>
                     </div>
@@ -113,13 +113,14 @@ export default function LandingPage() {
 
                     <Service />
 
-                    <div className={classes.sectionWrapper}>
+                    <div className={classes.sectionWrapper} id="features">
                         <div className={classes.logo}>
                             <span>-----</span> Features <span>-----</span>
                         </div>
                         <div className={classes.section}>
                             <div className={classes.box}>
                                 <img className={classes.iconAll} src={docAll} alt="" />
+                                <img className={classes.iconBg} src={a1} alt="" />
                             </div>
                             <div className={classes.box}>
                                 <div className={classes.boxContainer}>
