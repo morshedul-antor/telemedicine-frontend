@@ -8,7 +8,7 @@
 
 .header {
     position: relative;
-    /* background-image: linear-gradient(to bottom, var(--primary), var(--secondary)); */
+    background-image: linear-gradient(to bottom, var(--primary), var(--secondary));
     box-shadow: 1px 3px 10px var(--grey2);
     color: var(--white);
     border-radius: 10px;
@@ -31,7 +31,7 @@
 
 .header div {
     position: relative;
-    z-index: 100;
+    z-index: 50;
 }
 .headLeftWrapper {
     position: relative;
@@ -55,7 +55,7 @@
     margin: 0;
     top: 45px;
     left: 170px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .Image {
@@ -80,6 +80,6 @@
     font-weight: 500;
 }
 .header div:nth-child(2) p {
-    margin: 0 0 0 5px;
-    font-size: 14px;
+    margin: 0 0 0 30px;
+    font-size: 16px;
 }

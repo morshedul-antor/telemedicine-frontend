@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
 import { Auth, UserInfo } from '../../allContext'
 import docCover from '../../assets/img/background-doc-table.jpg'
-import doc from '../../assets/img/docstock.jpg'
+import doc from '../../assets/img/doc-df.jpg'
 import classes from './ProfileHeader.module.css'
 import ProfilePictreUpload from './ProfilePictureUpload/ProfilePictureUpload'
 
@@ -44,6 +44,8 @@ const ProfileHeader = () => {
     }, [apiV1, token, msg])
 
     const profileImageUrl = 'http://127.0.0.1:8000/images/profile/' + profileImage
+
+    // Profile Picture API fetch finished
 
     useEffect(() => {
         let infoFunc = async () => {
@@ -148,7 +150,11 @@ const ProfileHeader = () => {
                                     boxShadow: `0 3px 5px var(--grey2)`,
                                 }}></div> */}
                         <div className={classes.ProfilePic}>
-                            <img className={classes.Image} src={profileImageUrl} alt="pp" />
+                            <img
+                                className={classes.Image}
+                                src={profileImage.toString().length < 16 ? doc : profileImageUrl}
+                                alt="pp"
+                            />
                             <>
                                 <ProfilePictreUpload msg={msg} setMsg={setMsg} />
                             </>
