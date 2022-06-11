@@ -1,0 +1,79 @@
+.serviceWrapper {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+.service {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2em;
+    grid-gap: 4em;
+}
+
+.service .box {
+    border-radius: 4px;
+    border: 1px solid var(--light);
+    background-color: var(--white);
+    box-shadow: 2px 4px 6px var(--light);
+    padding: 20px 30px;
+}
+
+.service .box .number {
+    font-size: 3em;
+    font-weight: 500;
+    margin-top: -10px;
+    color: var(--light);
+    opacity: 0.8;
+}
+
+.service .box .icon {
+    text-align: center;
+    height: 6em;
+    display: block;
+    margin: 0 auto;
+    margin-top: -4em;
+}
+
+.service .box .title {
+    margin-top: 1.6em;
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.service .box span {
+    display: block;
+    text-align: center;
+    color: var(--dark);
+    margin-top: -10px;
+    font-size: 14px;
+}
+
+.service .box button {
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 0.9em;
+    padding: 10px 20px;
+    display: block;
+    margin: 20px auto;
+    margin-top: 4em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.service .box:hover {
+    transition: 200ms;
+    cursor: pointer;
+    box-shadow: 10px 20px 30px var(--light);
+}
+
+.service .box button:hover {
+    opacity: 0.8;
+    transition: 200ms;
+    cursor: pointer;
+}

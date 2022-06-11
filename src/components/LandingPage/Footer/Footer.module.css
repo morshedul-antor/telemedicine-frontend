@@ -1,0 +1,62 @@
+.footer {
+    position: relative;
+    width: 100%;
+}
+
+.footer > .loveImg {
+    position: absolute;
+    z-index: 5;
+    height: 12em;
+    margin-top: 4em;
+    margin-left: 4em;
+}
+
+.footer > .footerImg1 {
+    width: 100%;
+    height: 18em;
+    position: absolute;
+}
+
+.footer > .footerImg2 {
+    width: 100%;
+    height: 17em;
+    position: absolute;
+    transform: scaleX(-1);
+    opacity: 0.1;
+}
+
+.footer > div {
+    position: absolute;
+    margin-top: 7.6%;
+    right: 11%;
+}
+
+.footer > div > p {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.footer > div > div {
+    font-size: 1em;
+    text-align: center;
+    margin-top: -1em;
+}
+
+.footer > div > div > img {
+    height: 24px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.footer > div > div > img:hover {
+    opacity: 0.7;
+}
+
+.footer > div > span {
+    color: var(--white);
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
