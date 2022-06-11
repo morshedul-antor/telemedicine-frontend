@@ -59,7 +59,6 @@ const ProfilePictreUpload = ({ msg, setMsg }) => {
         })
 
         const pp = await picUpload.json()
-        console.log(pp)
 
         if (picUpload.ok) {
             setMsg([...msg, 'Profile Pic Updated'])
@@ -76,39 +75,43 @@ const ProfilePictreUpload = ({ msg, setMsg }) => {
 
             {uploadForm && (
                 <div className={classes.ImgUploader}>
-                    <div className={classes.Title}> Upload Profile Picture</div>
-                    <button className={classes.Close} onClick={popup}>
-                        X
-                    </button>
-
-                    <div className={classes.UploadForm}>
-                        <div className={classes.SelectedImg}>
-                            {selectedImg && (
-                                <div>
-                                    <div className={classes.PreviewContainer}>
-                                        <img src={preview} className={classes.ImgPreview} alt="proPic" />
-                                    </div>
-                                </div>
-                            )}
+                    <div className={classes.container}>
+                        <div className={classes.header}>
+                            <div className={classes.Title}> Upload Profile Picture</div>
+                            <button className={classes.Close} onClick={popup}>
+                                X
+                            </button>
                         </div>
-                        <div className={classes.Control}>
-                            <div>
-                                <input
-                                    type="file"
-                                    onChange={onSelectImg}
-                                    accept="image/*"
-                                    ref={inputRef}
-                                    style={{ display: 'none' }}
-                                />
+
+                        <div className={classes.UploadForm}>
+                            <div className={classes.SelectedImg}>
+                                {selectedImg && (
+                                    <div>
+                                        <div className={classes.PreviewContainer}>
+                                            <img src={preview} className={classes.ImgPreview} alt="proPic" />
+                                        </div>
+                                    </div>
+                                )}
                             </div>
-                            <button onClick={triggerFileSelectPopup} className={classes.Select}>
-                                <FontAwesomeIcon icon={faFileUpload} />
-                                <span>Select</span>
-                            </button>
-                            <button className={classes.Upload} onClick={upload}>
-                                <FontAwesomeIcon icon={faUpload} />
-                                <span> Upload</span>
-                            </button>
+                            <div className={classes.Control}>
+                                <div>
+                                    <input
+                                        type="file"
+                                        onChange={onSelectImg}
+                                        accept="image/*"
+                                        ref={inputRef}
+                                        style={{ display: 'none' }}
+                                    />
+                                </div>
+                                <button onClick={triggerFileSelectPopup} className={classes.Select}>
+                                    <FontAwesomeIcon icon={faFileUpload} />
+                                    <span>Select</span>
+                                </button>
+                                <button className={classes.Upload} onClick={upload}>
+                                    <FontAwesomeIcon icon={faUpload} />
+                                    <span> Upload</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
