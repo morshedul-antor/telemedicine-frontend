@@ -66,7 +66,9 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
                                     onChange={(e) => setDetail(e.target.value)}
                                 />
                                 <button>Edit</button>
-                                <button onClick={popup}>Discard</button>
+                                <button className={classes.Close} onClick={popup}>
+                                    Discard
+                                </button>
                             </form>
                         </div>
                     </div>
