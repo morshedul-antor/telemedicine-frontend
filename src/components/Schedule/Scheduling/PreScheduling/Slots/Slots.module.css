@@ -17,7 +17,10 @@
     text-align: center;
 }
 .slotButtons {
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    gap: 2px;
 }
 
 .slotButtons > .slotButton > button {
