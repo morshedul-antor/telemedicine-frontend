@@ -16,6 +16,6 @@
     color: var(--dark-blue);
 }
 .on {
-    border-bottom: 5px solid var(--secondary);
+    border-bottom: 2px solid var(--secondary);
     color: var(--secondary);
 }
