@@ -37,19 +37,12 @@ const Settings = () => {
                             onClick={(e) => setMenu(4)}>
                             Change Password
                         </span>
-
-                        <span
-                            className={menu === 5 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(4)}>
-                            Profile Picture
-                        </span>
                     </div>
                     <div>
                         {menu === 1 ? <General /> : null}
                         {menu === 2 ? <ProfessionalInfoEdit /> : null}
                         {menu === 3 ? <SpecialityEdit /> : null}
                         {menu === 4 ? <ChangePassword /> : null}
-                        {/* {menu === 4 ? <ChangePassword /> : null} */}
                     </div>
                 </div>
             </div>
