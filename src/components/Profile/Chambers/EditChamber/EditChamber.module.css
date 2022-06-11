@@ -15,25 +15,32 @@
 
 .formPopup {
     position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0%;
+    left: 0%;
+    /* transform: translate(-50%, -50%); */
     line-height: 1.4;
-    background: none;
-    padding: 14px 28px;
-    border-radius: 10px;
-    max-width: 600px;
-    min-width: 300px;
+    background: rgb(0, 0, 0, 0.5);
+    /* padding: 14px 28px; */
+    /* border-radius: 10px; */
+    /* max-width: 600px;
+    min-width: 300px; */
+    width: 100%;
+    height: 800px;
+    z-index: 50;
 }
 .chamberForm {
+    position: relative;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
     width: 500px;
     height: 300px;
     border-radius: 10px;
     background: var(--white);
-    box-shadow: 1px 3px 10px var(--grey2);
     display: flex;
     flex-direction: column;
     padding: 25px;
+    z-index: 50;
 }
 
 .chamberForm > h2 {
@@ -50,7 +57,7 @@
     font-size: 1.7rem;
     text-align: center;
 }
-.chamberForm .content form > label {
+/* .chamberForm .content form > label {
     color: var(--dark-blue);
     font-size: 12px;
     margin: 0 0 0 10px;
@@ -70,7 +77,31 @@
     border-radius: 2px;
     padding: 7px 90px;
     width: 60%;
+} */
+
+.chamberForm .content form > label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: 10px;
+    right: 130px;
+    background: var(--white);
+    padding: 0 2px;
 }
+.chamberForm form > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--secondary);
+    outline: 0;
+    display: block;
+    margin: 0 0 10px 0;
+    border-radius: 2px;
+    padding: 7px 10px;
+    width: 100%;
+}
+
 .chamberForm form > input:focus {
     outline: 0;
 }
@@ -83,6 +114,10 @@
     padding: 10px 25px;
     border-radius: 2px;
     margin: 20px 30px;
+}
+.chamberForm form > .Close {
+    background: var(--red);
+    color: var(--white);
 }
 .chamberForm form > button:hover {
     box-shadow: 1px 3px 10px var(--grey2);

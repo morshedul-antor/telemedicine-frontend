@@ -1,16 +1,16 @@
-import Academic from '../ProfessionalInfoEdit/Academic/Academic'
-import Workplace from '../ProfessionalInfoEdit/Workplace/Workplace'
+import AcademicForm from './AcademicForm/AcademicForm'
 import classes from './ProfessionalInfoEdit.module.css'
+import WorkplaceForm from './WorkplaceForm/WorkplaceForm'
 
 const ProfessionalInfoEdit = () => {
     return (
         <div className={classes.ProfessionalInfo}>
             <div className={classes.Info}>
                 <div className={classes.Academic}>
-                    <Academic />
+                    <AcademicForm />
                 </div>
                 <div className={classes.Practice}>
-                    <Workplace />
+                    <WorkplaceForm />
                 </div>
             </div>
         </div>

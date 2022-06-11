@@ -14,11 +14,13 @@
 
 .ProfileDetail > .Basic > div {
     padding: 20px;
-    border-bottom: 1px solid var(--grey2);
+    background: none;
+    border-radius: 2px;
+    box-shadow: 5px 5px 5px var(--light);
 }
 
-.ProfileDetail > .Basic > div > h3 {
-    color: var(--dark-blue);
+.ProfileDetail > .Basic > div > h2 {
+    color: var(--secondary);
 }
 
 .ProfileDetail > .Basic > div > ul {

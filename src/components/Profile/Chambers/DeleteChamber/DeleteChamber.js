@@ -49,7 +49,7 @@ const DeleteChamber = ({ chamberId, msg, setMsg }) => {
                             <div className={classes.content}>
                                 <form onSubmit={deleteChamber}>
                                     <h3>Are you sure?</h3>
-                                    <button>Sure</button>
+                                    <button className={classes.Sure}>Sure</button>
                                     <button onClick={popup}>Not Sure</button>
                                 </form>
                             </div>

@@ -11,7 +11,7 @@ const PreScheduling = () => {
             <div className={classes.scheduleForm}>
                 <div className={classes.preSchedule}>
                     <div className={classes.onOff}>
-                        <div>
+                        <div className={classes.off}>
                             <span
                                 className={online === 1 ? `${classes.on}` : `${classes.off}`}
                                 onClick={(e) => setOnline(1)}>
@@ -26,7 +26,7 @@ const PreScheduling = () => {
                             </span>
                         </div>
                     </div>
-                    <div>
+                    <div className={classes.Form}>
                         {online === 1 ? <OnlineForm /> : null}
                         {online === 0 ? <OfflineForm /> : null}
                     </div>

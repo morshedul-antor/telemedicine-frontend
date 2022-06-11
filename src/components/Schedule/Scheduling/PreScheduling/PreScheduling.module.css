@@ -2,22 +2,15 @@
     background: var(--white);
     border: 1px solid var(--white);
     height: 25vh;
-    width: 100%;
+    /* width: 100%; */
 }
 
-.preSchedule {
+.preSchedule > .Form {
     margin-left: 50px;
-    width: 80%;
+    /* width: 100%; */
 }
 
-.onOff {
-    margin-top: 50px;
-}
-.onOff > div {
-    display: inline;
-    margin-right: 10px;
-}
-.onOff > div > span {
+/* .onOff > div > span {
     position: relative;
     bottom: 8px;
     padding: 5px 15px;
@@ -26,15 +19,35 @@
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+} */
+.onOff {
+    margin-top: 2px;
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+}
+
+.onOff > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.onOff > div > span {
+    bottom: 8px;
+    padding: 10px 0 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
 }
 
 .off {
-    background: none;
     color: var(--dark-blue);
 }
 .on {
-    background: var(--secondary);
-    color: var(--white);
+    color: var(--secondary);
+    border-bottom: 2px solid var(--secondary);
 }
 
 .preSlots {

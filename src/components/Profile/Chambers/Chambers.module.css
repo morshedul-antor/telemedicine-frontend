@@ -6,7 +6,8 @@
     background: none;
     border-radius: 2px;
     margin: 10px 20px 0 0;
-    box-shadow: 5px 5px 5px var(--grey2);
+    margin-left: 20px;
+    box-shadow: 5px 5px 5px var(--light);
 }
 .head {
     display: grid;
@@ -33,7 +34,7 @@
     background: var(--light);
 }
 .Chambers > .body:nth-last-child(1) {
-    border-radius: 0 0 10px 10px;
+    /* border-radius: 0 0 10px 10px; */
 }
 
 .btn > button {
