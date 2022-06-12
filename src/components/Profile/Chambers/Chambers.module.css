@@ -4,10 +4,10 @@
 }
 .Chambers {
     background: none;
+    border: 1px solid var(--light);
     border-radius: 2px;
     margin: 10px 20px 0 0;
     margin-left: 20px;
-    box-shadow: 5px 5px 5px var(--light);
 }
 .head {
     display: grid;

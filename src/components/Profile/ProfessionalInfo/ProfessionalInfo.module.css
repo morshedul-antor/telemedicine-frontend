@@ -8,13 +8,20 @@
 }
 
 .professionalInfo > .Category {
-    background: none;
     padding: 20px;
 }
 
 .professionalInfo > .Category > div {
+    background: var(--white);
     padding: 20px;
+    border: 1px solid var(--light);
+    border-radius: 10px;
     box-shadow: 5px 5px 5px var(--light);
+}
+
+.professionalInfo > .Category > div:hover {
+    cursor: pointer;
+    box-shadow: 10px 10px 10px var(--light);
 }
 
 .professionalInfo > .Category > div > h2 {
