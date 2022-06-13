@@ -55,6 +55,7 @@ const ChangePassword = () => {
                 <input
                     id="password"
                     type="password"
+                    placeholder="Enter new password"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                 />
@@ -63,6 +64,7 @@ const ChangePassword = () => {
                 <input
                     id="conf-password"
                     type="password"
+                    placeholder="Confirm new password"
                     value={newConfPassword}
                     onChange={(e) => setNewConfPassword(e.target.value)}
                 />

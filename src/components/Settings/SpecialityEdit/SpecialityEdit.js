@@ -15,6 +15,7 @@ const SpecialityEdit = () => {
                         id="speciality"
                         type="text"
                         value={speciality}
+                        placeholder="e.g: Cardiologist"
                         onChange={(e) => setSpeciality(e.target.value)}
                     />
 

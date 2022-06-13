@@ -14,13 +14,13 @@ const Academic = () => {
             ) : null}
             <form>
                 <label htmlFor="institute">Institute</label>
-                <input id="institute" type="text" value="ABC Medical College" />
+                <input id="institute" type="text" placeholder="Dhaka Medical College" />
 
                 <label htmlFor="degree">Degree</label>
-                <input id="degree" type="text" />
+                <input id="degree" type="text" placeholder="e.g: MBBS, FCPS" />
 
                 <label htmlFor="year">Year</label>
-                <input id="year" type="year" />
+                <input id="year" type="year" placeholder="year of Certification" />
 
                 <button>Add</button>
             </form>

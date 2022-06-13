@@ -46,6 +46,7 @@
     border-radius: 2px;
     padding: 7px 10px;
     width: 40%;
+    color: var(--form-text);
 }
 .Workplace form > input:focus {
     outline: 0;
@@ -55,7 +56,7 @@
     cursor: pointer;
     border: none;
     background: var(--secondary);
-    /* color: var(--white); */
+    color: var(--white);
     display: block;
     padding: 10px 25px;
     border-radius: 2px;
