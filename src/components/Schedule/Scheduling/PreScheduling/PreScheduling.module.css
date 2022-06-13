@@ -1,14 +1,14 @@
 .scheduleForm {
     background: var(--white);
     border: 1px solid var(--white);
-    height: 25vh;
+    height: 35vh;
     /* width: 100%; */
 }
-
+/* 
 .preSchedule > .Form {
     margin-left: 50px;
-    /* width: 100%; */
-}
+    width: 100%;
+} */
 
 /* .onOff > div > span {
     position: relative;

@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import { Auth } from '../../../../../allContext'
-import Timepicker from '../../Timepicker/Timepicker'
+import Timepicker2 from '../../Timepicker2/Timepicker'
 import classes from './OfflineForm.module.css'
 
 const OfflineForm = () => {
@@ -34,9 +34,9 @@ const OfflineForm = () => {
     let data = Array.from(chamberInfo)
     return (
         <div>
-            <div className={classes.offlineForm}>
-                <div className={classes.timepicker}>
-                    <Timepicker />
+            <form className={classes.offlineForm}>
+                <div className={classes.timepick}>
+                    <Timepicker2 />
                 </div>
                 <div className={classes.chamberSelection}>
                     <label htmlFor="chamberSelection">Chamber</label>
@@ -46,7 +46,7 @@ const OfflineForm = () => {
                         })}
                     </select>
                 </div>
-            </div>
+            </form>
         </div>
     )
 }

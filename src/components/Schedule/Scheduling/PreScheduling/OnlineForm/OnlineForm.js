@@ -1,11 +1,11 @@
-import Timepicker from '../../Timepicker/Timepicker'
+import Timepicker2 from '../../Timepicker2/Timepicker'
 import classes from './OnlineForm.module.css'
 
 const OnlineForm = () => {
     return (
         <>
             <form>
-                <Timepicker />
+                <Timepicker2 />
             </form>
         </>
     )
