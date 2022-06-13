@@ -79,8 +79,8 @@ const ProfileDetail = () => {
                 <div>
                     <h2>Qualification</h2>
                     <ul>
-                        <li>MBBS, Dhaka Medical College</li>
-                        <li>FRCS, BSMRMU</li>
+                        <li> MBBS, Dhaka Medical College</li>
+                        <li> FRCS, BSMRMU</li>
                     </ul>
                 </div>
             </div>
@@ -89,8 +89,8 @@ const ProfileDetail = () => {
                 <div>
                     <h2>Speciality</h2>
                     <ul>
-                        <li>Cardiologist</li>
-                        <li>Neural Surgery</li>
+                        <li> Cardiologist</li>
+                        <li> Neural Surgery</li>
                     </ul>
                 </div>
             </div>
