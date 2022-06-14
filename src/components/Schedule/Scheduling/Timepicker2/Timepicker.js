@@ -12,8 +12,12 @@ const Timepicker2 = () => {
                     <input type="number" placeholder="MM" />
                 </div>
                 <div className={classes.AP}>
-                    <div>AM</div>
-                    <div>PM</div>
+                    <div>
+                        <span className={classes.apm}>AM</span>
+                    </div>
+                    <div>
+                        <span className={classes.apm}>PM</span>
+                    </div>
                 </div>
             </form>
         </div>
