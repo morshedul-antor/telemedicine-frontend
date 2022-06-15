@@ -33,6 +33,10 @@
     list-style-type: none;
 }
 
+.professionalInfo > .Category > div > ul li {
+    margin-bottom: 30px;
+}
+
 .professionalInfo > .Category > div > ul div h3 {
     color: var(--dark-blue);
     font-weight: 500;
