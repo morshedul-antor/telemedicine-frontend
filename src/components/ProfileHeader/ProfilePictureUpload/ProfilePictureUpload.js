@@ -63,6 +63,8 @@ const ProfilePictreUpload = ({ msg, setMsg }) => {
         if (picUpload.ok) {
             setMsg([...msg, 'Profile Pic Updated'])
             setUploadForm(false)
+            setPreview(undefined)
+            setSelectedImg(undefined)
         }
     }
     return (
