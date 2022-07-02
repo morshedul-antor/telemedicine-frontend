@@ -1,24 +1,4 @@
-.ProfessionalInfo {
-    margin: 20px;
-}
-.ProfessionalInfo > h2 {
-    color: var(--dark-blue);
-}
-
-.ProfessionalInfo > .Info {
+.Info {
     display: grid;
-    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
-    gap: 10px;
-    min-height: 100vh;
+    grid-template-columns: repeat(2, 1fr);
 }
-
-/* .ProfessionalInfo > .Info > div {
-    border-right: 1px solid var(--secondary);
-} */
-
-/* .ProfessionalInfo > .Info > div button {
-    cursor: pointer;
-    border: none;
-    background: none;
-    color: var(--secondary);
-} */

@@ -41,36 +41,65 @@ const ChangePassword = () => {
         }
     }
     return (
-        <div className={classes.ChangePassword}>
-            <h2>Change password</h2>
-            {msg.length !== 0 ? (
-                <p className={classes.msg}>
-                    {msg}
-                    <span onClick={(e) => setMsg('')}>x</span>
-                </p>
-            ) : null}
+        // <div className={classes.ChangePassword}>
+        //     <h2>Change password</h2>
+        //     {msg.length !== 0 ? (
+        //         <p className={classes.msg}>
+        //             {msg}
+        //             <span onClick={(e) => setMsg('')}>x</span>
+        //         </p>
+        //     ) : null}
 
+        //     <form onSubmit={submit}>
+        //         <label htmlFor="password">Password</label>
+        //         <input
+        //             id="password"
+        //             type="password"
+        //             placeholder="Enter new password"
+        //             value={newPassword}
+        //             onChange={(e) => setNewPassword(e.target.value)}
+        //         />
+
+        //         <label htmlFor="Password">Confirm Password</label>
+        //         <input
+        //             id="conf-password"
+        //             type="password"
+        //             placeholder="Confirm new password"
+        //             value={newConfPassword}
+        //             onChange={(e) => setNewConfPassword(e.target.value)}
+        //         />
+
+        //         <button>Change Password</button>
+        //     </form>
+        // </div>
+        <div className={classes.changePassword}>
             <form onSubmit={submit}>
-                <label htmlFor="password">Password</label>
-                <input
-                    id="password"
-                    type="password"
-                    placeholder="Enter new password"
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                />
+                <div className={classes.formHeader}>Change Password</div>
+                <div className={classes.formWrap}>
+                    <label>
+                        Password
+                        <input
+                            id="password"
+                            type="password"
+                            value={newPassword}
+                            onChange={(e) => setNewPassword(e.target.value)}
+                        />
+                    </label>
 
-                <label htmlFor="Password">Confirm Password</label>
-                <input
-                    id="conf-password"
-                    type="password"
-                    placeholder="Confirm new password"
-                    value={newConfPassword}
-                    onChange={(e) => setNewConfPassword(e.target.value)}
-                />
+                    <label>
+                        Confirm Password
+                        <input
+                            id="conf-password"
+                            type="password"
+                            value={newConfPassword}
+                            onChange={(e) => setNewConfPassword(e.target.value)}
+                        />
+                    </label>
+                </div>
 
-                <button>Change Password</button>
+                <button className={classes.Button}>Change Password</button>
             </form>
+            <div className={classes.alertMessage}>{msg && <span>{msg}</span>}</div>
         </div>
     )
 }

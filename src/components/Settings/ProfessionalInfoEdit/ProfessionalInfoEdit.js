@@ -9,7 +9,7 @@ const ProfessionalInfoEdit = () => {
                 <div className={classes.Academic}>
                     <Academic />
                 </div>
-                <div className={classes.Practice}>
+                <div className={classes.Workplace}>
                     <Workplace />
                 </div>
             </div>

@@ -3,32 +3,36 @@ import classes from './SpecialityEdit.module.css'
 
 const SpecialityEdit = () => {
     let specialities = ['Cardiologist', 'Medicine']
+    const [msg, setMsg] = useState('')
     const [speciality, setSpeciality] = useState()
     return (
         <div className={classes.Speciality}>
-            <>
-                <h2> Add Speciality</h2>
+            <form>
+                <div className={classes.sectionHeader}>Specialities</div>
+                <div className={classes.formWrap}>
+                    <label>
+                        Speciality
+                        <input
+                            id="speciality"
+                            type="text"
+                            value={speciality}
+                            placeholder="e.g: Cardiologist"
+                            onChange={(e) => setSpeciality(e.target.value)}
+                        />
+                    </label>
+                </div>
 
-                <form>
-                    <label htmlFor="speciality">Speciality</label>
-                    <input
-                        id="speciality"
-                        type="text"
-                        value={speciality}
-                        placeholder="e.g: Cardiologist"
-                        onChange={(e) => setSpeciality(e.target.value)}
-                    />
+                <button className={classes.Button}>Add</button>
+                <div className={classes.alertMessage}>{msg && <span>{msg}</span>}</div>
+            </form>
 
-                    <button>Add</button>
-                </form>
-            </>
             <>
-                <h2>Your Specialities</h2>
+                <div className={classes.sectionHeader}>Your Specialities</div>
                 {specialities.map((speciality, i) => {
                     return (
-                        <span className={classes.badge}>
-                            {speciality} <button> X </button>
-                        </span>
+                        <>
+                            <div className={classes.Badge}>{speciality}</div>
+                        </>
                     )
                 })}
             </>
