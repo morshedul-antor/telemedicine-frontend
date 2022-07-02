@@ -1,0 +1,50 @@
+.calenderWrapper {
+    position: relative;
+    width: 100%;
+    /* margin-top: 20px; */
+    margin: 30px auto;
+    /* padding: 20px 0 20px; */
+    /* border-radius: 10px; */
+    /* overflow: hidden; */
+}
+
+.todayBox {
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--secondary) 100%);
+    color: var(--white);
+    padding: 37px 40px;
+    position: relative;
+    box-shadow: 0px 0px 10px -9px var(--secondary);
+    margin-bottom: 50px;
+    border-radius: 4px 4px 0px 0px;
+    margin-top: -10px;
+}
+
+.todayBox .breadcrumb {
+    font-weight: 400;
+    position: relative;
+}
+
+.todayBox .dateTitle {
+    font-size: 20px;
+    margin: 7px 0 0 0;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.todayBox .plusIcon {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+    cursor: pointer;
+    transition: all 350ms ease;
+    font-size: 1.6em;
+}
+.todayBox .plusIcon:hover {
+    transform: translateY(-40%);
+}
+.todayBox .plusIcon:active {
+    top: 52%;
+    transform: translatey(-52%);
+    right: 38px;
+}
