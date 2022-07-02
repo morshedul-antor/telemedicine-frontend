@@ -4,8 +4,9 @@ import OnlineForm from './OnlineForm/OnlineForm'
 import PreOnOfSlot from './PreOnOfSlot/PreOnOfSlot'
 import classes from './PreScheduling.module.css'
 
-const PreScheduling = () => {
+const PreScheduling = ({ day }) => {
     const [online, setOnline] = useState(1)
+    const [msg, setMsg] = useState([])
     return (
         <div>
             <div className={classes.scheduleForm}>
@@ -27,13 +28,13 @@ const PreScheduling = () => {
                         </div>
                     </div>
                     <div className={classes.Form}>
-                        {online === 1 ? <OnlineForm /> : null}
+                        {online === 1 ? <OnlineForm day={day} msg={msg} setMsg={setMsg} /> : null}
                         {online === 0 ? <OfflineForm /> : null}
                     </div>
                 </div>
             </div>
             <div className={classes.preSlots}>
-                <PreOnOfSlot />
+                <PreOnOfSlot day={day} msg={msg} setMsg={setMsg} />
             </div>
         </div>
     )

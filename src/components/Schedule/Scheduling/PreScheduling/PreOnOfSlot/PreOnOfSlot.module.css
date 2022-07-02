@@ -19,3 +19,7 @@
     border-bottom: 2px solid var(--secondary);
     color: var(--secondary);
 }
+
+.Slots {
+    border-radius: 10px;
+}

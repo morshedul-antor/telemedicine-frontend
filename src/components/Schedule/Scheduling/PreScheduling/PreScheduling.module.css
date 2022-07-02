@@ -2,24 +2,9 @@
     background: var(--white);
     border: 1px solid var(--white);
     height: 35vh;
-    /* width: 100%; */
+    border-radius: 0 10px 10px 10px;
 }
-/* 
-.preSchedule > .Form {
-    margin-left: 50px;
-    width: 100%;
-} */
 
-/* .onOff > div > span {
-    position: relative;
-    bottom: 8px;
-    padding: 5px 15px;
-    border: 1px solid var(--secondary);
-    border-radius: 2px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-} */
 .onOff {
     margin-top: 2px;
     display: grid;
@@ -53,4 +38,5 @@
 .preSlots {
     margin-top: 50px;
     background: var(--white);
+    border-radius: 0 0 10px 10px;
 }

@@ -35,7 +35,9 @@ const Slot = () => {
             </div>
 
             <div className={classes.Slot}>
-                <div className={classes.slotHead}>Wednesday, May 11 (Online)</div>
+                <div className={classes.slotHead}>
+                    <span>&nbsp; &#60; &nbsp;</span> Wednesday, May 11 (Online) <span>&nbsp; &#62; &nbsp;</span>
+                </div>
                 <div className={classes.slotBody}>
                     <div className={classes.slotButtons}>
                         {slot.map((slot, i) => {
