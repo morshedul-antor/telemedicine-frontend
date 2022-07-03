@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import { Auth } from '../../../../../allContext'
 import classes from './Slots.module.css'
 
-const Slots = ({ day, msg, setMsg }) => {
+const Slots = ({ day, msg }) => {
     const { stateAuth } = useContext(Auth)
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -31,34 +31,79 @@ const Slots = ({ day, msg, setMsg }) => {
     }, [apiV1, token, msg])
 
     let allSlot = Array.from(slots)
-    const byDay = allSlot.sort((a, b) => {
-        return a.day - b.day
+    let PmSlots = []
+    let AmSlots = []
+    let clockCycle = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+    const dayN = allSlot.filter((today) => {
+        return today.day === day
     })
 
-    console.log('Day: ', byDay)
-
-    const day1 = allSlot.filter((day) => {
-        day = 1
-        return day
+    const dayAm = dayN.filter((today) => {
+        return today.am_pm === 'am'
     })
 
-    console.log('DAY: 1: ', day1)
+    const dayAmSlot = dayAm.sort((current, next) => {
+        if (current.hours === 12) {
+            return next.hours - current.hours
+        }
+        return current.hours - next.hours
+    })
+
+    for (let hour = 0; hour < 12; hour++) {
+        const currentHour = dayAmSlot.filter((currentHour) => {
+            return currentHour.hours === clockCycle[hour]
+        })
+        const currentHourSort = currentHour.sort((a, b) => {
+            return a.minutes - b.minutes
+        })
+        AmSlots.push(currentHourSort)
+    }
+
+    const dayPm = dayN.filter((today) => {
+        return today.am_pm === 'pm'
+    })
+
+    const dayPmSlot = dayPm.sort((current, next) => {
+        if (current.hours === 12) {
+            return next.hours - current.hours
+        }
+        return current.hours - next.hours
+    })
+
+    for (let hour = 0; hour < 12; hour++) {
+        const currentHour = dayPmSlot.filter((currentHour) => {
+            return currentHour.hours === clockCycle[hour]
+        })
+        const currentHourSort = currentHour.sort((a, b) => {
+            return a.minutes - b.minutes
+        })
+        PmSlots.push(currentHourSort)
+    }
 
     return (
         <div className={classes.Slot}>
             <div className={classes.slotBody}>
                 <div className={classes.slotButtons}>
-                    {allSlot.map((slot, i) => {
-                        if (slot.day === day) {
-                            return (
-                                <div className={classes.slotButton} key={i}>
-                                    <button>
-                                        {slot.hours}:{slot.minutes} {slot.am_pm}
-                                    </button>
-                                </div>
-                            )
-                        }
-                    })}
+                    {AmSlots.map((slots, i) =>
+                        slots.map((slot, i) => (
+                            <div className={classes.slotButton} key={i}>
+                                <button>
+                                    {slot.hours}:{slot.minutes} {slot.am_pm}
+                                </button>
+                            </div>
+                        ))
+                    )}
+
+                    {PmSlots.map((slots, i) =>
+                        slots.map((slot, i) => (
+                            <div className={classes.slotButton} key={i}>
+                                <button>
+                                    {slot.hours}:{slot.minutes} {slot.am_pm}
+                                </button>
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
         </div>
