@@ -3,7 +3,6 @@ import { UserInfo, Auth } from '../../../allContext'
 import classes from './General.module.css'
 
 const General = () => {
-    // const bg = ['A+', 'B+', 'A-', 'B-', 'AB+', 'AB-', 'O+', 'O-']
     const { stateAuth } = useContext(Auth)
     const { stateUser } = useContext(UserInfo)
     const userDetail = stateUser.info
