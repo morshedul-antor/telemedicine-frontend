@@ -20,6 +20,18 @@ const Slot = () => {
 
     const [slots, setSlots] = useState({})
     const [day, setDay] = useState(1)
+    const [dd, setDd] = useState()
+    const [mm, setMm] = useState()
+    const [yy, setYy] = useState()
+
+    useEffect(() => {
+        let date = new Date()
+        setDd(date.getDate())
+        setMm(date.getMonth())
+        setYy(date.getFullYear())
+        const today = date.getDay()
+        setDay(today + 2)
+    })
 
     useEffect(() => {
         let slotFunc = async () => {
@@ -111,7 +123,11 @@ const Slot = () => {
 
             <div className={classes.Slot}>
                 <div className={classes.slotHead}>
-                    <span>&nbsp; &#60; &nbsp;</span> Wednesday, May 11 (Online) <span>&nbsp; &#62; &nbsp;</span>
+                    <span>&nbsp; &#60; &nbsp;</span>
+                    <span className={classes.Date}>
+                        {days[day - 1].name}, {dd}.{mm}.{yy}
+                    </span>
+                    <span>&nbsp; &#62; &nbsp;</span>
                 </div>
                 <div className={classes.slotBody}>
                     <div className={classes.slotButtons}>
