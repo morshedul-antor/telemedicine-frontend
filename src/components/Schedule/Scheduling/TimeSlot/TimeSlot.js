@@ -125,7 +125,7 @@ const Slot = () => {
                 <div className={classes.slotHead}>
                     <span>&nbsp; &#60; &nbsp;</span>
                     <span className={classes.Date}>
-                        {days[day - 1].name}, {dd}.{mm}.{yy}
+                        {days[day - 1].name}, {dd}-{mm}-{yy}
                     </span>
                     <span>&nbsp; &#62; &nbsp;</span>
                 </div>
