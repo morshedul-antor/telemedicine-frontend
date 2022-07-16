@@ -3,15 +3,7 @@ import { Auth } from '../../../../allContext'
 import classes from './TimeSlot.module.css'
 
 const Slot = () => {
-    let days = [
-        { name: 'Saturday', id: 1 },
-        { name: 'Sunday', id: 2 },
-        { name: 'Monday', id: 3 },
-        { name: 'Tuesday', id: 4 },
-        { name: 'Wednesday', id: 5 },
-        { name: 'Thursday', id: 6 },
-        { name: 'Friday', id: 7 },
-    ]
+    let days = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 
     const { stateAuth } = useContext(Auth)
 
@@ -30,8 +22,8 @@ const Slot = () => {
         setMm(date.getMonth())
         setYy(date.getFullYear())
         const today = date.getDay()
-        setDay(today + 2)
-    })
+        today + 2 > 7 ? setDay(today + 2 - 7) : setDay(today + 2)
+    }, [])
 
     useEffect(() => {
         let slotFunc = async () => {
@@ -106,26 +98,11 @@ const Slot = () => {
 
     return (
         <div>
-            {/* <div className={classes.Slot}>
-                <div className={classes.slotHead}>Wednesday, May 11 (Offline)</div>
-                <div className={classes.slotBody}>
-                    <div className={classes.slotButtons}>
-                        {slot.map((slot, i) => {
-                            return (
-                                <div className={classes.slotButton} key={i}>
-                                    <button>{slot.time}</button>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div> */}
-
             <div className={classes.Slot}>
                 <div className={classes.slotHead}>
                     <span>&nbsp; &#60; &nbsp;</span>
                     <span className={classes.Date}>
-                        {days[day - 1].name}, {dd}-{mm}-{yy}
+                        {days[day - 1]}, {dd}-{mm}-{yy}
                     </span>
                     <span>&nbsp; &#62; &nbsp;</span>
                 </div>
