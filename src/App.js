@@ -34,7 +34,7 @@ const App = () => {
                     <Router>
                         <Switch>
                             <Route path="/" exact={true} component={HomePage} />
-                            <ProtectedRoute path="/home" exact={true} component={DashboardPage2} />
+                            <ProtectedRoute path="/home" exact={true} component={DashboardPage} />
                             <ProtectedRoute path="/profile" component={ProfilePage} />
                             <ProtectedRoute path="/settings" component={SettingsPage} />
                             <ProtectedRoute path="/schedule" component={SchedulePage} />
