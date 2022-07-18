@@ -2,6 +2,7 @@ import { Sidebar } from '../Nav'
 import TimeSlot from '../Schedule/Scheduling/TimeSlot/TimeSlot'
 import classes from './Schedule.module.css'
 import Scheduling from './Scheduling/Scheduling'
+import SlotOff from './Scheduling/TimeSlotOff/TimeSlotOff'
 
 const Schedule = () => {
     return (
@@ -16,6 +17,7 @@ const Schedule = () => {
                 </div>
                 <div className={classes.WrapperRight}>
                     <TimeSlot />
+                    <SlotOff />
                 </div>
             </div>
         </div>

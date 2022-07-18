@@ -7,7 +7,7 @@
 }
 
 .Wrapper {
-    min-height: 85vh;
+    /* min-height: 85vh; */
     background: none;
     display: grid;
     grid-template-columns: minmax(0, 60%) minmax(0, 40%);
@@ -18,7 +18,7 @@
 }
 
 .WrapperLeft {
-    min-height: 90vh;
+    /* min-height: 90vh; */
     position: relative;
     background: none;
     margin: 0px 0px 0px 0px;
@@ -26,7 +26,7 @@
     padding: 0 0 0 0;
 }
 .WrapperRight {
-    min-height: 85vh;
+    /* min-height: 85vh; */
     position: relative;
     background: none;
     margin: 0px 0px 0px 0px;
