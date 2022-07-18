@@ -11,7 +11,7 @@ const Slot = () => {
     const token = stateAuth.token
 
     const [slots, setSlots] = useState({})
-    const [day, setDay] = useState(1)
+    const [day, setDay] = useState()
     const [dd, setDd] = useState()
     const [mm, setMm] = useState()
     const [yy, setYy] = useState()
@@ -50,7 +50,10 @@ const Slot = () => {
     let AmSlots = []
     let clockCycle = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
-    const dayN = allSlot.filter((today) => {
+    const onlineSlot = allSlot.filter((on) => {
+        return on.online === true
+    })
+    const dayN = onlineSlot.filter((today) => {
         return today.day === day
     })
 
@@ -107,27 +110,31 @@ const Slot = () => {
                     <span>&nbsp; &#62; &nbsp;</span>
                 </div>
                 <div className={classes.slotBody}>
-                    <div className={classes.slotButtons}>
-                        {AmSlots.map((slots, i) =>
-                            slots.map((slot, i) => (
-                                <div className={classes.slotButton} key={i}>
-                                    <button>
-                                        {slot.hours}:{slot.minutes} {slot.am_pm}
-                                    </button>
-                                </div>
-                            ))
-                        )}
+                    {dayN.length > 0 ? (
+                        <div className={classes.slotButtons}>
+                            {AmSlots.map((slots, i) =>
+                                slots.map((slot, i) => (
+                                    <div className={classes.slotButton} key={i}>
+                                        <button>
+                                            {slot.hours}:{slot.minutes} {slot.am_pm}
+                                        </button>
+                                    </div>
+                                ))
+                            )}
 
-                        {PmSlots.map((slots, i) =>
-                            slots.map((slot, i) => (
-                                <div className={classes.slotButton} key={i}>
-                                    <button>
-                                        {slot.hours}:{slot.minutes} {slot.am_pm}
-                                    </button>
-                                </div>
-                            ))
-                        )}
-                    </div>
+                            {PmSlots.map((slots, i) =>
+                                slots.map((slot, i) => (
+                                    <div className={classes.slotButton} key={i}>
+                                        <button>
+                                            {slot.hours}:{slot.minutes} {slot.am_pm}
+                                        </button>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    ) : (
+                        <div className={classes.noSlotBody}>{dayN.length === 0 && <div>No slot today</div>}</div>
+                    )}
                 </div>
             </div>
         </div>

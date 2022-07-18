@@ -17,8 +17,8 @@ const PreOnOfSlot = ({ day, msg, setMsg }) => {
                 </span>
             </div>
             <div className={classes.Slots}>
-                {on === 1 ? <Slots day={day} msg={msg} setMsg={setMsg} /> : null}
-                {on === 0 ? <Slots /> : null}
+                {on === 1 ? <Slots day={day} msg={msg} setMsg={setMsg} on={on} /> : null}
+                {on === 0 ? <Slots day={day} msg={msg} setMsg={setMsg} on={on} /> : null}
             </div>
         </div>
     )

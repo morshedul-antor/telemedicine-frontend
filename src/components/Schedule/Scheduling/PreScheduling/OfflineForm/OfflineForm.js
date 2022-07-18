@@ -3,7 +3,7 @@ import { Auth } from '../../../../../allContext'
 import Timepicker2 from '../../Timepicker2/Timepicker'
 import classes from './OfflineForm.module.css'
 
-const OfflineForm = () => {
+const OfflineForm = ({ day, msg, setMsg, online }) => {
     const [chamberInfo, setChamberInfo] = useState({})
 
     const { stateAuth } = useContext(Auth)
@@ -34,19 +34,21 @@ const OfflineForm = () => {
     let data = Array.from(chamberInfo)
     return (
         <div>
-            <form className={classes.offlineForm}>
+            <div className={classes.offlineForm}>
                 <div className={classes.timepick}>
-                    <Timepicker2 />
+                    <Timepicker2 day={day} msg={msg} setMsg={setMsg} online={online} />
                 </div>
-                <div className={classes.chamberSelection}>
+
+                {/* <div className={classes.chamberSelection}>
                     <label htmlFor="chamberSelection">Chamber</label>
                     <select>
                         {data.map((chamber, i) => {
                             return <option>{chamber.name}</option>
                         })}
                     </select>
-                </div>
-            </form>
+                    {online}
+                </div> */}
+            </div>
         </div>
     )
 }

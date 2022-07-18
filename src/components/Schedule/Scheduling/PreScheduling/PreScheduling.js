@@ -28,8 +28,8 @@ const PreScheduling = ({ day }) => {
                         </div>
                     </div>
                     <div className={classes.Form}>
-                        {online === 1 ? <OnlineForm day={day} msg={msg} setMsg={setMsg} /> : null}
-                        {online === 0 ? <OfflineForm /> : null}
+                        {online === 1 ? <OnlineForm day={day} msg={msg} setMsg={setMsg} online={online} /> : null}
+                        {online === 0 ? <OfflineForm day={day} msg={msg} setMsg={setMsg} online={online} /> : null}
                     </div>
                 </div>
             </div>

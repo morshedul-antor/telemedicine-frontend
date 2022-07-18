@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import { Auth } from '../../../../allContext'
 import classes from './Timepicker.module.css'
 
-const Timepicker2 = ({ day, msg, setMsg }) => {
+const Timepicker2 = ({ day, msg, setMsg, online }) => {
     const { stateAuth } = useContext(Auth)
 
     const [hours, setHours] = useState()
@@ -36,6 +36,7 @@ const Timepicker2 = ({ day, msg, setMsg }) => {
                 hours,
                 minutes,
                 am_pm,
+                online,
             }),
         })
         if (setScheduleFetch.ok) {
