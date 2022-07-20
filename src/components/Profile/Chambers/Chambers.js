@@ -17,6 +17,8 @@ const Chambers = () => {
 
     const [name, setName] = useState('')
     const [detail, setDetail] = useState('')
+    const [district, setDistrict] = useState('')
+    const [detail_address, setDetailAddress] = useState('')
     const [active, setActive] = useState({})
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -35,11 +37,15 @@ const Chambers = () => {
             body: JSON.stringify({
                 name,
                 detail,
+                district,
+                detail_address,
             }),
         })
         if (addChamberFetch.ok) {
             setName('')
             setDetail('')
+            setDistrict('')
+            setDetailAddress('')
             setMsg([...msg, 'New Chamber added.'])
             setChamberPopup(!chamberPopup)
         }
@@ -108,6 +114,7 @@ const Chambers = () => {
                 <div className={classes.head}>
                     <p>ID</p>
                     <p>Name</p>
+                    <p>Detail</p>
                     <p>District</p>
                     <p>Chamber Address</p>
                     <p>Active</p>
@@ -131,8 +138,9 @@ const Chambers = () => {
                         <div className={classes.body} key={i}>
                             <p>{i + 1}</p>
                             <p>{chamber.name}</p>
-                            <p>District</p>
                             <p>{chamber.detail}</p>
+                            <p>{chamber.district}</p>
+                            <p>{chamber.detail_address}</p>
                             <p>
                                 <ChamberState
                                     chamberId={chamber.id}
@@ -167,6 +175,10 @@ const Chambers = () => {
                 setName={setName}
                 detail={detail}
                 setDetail={setDetail}
+                district={district}
+                setDistrict={setDistrict}
+                detailAddress={detail_address}
+                setDetailAddress={setDetailAddress}
                 chamberPopup={chamberPopup}
                 setChamberPopup={setChamberPopup}
             />
