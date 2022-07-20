@@ -31,11 +31,11 @@ const Profile = () => {
                                 Professional Info
                             </span>
 
-                            <span
+                            {/* <span
                                 className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                                 onClick={(e) => setMenu(3)}>
                                 Achievement
-                            </span>
+                            </span> */}
 
                             <span
                                 className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
