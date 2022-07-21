@@ -14,8 +14,20 @@ const Profile = () => {
             <div>
                 <Sidebar />
             </div>
-            <div>
-                <ProfileHeader />
+            <div className={classes.profileWrapper}>
+                <div className={classes.profileHeader}>
+                    <ProfileHeader />
+                </div>
+                <div className={classes.infoWrapper}>
+                    <div className={classes.Info}>
+                        <div>
+                            <p>BMDC</p>
+                            <span>A-92227</span>
+                        </div>
+                        <div>Experience</div>
+                    </div>
+                </div>
+
                 <div className={classes.Wrapper}>
                     <div>
                         <div className={classes.Nav}>

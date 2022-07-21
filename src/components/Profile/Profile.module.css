@@ -6,6 +6,32 @@
     min-height: 100vh;
 }
 
+.profileWrapper {
+    margin: 20px 20px 20px 0px;
+}
+
+.infoWrapper {
+    background: var(--white);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.infoWrapper > .Info {
+    /* background: var(--red); */
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 50%;
+}
+
+.infoWrapper > .Info div {
+    padding: 10px;
+    text-align: left;
+    line-height: 0.5;
+    border-left: 2px solid var(--secondary);
+}
+
 .Wrapper {
     background: var(--light);
     min-height: 100vh;
@@ -16,7 +42,8 @@
     margin: 20px 20px 0 0;
     border-radius: 10px;
     box-shadow: 3px 3px 15px var(--light-grey); */
-    padding: 40px 20px 20px 20px;
+    /* padding: 40px 0px 0px 0px; */
+    margin-top: 50px;
 }
 
 /* .Nav {

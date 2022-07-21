@@ -4,6 +4,8 @@ import { useContext, useEffect, useState } from 'react'
 import { Auth, UserInfo } from '../../allContext'
 import docCover from '../../assets/img/background-doc-table.jpg'
 import doc from '../../assets/img/doc-df.jpg'
+import Img from '../../assets/img/docstock.jpg'
+import cover from '../../assets/img/doctor/bg.jpg'
 import classes from './ProfileHeader.module.css'
 import ProfilePictreUpload from './ProfilePictureUpload/ProfilePictureUpload'
 
@@ -128,46 +130,64 @@ const ProfileHeader = () => {
     }, [apiV1, token])
 
     return (
-        <div>
-            <div
-                className={classes.header}
-                style={{
-                    background: `url(${docCover})`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                }}>
-                <div>
-                    <div className={classes.headLeftWrapper}>
-                        {/* <div
-                                style={{
-                                    background: `url(${doc})`,
-                                    width: '150px',
-                                    height: '150px',
-                                    backgroundPosition: 'center',
-                                    backgroundSize: 'cover',
-                                    borderRadius: '10px',
-                                    border: '4px solid var(--white)',
-                                    boxShadow: `0 3px 5px var(--grey2)`,
-                                }}></div> */}
-                        <div className={classes.ProfilePic}>
-                            <img
-                                className={classes.Image}
-                                src={profileImage.toString().length < 16 ? doc : profileImageUrl}
-                                alt="pp"
-                            />
-                            <>
-                                <ProfilePictreUpload msg={msg} setMsg={setMsg} />
-                            </>
-                        </div>
-                        <h2>{stateUser.info?.name}</h2>
-                        <p>{doctorDetail.bmdc}</p>
-                        {/* <p>{qualification?.qualification}</p>
-                            <p>{speciality?.speciality}</p> */}
+        // <div>
+        //     <div
+        //         className={classes.header}
+        //         style={{
+        //             background: `url(${cover})`,
+        //             backgroundPosition: 'center',
+        //             backgroundSize: 'cover',
+        //         }}>
+        //         <div>
+        //             <div className={classes.headLeftWrapper}>
+        //                 <div className={classes.ProfilePic}>
+        //                     <img
+        //                         className={classes.Image}
+        //                         src={profileImage.toString().length < 16 ? doc : profileImageUrl}
+        //                         alt="pp"
+        //                     />
+        //                     <>
+        //                         <ProfilePictreUpload msg={msg} setMsg={setMsg} />
+        //                     </>
+        //                 </div>
+        //                 <h2>{stateUser.info?.name}</h2>
+        //                 <p>{doctorDetail.bmdc}</p>
+        //                 <p>{qualification?.qualification}</p>
+        //                 <p>{speciality?.speciality}</p>
+        //             </div>
+        //         </div>
+        //         <div>
+        //             <FontAwesomeIcon icon={faHouseChimneyMedical} />
+        //             <h2>{activeChamber?.name}</h2>
+        //             <p>{activeChamber?.detail}</p>
+        //         </div>
+        //     </div>
+        // </div>
+
+        <div
+            className={classes.header}
+            style={{
+                background: `url(${cover})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+            }}>
+            <div>
+                <div className={classes.headLeftWrapper}>
+                    <div className={classes.profilePic}>
+                        <img className={classes.img} src={Img} alt="" />
                     </div>
+                    <h2>{stateUser.info?.name}</h2>
+                    <p>{qualification?.qualification}</p>
+                    <p>{speciality?.speciality}</p>
                 </div>
+            </div>
+            <div className={classes.Chamber}>
                 <div>
-                    <FontAwesomeIcon icon={faHouseChimneyMedical} />
-                    <h2>{activeChamber?.name}</h2>
+                    <h2>
+                        <FontAwesomeIcon icon={faHouseChimneyMedical} />
+                        &#160;
+                        {activeChamber?.name}
+                    </h2>
                     <p>{activeChamber?.detail}</p>
                 </div>
             </div>
