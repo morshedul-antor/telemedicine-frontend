@@ -117,18 +117,18 @@
     top: 10px;
     left: 170px;
     font-weight: 500;
-    color: var(--secondary);
+    color: var(--dark-grey);
 }
 .headLeftWrapper > p {
     position: relative;
     margin: 0;
     top: 45px;
     left: 170px;
-    font-size: 16px;
-    color: var(--secondary);
+    font-size: 0.9em;
+    color: var(--dark-grey);
 }
 
-.img {
+.profilePic > .Image {
     position: absolute;
     object-fit: cover;
     height: 150px;
@@ -140,23 +140,8 @@
     margin: 0 auto;
 }
 
-.header div > button {
-    font-weight: 500;
-    border-radius: 20px;
-    border: none;
-    background-color: var(--primary);
-    color: var(--white);
-    font-size: 1em;
-    padding: 10px 20px;
-}
-
-.header div > button:hover {
-    opacity: 0.9;
-    cursor: pointer;
-    transition: 200ms;
-}
 .header > .Chamber {
-    color: var(--secondary);
+    color: var(--dark-grey);
     line-height: 0.5;
     font-weight: 500;
 }
@@ -172,4 +157,38 @@
 
 .header > .Chamber p {
     margin-left: 30px;
+}
+
+.infoWrapper {
+    background: var(--white);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.infoWrapper > .Info {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 65%;
+}
+
+.infoWrapper > .Info div {
+    text-align: center;
+}
+
+.infoWrapper > .Info > div > .Title {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: var(--dark);
+    border-left: 1px solid var(--secondary);
+    padding-left: 6px;
+}
+
+.infoWrapper > .Info div .Info {
+    display: block;
+    margin-top: -4px;
+    font-size: 1em;
+    color: var(--dark);
+    font-weight: 500;
 }

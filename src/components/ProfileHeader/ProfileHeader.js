@@ -1,11 +1,10 @@
-import { faHouseChimneyMedical } from '@fortawesome/free-solid-svg-icons'
+import { faHouseChimneyMedical, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
 import { Auth, UserInfo } from '../../allContext'
-import docCover from '../../assets/img/background-doc-table.jpg'
 import doc from '../../assets/img/doc-df.jpg'
-import Img from '../../assets/img/docstock.jpg'
 import cover from '../../assets/img/doctor/bg.jpg'
+import { toMonthNameLong } from '../../utils/date'
 import classes from './ProfileHeader.module.css'
 import ProfilePictreUpload from './ProfilePictureUpload/ProfilePictureUpload'
 
@@ -18,6 +17,7 @@ const ProfileHeader = () => {
 
     const [activeChamber, setActiveChamber] = useState({})
     const [doctorDetail, setDoctorDetail] = useState({})
+    const [doctor, setDoctor] = useState([])
     const [qualification, setQualification] = useState({})
     const [speciality, setSpeciality] = useState({})
     const [profileImage, setProfileImage] = useState({})
@@ -46,7 +46,6 @@ const ProfileHeader = () => {
     }, [apiV1, token, msg])
 
     const profileImageUrl = 'http://127.0.0.1:8000/images/profile/' + profileImage
-
     // Profile Picture API fetch finished
 
     useEffect(() => {
@@ -62,6 +61,7 @@ const ProfileHeader = () => {
             let infoJson = await infoFetch.json()
             if (infoFetch.ok) {
                 setDoctorDetail(infoJson)
+                setDoctor(infoJson)
             }
         }
         try {
@@ -164,34 +164,72 @@ const ProfileHeader = () => {
         //     </div>
         // </div>
 
-        <div
-            className={classes.header}
-            style={{
-                background: `url(${cover})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-            }}>
-            <div>
-                <div className={classes.headLeftWrapper}>
-                    <div className={classes.profilePic}>
-                        <img className={classes.img} src={Img} alt="" />
-                    </div>
-                    <h2>{stateUser.info?.name}</h2>
-                    <p>{qualification?.qualification}</p>
-                    <p>{speciality?.speciality}</p>
-                </div>
-            </div>
-            <div className={classes.Chamber}>
+        <>
+            <div
+                className={classes.header}
+                style={{
+                    background: `url(${cover})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                }}>
                 <div>
-                    <h2>
-                        <FontAwesomeIcon icon={faHouseChimneyMedical} />
-                        &#160;
-                        {activeChamber?.name}
-                    </h2>
-                    <p>{activeChamber?.detail}</p>
+                    <div className={classes.headLeftWrapper}>
+                        <div className={classes.profilePic}>
+                            <img
+                                className={classes.Image}
+                                src={profileImage.toString().length < 16 ? doc : profileImageUrl}
+                                alt="pp"
+                            />
+                            <>
+                                <ProfilePictreUpload msg={msg} setMsg={setMsg} />
+                            </>
+                        </div>
+                        <h2>{stateUser.info?.name}</h2>
+                        <p>{qualification?.qualification}</p>
+                        <p>{speciality?.speciality}</p>
+                    </div>
+                </div>
+                <div className={classes.Chamber}>
+                    <div>
+                        <h2>
+                            <FontAwesomeIcon icon={faHouseChimneyMedical} />
+                            &#160;
+                            {activeChamber?.name}
+                        </h2>
+                        <p>{activeChamber?.detail}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div className={classes.infoWrapper}>
+                <div className={classes.Info}>
+                    <div>
+                        <p className={classes.Title}>BMDC Number</p>
+                        <span className={classes.Info}>{doctorDetail.bmdc}</span>
+                    </div>
+                    <div>
+                        <p className={classes.Title}>Total Experience</p>
+                        <span className={classes.Info}>{doctorDetail.exp_year}+ Years</span>
+                    </div>
+                    <div>
+                        <p className={classes.Title}>Total Consultations</p>
+                        <span className={classes.Info}>50</span>
+                    </div>
+                    <div>
+                        <p className={classes.Title}>Ratings(1)</p>
+                        <span className={classes.Info}>
+                            4.5 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
+                        </span>
+                    </div>
+                    <div>
+                        <p className={classes.Title}>Joined date</p>
+                        <span className={classes.Info}>
+                            {/* {toMonthNameLong(doctor?.created_at.slice(5, 7))} {doctor?.created_at.slice(0, 4)} */}
+                            April 2022
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
 export default ProfileHeader

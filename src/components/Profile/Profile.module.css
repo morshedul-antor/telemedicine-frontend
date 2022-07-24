@@ -18,7 +18,6 @@
 }
 
 .infoWrapper > .Info {
-    /* background: var(--red); */
     display: flex;
     justify-content: space-around;
     padding: 20px;
@@ -33,17 +32,19 @@
 }
 
 .Wrapper {
-    background: var(--light);
-    min-height: 100vh;
+    background: var(--white);
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
 }
 .Wrapper > div {
-    min-height: 90vh;
+    /* min-height: 90vh; */
     /* background: var(--white);
     margin: 20px 20px 0 0;
     border-radius: 10px;
     box-shadow: 3px 3px 15px var(--light-grey); */
     /* padding: 40px 0px 0px 0px; */
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 /* .Nav {
@@ -74,26 +75,24 @@
 
 .Nav {
     background: none;
-    margin-top: 15px;
     width: 100%;
     position: relative;
 }
 
 .Nav > span {
     position: relative;
-    bottom: 8px;
     padding: 10px 15px;
-    border-radius: 2px;
+    border-radius: 10px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
 }
 
 .deactiveNav {
-    background: var(--light);
+    background: var(--white);
     color: var(--dark-blue);
 }
 .activeNav {
-    background: var(--white);
+    background: var(--light);
     color: var(--secondary);
 }
