@@ -33,14 +33,6 @@
     margin: 5px 5px;
     border-radius: 5px;
 }
-/* .slotButtons > .slotButton > button:hover {
-    cursor: pointer;
-    border: 1px solid var(--secondary);
-    background: var(--secondary);
-    color: var(--white);
-    padding: 5px 5px;
-    margin: 5px 5px;
-} */
 
 .slotBody > .noSlotBody div {
     color: var(--grey2);
