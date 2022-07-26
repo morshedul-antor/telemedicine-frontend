@@ -2,15 +2,7 @@ import { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Auth, UserInfo } from './allContext'
 import SchedulePage from './pages/SchedulePage'
-import {
-    ProfilePage,
-    LoginPage,
-    RegisterPage,
-    DashboardPage,
-    SettingsPage,
-    HomePage,
-    DashboardPage2,
-} from './pages/index'
+import { ProfilePage, LoginPage, RegisterPage, DashboardPage, SettingsPage, HomePage } from './pages/index'
 import { authReducer, authState, userReducer, userState } from './reducer'
 import ProtectedRoute from './routes/ProtectedRoute'
 
