@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Sidebar from '../Nav/Sidebar/Sidebar'
 import ChangePassword from './ChangePassword/ChangePassword'
+import ExperiencenFees from './ExperiencenFees/ExperiencenFees'
 import General from './General/General'
-import OtherInfo from './OtherInfo/OtherInfo'
 import ProfessionalInfoEdit from './ProfessionalInfoEdit/ProfessionalInfoEdit'
 import classes from './Settings.module.css'
 import SpecialityQualificationEdit from './SpecialityQualificationEdit/SpecialityQualificationEdit'
@@ -46,7 +46,7 @@ const Settings = () => {
                     </div>
                     <div>
                         {menu === 1 ? <General /> : null}
-                        {menu === 2 ? <OtherInfo /> : null}
+                        {menu === 2 ? <ExperiencenFees /> : null}
                         {menu === 3 ? <ProfessionalInfoEdit /> : null}
                         {menu === 4 ? <SpecialityQualificationEdit /> : null}
                         {menu === 5 ? <ChangePassword /> : null}
