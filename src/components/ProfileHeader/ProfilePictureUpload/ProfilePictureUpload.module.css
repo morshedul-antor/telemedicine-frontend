@@ -16,14 +16,14 @@
 }
 
 .ImgUploader > .container {
+    position: relative;
     background: var(--white);
     border: 1px solid var(--light);
-    bottom: 50%;
+    bottom: 0%;
     left: 100%;
     line-height: 1.4;
     padding: 14px 28px;
-    border-radius: 2px;
-    max-width: 400px;
+    border-radius: 10px;
     min-width: 300px;
     z-index: 50;
 }

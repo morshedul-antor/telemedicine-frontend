@@ -24,6 +24,7 @@ const ProfileHeader = () => {
     const [msg, setMsg] = useState([])
 
     // Profile Picture Image API fetch
+
     useEffect(() => {
         let ProfileImgFunc = async () => {
             let ppFetch = await fetch(`${apiV1}/profile-pic`, {
@@ -46,6 +47,7 @@ const ProfileHeader = () => {
     }, [apiV1, token, msg])
 
     const profileImageUrl = 'http://127.0.0.1:8000/images/profile/' + profileImage
+
     // Profile Picture API fetch finished
 
     useEffect(() => {
@@ -61,12 +63,14 @@ const ProfileHeader = () => {
             let infoJson = await infoFetch.json()
             if (infoFetch.ok) {
                 setDoctorDetail(infoJson)
-                setDoctor(infoJson)
+                setDoctor([infoJson])
             }
         }
         try {
             infoFunc()
-        } catch (e) {}
+        } catch (e) {
+            setDoctor([])
+        }
     }, [apiV1, token])
 
     useEffect(() => {
@@ -130,40 +134,6 @@ const ProfileHeader = () => {
     }, [apiV1, token])
 
     return (
-        // <div>
-        //     <div
-        //         className={classes.header}
-        //         style={{
-        //             background: `url(${cover})`,
-        //             backgroundPosition: 'center',
-        //             backgroundSize: 'cover',
-        //         }}>
-        //         <div>
-        //             <div className={classes.headLeftWrapper}>
-        //                 <div className={classes.ProfilePic}>
-        //                     <img
-        //                         className={classes.Image}
-        //                         src={profileImage.toString().length < 16 ? doc : profileImageUrl}
-        //                         alt="pp"
-        //                     />
-        //                     <>
-        //                         <ProfilePictreUpload msg={msg} setMsg={setMsg} />
-        //                     </>
-        //                 </div>
-        //                 <h2>{stateUser.info?.name}</h2>
-        //                 <p>{doctorDetail.bmdc}</p>
-        //                 <p>{qualification?.qualification}</p>
-        //                 <p>{speciality?.speciality}</p>
-        //             </div>
-        //         </div>
-        //         <div>
-        //             <FontAwesomeIcon icon={faHouseChimneyMedical} />
-        //             <h2>{activeChamber?.name}</h2>
-        //             <p>{activeChamber?.detail}</p>
-        //         </div>
-        //     </div>
-        // </div>
-
         <>
             <div
                 className={classes.header}
@@ -223,8 +193,7 @@ const ProfileHeader = () => {
                     <div>
                         <p className={classes.Title}>Joined date</p>
                         <span className={classes.Info}>
-                            {/* {toMonthNameLong(doctor?.created_at.slice(5, 7))} {doctor?.created_at.slice(0, 4)} */}
-                            April 2022
+                            {toMonthNameLong(doctor[0]?.created_at.slice(5, 7))} {doctor[0]?.created_at.slice(0, 4)}
                         </span>
                     </div>
                 </div>
