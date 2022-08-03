@@ -33,6 +33,6 @@
     list-style-type: none;
 }
 
-.ProfileDetail > .Basic > div > ul li::before {
+/* .ProfileDetail > .Basic > div > ul li::before {
     content: '\2713';
-}
+} */

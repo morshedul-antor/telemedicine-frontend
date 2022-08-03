@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import { Auth } from '../../../allContext'
+import SkeletonChamber from '../../Skeletons/SkeletonChamber'
 import AddChamber from './AddChamber/AddChamber'
 import ChamberState from './ChamberState/ChamberState'
 import classes from './Chambers.module.css'
@@ -15,6 +16,7 @@ const Chambers = () => {
 
     const [msg, setMsg] = useState([])
 
+    const [isLoading, setIsLoading] = useState(true)
     const [name, setName] = useState('')
     const [detail, setDetail] = useState('')
     const [district, setDistrict] = useState('')
@@ -52,26 +54,68 @@ const Chambers = () => {
     }
 
     useEffect(() => {
-        let chamberFunc = async () => {
-            let chamberFetch = await fetch(`${apiV1}/doctors/chamber/`, {
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                method: 'GET',
-            })
-            let chamberJson = await chamberFetch.json()
-            if (chamberFetch.ok) {
-                setChamberInfo(chamberJson)
+        setTimeout(() => {
+            let chamberFunc = async () => {
+                let chamberFetch = await fetch(`${apiV1}/doctors/chamber/`, {
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                    method: 'GET',
+                })
+                let chamberJson = await chamberFetch.json()
+                if (chamberFetch.ok) {
+                    setChamberInfo(chamberJson)
+                }
             }
-        }
-        try {
-            chamberFunc()
-        } catch (e) {}
-    }, [apiV1, token, msg])
+
+            let activeChamberFunc = async (e) => {
+                let activeChamberFetch = await fetch(`${apiV1}/doctors/chamber/active`, {
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                    method: 'GET',
+                })
+                let activeChamberJson = await activeChamberFetch.json()
+                if (activeChamberFetch.ok) {
+                    setActive(activeChamberJson)
+                }
+            }
+
+            try {
+                chamberFunc()
+                activeChamberFunc()
+                setIsLoading(false)
+            } catch (e) {}
+        }, 2000)
+    }, [apiV1, token, msg, setIsLoading])
 
     let data = Array.from(chamberInfo)
+
+    // useEffect(() => {
+    //     let chamberFunc = async () => {
+    //         let chamberFetch = await fetch(`${apiV1}/doctors/chamber/`, {
+    //             headers: {
+    //                 Accept: 'application/json',
+    //                 'Content-Type': 'application/json',
+    //                 Authorization: `Bearer ${token}`,
+    //             },
+    //             method: 'GET',
+    //         })
+    //         let chamberJson = await chamberFetch.json()
+    //         if (chamberFetch.ok) {
+    //             setChamberInfo(chamberJson)
+    //         }
+    //     }
+    //     try {
+    //         chamberFunc()
+    //     } catch (e) {}
+    // }, [apiV1, token, msg])
+
+    // let data = Array.from(chamberInfo)
 
     // Activate and Active Chamber
 
@@ -88,101 +132,112 @@ const Chambers = () => {
     //     }
     // }
 
-    useEffect(() => {
-        let activeChamberFunc = async (e) => {
-            let activeChamberFetch = await fetch(`${apiV1}/doctors/chamber/active`, {
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                method: 'GET',
-            })
-            let activeChamberJson = await activeChamberFetch.json()
-            if (activeChamberFetch.ok) {
-                setActive(activeChamberJson)
-            }
-        }
-        try {
-            activeChamberFunc()
-        } catch (e) {}
-    }, [apiV1, token, msg])
+    // useEffect(() => {
+    //     let activeChamberFunc = async (e) => {
+    //         let activeChamberFetch = await fetch(`${apiV1}/doctors/chamber/active`, {
+    //             headers: {
+    //                 Accept: 'application/json',
+    //                 'Content-Type': 'application/json',
+    //                 Authorization: `Bearer ${token}`,
+    //             },
+    //             method: 'GET',
+    //         })
+    //         let activeChamberJson = await activeChamberFetch.json()
+    //         if (activeChamberFetch.ok) {
+    //             setActive(activeChamberJson)
+    //         }
+    //     }
+    //     try {
+    //         activeChamberFunc()
+    //     } catch (e) {}
+    // }, [apiV1, token, msg])
 
     return (
-        <div className={classes.ChamberPage}>
-            <div className={classes.Chambers}>
-                <div className={classes.head}>
-                    <p>ID</p>
-                    <p>Name</p>
-                    <p>Detail</p>
-                    <p>District</p>
-                    <p>Chamber Address</p>
-                    <p>Active</p>
-                    <p>Action</p>
+        <>
+            {isLoading ? (
+                <div className={classes.ChamberPage}>
+                    <SkeletonChamber />
                 </div>
-                {data.map((chamber, i) => {
-                    // API fetch for Activating Chamber
-                    const activateChamberFunc = async (e) => {
-                        e.preventDefault()
-                        let activateChamberFetch = await fetch(`${apiV1}/doctors/chamber/activate/${chamber.id}`, {
-                            headers: {
-                                Authorization: `Bearer ${token}`,
-                            },
-                            method: 'PUT',
-                        })
-                        if (activateChamberFetch.ok) {
-                            setMsg(...msg, 'Chamber Activated')
-                        }
-                    }
-                    return (
-                        <div className={classes.body} key={i}>
-                            <p>{i + 1}</p>
-                            <p>{chamber.name}</p>
-                            <p>{chamber.detail}</p>
-                            <p>{chamber.district}</p>
-                            <p>{chamber.detail_address}</p>
-                            <p>
-                                <ChamberState
-                                    chamberId={chamber.id}
-                                    activate={activateChamberFunc}
-                                    msg={msg}
-                                    active={active}
-                                />
-                            </p>
-                            <p>
-                                <div className={classes.btn}>
-                                    <button>
-                                        <DeleteChamber chamberId={chamber.id} msg={msg} setMsg={setMsg} />
-                                    </button>
-
-                                    <button>
-                                        <EditChamber
-                                            chamber={chamber}
-                                            chamberId={chamber.id}
-                                            msg={msg}
-                                            setMsg={setMsg}
-                                        />
-                                    </button>
-                                </div>
-                            </p>
+            ) : (
+                <div className={classes.ChamberPage}>
+                    <div className={classes.Chambers}>
+                        <div className={classes.head}>
+                            <p>ID</p>
+                            <p>Name</p>
+                            <p>Detail</p>
+                            <p>District</p>
+                            <p>Chamber Address</p>
+                            <p>Active</p>
+                            <p>Action</p>
                         </div>
-                    )
-                })}
-            </div>
-            <AddChamber
-                addChamber={addChamber}
-                name={name}
-                setName={setName}
-                detail={detail}
-                setDetail={setDetail}
-                district={district}
-                setDistrict={setDistrict}
-                detailAddress={detail_address}
-                setDetailAddress={setDetailAddress}
-                chamberPopup={chamberPopup}
-                setChamberPopup={setChamberPopup}
-            />
-        </div>
+                        {data.map((chamber, i) => {
+                            // API fetch for Activating Chamber
+                            const activateChamberFunc = async (e) => {
+                                e.preventDefault()
+                                let activateChamberFetch = await fetch(
+                                    `${apiV1}/doctors/chamber/activate/${chamber.id}`,
+                                    {
+                                        headers: {
+                                            Authorization: `Bearer ${token}`,
+                                        },
+                                        method: 'PUT',
+                                    }
+                                )
+                                if (activateChamberFetch.ok) {
+                                    setMsg(...msg, 'Chamber Activated')
+                                }
+                            }
+                            return (
+                                <div className={classes.body} key={i}>
+                                    <p>{i + 1}</p>
+                                    <p>{chamber.name}</p>
+                                    <p>{chamber.detail}</p>
+                                    <p>{chamber.district}</p>
+                                    <p>{chamber.detail_address}</p>
+                                    <p>
+                                        <ChamberState
+                                            chamberId={chamber.id}
+                                            activate={activateChamberFunc}
+                                            msg={msg}
+                                            active={active}
+                                        />
+                                    </p>
+                                    <p>
+                                        <div className={classes.btn}>
+                                            <button>
+                                                <DeleteChamber chamberId={chamber.id} msg={msg} setMsg={setMsg} />
+                                            </button>
+
+                                            <button>
+                                                <EditChamber
+                                                    chamber={chamber}
+                                                    chamberId={chamber.id}
+                                                    msg={msg}
+                                                    setMsg={setMsg}
+                                                />
+                                            </button>
+                                        </div>
+                                    </p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <AddChamber
+                        addChamber={addChamber}
+                        name={name}
+                        setName={setName}
+                        detail={detail}
+                        setDetail={setDetail}
+                        district={district}
+                        setDistrict={setDistrict}
+                        detailAddress={detail_address}
+                        setDetailAddress={setDetailAddress}
+                        chamberPopup={chamberPopup}
+                        setChamberPopup={setChamberPopup}
+                    />
+                </div>
+            )}
+        </>
     )
 }
 export default Chambers
