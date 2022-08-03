@@ -43,10 +43,6 @@
     list-style-type: none;
 }
 
-.professionalInfo > .Category > div > ul li div h3::before {
-    content: '\2713';
-}
-
 .professionalInfo > .Category > div > ul li div {
     color: var(--dark-blue);
     line-height: 0.5;
