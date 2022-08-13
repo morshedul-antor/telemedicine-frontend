@@ -1,13 +1,11 @@
 import Timepicker from '../../Timepicker/Timepicker'
 import classes from './OnlineForm.module.css'
 
-const OnlineForm = () => {
+const OnlineForm = ({ day, msg, setMsg, online }) => {
     return (
-        <>
-            <form>
-                <Timepicker />
-            </form>
-        </>
+        <div className={classes.Timepicker}>
+            <Timepicker day={day} msg={msg} setMsg={setMsg} online={online} />
+        </div>
     )
 }
 export default OnlineForm

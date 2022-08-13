@@ -8,22 +8,31 @@
 }
 
 .ProfileDetail > .Basic {
-    background: none;
     padding: 20px;
 }
 
 .ProfileDetail > .Basic > div {
     padding: 20px;
     background: none;
-    border-radius: 2px;
+    border: 1px solid var(--light);
+    border-radius: 5px;
     box-shadow: 5px 5px 5px var(--light);
+}
+
+.ProfileDetail > .Basic > div:hover {
+    cursor: pointer;
 }
 
 .ProfileDetail > .Basic > div > h2 {
     color: var(--secondary);
+    font-weight: 500;
 }
 
 .ProfileDetail > .Basic > div > ul {
-    color: var(--dark);
-    list-style-type: square;
+    color: var(--dark-blue);
+    list-style-type: none;
 }
+
+/* .ProfileDetail > .Basic > div > ul li::before {
+    content: '\2713';
+} */

@@ -1,25 +1,38 @@
+.slotReady {
+    background: var(--white);
+    border-radius: 10px;
+}
+
 .DayNav {
-    background: none;
-    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    padding: 1px;
     width: 100%;
     position: relative;
+    border-bottom: 1px solid var(--light);
 }
 
 .DayNav > span {
     position: relative;
-    bottom: 8px;
     padding: 10px 15px;
-    border-radius: 2px;
+    border-radius: 10px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
 }
 
+.preSlots {
+    margin-top: 25px;
+    padding: 5px;
+    background: var(--white);
+    border-radius: 10px;
+}
+
 .deactiveNav {
-    background: var(--light);
+    background: var(--white);
     color: var(--dark-blue);
 }
 .activeNav {
-    background: var(--white);
+    background: var(--light);
     color: var(--secondary);
 }

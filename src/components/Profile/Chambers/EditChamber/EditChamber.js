@@ -16,6 +16,8 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
 
     const [name, setName] = useState(chamberInfo.name)
     const [detail, setDetail] = useState(chamberInfo.detail)
+    const [district, setDistrict] = useState(chamberInfo.district)
+    const [detail_address, setDetailAddress] = useState(chamberInfo.detail_address)
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
@@ -33,6 +35,8 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
             body: JSON.stringify({
                 name,
                 detail,
+                district,
+                detail_address,
             }),
         })
         if (editFetch.ok) {
@@ -48,7 +52,7 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
                     <FontAwesomeIcon icon={faEdit} />
                 </button>
             </div>
-            {editPrompt && (
+            {/* {editPrompt && (
                 <div className={classes.formPopup}>
                     <div onClick={editPrompt}></div>
                     <div className={classes.chamberForm}>
@@ -65,12 +69,82 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
                                     value={detail}
                                     onChange={(e) => setDetail(e.target.value)}
                                 />
+
+                                <label htmlFor="detail">District</label>
+                                <input
+                                    id="detail"
+                                    type="text"
+                                    value={district}
+                                    onChange={(e) => setDistrict(e.target.value)}
+                                />
+
+                                <label htmlFor="detail">Detail</label>
+                                <input
+                                    id="detail"
+                                    type="text"
+                                    value={detail_address}
+                                    onChange={(e) => setDetailAddress(e.target.value)}
+                                />
                                 <button>Edit</button>
                                 <button className={classes.Close} onClick={popup}>
                                     Discard
                                 </button>
                             </form>
                         </div>
+                    </div>
+                </div>
+            )} */}
+            {editPrompt && (
+                <div className={classes.formPopup}>
+                    <div onClick={editPrompt}></div>
+                    <div className={classes.chamberForm}>
+                        <form onSubmit={editChamber}>
+                            <div className={classes.formHeader}>Edit Chamber</div>
+                            <div className={classes.formWrap}>
+                                <label>
+                                    Chamber Name
+                                    <input
+                                        id="name"
+                                        type="name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                </label>
+                                <label>
+                                    Chamber Detail
+                                    <input
+                                        id="detail"
+                                        type="text"
+                                        value={detail}
+                                        onChange={(e) => setDetail(e.target.value)}
+                                    />
+                                </label>
+                                <label>
+                                    District
+                                    <input
+                                        id="district"
+                                        type="text"
+                                        value={district}
+                                        onChange={(e) => setDistrict(e.target.value)}
+                                    />
+                                </label>
+                                <label>
+                                    Detail Address
+                                    <input
+                                        id="detail address"
+                                        type="text"
+                                        value={detail_address}
+                                        onChange={(e) => setDetailAddress(e.target.value)}
+                                    />
+                                </label>
+                            </div>
+                            <div className={classes.Button}>
+                                <button>Create</button>
+                                <button className={classes.Close} onClick={popup}>
+                                    Discard
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             )}

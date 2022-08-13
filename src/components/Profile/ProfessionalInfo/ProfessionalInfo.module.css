@@ -8,22 +8,39 @@
 }
 
 .professionalInfo > .Category {
-    background: none;
-    padding: 20px;
+    padding: 15px;
 }
 
 .professionalInfo > .Category > div {
+    background: var(--white);
     padding: 20px;
+    border: 1px solid var(--light);
+    border-radius: 5px;
     box-shadow: 5px 5px 5px var(--light);
+}
+
+.professionalInfo > .Category > div:hover {
+    cursor: pointer;
 }
 
 .professionalInfo > .Category > div > h2 {
     color: var(--secondary);
+    font-weight: 500;
 }
 
 .professionalInfo > .Category > div > ul {
     color: var(--dark-blue);
-    list-style-type: square;
+    list-style-type: none;
+}
+
+.professionalInfo > .Category > div > ul li {
+    margin-bottom: 30px;
+}
+
+.professionalInfo > .Category > div > ul div h3 {
+    color: var(--dark-blue);
+    font-weight: 500;
+    list-style-type: none;
 }
 
 .professionalInfo > .Category > div > ul li div {

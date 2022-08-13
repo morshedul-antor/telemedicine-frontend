@@ -10,14 +10,14 @@ import classes from './Sidebar.module.css'
 const Sidebar = () => {
     const { stateAuth, dispatchAuth } = useContext(Auth)
     const { dispatchUser } = useContext(UserInfo)
-    const { stateUser } = useContext(UserInfo)
+    // const { stateUser } = useContext(UserInfo)
 
-    const hx = 'hxds100000'
-    const array = hx.split('s')
+    // const hx = 'hxds100000'
+    // const array = hx.split('s')
 
-    const [prefix, id] = array
-    const idInt = parseInt(id) + stateUser.info?.id
-    const url = prefix + idInt
+    // const [prefix, id] = array
+    // const idInt = parseInt(id) + stateUser.info?.id
+    // const url = prefix + idInt
 
     let location = useLocation()
 
@@ -32,7 +32,7 @@ const Sidebar = () => {
     return (
         <div className={classes.Sidebar} style={{ width: '20%' }}>
             <div className={classes.header}>
-                <Link to={`/${url}`}>
+                <Link to="/">
                     <img src={img} alt="" />
                     <h2>
                         Smart <span>Doctor</span>
