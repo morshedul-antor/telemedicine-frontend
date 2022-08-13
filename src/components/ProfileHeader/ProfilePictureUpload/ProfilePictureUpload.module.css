@@ -1,7 +1,9 @@
 .changePP button {
     background: var(--light);
+    width: 25px;
+    height: 25px;
     border: none;
-    border-radius: 40px;
+    border-radius: 50%;
     color: var(--secondary);
     position: relative;
     top: 125px;
@@ -15,6 +17,7 @@
 
 .ImgUploader > .container {
     background: var(--white);
+    border: 1px solid var(--light);
     bottom: 50%;
     left: 100%;
     line-height: 1.4;

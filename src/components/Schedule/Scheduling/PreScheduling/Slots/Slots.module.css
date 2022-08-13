@@ -2,14 +2,16 @@
 .Slot {
     margin: 10px 5px;
     box-shadow: inset;
+    border: 1px solid var(--white);
+    border-radius: 0 0 10px 10px;
 }
 .slotBody {
     background: var(--white);
-    padding: 10px 10px;
+    padding: 10px;
 }
 .slotHead {
     color: var(--dark-blue);
-    background-image: linear-gradient(to right, var(--secondary), var(--grey2), var(--primary));
+    background-image: linear-gradient(to right, var(--secondary), var(--secondary2));
     padding: 5px 15px;
     border-radius: 2px 2px 0 0;
     font-size: 14px;
@@ -17,9 +19,8 @@
     text-align: center;
 }
 .slotButtons {
-    /* margin-bottom: 5px; */
     display: grid;
-    grid-template-columns: repeat(8, 12.5%);
+    grid-template-columns: repeat(7, 1fr);
     gap: 2px;
 }
 
@@ -28,23 +29,15 @@
     border: 1px solid var(--secondary);
     background: none;
     color: var(--dark-blue);
-    padding: 5px 10px;
-    border-radius: 2px;
+    padding: 5px 5px;
     margin: 5px 5px;
-    border-radius: 2px;
-    transition: 500ms;
+    border-radius: 5px;
 }
 .slotButtons > .slotButton > button:hover {
     cursor: pointer;
     border: 1px solid var(--secondary);
     background: var(--secondary);
     color: var(--white);
-    padding: 5px 10px;
-    border-radius: 2px;
+    padding: 5px 5px;
     margin: 5px 5px;
-    border-radius: 2px;
-    box-shadow: 1px 3px 10px var(--grey2);
-}
-.slotButtons > .slotButton {
-    display: inline-block;
 }

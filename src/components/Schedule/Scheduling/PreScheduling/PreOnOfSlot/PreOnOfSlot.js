@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Slots from '../Slots/Slots'
 import classes from './PreOnOfSlot.module.css'
 
-const PreOnOfSlot = () => {
+const PreOnOfSlot = ({ day, msg, setMsg }) => {
     const [on, setOn] = useState(1)
 
     return (
@@ -16,8 +16,8 @@ const PreOnOfSlot = () => {
                     Offline
                 </span>
             </div>
-            <div>
-                {on === 1 ? <Slots /> : null}
+            <div className={classes.Slots}>
+                {on === 1 ? <Slots day={day} msg={msg} setMsg={setMsg} /> : null}
                 {on === 0 ? <Slots /> : null}
             </div>
         </div>

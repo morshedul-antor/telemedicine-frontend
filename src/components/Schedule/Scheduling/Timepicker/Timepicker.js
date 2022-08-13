@@ -7,7 +7,7 @@ const Timepicker = () => {
                 <form>
                     <div className={classes.timePicker}>
                         <div>
-                            <input type="number" min="1" max="12" />
+                            <input type="number" min="01" max="12" />
                         </div>
                         <div> : </div>
                         <div>

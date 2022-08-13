@@ -10,17 +10,17 @@ const ProfessionalInfo = () => {
                         <ul>
                             <li>
                                 <div>
-                                    <h3>Dhaka Medical College</h3>
-                                    <p>Lecturer</p>
-                                    <p>2015-2019</p>
+                                    <h3> Dhaka Medical College</h3>
+                                    <p>&#160; &#160; &#160; &#160;Lecturer</p>
+                                    <p>&#160; &#160; &#160; &#160;2015-2019</p>
                                 </div>
                             </li>
 
                             <li>
                                 <div>
-                                    <h3>Healtnx Medical College</h3>
-                                    <p>Asst. Professor</p>
-                                    <p>2020-22</p>
+                                    <h3> Healtnx Medical College</h3>
+                                    <p>&#160; &#160; &#160; &#160;Asst. Professor</p>
+                                    <p>&#160; &#160; &#160; &#160;2020-22</p>
                                 </div>
                             </li>
                         </ul>
@@ -32,17 +32,17 @@ const ProfessionalInfo = () => {
                         <ul>
                             <li>
                                 <div>
-                                    <h3>Dhaka Medical College</h3>
-                                    <p>MBBS</p>
-                                    <p>Class of 2010</p>
+                                    <h3> Dhaka Medical College</h3>
+                                    <p>&#160; &#160; &#160; &#160;MBBS</p>
+                                    <p>&#160; &#160; &#160; &#160;Class of 2010</p>
                                 </div>
                             </li>
 
                             <li>
                                 <div>
-                                    <h3>Healtnx Medical College</h3>
-                                    <p>FCPS</p>
-                                    <p>Class of 2014</p>
+                                    <h3> Healtnx Medical College</h3>
+                                    <p>&#160; &#160; &#160; &#160;FCPS</p>
+                                    <p>&#160; &#160; &#160; &#160;Class of 2014</p>
                                 </div>
                             </li>
                         </ul>

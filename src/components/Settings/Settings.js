@@ -4,7 +4,7 @@ import ChangePassword from './ChangePassword/ChangePassword'
 import General from './General/General'
 import ProfessionalInfoEdit from './ProfessionalInfoEdit/ProfessionalInfoEdit'
 import classes from './Settings.module.css'
-import SpecialityEdit from './SpecialityEdit/SpecialityEdit'
+import SpecialityQualificationEdit from './SpecialityQualificationEdit/SpecialityQualificationEdit'
 
 const Settings = () => {
     const [menu, setMenu] = useState(1)
@@ -41,7 +41,7 @@ const Settings = () => {
                     <div>
                         {menu === 1 ? <General /> : null}
                         {menu === 2 ? <ProfessionalInfoEdit /> : null}
-                        {menu === 3 ? <SpecialityEdit /> : null}
+                        {menu === 3 ? <SpecialityQualificationEdit /> : null}
                         {menu === 4 ? <ChangePassword /> : null}
                     </div>
                 </div>
