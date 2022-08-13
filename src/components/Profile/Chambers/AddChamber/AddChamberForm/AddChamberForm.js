@@ -2,7 +2,19 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classes from './AddChamberForm.module.css'
 
-const AddChanberForm = ({ addChamber, name, setName, detail, setDetail, chamberPopup, setChamberPopup }) => {
+const AddChanberForm = ({
+    addChamber,
+    name,
+    setName,
+    detail,
+    setDetail,
+    district,
+    setDistrict,
+    detailAddress,
+    setDetailAddress,
+    chamberPopup,
+    setChamberPopup,
+}) => {
     const popup = () => {
         setChamberPopup(!chamberPopup)
     }
@@ -21,21 +33,53 @@ const AddChanberForm = ({ addChamber, name, setName, detail, setDetail, chamberP
                 <div className={classes.formPopup}>
                     <div onClick={chamberPopup}></div>
                     <div className={classes.chamberForm}>
-                        <h2>Create Chamber</h2>
-                        <div className={classes.content}>
-                            <form onSubmit={addChamber}>
-                                <label htmlFor="name">Name</label>
-                                <input value={name} onChange={(e) => setName(e.target.value)} />
-
-                                <label htmlFor="detail">Detail</label>
-                                <input value={detail} onChange={(e) => setDetail(e.target.value)} />
-
+                        <form onSubmit={addChamber}>
+                            <div className={classes.formHeader}>Add new chamber</div>
+                            <div className={classes.formWrap}>
+                                <label>
+                                    Chamber Name
+                                    <input
+                                        id="name"
+                                        type="name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                </label>
+                                <label>
+                                    Chamber Detail
+                                    <input
+                                        id="detail"
+                                        type="text"
+                                        value={detail}
+                                        onChange={(e) => setDetail(e.target.value)}
+                                    />
+                                </label>
+                                <label>
+                                    District
+                                    <input
+                                        id="district"
+                                        type="text"
+                                        value={district}
+                                        onChange={(e) => setDistrict(e.target.value)}
+                                    />
+                                </label>
+                                <label>
+                                    Detail Address
+                                    <input
+                                        id="detail address"
+                                        type="text"
+                                        value={detailAddress}
+                                        onChange={(e) => setDetailAddress(e.target.value)}
+                                    />
+                                </label>
+                            </div>
+                            <div className={classes.Button}>
                                 <button>Create</button>
                                 <button className={classes.Close} onClick={popup}>
                                     Close
                                 </button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             )}

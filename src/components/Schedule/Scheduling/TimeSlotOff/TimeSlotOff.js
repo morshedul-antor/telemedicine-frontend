@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react'
 import { Auth } from '../../../../allContext'
-import classes from './TimeSlot.module.css'
+import classes from './TimeSlotOff.module.css'
 
-const Slot = () => {
+const SlotOff = () => {
     let days = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 
     const { stateAuth } = useContext(Auth)
@@ -51,7 +51,7 @@ const Slot = () => {
     let clockCycle = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
     const onlineSlot = allSlot.filter((on) => {
-        return on.online === true
+        return on.online === false
     })
     const dayN = onlineSlot.filter((today) => {
         return today.day === day
@@ -140,4 +140,4 @@ const Slot = () => {
         </div>
     )
 }
-export default Slot
+export default SlotOff

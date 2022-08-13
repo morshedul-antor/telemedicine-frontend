@@ -58,7 +58,7 @@ const ProfilePictreUpload = ({ msg, setMsg }) => {
             body: imgData,
         })
 
-        const pp = await picUpload.json()
+        // const pp = await picUpload.json()
 
         if (picUpload.ok) {
             setMsg([...msg, 'Profile Pic Updated'])
@@ -82,7 +82,7 @@ const ProfilePictreUpload = ({ msg, setMsg }) => {
                         <div className={classes.header}>
                             <div className={classes.Title}> Upload Profile Picture</div>
                             <button className={classes.Close} onClick={popup}>
-                                X
+                                x
                             </button>
                         </div>
 

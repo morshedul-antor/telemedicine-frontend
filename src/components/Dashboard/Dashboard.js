@@ -9,7 +9,7 @@ const Dashboard = () => {
             <div>
                 <Sidebar />
             </div>
-            <div>
+            <div className={classes.Content}>
                 <ProfileHeader />
                 <Snapshot />
                 <Appointment />

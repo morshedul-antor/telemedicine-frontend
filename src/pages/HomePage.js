@@ -1,16 +1,17 @@
-import Home from '../components/Home/Home'
+import { useState, useEffect } from 'react'
+import GridLoader from 'react-spinners/GridLoader'
 import LandingPage from '../components/LandingPage/LandingPage'
 
-// import { PublicProfile } from '../components/PublicProfile'
-
 const HomePage = () => {
-    return (
-        <div>
-            {/* <PublicProfile /> */}
-            {/* <Home /> */}
-            <LandingPage />
-        </div>
-    )
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 4000)
+    }, [])
+    return <div>{loading ? <GridLoader color="#419CD9" size={10} loading={loading} /> : <LandingPage />}</div>
 }
 
 export default HomePage

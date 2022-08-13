@@ -86,31 +86,15 @@
     border-radius: 0 0 10px 10px;
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
-
 .infoWrapper > .Info {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
     width: 65%;
 }
-
 .infoWrapper > .Info div {
-    text-align: center;
-}
-
-.infoWrapper > .Info > div > .Title {
-    font-size: 0.9em;
-    font-weight: 400;
-    color: var(--dark);
-    border-left: 1px solid var(--secondary);
-    padding-left: 6px;
-}
-
-.infoWrapper > .Info div .Info {
-    display: block;
-    margin-top: -4px;
-    font-size: 1em;
-    color: var(--dark);
-    font-weight: 500;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 100%;
 }

@@ -1,7 +1,6 @@
 import { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Auth, UserInfo } from './allContext'
-import SchedulePage from './pages/SchedulePage'
 import {
     ProfilePage,
     LoginPage,
@@ -9,7 +8,7 @@ import {
     DashboardPage,
     SettingsPage,
     HomePage,
-    DashboardPage2,
+    SchedulePage,
 } from './pages/index'
 import { authReducer, authState, userReducer, userState } from './reducer'
 import ProtectedRoute from './routes/ProtectedRoute'
@@ -17,15 +16,6 @@ import ProtectedRoute from './routes/ProtectedRoute'
 const App = () => {
     const [stateAuth, dispatchAuth] = useReducer(authReducer, authState)
     const [stateUser, dispatchUser] = useReducer(userReducer, userState)
-
-    const hx = 'hxds100000'
-    const array = hx.split('s')
-
-    const [prefix, id] = array
-    const idInt = parseInt(id) + stateUser.info?.id
-
-    const url = prefix + idInt
-    // console.log(url)
 
     return (
         <div>

@@ -1,6 +1,18 @@
 import AddChamberForm from './AddChamberForm/AddChamberForm'
 
-const AddChamber = ({ addChamber, name, setName, detail, setDetail, chamberPopup, setChamberPopup }) => {
+const AddChamber = ({
+    addChamber,
+    name,
+    setName,
+    detail,
+    setDetail,
+    district,
+    setDistrict,
+    detailAddress,
+    setDetailAddress,
+    chamberPopup,
+    setChamberPopup,
+}) => {
     return (
         <div>
             <AddChamberForm
@@ -9,6 +21,10 @@ const AddChamber = ({ addChamber, name, setName, detail, setDetail, chamberPopup
                 setName={setName}
                 detail={detail}
                 setDetail={setDetail}
+                district={district}
+                setDistrict={setDistrict}
+                detailAddress={detailAddress}
+                setDetailAddress={setDetailAddress}
                 chamberPopup={chamberPopup}
                 setChamberPopup={setChamberPopup}
             />
