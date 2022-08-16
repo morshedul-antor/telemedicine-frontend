@@ -1,83 +1,97 @@
-.sectionWrapper {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 4em;
+.wrapper {
+    margin-top: 6em;
+    padding: 10px 10em;
+    margin-bottom: 4em;
 }
 
-.sectionWrapper .logo {
+.logo {
     text-align: center;
-    font-size: 2.2em;
+    font-size: 2em;
     color: var(--secondary);
     font-weight: 500;
     text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.sectionWrapper .logo > span {
-    font-size: 16px;
-}
-
-.section {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 2em;
-    grid-gap: 4em;
-}
-
-.section .boxContainer {
-    display: flex;
-    border: 1px solid var(--light);
-    box-shadow: 2px 4px 6px var(--light);
-    border-radius: 10px;
-    padding: 20px 30px;
     margin-bottom: 1.4em;
 }
 
-.section .boxContainer:hover {
-    transition: 200ms;
+.logo > span {
+    font-size: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em 4em;
+}
+.grid > div {
+    padding: 0 2em;
+    border-radius: 10px;
+    transition: 250ms;
+    border: none;
+    text-align: justify;
+    border-top: 2px solid var(--dark);
+}
+
+.grid > div:hover {
+    background-color: var(--white);
+    box-shadow: 2px 4px 6px var(--light);
     cursor: pointer;
-    box-shadow: 10px 20px 30px var(--light);
+    transition: 250ms;
+    transform: translateY(-4px);
 }
 
-.section .box .iconAll {
-    height: 34em;
-    position: absolute;
-    margin-left: -16.4%;
-    margin-top: 3.4em;
-    z-index: -10;
-    opacity: 0.9;
+.grid > div:nth-child(even) {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.section .box .iconBg {
-    height: 50em;
-    position: absolute;
-    margin-left: -14%;
-    margin-top: -1em;
-    z-index: -12;
-    opacity: 0.04;
+.grid > div:nth-child(even) > p > div {
+    text-align: justify;
 }
 
-.section .boxContainer .icon {
-    height: 3em;
-    background-color: var(--primary);
-    padding: 1.8em 2em;
+.grid > div > p > div > div > span {
+    display: block;
+    font-size: 14px;
+    color: var(--dark);
+    padding: 4px 0;
+    text-align: left;
+}
+
+.grid div > p {
+    display: flex;
+}
+
+.grid div > p > img {
+    width: 60px;
+    height: 50px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-.section .boxContainer > div {
-    margin-left: 2em;
+.grid div > p > div {
+    padding-left: 20px;
 }
 
-.section .boxContainer .title {
-    color: var(--primary);
-    font-size: 1.4em;
-    margin-top: 2px;
-    margin-bottom: 6px;
+.grid div > p > div > h2 {
+    font-size: 24px;
+    color: var(--blue);
     font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 6px;
 }
 
-.section .boxContainer > div > span {
-    display: block;
+.grid div > p > div > span {
     color: var(--dark);
     font-size: 14px;
+}
+
+.grid div > p > div > div {
+    margin-top: 14px;
+}
+
+.grid div > p > div > div > li {
+    font-size: 14px;
+    color: var(--blue);
+    font-weight: 400;
+    padding: 4px 0px;
+    text-transform: capitalize;
 }
