@@ -14,8 +14,11 @@ const Profile = () => {
             <div>
                 <Sidebar />
             </div>
-            <div>
-                <ProfileHeader />
+            <div className={classes.profileWrapper}>
+                <div className={classes.profileHeader}>
+                    <ProfileHeader />
+                </div>
+
                 <div className={classes.Wrapper}>
                     <div>
                         <div className={classes.Nav}>
@@ -31,11 +34,11 @@ const Profile = () => {
                                 Professional Info
                             </span>
 
-                            <span
+                            {/* <span
                                 className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                                 onClick={(e) => setMenu(3)}>
                                 Achievement
-                            </span>
+                            </span> */}
 
                             <span
                                 className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}

@@ -41,18 +41,19 @@ const DeleteChamber = ({ chamberId, msg, setMsg }) => {
             </div>
 
             {deletePrompt && (
-                <div>
-                    <div className={classes.formPopup}>
-                        <div onClick={deletePrompt}></div>
-                        <div className={classes.deleteForm}>
-                            <h2>Delete Chamber</h2>
-                            <div className={classes.content}>
-                                <form onSubmit={deleteChamber}>
-                                    <h3>Are you sure?</h3>
-                                    <button className={classes.Sure}>Sure</button>
-                                    <button onClick={popup}>Not Sure</button>
-                                </form>
-                            </div>
+                <div className={classes.formPopup}>
+                    <div onClick={deletePrompt}></div>
+                    <div className={classes.chamberForm}>
+                        <div>
+                            <form onSubmit={deleteChamber}>
+                                <div className={classes.formHeader}>Add new chamber</div>
+                                <div className={classes.Button}>
+                                    <button>Delete</button>
+                                    <button className={classes.Close} onClick={popup}>
+                                        Discard
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

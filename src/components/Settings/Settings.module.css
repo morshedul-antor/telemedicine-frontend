@@ -6,10 +6,10 @@
 }
 .Wrapper {
     background: var(--light);
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 .Wrapper > div {
-    min-height: 90vh;
+    /* min-height: 90vh; */
     background: var(--white);
     margin: 20px 20px 0 0;
     border-radius: 10px;

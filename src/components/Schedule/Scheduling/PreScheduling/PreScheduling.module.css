@@ -1,25 +1,8 @@
 .scheduleForm {
     background: var(--white);
     border: 1px solid var(--white);
-    height: 25vh;
-    /* width: 100%; */
 }
 
-.preSchedule > .Form {
-    margin-left: 50px;
-    /* width: 100%; */
-}
-
-/* .onOff > div > span {
-    position: relative;
-    bottom: 8px;
-    padding: 5px 15px;
-    border: 1px solid var(--secondary);
-    border-radius: 2px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-} */
 .onOff {
     margin-top: 2px;
     display: grid;
@@ -36,7 +19,7 @@
     bottom: 8px;
     padding: 10px 0 10px 0;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
     width: 100%;
     text-align: center;
@@ -48,9 +31,4 @@
 .on {
     color: var(--secondary);
     border-bottom: 2px solid var(--secondary);
-}
-
-.preSlots {
-    margin-top: 50px;
-    background: var(--white);
 }

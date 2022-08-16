@@ -1,24 +1,69 @@
-.ProfessionalInfo {
-    margin: 20px;
-}
-.ProfessionalInfo > h2 {
-    color: var(--dark-blue);
-}
-
-.ProfessionalInfo > .Info {
+.Info {
     display: grid;
-    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
-    gap: 10px;
-    min-height: 100vh;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 10px;
 }
 
-/* .ProfessionalInfo > .Info > div {
-    border-right: 1px solid var(--secondary);
-} */
-
-.ProfessionalInfo > .Info > div button {
+.editInfo {
+    padding: 20px;
+}
+.collapsible {
+    background: var(--secondary2);
+    color: var(--white);
     cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    outline: none;
+}
+
+.active,
+.collapsible:hover {
+    background: var(--light-secondary);
+}
+
+.contentShow {
+    padding: 0 18px;
+    display: block;
+    overflow: hidden;
+}
+
+.contentHide {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
+
+.infoTable {
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--dark-grey);
+    font-size: 12px;
+}
+
+.infoTable td,
+.infoTable th {
+    border: 1px solid var(--light);
+    padding: 5px;
+}
+.infoTable td button {
+    margin: 5px;
     border: none;
     background: none;
-    color: var(--secondary);
+    cursor: pointer;
+}
+
+.infoTable tr:nth-child(even) {
+    background-color: var(--light-low);
+}
+
+.infoTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--light-secondary);
+    color: var(--white);
 }
