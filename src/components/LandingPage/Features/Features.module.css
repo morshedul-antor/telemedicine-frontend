@@ -67,6 +67,10 @@
     border-radius: 10px;
 }
 
+.grid div:nth-child(4) > p > img {
+    filter: invert(5%) opacity(0.9);
+}
+
 .grid div > p > div {
     padding-left: 20px;
 }
