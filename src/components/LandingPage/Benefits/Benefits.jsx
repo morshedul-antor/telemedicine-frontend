@@ -11,7 +11,7 @@ import classes from './Bentefits.module.css'
 
 export default function Benefits() {
     return (
-        <div className={classes.sectionWrapper} id="features">
+        <div className={classes.sectionWrapper} id="benefits">
             <div className={classes.logo}>
                 <span>-----</span> Benefits <span>-----</span>
             </div>

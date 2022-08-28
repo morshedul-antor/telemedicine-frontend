@@ -9,9 +9,19 @@ const HomePage = () => {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, 4000)
+        }, 500)
     }, [])
-    return <div>{loading ? <GridLoader color="#419CD9" size={10} loading={loading} /> : <LandingPage />}</div>
+    return (
+        <div>
+            {loading ? (
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40vh' }}>
+                    <GridLoader color="#419CD9" size={20} loading={loading} />
+                </div>
+            ) : (
+                <LandingPage />
+            )}
+        </div>
+    )
 }
 
 export default HomePage

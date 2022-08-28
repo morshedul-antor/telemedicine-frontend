@@ -1,6 +1,7 @@
 .slotReady {
     background: var(--white);
     border-radius: 10px;
+    padding-top: 10px;
 }
 
 .DayNav {
@@ -14,8 +15,8 @@
 
 .DayNav > span {
     position: relative;
-    padding: 10px 15px;
-    border-radius: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -33,6 +34,6 @@
     color: var(--dark-blue);
 }
 .activeNav {
-    background: var(--light);
-    color: var(--secondary);
+    background: var(--primary);
+    color: var(--white);
 }

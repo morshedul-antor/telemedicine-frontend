@@ -1,6 +1,7 @@
 import { faHouseChimneyMedical, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Auth, UserInfo } from '../../allContext'
 import doc from '../../assets/img/doc-df.jpg'
 import cover from '../../assets/img/doctor/bg.jpg'
@@ -115,7 +116,7 @@ const ProfileHeader = () => {
         }, 3000)
     }, [apiV1, token, isLoading, msg])
 
-    const profileImageUrl = 'http://127.0.0.1:8000/images/profile/' + profileImage
+    const profileImageUrl = `${apiV1}/images/profile/` + profileImage
 
     // Profile Picture Image API fetch
 
@@ -293,6 +294,12 @@ const ProfileHeader = () => {
                                 <span className={classes.Info}>
                                     {toMonthNameLong(doctor[0]?.created_at.slice(5, 7))}{' '}
                                     {doctor[0]?.created_at.slice(0, 4)}
+                                </span>
+                            </div>
+                            <div>
+                                <p className={classes.Title}>eVisitingCard</p>
+                                <span className={classes.Info}>
+                                    <Link to="/e-card">Download</Link>
                                 </span>
                             </div>
                         </div>

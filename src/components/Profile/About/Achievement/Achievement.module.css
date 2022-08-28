@@ -1,0 +1,162 @@
+.Achievement {
+    margin: 20px;
+    font-size: 14px;
+    border: 1px solid var(--light);
+    border-radius: 10px;
+    box-shadow: 2px 4px 6px var(--light-low);
+}
+
+.Basic {
+    padding: 10px 20px;
+}
+
+.Basic > div {
+    position: relative;
+}
+
+.Basic > div > h2 {
+    color: var(--dark-blue);
+    font-weight: 500;
+    text-align: center;
+}
+
+.Basic > div > h2 > svg {
+    color: var(--primary);
+    padding-right: 4px;
+}
+
+.Basic .heading {
+    margin-top: 14px;
+    font-size: 18px;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.list {
+    margin-bottom: -10px;
+}
+
+.list > ol > li {
+    font-size: 14px;
+    color: var(--dark);
+    padding-bottom: 10px;
+}
+
+.list > ol > li > span {
+    padding-left: 14px;
+    color: var(--secondary2);
+    font-size: 12px;
+}
+
+.list > ol > li > span:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 200ms;
+}
+
+.formWrap {
+    padding: 10px 20px 0;
+    background: var(--light-low);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 2.6fr 0.2fr;
+    grid-gap: 10px;
+    position: relative;
+}
+
+.formWrap > div {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.Basic > button {
+    background-color: var(--secondary);
+    color: var(--white);
+    border: none;
+    display: block;
+    margin: 0 auto;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.Basic > button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 200ms;
+}
+
+.Basic label {
+    display: block;
+    font-size: 12px;
+    color: var(--dark-grey);
+    margin-bottom: 14px;
+    font-weight: 450;
+}
+
+.Basic label > span > button {
+    position: absolute;
+    right: 0;
+    border: 1px solid var(--dark);
+    border-radius: 50%;
+    padding: 0 6px;
+    margin-top: -40px;
+    background-color: transparent;
+    font-size: 14px;
+    color: var(--red);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.Basic input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 2px solid var(--white);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.35);
+    font-size: 12px;
+    color: var(--dark);
+    background: var(--white);
+    outline: none;
+}
+
+.Basic input[type='date'] {
+    color: var(--dark-grey);
+}
+
+.Basic input:focus {
+    border: 2px solid var(--grey2);
+}
+
+.Basic input::placeholder {
+    color: var(--grey);
+    opacity: 0.5;
+}
+
+.Basic .button {
+    background-color: var(--secondary);
+    padding: 6px 30px;
+    color: var(--white);
+    font-size: 12px;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: -8px;
+}
+
+.Basic .button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 200ms;
+}

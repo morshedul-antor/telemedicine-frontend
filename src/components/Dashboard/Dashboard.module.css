@@ -1,5 +1,4 @@
 .Dashboard {
-    background: var(--light);
     display: grid;
     grid-template-columns: minmax(0, 20%) minmax(0, 80%);
     min-height: 100vh;

@@ -1,7 +1,6 @@
 import { faRegistered, faHandSparkles, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext } from 'react'
-import env from 'react-dotenv'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'
@@ -23,10 +22,8 @@ const Register = () => {
     const [bmdc, setBmdc] = useState('')
 
     const [alert, setAlert] = useState([])
-
     const history = useHistory()
 
-    // const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
     const apiV1 = process.env.REACT_APP_API_V1
 
     const submit = async (e) => {
@@ -57,7 +54,6 @@ const Register = () => {
         })
 
         // let registrationJson = await registrationFetch.json()
-
         if (registrationFetch.ok) {
             history.push('/login')
         } else {

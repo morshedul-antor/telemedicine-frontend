@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import bgnew from '../../assets/img/plus-bg.png'
+import Logo from '../../assets/logo/hx-blue-fit.png'
 import About from './About/About'
 import Benefits from './Benefits/Benefits'
 import Faq from './Faq/Faq'
@@ -28,11 +29,13 @@ export default function LandingPage() {
                 <div className={classes.wrapper}>
                     <div className={classes.nav}>
                         <div className={classes.topNavbar}>
-                            <div className={classes.logo}>Smart Doctor</div>
+                            <div className={classes.logo}>
+                                <img src={Logo} alt="" />
+                            </div>
                             <div className={classes.navList}>
                                 <a href="#features">Features</a>
-                                <a href="#about">About</a>
-                                <a href="#faq">Demo</a>
+                                <a href="#benefits">Benefits</a>
+                                <a href="#faq">FAQ</a>
                                 <Link to="/login">Get Started</Link>
                             </div>
                         </div>
