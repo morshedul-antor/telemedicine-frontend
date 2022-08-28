@@ -9,6 +9,7 @@ import {
     SettingsPage,
     HomePage,
     SchedulePage,
+    EcardPage,
 } from './pages/index'
 import { authReducer, authState, userReducer, userState } from './reducer'
 import ProtectedRoute from './routes/ProtectedRoute'
@@ -30,6 +31,7 @@ const App = () => {
                             <ProtectedRoute path="/schedule" component={SchedulePage} />
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />
+                            <Route path="/e-card" component={EcardPage} />
                         </Switch>
                     </Router>
                 </UserInfo.Provider>
