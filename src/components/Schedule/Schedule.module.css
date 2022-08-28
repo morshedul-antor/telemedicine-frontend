@@ -1,5 +1,4 @@
 .Schedule {
-    background: var(--light);
     display: grid;
     grid-template-columns: minmax(0, 20%) minmax(0, 80%);
 }

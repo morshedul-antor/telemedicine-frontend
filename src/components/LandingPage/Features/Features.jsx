@@ -8,7 +8,7 @@ import classes from './Features.module.css'
 
 export default function Features() {
     return (
-        <div className={classes.wrapper}>
+        <div className={classes.wrapper} id="features">
             <div className={classes.logo}>
                 <span>-----</span> Features <span>-----</span>
             </div>

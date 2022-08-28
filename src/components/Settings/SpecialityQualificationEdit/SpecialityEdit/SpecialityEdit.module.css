@@ -15,6 +15,10 @@
     /* text-align: center; */
 }
 
+.Speciality > .sectionHeader {
+    margin-top: 2em;
+}
+
 .Speciality .formWrap {
     padding: 30px;
     background: var(--light-low);
@@ -50,16 +54,15 @@
 
 .Speciality .Button {
     background-color: var(--secondary2);
-    padding: 10px 20px;
+    padding: 6px 20px;
     color: var(--white);
-    font-size: 14px;
+    font-size: 12px;
     overflow: hidden;
     transition: 0.5s;
     margin: 0 auto;
     letter-spacing: 1px;
     border: none;
     border-radius: 4px;
-    /* width: 14em; */
     display: block;
     margin-top: 1em;
     cursor: pointer;
@@ -69,7 +72,7 @@
 
 .Speciality .Badge {
     background-color: var(--secondary2);
-    padding: 10px 20px;
+    padding: 6px 20px;
     color: var(--white);
     font-size: 14px;
     overflow: hidden;
@@ -78,7 +81,7 @@
     border: none;
     border-radius: 4px;
     display: inline-flex;
-    margin-top: 1em;
+    margin-top: 0em;
     cursor: pointer;
     font-weight: 500;
     margin-right: 5px;

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Sidebar } from '../Nav'
 import ProfileHeader from '../ProfileHeader/ProfileHeader'
+import About from './About/About'
 import Chambers from './Chambers/Chambers'
 import ProfessionalInfo from './ProfessionalInfo/ProfessionalInfo'
 import classes from './Profile.module.css'
-import ProfileDetail from './ProfileDetail/ProfileDetail'
 
 const Profile = () => {
     const [menu, setMenu] = useState(1)
@@ -25,19 +25,13 @@ const Profile = () => {
                             <span
                                 className={menu === 1 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                                 onClick={(e) => setMenu(1)}>
-                                Detail
-                            </span>
-
-                            <span
-                                className={menu === 2 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                                onClick={(e) => setMenu(2)}>
-                                Professional Info
+                                About
                             </span>
 
                             {/* <span
-                                className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                                onClick={(e) => setMenu(3)}>
-                                Achievement
+                                className={menu === 2 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(2)}>
+                                Professional Info
                             </span> */}
 
                             <span
@@ -47,8 +41,8 @@ const Profile = () => {
                             </span>
                         </div>
                         <div>
-                            {menu === 1 ? <ProfileDetail /> : null}
-                            {menu === 2 ? <ProfessionalInfo /> : null}
+                            {menu === 1 ? <About /> : null}
+                            {menu === 2 ? '' : null}
                             {menu === 4 ? <Chambers /> : null}
                         </div>
                     </div>
