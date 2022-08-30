@@ -21,7 +21,8 @@ const Sidebar = () => {
 
     let location = useLocation()
 
-    let epApi = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_EP_SITE : env.REACT_APP_EP_SITE
+    let epApi = process.env.REACT_APP_EP_SITE
+    console.log(epApi)
 
     const logout = (e) => {
         e.preventDefault()
