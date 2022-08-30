@@ -113,7 +113,7 @@ const ProfileHeader = () => {
                 activeChamberFunc()
                 setIsLoading(false)
             } catch (e) {}
-        }, 3000)
+        }, 1000)
     }, [apiV1, token, isLoading, msg])
 
     const profileImageUrl = `${apiV1}/images/profile/` + profileImage
@@ -265,7 +265,7 @@ const ProfileHeader = () => {
                                     &#160;
                                     {activeChamber?.name}
                                 </h2>
-                                <p>{activeChamber?.detail}</p>
+                                <p>{activeChamber?.detail_address}</p>
                             </div>
                         </div>
                     </div>

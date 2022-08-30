@@ -1,5 +1,6 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import districts from '../../../../../utils/districts.json'
 import classes from './AddChamberForm.module.css'
 
 const AddChanberForm = ({
@@ -8,12 +9,13 @@ const AddChanberForm = ({
     setName,
     detail,
     setDetail,
-    district,
     setDistrict,
     detailAddress,
     setDetailAddress,
     chamberPopup,
     setChamberPopup,
+    fee,
+    setFee,
 }) => {
     const popup = () => {
         setChamberPopup(!chamberPopup)
@@ -23,7 +25,6 @@ const AddChanberForm = ({
         <div>
             <div className={classes.addChamber}>
                 <button onClick={popup}>
-                    {' '}
                     <FontAwesomeIcon icon={faPlus} />
                     <span>Add Chamber</span>
                 </button>
@@ -34,42 +35,54 @@ const AddChanberForm = ({
                     <div onClick={chamberPopup}></div>
                     <div className={classes.chamberForm}>
                         <form onSubmit={addChamber}>
-                            <div className={classes.formHeader}>Add new chamber</div>
+                            <div className={classes.formHeader}>Add New Chamber</div>
                             <div className={classes.formWrap}>
+                                <div className={classes.formGrid}>
+                                    <label>
+                                        Chamber Name
+                                        <input
+                                            type="text"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            required
+                                        />
+                                    </label>
+                                    <label>
+                                        Chamber Fee
+                                        <input
+                                            type="number"
+                                            value={fee}
+                                            onChange={(e) => setFee(parseFloat(e.target.value))}
+                                            step="any"
+                                            min={0}
+                                        />
+                                    </label>
+                                </div>
                                 <label>
-                                    Chamber Name
+                                    Chamber Details
                                     <input
-                                        id="name"
-                                        type="name"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                    />
-                                </label>
-                                <label>
-                                    Chamber Detail
-                                    <input
-                                        id="detail"
                                         type="text"
                                         value={detail}
                                         onChange={(e) => setDetail(e.target.value)}
+                                        required
                                     />
                                 </label>
                                 <label>
                                     District
-                                    <input
-                                        id="district"
-                                        type="text"
-                                        value={district}
-                                        onChange={(e) => setDistrict(e.target.value)}
-                                    />
+                                    <select onChange={(e) => setDistrict(e.target.value)} required>
+                                        <option value="">Select District</option>
+                                        {districts.data.map((data) => (
+                                            <option>{`${data.district} - ${data.districtbn}`}</option>
+                                        ))}
+                                    </select>
                                 </label>
                                 <label>
                                     Detail Address
                                     <input
-                                        id="detail address"
                                         type="text"
                                         value={detailAddress}
                                         onChange={(e) => setDetailAddress(e.target.value)}
+                                        required
                                     />
                                 </label>
                             </div>

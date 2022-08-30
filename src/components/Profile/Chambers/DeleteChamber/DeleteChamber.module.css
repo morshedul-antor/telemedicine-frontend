@@ -10,11 +10,13 @@
 }
 
 .deleteChamber > button:hover {
-    box-shadow: 1px 3px 10px var(--grey2);
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 200ms;
 }
 
 .formPopup {
-    position: absolute;
+    position: fixed;
     top: 0%;
     left: 0%;
     /* transform: translate(-50%, -50%); */
@@ -25,7 +27,7 @@
     /* max-width: 600px;
     min-width: 300px; */
     width: 100%;
-    height: 800px;
+    height: 100vh;
     z-index: 50;
 }
 

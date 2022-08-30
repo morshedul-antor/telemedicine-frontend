@@ -38,9 +38,9 @@ const General = () => {
         })
 
         if (updateFetch.ok) {
-            setMsg('User info update. Please logout and login again')
+            setMsg('User Info Update. Please Logout and Login Again')
         } else {
-            setMsg('Something went wrong.')
+            setMsg('Something Went Wrong.')
         }
     }
 

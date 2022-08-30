@@ -47,7 +47,7 @@ export default function Workplace() {
                 infoFunc()
                 setIsLoading(false)
             } catch (e) {}
-        }, 3000)
+        }, 1000)
     }, [apiV1, token, userInfo?.id, position, institute])
 
     const handleSubmit = async (e) => {

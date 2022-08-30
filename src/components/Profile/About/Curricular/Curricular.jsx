@@ -1,31 +1,69 @@
-import { faBookmark, faEdit, faShield } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
-import { Auth, UserInfo } from '../../../../allContext'
-import { toMonthNameLong } from '../../../../utils/date'
+import { Auth } from '../../../../allContext'
 import SkeletonProfileDetail from '../../../Skeletons/SkeletonProfileDetail'
 import classes from './Curricular.module.css'
 import Update from './UpdateCurricular/Update'
 
 export default function Curricular() {
-    const [isLoading, setIsLoading] = useState(false)
-    const [isOpen, setIsOpen] = useState(false)
-
-    const [workplaces, setWorkplaces] = useState([])
-
-    const { stateAuth } = useContext(Auth)
-    const { stateUser } = useContext(UserInfo)
+    const [curriculars, setCurriculars] = useState([])
+    const [title, setTitle] = useState('')
 
     const apiV1 = process.env.REACT_APP_API_V1
+    const { stateAuth } = useContext(Auth)
     const token = stateAuth.token
-    const userInfo = stateUser.info
 
-    const [position, setPosition] = useState('')
-    const [institute, setInstitute] = useState('')
-    const [start, setStart] = useState('')
-    const [end, setEnd] = useState(null)
-
+    const [isLoading, setIsLoading] = useState(false)
     const [formOpen, setFormOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => {
+            let infoFunc = async () => {
+                let infoFetch = await fetch(`${apiV1}/doctors/others-activity/?skip=0&limit=50&topic=curricular`, {
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                    method: 'GET',
+                })
+                let infoJson = await infoFetch.json()
+                if (infoFetch.ok) {
+                    setCurriculars(infoJson)
+                }
+            }
+            try {
+                infoFunc()
+                setIsLoading(false)
+            } catch (e) {}
+        }, 1000)
+    }, [apiV1, token, title])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const details = {
+            topic: 'curricular',
+            title,
+            detail: null,
+        }
+
+        let response = await fetch(`${apiV1}/doctors/others-activity/`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(details),
+        })
+        if (response.ok) {
+            setFormOpen(false)
+            setTitle('')
+        }
+    }
 
     return (
         <>
@@ -49,12 +87,22 @@ export default function Curricular() {
 
                             <div className={classes.list}>
                                 <ol>
-                                    <li>
-                                        Feature Writer at Different National Dailies
-                                        <span>
-                                            <FontAwesomeIcon icon={faEdit} />
-                                        </span>
-                                    </li>
+                                    {curriculars[1] &&
+                                        curriculars[1].map((curricular, index) => (
+                                            <li>
+                                                {curricular.title}
+                                                <span>
+                                                    <FontAwesomeIcon icon={faEdit} onClick={() => setIsOpen(index)} />
+                                                </span>
+                                                {isOpen === index && (
+                                                    <Update
+                                                        index={index}
+                                                        setIsOpen={setIsOpen}
+                                                        curricular={curricular}
+                                                    />
+                                                )}
+                                            </li>
+                                        ))}
                                 </ol>
                             </div>
                         </div>
@@ -63,7 +111,7 @@ export default function Curricular() {
                     <div className={classes.Basic}>
                         <button onClick={() => setFormOpen(true)}>Add More</button>
                         {formOpen && (
-                            <form>
+                            <form onSubmit={(e) => handleSubmit(e)}>
                                 <div className={classes.formWrap}>
                                     <label>
                                         <span>
@@ -73,8 +121,8 @@ export default function Curricular() {
                                         <input
                                             type="text"
                                             placeholder="Feature Writer at Different National Dailies"
-                                            value={position}
-                                            onChange={(e) => setPosition(e.target.value)}
+                                            value={title}
+                                            onChange={(e) => setTitle(e.target.value)}
                                             required
                                         />
                                     </label>

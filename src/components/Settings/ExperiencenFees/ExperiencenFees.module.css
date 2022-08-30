@@ -81,11 +81,11 @@
     margin-bottom: -10px;
 }
 
-/* .formGrid {
+.formGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
-} */
+    grid-gap: 0 30px;
+}
 
 .alertMessage {
     text-align: center;
@@ -93,4 +93,8 @@
     font-weight: 500;
     font-size: 14px;
     margin-top: 16px;
+}
+
+.bmdcInput > span {
+    visibility: hidden;
 }

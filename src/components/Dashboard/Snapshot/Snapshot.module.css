@@ -57,13 +57,17 @@
     visibility: hidden;
 }
 
+.Snapshot > div > div > div > p {
+    font-size: 14px;
+}
+
 .Snapshot > div > div > div > p:first-child {
-    font-size: 12px;
-    color: var(--dark-blue);
+    font-size: 14px;
+    color: var(--primary);
     font-weight: 500;
 }
 
 .Snapshot b {
-    font-size: 14px;
+    font-size: 16px;
     padding-left: 4px;
 }
