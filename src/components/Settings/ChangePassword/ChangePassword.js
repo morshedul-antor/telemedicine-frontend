@@ -35,7 +35,7 @@ const ChangePassword = () => {
         })
 
         if (passwordFetch.ok) {
-            setMsg('User password updated')
+            setMsg('User Password Updated')
         } else {
             setMsg('Something went wrong.')
         }

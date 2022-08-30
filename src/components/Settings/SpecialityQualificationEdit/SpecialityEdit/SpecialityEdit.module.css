@@ -86,3 +86,11 @@
     font-weight: 500;
     margin-right: 5px;
 }
+
+.alertMessage {
+    font-size: 14px;
+    margin-top: 26px;
+    margin-bottom: -30px;
+    text-align: center;
+    color: var(--red);
+}
