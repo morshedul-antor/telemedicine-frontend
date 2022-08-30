@@ -66,6 +66,7 @@
     color: var(--dark-grey);
     line-height: 0.5;
     font-weight: 500;
+    margin-left: 6em;
 }
 
 .header > .Chamber div {
