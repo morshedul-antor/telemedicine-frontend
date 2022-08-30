@@ -17,7 +17,8 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
     const [name, setName] = useState(chamberInfo.name)
     const [detail, setDetail] = useState(chamberInfo.detail)
     const [district, setDistrict] = useState(chamberInfo.district)
-    const [detail_address, setDetailAddress] = useState(chamberInfo.detail_address)
+    const [detailAddress, setDetailAddress] = useState(chamberInfo.detail_address)
+    const [fee, setFee] = useState(chamberInfo.chamber_fee)
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
@@ -36,7 +37,8 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
                 name,
                 detail,
                 district,
-                detail_address,
+                detail_address: detailAddress,
+                chamber_fee: fee,
             }),
         })
         if (editFetch.ok) {
@@ -101,45 +103,39 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
                         <form onSubmit={editChamber}>
                             <div className={classes.formHeader}>Edit Chamber</div>
                             <div className={classes.formWrap}>
-                                <label>
-                                    Chamber Name
-                                    <input
-                                        id="name"
-                                        type="name"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                    />
-                                </label>
+                                <div className={classes.formGrid}>
+                                    <label>
+                                        Chamber Name
+                                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                                    </label>
+                                    <label>
+                                        Chamber Fee
+                                        <input
+                                            type="number"
+                                            value={fee}
+                                            onChange={(e) => setFee(parseFloat(e.target.value))}
+                                        />
+                                    </label>
+                                </div>
                                 <label>
                                     Chamber Detail
-                                    <input
-                                        id="detail"
-                                        type="text"
-                                        value={detail}
-                                        onChange={(e) => setDetail(e.target.value)}
-                                    />
+                                    <input type="text" value={detail} onChange={(e) => setDetail(e.target.value)} />
                                 </label>
                                 <label>
                                     District
-                                    <input
-                                        id="district"
-                                        type="text"
-                                        value={district}
-                                        onChange={(e) => setDistrict(e.target.value)}
-                                    />
+                                    <input type="text" value={district} onChange={(e) => setDistrict(e.target.value)} />
                                 </label>
                                 <label>
                                     Detail Address
                                     <input
-                                        id="detail address"
                                         type="text"
-                                        value={detail_address}
+                                        value={detailAddress}
                                         onChange={(e) => setDetailAddress(e.target.value)}
                                     />
                                 </label>
                             </div>
                             <div className={classes.Button}>
-                                <button>Create</button>
+                                <button type="submit">Update</button>
                                 <button className={classes.Close} onClick={popup}>
                                     Discard
                                 </button>

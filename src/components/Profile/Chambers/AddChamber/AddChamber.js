@@ -10,6 +10,8 @@ const AddChamber = ({
     setDistrict,
     detailAddress,
     setDetailAddress,
+    fee,
+    setFee,
     chamberPopup,
     setChamberPopup,
 }) => {
@@ -25,6 +27,8 @@ const AddChamber = ({
                 setDistrict={setDistrict}
                 detailAddress={detailAddress}
                 setDetailAddress={setDetailAddress}
+                fee={fee}
+                setFee={setFee}
                 chamberPopup={chamberPopup}
                 setChamberPopup={setChamberPopup}
             />

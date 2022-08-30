@@ -9,38 +9,38 @@ import EditChamber from './EditChamber/EditChamber'
 
 const Chambers = () => {
     const [chamberPopup, setChamberPopup] = useState(false)
-
     const [chamberInfo, setChamberInfo] = useState({})
-
     const { stateAuth } = useContext(Auth)
 
     const [msg, setMsg] = useState([])
-
     const [isLoading, setIsLoading] = useState(true)
+
     const [name, setName] = useState('')
     const [detail, setDetail] = useState('')
     const [district, setDistrict] = useState('')
-    const [detail_address, setDetailAddress] = useState('')
-    const [active, setActive] = useState({})
+    const [detailAddress, setDetailAddress] = useState('')
+    const [fee, setFee] = useState(0)
 
+    const [active, setActive] = useState({})
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
 
     const addChamber = async (e) => {
         e.preventDefault()
+
         let addChamberFetch = await fetch(`${apiV1}/doctors/chamber`, {
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
             },
-            dataType: 'json',
             method: 'POST',
             body: JSON.stringify({
                 name,
                 detail,
                 district,
-                detail_address,
+                detail_address: detailAddress,
+                chamber_fee: fee,
             }),
         })
         if (addChamberFetch.ok) {
@@ -67,6 +67,7 @@ const Chambers = () => {
                 let chamberJson = await chamberFetch.json()
                 if (chamberFetch.ok) {
                     setChamberInfo(chamberJson)
+                    console.log(chamberJson)
                 }
             }
 
@@ -90,7 +91,7 @@ const Chambers = () => {
                 activeChamberFunc()
                 setIsLoading(false)
             } catch (e) {}
-        }, 2000)
+        }, 1000)
     }, [apiV1, token, msg, setIsLoading])
 
     let data = Array.from(chamberInfo)
@@ -167,6 +168,7 @@ const Chambers = () => {
                             <p>Detail</p>
                             <p>District</p>
                             <p>Chamber Address</p>
+                            <p>Chamber Fee</p>
                             <p>Active</p>
                             <p>Action</p>
                         </div>
@@ -194,6 +196,7 @@ const Chambers = () => {
                                     <p>{chamber.detail}</p>
                                     <p>{chamber.district}</p>
                                     <p>{chamber.detail_address}</p>
+                                    <p>{chamber.chamber_fee}</p>
                                     <p>
                                         <ChamberState
                                             chamberId={chamber.id}
@@ -205,16 +208,15 @@ const Chambers = () => {
                                     <p>
                                         <div className={classes.btn}>
                                             <button>
-                                                <DeleteChamber chamberId={chamber.id} msg={msg} setMsg={setMsg} />
-                                            </button>
-
-                                            <button>
                                                 <EditChamber
                                                     chamber={chamber}
                                                     chamberId={chamber.id}
                                                     msg={msg}
                                                     setMsg={setMsg}
                                                 />
+                                            </button>
+                                            <button>
+                                                <DeleteChamber chamberId={chamber.id} msg={msg} setMsg={setMsg} />
                                             </button>
                                         </div>
                                     </p>
@@ -230,8 +232,10 @@ const Chambers = () => {
                         setDetail={setDetail}
                         district={district}
                         setDistrict={setDistrict}
-                        detailAddress={detail_address}
+                        detailAddress={detailAddress}
                         setDetailAddress={setDetailAddress}
+                        fee={fee}
+                        setFee={setFee}
                         chamberPopup={chamberPopup}
                         setChamberPopup={setChamberPopup}
                     />

@@ -1,31 +1,69 @@
 import { faEdit, faShield } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
-import { Auth, UserInfo } from '../../../../allContext'
-import { toMonthNameLong } from '../../../../utils/date'
+import { Auth } from '../../../../allContext'
 import SkeletonProfileDetail from '../../../Skeletons/SkeletonProfileDetail'
 import classes from './Activity.module.css'
 import Update from './UpdateActivity/Update'
 
 export default function Activity() {
-    const [isLoading, setIsLoading] = useState(false)
-    const [isOpen, setIsOpen] = useState(false)
-
-    const [workplaces, setWorkplaces] = useState([])
-
-    const { stateAuth } = useContext(Auth)
-    const { stateUser } = useContext(UserInfo)
+    const [activities, setActivities] = useState([])
+    const [title, setTitle] = useState('')
 
     const apiV1 = process.env.REACT_APP_API_V1
+    const { stateAuth } = useContext(Auth)
     const token = stateAuth.token
-    const userInfo = stateUser.info
 
-    const [position, setPosition] = useState('')
-    const [institute, setInstitute] = useState('')
-    const [start, setStart] = useState('')
-    const [end, setEnd] = useState(null)
-
+    const [isLoading, setIsLoading] = useState(false)
     const [formOpen, setFormOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => {
+            let infoFunc = async () => {
+                let infoFetch = await fetch(`${apiV1}/doctors/others-activity/?skip=0&limit=50&topic=conference`, {
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                    method: 'GET',
+                })
+                let infoJson = await infoFetch.json()
+                if (infoFetch.ok) {
+                    setActivities(infoJson)
+                }
+            }
+            try {
+                infoFunc()
+                setIsLoading(false)
+            } catch (e) {}
+        }, 1000)
+    }, [apiV1, token, title])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const details = {
+            topic: 'conference',
+            title,
+            detail: null,
+        }
+
+        let response = await fetch(`${apiV1}/doctors/others-activity/`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(details),
+        })
+        if (response.ok) {
+            setFormOpen(false)
+            setTitle('')
+        }
+    }
 
     return (
         <>
@@ -44,17 +82,23 @@ export default function Activity() {
                     <div className={classes.Basic}>
                         <div>
                             <h2>
-                                <FontAwesomeIcon icon={faShield} /> Activitty at CME/Conference
+                                <FontAwesomeIcon icon={faShield} /> Activity at CME/Conference
                             </h2>
 
                             <div className={classes.list}>
                                 <ol>
-                                    <li>
-                                        Activity at Ranpgut Medical College on Covid-19
-                                        <span>
-                                            <FontAwesomeIcon icon={faEdit} />
-                                        </span>
-                                    </li>
+                                    {activities[1] &&
+                                        activities[1].map((activity, index) => (
+                                            <li key={index}>
+                                                {activity.title}
+                                                <span>
+                                                    <FontAwesomeIcon icon={faEdit} onClick={() => setIsOpen(index)} />
+                                                </span>
+                                                {isOpen === index && (
+                                                    <Update index={index} setIsOpen={setIsOpen} activity={activity} />
+                                                )}
+                                            </li>
+                                        ))}
                                 </ol>
                             </div>
                         </div>
@@ -63,7 +107,7 @@ export default function Activity() {
                     <div className={classes.Basic}>
                         <button onClick={() => setFormOpen(true)}>Add More</button>
                         {formOpen && (
-                            <form>
+                            <form onSubmit={(e) => handleSubmit(e)}>
                                 <div className={classes.formWrap}>
                                     <label>
                                         <span>
@@ -73,8 +117,8 @@ export default function Activity() {
                                         <input
                                             type="text"
                                             placeholder="Activity at Ranpgut Medical College on Covid-19"
-                                            value={position}
-                                            onChange={(e) => setPosition(e.target.value)}
+                                            value={title}
+                                            onChange={(e) => setTitle(e.target.value)}
                                             required
                                         />
                                     </label>

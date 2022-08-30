@@ -46,7 +46,7 @@ const DeleteChamber = ({ chamberId, msg, setMsg }) => {
                     <div className={classes.chamberForm}>
                         <div>
                             <form onSubmit={deleteChamber}>
-                                <div className={classes.formHeader}>Add new chamber</div>
+                                <div className={classes.formHeader}>Detele Chamber</div>
                                 <div className={classes.Button}>
                                     <button>Delete</button>
                                     <button className={classes.Close} onClick={popup}>

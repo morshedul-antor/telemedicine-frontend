@@ -44,7 +44,7 @@ const ProfileDetail = () => {
                 infoFunc()
                 setIsLoading(false)
             } catch (e) {}
-        }, 3000)
+        }, 1000)
     }, [apiV1, token, isLoading, userInfo?.id, degree, institute, speciality])
 
     const handleSubmit = async (e) => {
@@ -80,11 +80,9 @@ const ProfileDetail = () => {
             {isLoading ? (
                 <div className={classes.ProfileDetail}>
                     <div className={classes.Basic}>
-                        <SkeletonProfileDetail />
-                    </div>
-
-                    <div className={classes.Basic}>
-                        <SkeletonProfileDetail />
+                        <table className={classes.infoTable}>
+                            <SkeletonProfileDetail />
+                        </table>
                     </div>
                 </div>
             ) : (
