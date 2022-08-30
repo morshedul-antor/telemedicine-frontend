@@ -1,0 +1,100 @@
+.header {
+    position: relative;
+    color: var(--white);
+    border-radius: 10px 10px 0 0;
+    display: grid;
+    grid-template-columns: minmax(0, 70%) minmax(0, 30%);
+    min-height: 200px;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-image: linear-gradient(to top, var(--light-grey), transparent);
+    z-index: 10;
+}
+
+.header div {
+    position: relative;
+    z-index: 50;
+}
+
+.headLeftWrapper {
+    position: relative;
+    top: 70px;
+    left: 40px;
+}
+.headLeftWrapper > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.headLeftWrapper > h2 {
+    position: absolute;
+    margin: 0;
+    top: 10px;
+    left: 170px;
+    font-weight: 500;
+    color: var(--dark-grey);
+}
+.headLeftWrapper > p {
+    position: relative;
+    margin: 0;
+    top: 45px;
+    left: 170px;
+    font-size: 0.9em;
+    color: var(--dark-grey);
+}
+
+.profilePic > .Image {
+    position: absolute;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    border: 4px solid var(--white);
+    box-shadow: 0 3px 5px var(--grey2);
+    display: block;
+    margin: 0 auto;
+}
+
+.header > .Chamber {
+    color: var(--dark-grey);
+    line-height: 0.5;
+    font-weight: 500;
+}
+
+.header > .Chamber div {
+    bottom: -33%;
+}
+
+.header > .Chamber h2 svg {
+    font-size: 24px;
+    color: var(--green);
+}
+
+.header > .Chamber p {
+    margin-left: 30px;
+}
+
+.infoWrapper {
+    background: var(--white);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.infoWrapper > .Info {
+    padding: 10px;
+    width: 65%;
+}
+.infoWrapper > .Info div {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 100%;
+}

@@ -1,37 +1,69 @@
 .Snapshot {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 3fr));
+    grid-template-columns: repeat(3, minmax(0, 3fr));
     gap: 15px;
-    margin: 60px 20px 0 0;
-}
-.Snapshot > div {
-    padding: 5px 20px;
-    border-radius: 10px;
-    color: var(--white);
-    box-shadow: 5px 5px 10px var(--grey);
+    margin: 20px 0 0 0;
 }
 
-.Snapshot > div > p:nth-child(1) {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 10px 0;
-    transition: 200ms;
-}
-.Snapshot > div > p:nth-child(2),
-.Snapshot > div > p:nth-child(3) {
-    margin: 5px;
-    font-size: 14px;
+.Snapshot > div {
+    padding: 24px 0 0 0;
+    border-radius: 10px;
+    color: var(--dark-blue);
+    box-shadow: 5px 5px 10px var(--light);
+    font-size: 12px;
+    position: relative;
 }
 
 .Snapshot > div:nth-child(1) {
-    background-image: linear-gradient(to right, var(--dark-blue), var(--primary));
-}
-.Snapshot > div:nth-child(2) {
     background-image: linear-gradient(to right, var(--primary), var(--secondary));
 }
-.Snapshot > div:nth-child(3) {
-    background-image: linear-gradient(to right, var(--secondary), var(--grey));
+.Snapshot > div:nth-child(2) {
+    background-image: linear-gradient(to right, var(--secondary), var(--secondary2));
 }
-.Snapshot > div:nth-child(4) {
-    background-image: linear-gradient(to right, var(--grey), var(--grey2));
+.Snapshot > div:nth-child(3) {
+    background-image: linear-gradient(to right, var(--secondary2), var(--green));
+}
+
+.Snapshot > div > svg {
+    position: absolute;
+    font-size: 10px;
+    z-index: 100;
+    top: 7px;
+    right: 10px;
+    transform: rotate(45deg);
+    color: var(--white);
+}
+
+.Snapshot > div > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: var(--white);
+    padding: 2px 20px 10px 20px;
+    border-radius: 0 0 8px 8px;
+    position: relative;
+}
+
+.Snapshot > div > div > svg {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: var(--light-grey);
+    font-size: 44px;
+    opacity: 0.8;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.Snapshot > div > div > div > p:first-child {
+    font-size: 12px;
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+.Snapshot b {
+    font-size: 14px;
+    padding-left: 4px;
 }

@@ -1,32 +1,51 @@
 .Appointment {
-    background: var(--white);
     border-radius: 10px;
-    margin: 20px 20px 0 0;
-    box-shadow: 5px 5px 15px var(--grey2);
+    margin: 0 0 0 0;
+    text-align: center;
 }
 .head {
     display: grid;
-    grid-template-columns: minmax(0, 10%) minmax(0, 25%) minmax(0, 10%) minmax(0, 10%) minmax(0, 35%) minmax(0, 10%);
+    grid-template-columns: minmax(0, 5%) minmax(0, 25%) minmax(0, 10%) minmax(0, 15%) minmax(0, 30%) minmax(0, 10%) minmax(
+            0,
+            5%
+        );
     color: var(--white);
     background-image: linear-gradient(to right, var(--dark-blue), var(--primary), var(--secondary));
     border-radius: 10px 10px 0 0;
     font-size: 14px;
     font-weight: 600;
     padding: 0 15px;
-    margin: 40px 0 0 0;
+    margin: 20px 0 0 0;
 }
 .Appointment > .body {
     font-size: 12px;
     display: grid;
-    grid-template-columns: minmax(0, 10%) minmax(0, 25%) minmax(0, 10%) minmax(0, 10%) minmax(0, 35%) minmax(0, 10%);
-    padding: 0 15px;
+    grid-template-columns: minmax(0, 5%) minmax(0, 25%) minmax(0, 10%) minmax(0, 15%) minmax(0, 30%) minmax(0, 10%) minmax(
+            0,
+            5%
+        );
+    padding: 2px 15px;
+    margin-top: 6px;
+    background-color: var(--white);
+    box-shadow: 4px 6px 8px var(--light);
 }
+
 .Appointment > .body > p:nth-last-child(1) {
     color: var(--primary);
     cursor: pointer;
 }
+
+.Appointment > .body > p:nth-child(2):hover {
+    cursor: pointer;
+    color: var(--primary);
+    transition: 200ms;
+}
+
 .Appointment > .body:nth-child(odd) {
-    background: var(--light);
+    /* background: var(--light); */
+}
+.Appointment > .body:nth-child(even) {
+    background: var(--white);
 }
 .Appointment > .body:nth-last-child(1) {
     border-radius: 0 0 10px 10px;

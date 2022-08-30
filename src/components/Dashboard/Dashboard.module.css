@@ -1,13 +1,16 @@
 .Dashboard {
-    background: var(--light);
     display: grid;
     grid-template-columns: minmax(0, 20%) minmax(0, 80%);
-    gap: 20px;
     min-height: 100vh;
 }
-.header {
+
+.Dashboard .Content {
+    margin: 20px;
+}
+
+/* .header {
     position: relative;
-    /* background-image: linear-gradient(to bottom, var(--primary), var(--secondary)); */
+    background-image: linear-gradient(to bottom, var(--primary), var(--secondary));
     box-shadow: 1px 3px 10px var(--grey2);
     color: var(--white);
     border-radius: 10px;
@@ -68,4 +71,4 @@
 .header div:nth-child(2) p {
     margin: 0 0 0 5px;
     font-size: 14px;
-}
+} */

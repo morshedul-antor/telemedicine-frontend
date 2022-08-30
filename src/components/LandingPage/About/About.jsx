@@ -1,7 +1,7 @@
 import React from 'react'
 import CountUp from 'react-countup'
 import { Link } from 'react-router-dom'
-import a1 from '../../../assets/img/a2.png'
+import a1 from '../../../assets/img/a4.png'
 import docAll from '../../../assets/img/cds.png'
 import classes from './About.module.css'
 
@@ -12,13 +12,12 @@ export default function About() {
                 <div className={classes.box}>
                     <div className={classes.title}>
                         <p>Smart Doctor Solution</p>
-                        <span>Bringing The Future Of Healthcare</span>
+                        <span>One Stop Digital Solution For The Doctors</span>
                     </div>
                     <p>
-                        Smart Doctor Solution is a digital doctor solution platform that provides you with top-notch
-                        medical services in the comfort of your preferred area, redefines relationships, and helps
-                        direct your attention to what really matters to patients. It also provides to develop the
-                        network with doctors across the world.
+                        Smart Doctor solution offers Doctor Digital Profile, promotion, Patient appointment management,
+                        online & offline prescription, Patient history-medical record, health data analytics, clinical &
+                        medical education etc.
                     </p>
                     <div className={classes.buttonContainer}>
                         <Link to="/login">

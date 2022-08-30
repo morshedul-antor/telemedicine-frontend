@@ -4,21 +4,28 @@ import classes from './Appointment.module.css'
 
 const Appointment = () => {
     let arr = [
-        { no: 1, name: 'Sajidur Rahman', sex: 'male', age: 27, problem: 'fever for 5 days' },
-        { no: 2, name: 'Jhon Doe', sex: 'male', age: 26, problem: 'fever for 7 days' },
-        { no: 3, name: 'Bruce Wayne', sex: 'male', age: 28, problem: 'fever for 5 days' },
-        { no: 4, name: 'Jhon Doe', sex: 'male', age: 26, problem: 'fever for 7 days' },
-        { no: 5, name: 'Bruce Wayne', sex: 'male', age: 28, problem: 'fever for 5 days' },
+        {
+            no: 1,
+            name: 'Sajidur Rahman',
+            sex: 'male',
+            age: 27,
+            problem: 'fever for 5 days',
+            time: '10:00 AM',
+        },
+        { no: 2, name: 'Jhon Doe', sex: 'male', age: 26, problem: 'fever for 7 days', time: '10:30 AM' },
+        { no: 3, name: 'Bruce Wayne', sex: 'male', age: 28, problem: 'fever for 5 days', time: '11:00 AM' },
+        { no: 4, name: 'Jhon Doe', sex: 'male', age: 26, problem: 'fever for 7 days', time: '12:00 PM' },
     ]
     return (
         <div className={classes.Appointment}>
             <div className={classes.head}>
-                <p>No.</p>
-                <p>Name</p>
+                <p>Serial</p>
+                <p>Patient Name</p>
                 <p>Sex</p>
                 <p>Age</p>
-                <p>Basic problem</p>
-                <p>profile</p>
+                <p>Cause of Consultation</p>
+                <p>Time</p>
+                <p>Profile</p>
             </div>
             {arr.map((v, i) => {
                 return (
@@ -28,6 +35,7 @@ const Appointment = () => {
                         <p>{v.sex}</p>
                         <p>{v.age}</p>
                         <p>{v.problem}</p>
+                        <p>{v.time}</p>
                         <p>
                             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                         </p>
