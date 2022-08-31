@@ -299,7 +299,7 @@ const ProfileHeader = () => {
                             <div>
                                 <p className={classes.Title}>eVisitingCard</p>
                                 <span className={classes.Info}>
-                                    <Link to="/e-card">Download</Link>
+                                    <Link to={`/e-card/${stateUser.info?.id + 1000}`}>Download</Link>
                                 </span>
                             </div>
                         </div>

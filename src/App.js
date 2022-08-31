@@ -31,7 +31,7 @@ const App = () => {
                             <ProtectedRoute path="/schedule" component={SchedulePage} />
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />
-                            <Route path="/e-card" component={EcardPage} />
+                            <Route path="/e-card/:id" component={EcardPage} />
                         </Switch>
                     </Router>
                 </UserInfo.Provider>
