@@ -39,7 +39,7 @@
     top: 10px;
     left: 170px;
     font-weight: 500;
-    color: var(--dark-grey);
+    color: var(--dark);
 }
 .headLeftWrapper > p {
     position: relative;
@@ -47,6 +47,12 @@
     top: 45px;
     left: 170px;
     font-size: 0.9em;
+    color: var(--dark);
+    padding-right: 150px;
+}
+
+.headLeftWrapper > p:last-child {
+    font-weight: 500;
     color: var(--dark-grey);
 }
 
@@ -70,16 +76,23 @@
 }
 
 .header > .Chamber div {
-    bottom: -33%;
+    bottom: -30%;
+}
+
+.header > .Chamber h2 {
+    font-size: 20px;
 }
 
 .header > .Chamber h2 svg {
     font-size: 24px;
-    color: var(--green);
+    padding-right: 4px;
+    color: var(--primary);
 }
 
 .header > .Chamber p {
-    margin-left: 30px;
+    margin-left: 36px;
+    font-size: 16px;
+    margin-top: -2px;
 }
 
 .infoWrapper {

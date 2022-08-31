@@ -28,7 +28,7 @@
     padding: 20px 60px 30px 20px;
     border-radius: 8px;
     box-shadow: 4px 6px 8px var(--light);
-    border: 1px solid var(--light);
+    border: 1px solid var(--light-grey);
     display: flex;
     gap: 20px;
     width: 460px;
