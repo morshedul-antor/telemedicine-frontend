@@ -2,6 +2,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useContext } from 'react'
 import { Auth } from '../../../../allContext'
+import districts from '../../../../utils/districts.json'
 import classes from './EditChamber.module.css'
 
 const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
@@ -11,7 +12,6 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
     }
 
     const { stateAuth } = useContext(Auth)
-
     const chamberInfo = chamber
 
     const [name, setName] = useState(chamberInfo.name)
@@ -42,7 +42,7 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
             }),
         })
         if (editFetch.ok) {
-            setMsg([...msg, 'Chamber modified'])
+            setMsg([...msg, 'Chamber Modified'])
             setEditPrompt(!editPrompt)
         }
     }
@@ -54,48 +54,6 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
                     <FontAwesomeIcon icon={faEdit} />
                 </button>
             </div>
-            {/* {editPrompt && (
-                <div className={classes.formPopup}>
-                    <div onClick={editPrompt}></div>
-                    <div className={classes.chamberForm}>
-                        <h2>Edit Chamber</h2>
-                        <div className={classes.content}>
-                            <form onSubmit={editChamber}>
-                                <label htmlFor="name">Name</label>
-                                <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-
-                                <label htmlFor="detail">Detail</label>
-                                <input
-                                    id="detail"
-                                    type="text"
-                                    value={detail}
-                                    onChange={(e) => setDetail(e.target.value)}
-                                />
-
-                                <label htmlFor="detail">District</label>
-                                <input
-                                    id="detail"
-                                    type="text"
-                                    value={district}
-                                    onChange={(e) => setDistrict(e.target.value)}
-                                />
-
-                                <label htmlFor="detail">Detail</label>
-                                <input
-                                    id="detail"
-                                    type="text"
-                                    value={detail_address}
-                                    onChange={(e) => setDetailAddress(e.target.value)}
-                                />
-                                <button>Edit</button>
-                                <button className={classes.Close} onClick={popup}>
-                                    Discard
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            )} */}
             {editPrompt && (
                 <div className={classes.formPopup}>
                     <div onClick={editPrompt}></div>
@@ -123,7 +81,12 @@ const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {
                                 </label>
                                 <label>
                                     District
-                                    <input type="text" value={district} onChange={(e) => setDistrict(e.target.value)} />
+                                    <select value={district} onChange={(e) => setDistrict(e.target.value)}>
+                                        <option value="">Select</option>
+                                        {districts.data.map((item) => (
+                                            <option>{`${item.district} - ${item.districtbn}`}</option>
+                                        ))}
+                                    </select>
                                 </label>
                                 <label>
                                     Detail Address
