@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import { Auth, UserInfo } from '../../../../allContext'
+import { Auth } from '../../../../allContext'
 import { refreshPage } from '../../../../utils/refreshPage'
 import classes from './QualificationEdit.module.css'
 
@@ -9,8 +9,6 @@ const QualificationEdit = () => {
     const [msg, setMsg] = useState('')
 
     const { stateAuth } = useContext(Auth)
-    const { stateUser } = useContext(UserInfo)
-    const userDetail = stateUser.info
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
@@ -37,7 +35,7 @@ const QualificationEdit = () => {
     const submit = async (e) => {
         e.preventDefault()
 
-        let submitFetch = await fetch(`${apiV1}/doctors/qualifications/1`, {
+        let submitFetch = await fetch(`${apiV1}/doctors/qualifications/${qualifications?.id}`, {
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',

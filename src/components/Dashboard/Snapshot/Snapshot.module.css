@@ -12,6 +12,7 @@
     box-shadow: 5px 5px 10px var(--light);
     font-size: 12px;
     position: relative;
+    height: 60px;
 }
 
 .Snapshot > div:nth-child(1) {
@@ -67,7 +68,12 @@
     font-weight: 500;
 }
 
+.Snapshot div > div:nth-child(2) > p {
+    text-align: center;
+}
+
 .Snapshot b {
     font-size: 16px;
     padding-left: 4px;
+    color: var(--dark);
 }
