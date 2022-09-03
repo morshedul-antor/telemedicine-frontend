@@ -144,7 +144,7 @@ const Register = () => {
                                     <span></span>
                                 </div>
                                 <div>
-                                    <input type="text" onChange={(e) => setBmdc(e.target.value)} required />
+                                    <input type="number" onChange={(e) => setBmdc(e.target.value)} required />
                                     <label>
                                         <span>BMDC number</span>
                                     </label>
