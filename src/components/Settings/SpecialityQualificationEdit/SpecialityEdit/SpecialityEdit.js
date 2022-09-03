@@ -37,7 +37,7 @@ const SpecialityEdit = () => {
     const submit = async (e) => {
         e.preventDefault()
 
-        let submitFetch = await fetch(`${apiV1}/doctors/specialities/1`, {
+        let submitFetch = await fetch(`${apiV1}/doctors/specialities/${specialities?.id}`, {
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
