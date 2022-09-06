@@ -1,0 +1,53 @@
+.wrapper {
+    padding: 20px;
+}
+
+.wrapper > div:first-child {
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.wrapper > div > p {
+    color: var(--dark);
+    font-size: 12px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.wrapper > div > p > svg {
+    font-size: 14px;
+    padding-right: 6px;
+}
+
+.wrapper > div > div {
+    margin: 0 auto;
+}
+
+.wrapper > div > select {
+    display: block;
+    margin: 0 auto;
+    padding: 6px 20px;
+    width: 420px;
+    border: none;
+    background-image: linear-gradient(#93a7c5, #21527d);
+    border-radius: 4px;
+    outline: none;
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.wrapper > div > select > option {
+    color: var(--dark);
+    background-color: var(--white);
+    border: none;
+}
+
+.wrapper .grid {
+    margin-top: 10px;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 10px;
+    padding-bottom: 30px;
+}

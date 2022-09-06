@@ -1,0 +1,150 @@
+.wrapper {
+    margin-top: 60px;
+}
+
+.wrapper > p {
+    color: var(--dark);
+    font-size: 14px;
+    margin-bottom: -10px;
+    position: relative;
+}
+
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--grey2);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.PersonalHabits p {
+    margin: 6px;
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.PersonalHabits {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 10px 40px;
+    margin: 20px 0;
+}
+
+.PersonalHabits .labelAlign {
+    margin-left: 30%;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    margin: 5px 0 20px 5px;
+}
+.switch > input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.switch > span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--grey2);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 300ms;
+}
+.switch > span::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 3px;
+    left: 6px;
+    border-radius: 50px;
+    background: var(--white);
+    transition: 300ms;
+}
+.switch > input:checked + span::before {
+    transform: translateX(24px);
+}
+.switch > input:checked + span {
+    background: var(--red);
+}
+
+@media (max-width: 420px) {
+    .PersonalHabits {
+        background: var(--white);
+        border-radius: 10px;
+        padding: 20px 14px;
+        margin: 20px 0;
+    }
+    .PersonalHabits h3 {
+        color: var(--dark-blue);
+        font-size: 1em;
+        margin-bottom: 16px;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .PersonalHabits h4 {
+        margin: 5px;
+        color: var(--dark-blue);
+        font-size: 0.8em;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 22px;
+        margin: 5px 0 20px 5px;
+    }
+    .labelAlign {
+        margin-left: 30%;
+    }
+    .switch > input {
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+    .switch > span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: var(--grey2);
+        cursor: pointer;
+        border-radius: 50px;
+        transition: 300ms;
+    }
+    .switch > span::before {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        top: 3px;
+        left: 4px;
+        border-radius: 50px;
+        background: var(--white);
+        transition: 300ms;
+    }
+    .switch > input:checked + span::before {
+        transform: translateX(19px);
+    }
+    .switch > input:checked + span {
+        background: var(--red);
+    }
+}
