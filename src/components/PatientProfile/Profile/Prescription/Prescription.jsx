@@ -1,4 +1,4 @@
-import { faEye, faLaptopMedical, faList } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faList } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classes from './Prescription.module.css'
 
