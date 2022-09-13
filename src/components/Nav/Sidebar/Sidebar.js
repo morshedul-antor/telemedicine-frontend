@@ -21,6 +21,7 @@ const Sidebar = () => {
     let location = useLocation()
 
     const apiV1 = process.env.REACT_APP_API_V1
+    const ep = process.env.REACT_APP_EP
 
     const logout = (e) => {
         e.preventDefault()
@@ -39,7 +40,7 @@ const Sidebar = () => {
                 </Link>
             </div>
             <div className={classes.ep}>
-                <a rel="noreferrer" target={'_blank'} href={`${apiV1}/auth/${stateAuth.token}`}>
+                <a rel="noreferrer" target={'_blank'} href={`${ep}/auth/${stateAuth.token}`}>
                     E-Prescription
                 </a>
             </div>
