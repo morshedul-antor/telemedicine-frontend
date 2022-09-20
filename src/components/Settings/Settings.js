@@ -28,11 +28,6 @@ const Settings = () => {
                             onClick={(e) => setMenu(2)}>
                             Fees & Experience
                         </span>
-                        {/* <span
-                            className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(3)}>
-                            Professional Info
-                        </span> */}
                         <span
                             className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                             onClick={(e) => setMenu(4)}>

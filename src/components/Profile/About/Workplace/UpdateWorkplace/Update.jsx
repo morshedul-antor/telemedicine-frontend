@@ -20,6 +20,8 @@ export default function Update({ setIsOpen, index, workplace }) {
             ...workplace,
             institute,
             position,
+            start_date: start,
+            end_date: end,
         }
 
         let response = await fetch(`${apiV1}/doctors/workplace/${workplace.id}`, {
@@ -77,7 +79,7 @@ export default function Update({ setIsOpen, index, workplace }) {
                             </label>
                             <label>
                                 End Date
-                                <input type="date" value={end} onChange={(e) => setEnd(e.target.value)} required />
+                                <input type="date" value={end} onChange={(e) => setEnd(e.target.value)} />
                             </label>
                         </div>
                     </div>

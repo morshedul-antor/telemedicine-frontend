@@ -64,6 +64,17 @@ const ExperiencenFees = () => {
                 <div className={classes.formWrap}>
                     <div className={classes.formGrid}>
                         <label>
+                            Online Consultation Fee
+                            <input
+                                type="text"
+                                value={online_fees}
+                                placeholder="100"
+                                onChange={(e) => setOnlineFees(e.target.value)}
+                                minLength={0}
+                                required
+                            />
+                        </label>
+                        <label>
                             Year of experience
                             <input
                                 type="number"
@@ -73,21 +84,13 @@ const ExperiencenFees = () => {
                                 required
                             />
                         </label>
-                        <label>
-                            Online Consultation Fee
-                            <input
-                                type="text"
-                                value={online_fees}
-                                onChange={(e) => setOnlineFees(e.target.value)}
-                                minLength={0}
-                                required
-                            />
-                        </label>
-                        <label>
-                            BMDC
-                            <label className={classes.bmdcInput}>{bmdc}</label>
-                        </label>
                     </div>
+                    <label>
+                        BMDC
+                        <label className={classes.bmdcInput}>
+                            {bmdc} <span>.</span>
+                        </label>
+                    </label>
                 </div>
                 <button className={classes.Button}>Update</button>
                 <div className={classes.alertMessage}>{msg && <span>{msg}</span>}</div>

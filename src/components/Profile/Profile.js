@@ -3,7 +3,6 @@ import { Sidebar } from '../Nav'
 import ProfileHeader from '../ProfileHeader/ProfileHeader'
 import About from './About/About'
 import Chambers from './Chambers/Chambers'
-import ProfessionalInfo from './ProfessionalInfo/ProfessionalInfo'
 import classes from './Profile.module.css'
 
 const Profile = () => {

@@ -1,7 +1,6 @@
 import { faCog, faUser, faSignOutAlt, faTableColumns, faClock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
-import env from 'react-dotenv'
 import { Link, useLocation } from 'react-router-dom'
 import { Auth, UserInfo } from '../../../allContext'
 import img from '../.././../assets/img/logo.svg'
@@ -21,8 +20,13 @@ const Sidebar = () => {
 
     let location = useLocation()
 
+<<<<<<< HEAD
     let epApi = process.env.REACT_APP_EP_SITE
     console.log(epApi)
+=======
+    const apiV1 = process.env.REACT_APP_API_V1
+    const ep = process.env.REACT_APP_EP
+>>>>>>> 5bfb6c5b986953abddc263f3ab8b886ba66b271b
 
     const logout = (e) => {
         e.preventDefault()
@@ -41,7 +45,7 @@ const Sidebar = () => {
                 </Link>
             </div>
             <div className={classes.ep}>
-                <a rel="noreferrer" target={'_blank'} href={`${epApi}/auth/${stateAuth.token}`}>
+                <a rel="noreferrer" target={'_blank'} href={`${ep}/auth/${stateAuth.token}`}>
                     E-Prescription
                 </a>
             </div>

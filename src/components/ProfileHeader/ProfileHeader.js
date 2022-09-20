@@ -113,7 +113,7 @@ const ProfileHeader = () => {
                 activeChamberFunc()
                 setIsLoading(false)
             } catch (e) {}
-        }, 3000)
+        }, 1000)
     }, [apiV1, token, isLoading, msg])
 
     const profileImageUrl = `${apiV1}/images/profile/` + profileImage
@@ -265,7 +265,7 @@ const ProfileHeader = () => {
                                     &#160;
                                     {activeChamber?.name}
                                 </h2>
-                                <p>{activeChamber?.detail}</p>
+                                <p>{activeChamber?.detail_address}</p>
                             </div>
                         </div>
                     </div>
@@ -297,9 +297,9 @@ const ProfileHeader = () => {
                                 </span>
                             </div>
                             <div>
-                                <p className={classes.Title}>eVisitingCard</p>
+                                <p className={classes.Title}>e-VisitingCard</p>
                                 <span className={classes.Info}>
-                                    <Link to="/e-card">Download</Link>
+                                    <Link to={`/e-card/${stateUser.info?.id + 1000}`}>Download</Link>
                                 </span>
                             </div>
                         </div>

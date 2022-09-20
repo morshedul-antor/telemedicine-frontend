@@ -42,7 +42,7 @@ export default function Membership() {
                 infoFunc()
                 setIsLoading(false)
             } catch (e) {}
-        }, 2000)
+        }, 1000)
     }, [apiV1, token, name, position])
 
     const handleSubmit = async (e) => {

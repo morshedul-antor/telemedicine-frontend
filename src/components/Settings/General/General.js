@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
 import { UserInfo, Auth } from '../../../allContext'
+import { refreshPage } from '../../../utils/refreshPage'
 import classes from './General.module.css'
 
 const General = () => {
@@ -38,9 +39,10 @@ const General = () => {
         })
 
         if (updateFetch.ok) {
-            setMsg('User info update. Please logout and login again')
+            setMsg('User Info Update. Please Logout and Login Again')
+            refreshPage()
         } else {
-            setMsg('Something went wrong.')
+            setMsg('Something Went Wrong.')
         }
     }
 

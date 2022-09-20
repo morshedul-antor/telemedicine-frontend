@@ -1,23 +1,71 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { Auth } from '../../../../allContext'
+import { refreshPage } from '../../../../utils/refreshPage'
 import classes from './QualificationEdit.module.css'
 
 const QualificationEdit = () => {
-    let qualifications = ['MBBS', 'FRCS']
+    const [qualifications, setQualifications] = useState([])
+    const [qualification, setQualification] = useState([])
     const [msg, setMsg] = useState('')
-    const [qualification, setQualification] = useState('MBBS, FCPS, FRCS')
+
+    const { stateAuth } = useContext(Auth)
+
+    const apiV1 = process.env.REACT_APP_API_V1
+    const token = stateAuth.token
+
+    useEffect(() => {
+        let infoFunc = async () => {
+            let infoFetch = await fetch(`${apiV1}/doctors/qualifications`, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+            let infoJson = await infoFetch.json()
+            if (infoFetch.ok) {
+                setQualifications(infoJson)
+                setQualification(infoJson)
+            }
+        }
+        return infoFunc()
+    }, [apiV1, token])
+
+    const submit = async (e) => {
+        e.preventDefault()
+
+        let submitFetch = await fetch(`${apiV1}/doctors/qualifications/${qualifications?.id}`, {
+            headers: {
+                Accept: 'appllication/json',
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            method: 'PUT',
+            body: JSON.stringify({
+                ...qualifications,
+            }),
+        })
+
+        if (submitFetch.ok) {
+            setMsg('Update Succesfully')
+            refreshPage()
+        } else {
+            setMsg('Update Failed')
+        }
+    }
+
     return (
         <div className={classes.Qualification}>
-            <form>
+            <form onSubmit={(e) => submit(e)}>
                 <div className={classes.sectionHeader}>Qualifications</div>
                 <div className={classes.formWrap}>
                     <label>
-                        Qualification
+                        Input Qualification
                         <input
-                            id="speciality"
                             type="text"
-                            value={qualification}
-                            placeholder="e.g: Cardiologist"
-                            onChange={(e) => setQualification(e.target.value)}
+                            value={qualifications?.qualification}
+                            onChange={(e) => setQualifications({ ...qualifications, qualification: e.target.value })}
                         />
                     </label>
                 </div>
@@ -26,17 +74,8 @@ const QualificationEdit = () => {
                 <div className={classes.alertMessage}>{msg && <span>{msg}</span>}</div>
             </form>
 
-            <>
-                <div className={classes.sectionHeader}>Your Qualifications</div>
-                {/* {qualifications.map((qualification, i) => {
-                    return (
-                        <>
-                            <div className={classes.Badge}>{qualification}</div>
-                        </>
-                    )
-                })} */}
-                <div className={classes.Badge}>MBBS, FCPS, FRCS</div>
-            </>
+            <div className={classes.sectionHeader}>Your Qualifications</div>
+            <div className={classes.Badge}>{qualification?.qualification}</div>
         </div>
     )
 }

@@ -44,7 +44,7 @@ export default function Training() {
                 infoFunc()
                 setIsLoading(false)
             } catch (e) {}
-        }, 2000)
+        }, 1000)
     }, [apiV1, token, topic, place])
 
     const handleSubmit = async (e) => {

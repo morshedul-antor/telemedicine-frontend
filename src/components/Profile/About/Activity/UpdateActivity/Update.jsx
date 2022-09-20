@@ -3,11 +3,8 @@ import { Auth } from '../../../../../allContext'
 import { refreshPage } from '../../../../../utils/refreshPage'
 import classes from './Update.module.css'
 
-export default function Update({ setIsOpen, index, workplace }) {
-    const [position, setPosition] = useState(workplace.position)
-    const [institute, setInstitute] = useState(workplace.institute)
-    const [start, setStart] = useState(workplace.start_date)
-    const [end, setEnd] = useState(workplace.end_date)
+export default function Update({ setIsOpen, index, activity }) {
+    const [title, setTitle] = useState(activity.title)
 
     const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
@@ -17,12 +14,11 @@ export default function Update({ setIsOpen, index, workplace }) {
         e.preventDefault()
 
         const details = {
-            ...workplace,
-            institute,
-            position,
+            ...activity,
+            title,
         }
 
-        let response = await fetch(`${apiV1}/doctors/workplace/${workplace.id}`, {
+        let response = await fetch(`${apiV1}/doctors/others-activity/${activity.id}`, {
             method: 'PATCH',
             headers: {
                 Accept: 'application/json',
@@ -49,37 +45,10 @@ export default function Update({ setIsOpen, index, workplace }) {
                 <form onSubmit={(e) => handleUpdate(e)}>
                     <div className={classes.section}>Update Professional Experience</div>
                     <div className={classes.innerWrap}>
-                        <div className={classes.formGrid}>
-                            <label>
-                                Employment Place
-                                <input
-                                    type="text"
-                                    placeholder="Cardiologist"
-                                    value={institute}
-                                    onChange={(e) => setInstitute(e.target.value)}
-                                    required
-                                />
-                            </label>
-                            <label>
-                                Position
-                                <input
-                                    type="text"
-                                    placeholder="MBBS"
-                                    value={position}
-                                    onChange={(e) => setPosition(e.target.value)}
-                                    required
-                                />
-                            </label>
-
-                            <label>
-                                Start Date
-                                <input type="date" value={start} onChange={(e) => setStart(e.target.value)} required />
-                            </label>
-                            <label>
-                                End Date
-                                <input type="date" value={end} onChange={(e) => setEnd(e.target.value)} required />
-                            </label>
-                        </div>
+                        <label>
+                            Activity Name
+                            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+                        </label>
                     </div>
                     <button className={classes.button} type="submit">
                         Submit

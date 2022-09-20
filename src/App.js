@@ -10,6 +10,7 @@ import {
     HomePage,
     SchedulePage,
     EcardPage,
+    PatientProfilePage,
 } from './pages/index'
 import { authReducer, authState, userReducer, userState } from './reducer'
 import ProtectedRoute from './routes/ProtectedRoute'
@@ -29,9 +30,10 @@ const App = () => {
                             <ProtectedRoute path="/profile" component={ProfilePage} />
                             <ProtectedRoute path="/settings" component={SettingsPage} />
                             <ProtectedRoute path="/schedule" component={SchedulePage} />
+                            <ProtectedRoute path="/patient/:id" component={PatientProfilePage} />
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />
-                            <Route path="/e-card" component={EcardPage} />
+                            <Route path="/e-card/:id" component={EcardPage} />
                         </Switch>
                     </Router>
                 </UserInfo.Provider>

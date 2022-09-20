@@ -1,0 +1,95 @@
+.summery {
+    position: relative;
+}
+
+.summery > img {
+    position: absolute;
+    width: 100%;
+    height: 124px;
+    object-fit: cover;
+    opacity: 0.2;
+}
+
+.gridBox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.gridBox > div {
+    background: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: 250ms;
+}
+
+.gridBox > div:hover {
+    box-shadow: 6px 10px 20px var(--light);
+    transition: 250ms;
+}
+
+.gridBox .box {
+    background: var(--white);
+    box-shadow: 4px 6px 8px var(--light-low);
+    border: 1px solid var(--light);
+    padding: 0 18px;
+}
+
+.gridBox > .box > p {
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.gridBox > .box > p > span {
+    color: var(--dark);
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-top: -14px;
+    padding-bottom: 4px;
+}
+
+.gridBox .box > p > svg {
+    position: absolute;
+    opacity: 0.09;
+    font-size: 3.5em;
+    bottom: 8px;
+    right: 0;
+    color: var(--grey);
+}
+
+.gridBox > div > p > span {
+    font-weight: 300;
+    font-size: 14px;
+    display: block;
+}
+
+.gridBox > div > p:nth-child(2) {
+    text-align: center;
+    font-size: 1.4em;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.gridBox > div > p:nth-child(3) {
+    margin: 5px 0 40px 0;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.gridBox > div:nth-child(1) > svg {
+    color: var(--red);
+}
+
+.gridBox > div:nth-child(2) > svg {
+    color: var(--green);
+}
+
+.gridBox > div:nth-child(3) > svg {
+    color: var(--red);
+}

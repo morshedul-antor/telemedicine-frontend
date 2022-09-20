@@ -1,0 +1,53 @@
+.prescription {
+    padding: 20px 20px;
+}
+
+.prescription > p {
+    font-size: 14px;
+    color: var(--dark);
+    margin-top: 6px;
+}
+
+.infoTable {
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--dark-grey);
+    font-size: 14px;
+}
+
+.infoTable td,
+.infoTable th {
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid var(--light);
+    text-align: center;
+    font-size: 12px;
+}
+
+.infoTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: var(--primary);
+    background-color: var(--white);
+    font-size: 14px;
+}
+
+.infoTable td:last-child {
+    text-align: center;
+    font-size: 12px;
+}
+
+.infoTable td:last-child > svg:first-child {
+    color: var(--secondary);
+}
+
+.infoTable td:last-child > svg:first-child:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.infoTable tr:nth-child(odd) {
+    background-color: var(--light-low);
+}

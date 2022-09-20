@@ -42,7 +42,7 @@ const Snapshot = () => {
                         </p>
                     </div>
                     <div>
-                        <p>Compare Last Month</p>
+                        <p>Compare with Last Month</p>
                         <p>
                             <b>+50</b>
                         </p>
@@ -65,7 +65,7 @@ const Snapshot = () => {
                         </p>
                     </div>
                     <div>
-                        <p>Compare Last Year</p>
+                        <p>Compare with Last Year</p>
                         <p>
                             <b>+122</b>
                         </p>
