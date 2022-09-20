@@ -20,13 +20,8 @@ const Sidebar = () => {
 
     let location = useLocation()
 
-<<<<<<< HEAD
-    let epApi = process.env.REACT_APP_EP_SITE
-    console.log(epApi)
-=======
     const apiV1 = process.env.REACT_APP_API_V1
-    const ep = process.env.REACT_APP_EP
->>>>>>> 5bfb6c5b986953abddc263f3ab8b886ba66b271b
+    const ep = process.env.REACT_APP_EP_SITE
 
     const logout = (e) => {
         e.preventDefault()
