@@ -31,7 +31,7 @@
     box-shadow: 4px 6px 8px var(--light);
 }
 
-.Appointment > .body > p:nth-last-child(1) {
+.Appointment > .body > p:nth-last-child(1) > a > svg {
     color: var(--primary);
     cursor: pointer;
 }

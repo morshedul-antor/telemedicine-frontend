@@ -1,5 +1,6 @@
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 import classes from './Appointment.module.css'
 
 const Appointment = () => {
@@ -7,7 +8,7 @@ const Appointment = () => {
         {
             no: 1,
             name: 'Sajidur Rahman',
-            sex: 'male',
+            sex: 'Male',
             age: 27,
             problem: 'fever for 5 days',
             time: '10:00 AM',
@@ -37,7 +38,9 @@ const Appointment = () => {
                         <p>{v.problem}</p>
                         <p>{v.time}</p>
                         <p>
-                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                            <Link to="/patient/51">
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                            </Link>
                         </p>
                     </div>
                 )
