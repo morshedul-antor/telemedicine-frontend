@@ -1,11 +1,31 @@
-.prescription {
+.eprescription {
     padding: 20px 20px;
 }
 
-.prescription > p {
+.eprescription > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eprescription > div > p {
     font-size: 14px;
     color: var(--dark);
     margin-top: 6px;
+}
+
+.eprescription > div > button {
+    border: none;
+    padding: 8px 14px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 14px;
+    border-radius: 2px;
+}
+.eprescription > div > button:hover {
+    opacity: 0.9;
+    transition: 200ms;
+    cursor: pointer;
 }
 
 .infoTable {

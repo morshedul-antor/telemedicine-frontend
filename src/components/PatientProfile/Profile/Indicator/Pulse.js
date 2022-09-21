@@ -2,56 +2,28 @@ import { useContext, useState, useEffect } from 'react'
 import { Auth } from '../../../../allContext'
 import { toMonthNameShort } from '../../../../utils/date'
 import { LineChart } from '../../../Chart'
-import { Number } from './index'
 
-const Pulse = () => {
+const Pulse = ({ patientId }) => {
     const { stateAuth } = useContext(Auth)
-
-    const [pulse, setPulse] = useState()
     const [dataPulse, setDataPulse] = useState([])
 
     const apiV1 = process.env.REACT_APP_API_V1
-
     let token = stateAuth.token
-
-    const submit = async (e) => {
-        e.preventDefault()
-
-        let pulseFetch = await fetch(`${apiV1}/patient/indicators`, {
-            headers: {
-                Accept: 'appllication/json',
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-            },
-            dataType: 'json',
-            method: 'POST',
-            body: JSON.stringify({
-                key: 'pulse',
-                unit: 'rate/minute',
-                slot_int1: pulse,
-            }),
-        })
-
-        // let pulseJson = await pulseFetch.json()
-
-        if (pulseFetch.ok) {
-            setPulse(0)
-        }
-    }
 
     useEffect(() => {
         let pulseFunc = async () => {
-            let pulseFetch = await fetch(`${apiV1}/patient/indicators/pulse`, {
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                method: 'GET',
-            })
+            let pulseFetch = await fetch(
+                `${apiV1}/doctor/patient/patient/indicator/pulse/${patientId}?skip=0&limit=10`,
+                {
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            )
 
             let pulseJson = await pulseFetch.json()
-
             if (pulseFetch.ok) {
                 setDataPulse(pulseJson)
             }
@@ -60,7 +32,7 @@ const Pulse = () => {
         try {
             pulseFunc()
         } catch (e) {}
-    }, [apiV1, token, pulse])
+    }, [apiV1, token, patientId])
 
     let data = {
         labels: [

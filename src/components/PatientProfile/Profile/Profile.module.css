@@ -1,8 +1,22 @@
+.wrapper > a > img {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    top: 20px;
+    left: 26px;
+    transition: 300ms;
+}
+
+.wrapper > a > img:hover {
+    transform: scale(1.1);
+    transition: 300ms;
+}
+
 .profile {
     display: grid;
     grid-template-columns: 2fr 4fr;
     grid-gap: 0 30px;
-    margin: 3em 8em;
+    margin: 2.8em 10em;
 }
 
 .info,
@@ -19,6 +33,7 @@
     align-items: center;
     padding: 30px 20px;
     position: relative;
+    height: 460px;
 }
 
 .info > img {
@@ -65,7 +80,7 @@
     border-radius: 10px;
     font-weight: 500;
     font-size: 14px;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-bottom: 0px;
 }
 

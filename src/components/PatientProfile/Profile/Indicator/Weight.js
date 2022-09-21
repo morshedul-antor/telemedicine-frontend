@@ -2,52 +2,28 @@ import { useContext, useState, useEffect } from 'react'
 import { Auth } from '../../../../allContext'
 import { toMonthNameShort } from '../../../../utils/date'
 import { LineChart } from '../../../Chart'
-import { Number } from './index'
 
-const Weight = () => {
-    const [weight, setWeight] = useState()
+const Weight = ({ patientId }) => {
+    const { stateAuth } = useContext(Auth)
     const [dataWeight, setDataWeight] = useState([])
 
-    const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
     let token = stateAuth.token
 
-    const submit = async (e) => {
-        e.preventDefault()
-
-        let rbsFetch = await fetch(`${apiV1}/patient/indicators`, {
-            headers: {
-                Accept: 'appllication/json',
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-            },
-            dataType: 'json',
-            method: 'POST',
-            body: JSON.stringify({
-                key: 'weight',
-                unit: 'kg',
-                slot_flt4: weight,
-            }),
-        })
-
-        if (rbsFetch.ok) {
-            setWeight(0)
-        }
-    }
-
     useEffect(() => {
         let weightFunc = async () => {
-            let weightFetch = await fetch(`${apiV1}/patient/indicators/weight`, {
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                method: 'GET',
-            })
+            let weightFetch = await fetch(
+                `${apiV1}/doctor/patient/patient/indicator/weight/${patientId}?skip=0&limit=10`,
+                {
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            )
 
             let weightJson = await weightFetch.json()
-
             if (weightFetch.ok) {
                 setDataWeight(weightJson)
             }
@@ -56,7 +32,7 @@ const Weight = () => {
         try {
             weightFunc()
         } catch (e) {}
-    }, [apiV1, token, weight])
+    }, [apiV1, token, patientId])
 
     let data = {
         labels: [

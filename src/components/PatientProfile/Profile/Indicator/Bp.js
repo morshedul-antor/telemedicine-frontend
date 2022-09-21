@@ -2,57 +2,25 @@ import { useContext, useState, useEffect } from 'react'
 import { Auth } from '../../../../allContext'
 import { toMonthNameShort } from '../../../../utils/date'
 import { LineChart } from '../../../Chart'
-import { DoubleNumber } from './index'
 
-const Bp = () => {
-    const [dataBp, setDataBp] = useState([])
-    const [high, setHigh] = useState(null)
-    const [low, setLow] = useState(null)
-
+const Bp = ({ patientId }) => {
     const { stateAuth } = useContext(Auth)
+    const [dataBp, setDataBp] = useState([])
+
     const apiV1 = process.env.REACT_APP_API_V1
     let token = stateAuth.token
 
-    const submit = async (e) => {
-        e.preventDefault()
-
-        if (high !== null || low !== null) {
-            let bpFetch = await fetch(`${apiV1}/patient/indicators`, {
-                headers: {
-                    Accept: 'appllication/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                dataType: 'json',
-                method: 'POST',
-                body: JSON.stringify({
-                    key: 'bp',
-                    unit: 'mmHg',
-                    slot_int1: high,
-                    slot_int2: low,
-                }),
-            })
-
-            if (bpFetch.ok) {
-                setHigh(0)
-                setLow(0)
-            }
-        }
-    }
-
     useEffect(() => {
         let bpFunc = async () => {
-            let bpFetch = await fetch(`${apiV1}/patient/indicators/bp`, {
+            let bpFetch = await fetch(`${apiV1}/doctor/patient/patient/indicator/bp/${patientId}?skip=0&limit=10`, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`,
                 },
-                method: 'GET',
             })
 
             let bpJson = await bpFetch.json()
-
             if (bpFetch.ok) {
                 setDataBp(bpJson)
             }
@@ -61,7 +29,7 @@ const Bp = () => {
         try {
             bpFunc()
         } catch (e) {}
-    }, [apiV1, token, high, low])
+    }, [apiV1, token, patientId])
 
     let data = {
         labels: [
@@ -76,7 +44,7 @@ const Bp = () => {
         ],
         datasets: [
             {
-                label: 'High BP',
+                label: 'Systolic',
                 data: [...dataBp.map((elm) => elm.slot_int1).reverse()],
                 fill: true,
                 backgroundColor: 'rgba(45, 114, 178,0.2)',
@@ -84,7 +52,7 @@ const Bp = () => {
                 lineTension: 0.4,
             },
             {
-                label: 'Low BP',
+                label: 'Diastolic',
                 data: [...dataBp.map((elm) => elm.slot_int2).reverse()],
                 fill: true,
                 backgroundColor: 'rgba(65, 173, 217, 0.2)',
