@@ -71,7 +71,6 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
         })
         if (schedulePost.ok) {
             // setMsg([...msg, 'New Chamber added.'])
-            alert('success')
             refreshPage()
         }
     }
