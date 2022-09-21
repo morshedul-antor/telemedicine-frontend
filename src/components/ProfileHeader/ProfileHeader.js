@@ -1,4 +1,4 @@
-import { faHouseChimneyMedical, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faHouseChimneyMedical } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -118,116 +118,6 @@ const ProfileHeader = () => {
 
     const profileImageUrl = `${apiV1}/images/profile/` + profileImage
 
-    // Profile Picture Image API fetch
-
-    // useEffect(() => {
-    //     let ProfileImgFunc = async () => {
-    //         let ppFetch = await fetch(`${apiV1}/profile-pic`, {
-    //             headers: {
-    //                 Accept: 'application/json',
-    //                 'Content-Type': 'application/json',
-    //                 Authorization: `Bearer ${token}`,
-    //             },
-    //             method: 'GET',
-    //         })
-    //         let picJson = await ppFetch.json()
-
-    //         if (ppFetch.ok) {
-    //             setProfileImage(picJson.image_string)
-    //         }
-    //     }
-    //     try {
-    //         ProfileImgFunc()
-    //     } catch (e) {}
-    // }, [apiV1, token, msg])
-
-    // const profileImageUrl = 'http://127.0.0.1:8000/images/profile/' + profileImage
-
-    // Profile Picture API fetch finished
-
-    // useEffect(() => {
-    //     let infoFunc = async () => {
-    //         let infoFetch = await fetch(`${apiV1}/doctors/ `, {
-    //             headers: {
-    //                 Accept: 'application/json',
-    //                 'Content-Type': 'application/json',
-    //                 Authorization: `Bearer ${token}`,
-    //             },
-    //             method: 'GET',
-    //         })
-    //         let infoJson = await infoFetch.json()
-    //         if (infoFetch.ok) {
-    //             setDoctorDetail(infoJson)
-    //             setDoctor([infoJson])
-    //         }
-    //     }
-    //     try {
-    //         infoFunc()
-    //     } catch (e) {
-    //         setDoctor([])
-    //     }
-    // }, [apiV1, token])
-
-    // useEffect(() => {
-    //     let qualFunc = async () => {
-    //         let qualFetch = await fetch(`${apiV1}/doctors/qualifications `, {
-    //             headers: {
-    //                 Accept: 'application/json',
-    //                 'Content-Type': 'application/json',
-    //                 Authorization: `Bearer ${token}`,
-    //             },
-    //             method: 'GET',
-    //         })
-    //         let qualJson = await qualFetch.json()
-    //         if (qualFetch.ok) {
-    //             setQualification(qualJson)
-    //         }
-    //     }
-    //     try {
-    //         qualFunc()
-    //     } catch (e) {}
-    // }, [apiV1, token])
-
-    // useEffect(() => {
-    //     let specialityFunc = async () => {
-    //         let specialityFetch = await fetch(`${apiV1}/doctors/specialities `, {
-    //             headers: {
-    //                 Accept: 'application/json',
-    //                 'Content-Type': 'application/json',
-    //                 Authorization: `Bearer ${token}`,
-    //             },
-    //             method: 'GET',
-    //         })
-    //         let specialityJson = await specialityFetch.json()
-    //         if (specialityFetch.ok) {
-    //             setSpeciality(specialityJson)
-    //         }
-    //     }
-    //     try {
-    //         specialityFunc()
-    //     } catch (e) {}
-    // }, [apiV1, token])
-
-    // useEffect(() => {
-    //     let activeChamberFunc = async (e) => {
-    //         let activeChamberFetch = await fetch(`${apiV1}/doctors/chamber/active`, {
-    //             headers: {
-    //                 Accept: 'application/json',
-    //                 'Content-Type': 'application/json',
-    //                 Authorization: `Bearer ${token}`,
-    //             },
-    //             method: 'GET',
-    //         })
-    //         let activeChamberJson = await activeChamberFetch.json()
-    //         if (activeChamberFetch.ok) {
-    //             setActiveChamber(activeChamberJson)
-    //         }
-    //     }
-    //     try {
-    //         activeChamberFunc()
-    //     } catch (e) {}
-    // }, [apiV1, token])
-
     return (
         <>
             {isLoading ? (
@@ -279,7 +169,7 @@ const ProfileHeader = () => {
                                 <p className={classes.Title}>Total Experience</p>
                                 <span className={classes.Info}>{doctorDetail.exp_year}+ Years</span>
                             </div>
-                            <div>
+                            {/* <div>
                                 <p className={classes.Title}>Total Consultations</p>
                                 <span className={classes.Info}>50</span>
                             </div>
@@ -288,7 +178,7 @@ const ProfileHeader = () => {
                                 <span className={classes.Info}>
                                     4.5 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
                                 </span>
-                            </div>
+                            </div> */}
                             <div>
                                 <p className={classes.Title}>Joined date</p>
                                 <span className={classes.Info}>
@@ -306,69 +196,6 @@ const ProfileHeader = () => {
                     </div>
                 </>
             )}
-            {/* <div
-                className={classes.header}
-                style={{
-                    background: `url(${cover})`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                }}>
-                <div>
-                    <div className={classes.headLeftWrapper}>
-                        <div className={classes.profilePic}>
-                            <img
-                                className={classes.Image}
-                                src={profileImage.toString().length < 16 ? doc : profileImageUrl}
-                                alt="pp"
-                            />
-                            <>
-                                <ProfilePictreUpload msg={msg} setMsg={setMsg} />
-                            </>
-                        </div>
-                        <h2>{stateUser.info?.name}</h2>
-                        <p>{qualification?.qualification}</p>
-                        <p>{speciality?.speciality}</p>
-                    </div>
-                </div>
-                <div className={classes.Chamber}>
-                    <div>
-                        <h2>
-                            <FontAwesomeIcon icon={faHouseChimneyMedical} />
-                            &#160;
-                            {activeChamber?.name}
-                        </h2>
-                        <p>{activeChamber?.detail}</p>
-                    </div>
-                </div>
-            </div>
-            <div className={classes.infoWrapper}>
-                <div className={classes.Info}>
-                    <div>
-                        <p className={classes.Title}>BMDC Number</p>
-                        <span className={classes.Info}>{doctorDetail.bmdc}</span>
-                    </div>
-                    <div>
-                        <p className={classes.Title}>Total Experience</p>
-                        <span className={classes.Info}>{doctorDetail.exp_year}+ Years</span>
-                    </div>
-                    <div>
-                        <p className={classes.Title}>Total Consultations</p>
-                        <span className={classes.Info}>50</span>
-                    </div>
-                    <div>
-                        <p className={classes.Title}>Ratings(1)</p>
-                        <span className={classes.Info}>
-                            4.5 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
-                        </span>
-                    </div>
-                    <div>
-                        <p className={classes.Title}>Joined date</p>
-                        <span className={classes.Info}>
-                            {toMonthNameLong(doctor[0]?.created_at.slice(5, 7))} {doctor[0]?.created_at.slice(0, 4)}
-                        </span>
-                    </div>
-                </div>
-            </div> */}
         </>
     )
 }

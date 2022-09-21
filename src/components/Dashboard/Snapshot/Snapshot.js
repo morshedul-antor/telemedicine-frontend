@@ -11,10 +11,10 @@ const Snapshot = () => {
                     <div>
                         <p>Today's Appoinments</p>
                         <p>
-                            Online: <b>12</b>
+                            Online: <b>--</b>
                         </p>
                         <p>
-                            Offline: <b>3</b>
+                            Offline: <b>--</b>
                         </p>
                     </div>
                     <div className={classes.hidden}>
@@ -35,19 +35,19 @@ const Snapshot = () => {
                     <div>
                         <p>Monthly Appoinments</p>
                         <p>
-                            Online: <b>50</b>
+                            Online: <b>--</b>
                         </p>
                         <p>
-                            Offline: <b>13</b>
+                            Offline: <b>--</b>
                         </p>
                     </div>
                     <div>
                         <p>Compare with Last Month</p>
                         <p>
-                            <b>+50</b>
+                            <b></b>
                         </p>
                         <p>
-                            <b>-13</b>
+                            <b></b>
                         </p>
                     </div>
                 </div>
@@ -58,19 +58,19 @@ const Snapshot = () => {
                     <div>
                         <p>Yearly Appointments</p>
                         <p>
-                            Online: <b>122</b>
+                            Online: <b>--</b>
                         </p>
                         <p>
-                            Offline: <b>32</b>
+                            Offline: <b>--</b>
                         </p>
                     </div>
                     <div>
                         <p>Compare with Last Year</p>
                         <p>
-                            <b>+122</b>
+                            <b></b>
                         </p>
                         <p>
-                            <b>-32</b>
+                            <b></b>
                         </p>
                     </div>
                 </div>

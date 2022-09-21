@@ -1,0 +1,46 @@
+.report {
+    margin-top: 20px;
+}
+
+.report > div:first-child {
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.report > div > p {
+    color: var(--dark);
+    font-size: 12px;
+    margin-bottom: 10px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.report > div > p > svg {
+    font-size: 14px;
+    padding-right: 6px;
+}
+
+.report > div > div {
+    margin: 0 auto;
+}
+
+.report > div > select {
+    display: block;
+    margin: 0 auto;
+    padding: 6px 20px;
+    width: 430px;
+    border: none;
+    background-image: linear-gradient(#93a7c5, #21527d);
+    border-radius: 4px;
+    outline: none;
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.report > div > select > option {
+    color: var(--dark);
+    background-color: var(--white);
+    border: none;
+}

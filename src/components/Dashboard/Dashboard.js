@@ -12,7 +12,7 @@ const Dashboard = () => {
             <div className={classes.Content}>
                 <ProfileHeader />
                 <Snapshot />
-                <Appointment />
+                {/* <Appointment /> */}
             </div>
         </div>
     )

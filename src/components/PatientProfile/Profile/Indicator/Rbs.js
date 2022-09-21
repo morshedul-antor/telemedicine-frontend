@@ -2,54 +2,25 @@ import { useContext, useState, useEffect } from 'react'
 import { Auth } from '../../../../allContext'
 import { toMonthNameShort } from '../../../../utils/date'
 import { LineChart } from '../../../Chart'
-import { Number } from './index'
 
-const Pulse = () => {
+const Pulse = ({ patientId }) => {
     const { stateAuth } = useContext(Auth)
-
-    const [rbs, setRbs] = useState()
     const [dataRbs, setDataRbs] = useState([])
 
     const apiV1 = process.env.REACT_APP_API_V1
-
     let token = stateAuth.token
-
-    const submit = async (e) => {
-        e.preventDefault()
-
-        let rbsFetch = await fetch(`${apiV1}/patient/indicators`, {
-            headers: {
-                Accept: 'appllication/json',
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-            },
-            dataType: 'json',
-            method: 'POST',
-            body: JSON.stringify({
-                key: 'rbs',
-                unit: 'mmol/L',
-                slot_flt4: rbs,
-            }),
-        })
-
-        if (rbsFetch.ok) {
-            setRbs(0)
-        }
-    }
 
     useEffect(() => {
         let rbsFunc = async () => {
-            let rbsFetch = await fetch(`${apiV1}/patient/indicators/rbs`, {
+            let rbsFetch = await fetch(`${apiV1}/doctor/patient/patient/indicator/rbs/${patientId}?skip=0&limit=10`, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`,
                 },
-                method: 'GET',
             })
 
             let rbsJson = await rbsFetch.json()
-
             if (rbsFetch.ok) {
                 setDataRbs(rbsJson)
             }
@@ -58,7 +29,7 @@ const Pulse = () => {
         try {
             rbsFunc()
         } catch (e) {}
-    }, [apiV1, token, rbs])
+    }, [apiV1, token, patientId])
 
     let data = {
         labels: [

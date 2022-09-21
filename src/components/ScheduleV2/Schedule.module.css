@@ -1,0 +1,13 @@
+.schedule {
+    display: grid;
+    grid-template-columns: minmax(0, 20%) minmax(0, 80%);
+    grid-gap: 0 20px;
+    margin-bottom: 6em;
+}
+
+.section {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+    grid-gap: 0 36px;
+}

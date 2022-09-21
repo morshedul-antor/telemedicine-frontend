@@ -28,3 +28,7 @@ function formatDate(date) {
 }
 
 export const dateTime = formatDate(new Date())
+
+export const calenderDate = (monthNumber) => {
+    return formatDate(monthNumber)
+}

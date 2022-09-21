@@ -19,16 +19,7 @@ export default function Summery() {
                 </div>
                 <div className={classes.box}>
                     <p>
-                        22
-                        <FontAwesomeIcon icon={faRandom} />
-                    </p>
-                    <p>
-                        <span>BMI</span>
-                    </p>
-                </div>
-                <div className={classes.box}>
-                    <p>
-                        5'7"
+                        6'2"
                         <FontAwesomeIcon icon={faWaveSquare} />
                     </p>
                     <p>
@@ -37,11 +28,20 @@ export default function Summery() {
                 </div>
                 <div className={classes.box}>
                     <p>
-                        77 kg
+                        83 kg
                         <FontAwesomeIcon icon={faWalking} />
                     </p>
                     <p>
                         <span>Weight</span>
+                    </p>
+                </div>
+                <div className={classes.box}>
+                    <p>
+                        23.5
+                        <FontAwesomeIcon icon={faRandom} />
+                    </p>
+                    <p>
+                        <span>BMI</span>
                     </p>
                 </div>
             </div>

@@ -1,0 +1,29 @@
+.upload {
+    padding: 20px 20px;
+}
+
+.upload > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload > div > p {
+    font-size: 14px;
+    color: var(--dark);
+    margin-top: 6px;
+}
+
+.upload > div > button {
+    border: none;
+    padding: 8px 14px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 14px;
+    border-radius: 2px;
+}
+.upload > div > button:hover {
+    opacity: 0.9;
+    transition: 200ms;
+    cursor: pointer;
+}

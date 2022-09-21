@@ -5,7 +5,7 @@ import { useState } from 'react'
 import classes from './IndicatorView.module.css'
 import { Bp, Rbs, Weight, Pulse } from './index'
 
-export default function IndicatorView() {
+export default function IndicatorView({ patientId }) {
     const [select, setSelect] = useState(1)
     return (
         <div className={classes.wrapper}>
@@ -22,10 +22,10 @@ export default function IndicatorView() {
                 </select>
             </div>
             <div className={classes.grid}>
-                {select === 1 ? <Bp /> : ''}
-                {select === 2 ? <Rbs /> : ''}
-                {select === 3 ? <Weight /> : ''}
-                {select === 4 ? <Pulse /> : ''}
+                {select === 1 ? <Bp patientId={patientId} /> : ''}
+                {select === 2 ? <Rbs patientId={patientId} /> : ''}
+                {select === 3 ? <Weight patientId={patientId} /> : ''}
+                {select === 4 ? <Pulse patientId={patientId} /> : ''}
             </div>
         </div>
     )
