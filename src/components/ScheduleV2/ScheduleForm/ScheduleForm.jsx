@@ -154,7 +154,18 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
                             </label>
                         </div>
 
-                        <p className={classes.timeTitle}>Fill Time Range</p>
+                        <label>
+                            Select Day(s)
+                            <Select
+                                isMulti
+                                options={options}
+                                value={selected}
+                                onChange={setSelected}
+                                styles={customStyles}
+                            />
+                        </label>
+
+                        <p className={classes.timeTitle}>Fill Schedule Time Range</p>
                         <div className={classes.timePicker}>
                             <label>
                                 <input
@@ -240,17 +251,6 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
                                 </select>
                             </label>
                         </div>
-
-                        <label>
-                            Select Days
-                            <Select
-                                isMulti
-                                options={options}
-                                value={selected}
-                                onChange={setSelected}
-                                styles={customStyles}
-                            />
-                        </label>
                     </div>
                     <button className={classes.button} type="submit">
                         {active === 2 ? 'Create Chamber Schedule' : 'Create Online Schedule'}
