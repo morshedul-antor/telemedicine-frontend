@@ -21,7 +21,7 @@ const Sidebar = () => {
     let location = useLocation()
 
     const apiV1 = process.env.REACT_APP_API_V1
-    const ep = process.env.REACT_APP_EP
+    const ep = process.env.REACT_APP_EP_SITE
 
     const logout = (e) => {
         e.preventDefault()
