@@ -89,3 +89,63 @@
     color: var(--dark);
     font-size: 14px;
 }
+
+@media (max-width: 420px) {
+    .sectionWrapper {
+        width: 100%;
+        margin-top: 2em;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo > span {
+        font-size: 14px;
+    }
+
+    .section {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        grid-gap: 20px 0px;
+    }
+
+    .section .box:first-child {
+        display: none;
+    }
+
+    .section .box:last-child {
+        margin-left: 0em;
+        margin-top: 0em;
+    }
+
+    .section .boxContainer {
+        padding: 20px 10px;
+    }
+
+    .section .boxContainer div:first-child {
+        padding: 1.8em 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .section .boxContainer div:first-child .icon {
+        height: 2em;
+    }
+
+    .section .boxContainer > div:last-child {
+        margin-left: 1em;
+    }
+
+    .section .boxContainer .title {
+        font-size: 16px;
+        margin-top: 2px;
+        margin-bottom: 6px;
+    }
+
+    .section .boxContainer > div > span {
+        display: block;
+        font-size: 10px;
+        text-align: justify;
+    }
+}
