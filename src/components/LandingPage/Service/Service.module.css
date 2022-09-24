@@ -53,20 +53,6 @@
     margin-bottom: 14px;
 }
 
-.service .box button {
-    background-color: var(--secondary);
-    border: none;
-    border-radius: 10px;
-    color: var(--white);
-    font-size: 0.9em;
-    padding: 10px 20px;
-    display: block;
-    margin: 20px auto;
-    margin-top: 3em;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
 .service .box:hover {
     transition: 200ms;
     cursor: pointer;
@@ -81,4 +67,34 @@
     opacity: 0.8;
     transition: 200ms;
     cursor: pointer;
+}
+
+@media (max-width: 420px) {
+    .service {
+        width: 82%;
+        margin-top: 2em;
+    }
+
+    .boxWrapper {
+        margin-top: 0px;
+        grid-template-columns: 1fr;
+        grid-gap: 20px 0px;
+    }
+
+    .service .box {
+        padding: 14px 20px;
+    }
+
+    .service .box > p {
+        font-size: 2.2em;
+    }
+
+    .service .box img {
+        height: 40px;
+        margin-top: -4em;
+    }
+
+    .service .box > span {
+        font-size: 14px;
+    }
 }

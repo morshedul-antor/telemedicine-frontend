@@ -22,6 +22,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2em 4em;
 }
+
 .grid > div {
     padding: 0 2em;
     border-radius: 10px;
@@ -98,4 +99,56 @@
     font-weight: 400;
     padding: 4px 0px;
     text-transform: capitalize;
+}
+
+@media (max-width: 420px) {
+    .wrapper {
+        margin-top: 2em;
+        padding: 10px 10px;
+        margin-bottom: 2em;
+    }
+
+    .logo {
+        font-size: 18px;
+        margin-bottom: 1em;
+    }
+
+    .logo > span {
+        font-size: 14px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0em;
+    }
+
+    .grid > div {
+        padding: 0 10px;
+    }
+
+    .grid div > p > img {
+        width: 44px;
+        height: 34px;
+    }
+
+    .grid div > p > div {
+        padding-left: 10px;
+    }
+
+    .grid div > p > div > h2 {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .grid div > p > div > span {
+        font-size: 11px;
+    }
+
+    .grid div > p > div > div {
+        margin-top: 14px;
+    }
+
+    .grid div > p > div > div > li {
+        font-size: 12px;
+    }
 }

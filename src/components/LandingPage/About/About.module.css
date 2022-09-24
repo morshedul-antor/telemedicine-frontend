@@ -107,3 +107,72 @@
     color: var(--dark);
     margin-top: 0px;
 }
+
+@media (max-width: 420px) {
+    .about {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .about .box:first-child {
+        margin-top: -10em;
+    }
+
+    .about .box .title > p {
+        font-size: 22px;
+        margin-bottom: -2px;
+    }
+
+    .about .box .title > span {
+        font-size: 14px;
+    }
+
+    .about .box > p {
+        margin-top: 18.4em;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    .about .buttonContainer {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .about .buttonContainer > a > button {
+        margin-left: 0px;
+        padding: 8px 30px;
+        font-size: 10px;
+    }
+
+    .about .counterWrapper {
+        margin-top: 2em;
+    }
+
+    .about .counterWrapper > div > .counter {
+        font-size: 16px;
+    }
+
+    .about .counterWrapper > div > p {
+        font-size: 12px;
+    }
+
+    .about .box:last-child {
+        padding: 0em;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about .box > .bgImg {
+        height: 10em;
+        width: 14em;
+        margin-top: 2em;
+        margin-left: 0em;
+        opacity: 0.05;
+    }
+
+    .about .box > .docImg {
+        height: 14em;
+        margin-left: 0em;
+        margin-top: -2em;
+    }
+}

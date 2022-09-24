@@ -29,20 +29,16 @@
 
 .nav .topNavbar .logo > img {
     width: 150px;
-    /* height: 40px; */
     padding-left: 40px;
 }
 
 .nav .topNavbar .logo:hover {
-    opacity: 0.7;
+    opacity: 0.8;
+    cursor: pointer;
 }
 
-.logo .leaf {
-    position: absolute;
-    color: var(--green);
-    font-size: 12px;
-    margin-top: -6px;
-    margin-left: 12px;
+.nav .topNavbar .logoMobile {
+    display: none;
 }
 
 .nav .topNavbar .navList {
@@ -75,4 +71,37 @@
 .nav .topNavbar .navList a:last-child:hover {
     color: var(--white);
     opacity: 0.8;
+}
+
+@media (max-width: 420px) {
+    .nav .topNavbar {
+        height: 60px;
+        padding: 0;
+        margin-right: -20px;
+    }
+
+    .nav .topNavbar .logo {
+        display: none;
+    }
+
+    .nav .topNavbar .logoMobile {
+        display: block;
+    }
+
+    .nav .topNavbar .logoMobile > img {
+        width: 30px;
+        padding-left: 20px;
+        padding-top: 4px;
+    }
+
+    .nav .topNavbar .navList a {
+        display: none;
+    }
+
+    .nav .topNavbar .navList a:last-child {
+        padding: 8px 14px;
+        font-size: 12px;
+        display: block;
+        letter-spacing: 0.6px;
+    }
 }
