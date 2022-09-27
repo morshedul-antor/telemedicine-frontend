@@ -88,10 +88,6 @@
     padding-right: 4px;
 }
 
-.indicator {
-    /* padding: 20px; */
-}
-
 .navbar {
     margin-top: 10px;
     border-bottom: 1px solid var(--light-grey);
@@ -117,4 +113,14 @@
 .deactive {
     background: var(--light);
     color: var(--dark);
+}
+
+.noData {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--red);
+    font-weight: 500;
 }

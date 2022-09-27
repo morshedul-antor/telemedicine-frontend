@@ -115,7 +115,7 @@ const Register = () => {
                                         required
                                     />
                                     <label>
-                                        <span>Phone number [11 digit]</span>
+                                        <span>Phone [11 digit]</span>
                                     </label>
                                 </div>
                             </div>

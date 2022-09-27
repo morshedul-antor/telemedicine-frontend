@@ -9,7 +9,6 @@ import classes from './Sidebar.module.css'
 const Sidebar = () => {
     const { stateAuth, dispatchAuth } = useContext(Auth)
     const { dispatchUser } = useContext(UserInfo)
-    // const { stateUser } = useContext(UserInfo)
 
     // const hx = 'hxds100000'
     // const array = hx.split('s')
@@ -19,9 +18,7 @@ const Sidebar = () => {
     // const url = prefix + idInt
 
     let location = useLocation()
-
-    const apiV1 = process.env.REACT_APP_API_V1
-    const ep = process.env.REACT_APP_EP_SITE
+    const ep = process.env.REACT_APP_EP
 
     const logout = (e) => {
         e.preventDefault()

@@ -22,52 +22,56 @@ export default function Profile({ api, patientId, patient, picture }) {
             <Link to="/home">
                 <img src={Logo} alt="Logo" title="Home" />
             </Link>
-            <div className={classes.profile}>
-                <div className={classes.info}>
-                    <img src={BG} alt="" />
-                    <img src={picture.toString().length < 16 ? Pic : profileImage} alt="" />
-                    <div>
-                        <h2>{patient.name}</h2>
-                        <span>(25 Years)</span>
-                        <p>
-                            <FontAwesomeIcon icon={faPhone} /> +88 {patient.phone}
-                        </p>
-                        <p>
-                            <FontAwesomeIcon icon={faLocationDot} /> Block F, Bashundhara R/A, Dhaka
-                        </p>
-                        <p>New Patient</p>
+            {patient.role_name === 'patient' ? (
+                <div className={classes.profile}>
+                    <div className={classes.info}>
+                        <img src={BG} alt="" />
+                        <img src={picture.toString().length < 16 ? Pic : profileImage} alt="" />
+                        <div>
+                            <h2>{patient.name}</h2>
+                            <span>(25 Years)</span>
+                            <p>
+                                <FontAwesomeIcon icon={faPhone} /> +88 {patient.phone}
+                            </p>
+                            <p>
+                                <FontAwesomeIcon icon={faLocationDot} /> Block F, Bashundhara R/A, Dhaka
+                            </p>
+                            <p>New Patient</p>
+                        </div>
+                    </div>
+                    <div className={classes.indicator}>
+                        <Summery />
+                        <div className={classes.navbar}>
+                            <span
+                                className={menu === 1 ? `${classes.active}` : `${classes.deactive}`}
+                                onClick={(e) => setMenu(1)}>
+                                Health Indicators
+                            </span>
+                            <span
+                                className={menu === 2 ? `${classes.active}` : `${classes.deactive}`}
+                                onClick={(e) => setMenu(2)}>
+                                Prescriptions
+                            </span>
+                            <span
+                                className={menu === 3 ? `${classes.active}` : `${classes.deactive}`}
+                                onClick={(e) => setMenu(3)}>
+                                Medical Reports
+                            </span>
+                            <span
+                                className={menu === 4 ? `${classes.active}` : `${classes.deactive}`}
+                                onClick={(e) => setMenu(4)}>
+                                Medication Records
+                            </span>
+                        </div>
+                        {menu === 1 ? <IndicatorView patientId={patientId} /> : ''}
+                        {menu === 2 ? <Prescription patientId={patientId} /> : ''}
+                        {menu === 3 ? <Report patientId={patientId} /> : ''}
+                        {menu === 4 ? <Medication patientId={patientId} /> : ''}
                     </div>
                 </div>
-                <div className={classes.indicator}>
-                    <Summery />
-                    <div className={classes.navbar}>
-                        <span
-                            className={menu === 1 ? `${classes.active}` : `${classes.deactive}`}
-                            onClick={(e) => setMenu(1)}>
-                            Health Indicators
-                        </span>
-                        <span
-                            className={menu === 2 ? `${classes.active}` : `${classes.deactive}`}
-                            onClick={(e) => setMenu(2)}>
-                            Prescriptions
-                        </span>
-                        <span
-                            className={menu === 3 ? `${classes.active}` : `${classes.deactive}`}
-                            onClick={(e) => setMenu(3)}>
-                            Medical Reports
-                        </span>
-                        <span
-                            className={menu === 4 ? `${classes.active}` : `${classes.deactive}`}
-                            onClick={(e) => setMenu(4)}>
-                            Medication Records
-                        </span>
-                    </div>
-                    {menu === 1 ? <IndicatorView patientId={patientId} /> : ''}
-                    {menu === 2 ? <Prescription patientId={patientId} /> : ''}
-                    {menu === 3 ? <Report patientId={patientId} /> : ''}
-                    {menu === 4 ? <Medication patientId={patientId} /> : ''}
-                </div>
-            </div>
+            ) : (
+                <div className={classes.noData}>No Patient Found!</div>
+            )}
         </div>
     )
 }

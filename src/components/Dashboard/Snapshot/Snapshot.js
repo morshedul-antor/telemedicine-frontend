@@ -11,10 +11,10 @@ const Snapshot = () => {
                     <div>
                         <p>Today's Appoinments</p>
                         <p>
-                            Online: <b>--</b>
+                            Online Chamber: <b>--</b>
                         </p>
                         <p>
-                            Offline: <b>--</b>
+                            Offline Chamber: <b>--</b>
                         </p>
                     </div>
                     <div className={classes.hidden}>
@@ -35,10 +35,10 @@ const Snapshot = () => {
                     <div>
                         <p>Monthly Appoinments</p>
                         <p>
-                            Online: <b>--</b>
+                            Online Chamber: <b>--</b>
                         </p>
                         <p>
-                            Offline: <b>--</b>
+                            Offline Chamber: <b>--</b>
                         </p>
                     </div>
                     <div>
@@ -58,10 +58,10 @@ const Snapshot = () => {
                     <div>
                         <p>Yearly Appointments</p>
                         <p>
-                            Online: <b>--</b>
+                            Online Chamber: <b>--</b>
                         </p>
                         <p>
-                            Offline: <b>--</b>
+                            Offline Chamber: <b>--</b>
                         </p>
                     </div>
                     <div>
