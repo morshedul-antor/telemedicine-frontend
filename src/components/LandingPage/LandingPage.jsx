@@ -9,7 +9,9 @@ import Faq from './Faq/Faq'
 import Features from './Features/Features'
 import Footer from './Footer/Footer'
 import classes from './LandingPage.module.css'
+import Pricing from './Pricing/Pricing'
 import Service from './Service/Service'
+import Video from './Video/Video'
 
 export default function LandingPage() {
     return (
@@ -48,8 +50,10 @@ export default function LandingPage() {
 
                     <About />
                     <Service />
+                    <Video />
                     <Features />
                     <Benefits />
+                    <Pricing />
                     <Faq />
                     <Footer />
                 </div>

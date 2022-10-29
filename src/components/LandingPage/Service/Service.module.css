@@ -33,6 +33,7 @@
     margin-top: -10px;
     color: var(--light);
     opacity: 0.8;
+    visibility: hidden;
 }
 
 .service .box img {
