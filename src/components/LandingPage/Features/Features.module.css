@@ -29,7 +29,7 @@
     transition: 250ms;
     border: none;
     text-align: justify;
-    border-top: 2px solid var(--dark);
+    border-top: 1px solid var(--light-low);
 }
 
 .grid > div:hover {

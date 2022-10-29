@@ -1,0 +1,393 @@
+.wrapper {
+    padding: 40px 0px;
+}
+
+.pricingTable {
+    margin: 0px auto;
+    padding: 0 10em;
+}
+
+.pricingTable .headerFlex {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 10px;
+    margin-left: 4em;
+    padding-right: 1em;
+}
+
+.pricingTable .header {
+    margin-top: 4.6em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.list {
+    margin-top: 14px;
+    display: flex;
+    font-size: 14px;
+}
+
+.list > li {
+    padding: 0 10px;
+    color: var(--dark);
+}
+
+.pricingTable .title {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    margin-top: 0;
+    letter-spacing: 0.04em;
+}
+
+.pricingTable .subtitle {
+    text-align: center;
+    color: var(--dark);
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    padding: 0px 60px;
+}
+
+.pricingTable .info {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 500;
+    color: var(--dark);
+    margin-top: 3em;
+    margin-bottom: 10px;
+    border-left: 2px solid var(--primary);
+}
+
+.pricingTable .info > span {
+    border-left: 4px solid var(--secondary);
+    padding-left: 10px;
+    opacity: 0.9;
+}
+
+.pricingTable .infoText {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark);
+    padding: 0 10em;
+    font-size: 14px;
+}
+
+.gridFour {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 4em;
+    grid-gap: 10px 40px;
+}
+
+.table {
+    background-color: var(--white);
+    display: inline-block;
+    padding: 0px 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid var(--light);
+    box-shadow: 1px 2px 4px var(--light);
+    border-top: 4px solid var(--secondary);
+    padding-bottom: 80px;
+    position: relative;
+}
+
+.table:hover {
+    transform: translateY(-2px);
+    transition: 300ms;
+    box-shadow: 10px 20px 30px var(--light);
+}
+
+.table:not(:last-of-type) {
+    margin-right: 3%;
+}
+
+.table:nth-of-type(2) {
+    position: relative;
+}
+
+.table:nth-of-type(2):before {
+    content: 'Most Popular';
+    position: absolute;
+    color: var(--white);
+    display: block;
+    background-color: var(--secondary);
+    text-align: center;
+    right: 15px;
+    top: -25px;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    font-size: 0.6em;
+    padding-top: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    transition: all 0.5s ease;
+}
+
+.tableHeader {
+    font-size: 30px;
+    padding: 20px 0px;
+    border-bottom: 2px solid var(--light);
+    letter-spacing: 0.03em;
+    color: var(--dark);
+}
+
+.tablePricing {
+    font-size: 40px;
+    padding: 0px 0px;
+    border-bottom: 2px solid var(--light);
+    line-height: 0.7;
+    margin-top: -10px;
+    padding: 30px 0px;
+}
+
+.tablePricing span:first-child {
+    font-size: 0.5em;
+    vertical-align: top;
+    letter-spacing: 0.15em;
+}
+
+.tablePricing span:last-child {
+    vertical-align: bottom;
+    font-size: 0.3em;
+    letter-spacing: 0.04em;
+    padding-left: 0.2em;
+}
+
+.tableOptions {
+    list-style: none;
+    padding: 0px;
+    padding-bottom: 14px;
+    font-size: 0.9em;
+    border-bottom: 2px solid var(--light);
+    margin-top: -14px;
+}
+
+.tableOptions > li {
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.tableOptions > li:before {
+    content: '✓';
+    display: inline-flex;
+    margin-right: 15px;
+    color: var(--white);
+    background-color: var(--secondary);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 1em;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tableStart {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translate(-50%, 0);
+    display: block;
+    color: var(--white);
+    border: 0;
+    background-color: var(--secondary);
+    margin-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 16px;
+    letter-spacing: 0.07em;
+    transition: all 0.4s ease;
+}
+
+.tableStart:hover {
+    box-shadow: 0px 40px 29px -19px rgba(108, 182, 213, 0.9);
+}
+
+.tableStart:active {
+    box-shadow: inset 0 0 10px 1px #68abc7, 0px 40px 29px -19px rgba(104, 171, 210, 0.95);
+    transform: scale(0.95) translateY(-9px);
+}
+
+.details {
+    margin: 10px 10em;
+    margin-top: 1em;
+    margin-bottom: 0px;
+    background-color: var(--white);
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.details > div {
+    font-size: 1.1em;
+    color: var(--dark);
+}
+
+.details > div:nth-child(1) {
+    padding-bottom: 2px;
+}
+
+.details > div > span {
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+    margin-top: 1em;
+}
+
+.details > div > span {
+    font-weight: 500;
+    padding-left: 10px;
+    display: block;
+}
+
+.details > div > h4 {
+    font-size: 1em;
+    color: var(--dark);
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.details > div > ul > li {
+    margin: 8px;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+/* For mobile view  */
+@media (max-width: 420px) {
+    .pricingTable .subtitle {
+        text-align: left;
+        font-size: 14px;
+        padding: 0px 10px;
+    }
+    .pricingTable .header {
+        margin-top: 2em;
+    }
+    .pricingTable .info {
+        margin-top: 1.7em;
+    }
+    .pricingTable .infoText {
+        text-align: justify;
+    }
+    .pricingTable .headerFlex {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2px;
+    }
+
+    .pricingTable {
+        margin: 0px auto;
+        padding: 0 10px;
+    }
+
+    .headerFlex > div:nth-child(1) {
+        order: 1;
+    }
+    .headerFlex > div:nth-child(2) {
+        order: -1;
+    }
+    .pricingTable .title {
+        font-size: 1.4em;
+    }
+    /* For header List items */
+    .list > li {
+        padding: 0 20px;
+    }
+
+    /* {***** Basic Section********} */
+
+    .pricingTable .infoText {
+        padding: 0 14px;
+        line-height: 1.5;
+    }
+    .pricingTable .info > span {
+        font-size: 0.9em;
+    }
+    .tableHeader {
+        font-size: 1.5em;
+    }
+    .tablePricing {
+        font-size: 2em;
+        margin-top: 7px;
+    }
+    /* 
+        ** Four Grids ** */
+    .gridFour {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 10px 10px;
+        grid-gap: 40px 10px;
+    }
+
+    .gridFour > li:first-child {
+        margin-right: 0px;
+    }
+
+    .list {
+        display: block;
+    }
+
+    .details {
+        margin: 10px 25px;
+    }
+
+    .details > div > span {
+        font-size: 1.2rem;
+    }
+
+    .details > div > ul > li {
+        font-size: 14px;
+        margin-left: -24px;
+        padding: 3px 0;
+    }
+
+    /* button */
+    .tableStart {
+        font-size: 12px;
+        width: auto;
+    }
+
+    .tablePricing span:last-of-type {
+        font-size: 0.45em;
+    }
+
+    .tableOptions {
+        margin-top: 15px;
+    }
+    .tableOptions li {
+        text-align: left;
+        padding: 12px 0;
+    }
+
+    /* ..../............ */
+    .table:nth-of-type(2):before {
+        font-size: 0.5em;
+    }
+    .table:nth-of-type(2):before {
+        left: 8px;
+        width: 55px;
+        height: 50px;
+        top: -16px;
+        padding-top: 13px;
+    }
+
+    .table > h1 {
+        margin-bottom: 20px;
+    }
+
+    .table > p {
+        margin-bottom: 20px;
+    }
+
+    /* for shifting left coverage and offer details */
+    .details > div {
+        margin-left: -15px;
+    }
+}
