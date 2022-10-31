@@ -1,3 +1,4 @@
+import ChamberPage from './ChamberPage'
 import DashboardPage from './DashboardPage'
 import EcardPage from './EcardPage'
 import HomePage from './HomePage'
@@ -18,4 +19,5 @@ export {
     SchedulePage,
     EcardPage,
     PatientProfilePage,
+    ChamberPage,
 }
