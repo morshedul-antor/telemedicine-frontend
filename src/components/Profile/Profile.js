@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Sidebar } from '../Nav'
 import ProfileHeader from '../ProfileHeader/ProfileHeader'
 import About from './About/About'
-import Chambers from './Chambers/Chambers'
 import classes from './Profile.module.css'
 
 const Profile = () => {
@@ -24,7 +23,7 @@ const Profile = () => {
                             <span
                                 className={menu === 1 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                                 onClick={(e) => setMenu(1)}>
-                                About
+                                About Section
                             </span>
 
                             {/* <span
@@ -33,16 +32,16 @@ const Profile = () => {
                                 Professional Info
                             </span> */}
 
-                            <span
+                            {/* <span
                                 className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                                 onClick={(e) => setMenu(4)}>
                                 Chambers
-                            </span>
+                            </span> */}
                         </div>
                         <div>
                             {menu === 1 ? <About /> : null}
-                            {menu === 2 ? '' : null}
-                            {menu === 4 ? <Chambers /> : null}
+                            {/* {menu === 2 ? '' : null} */}
+                            {/* {menu === 4 ? <Chambers /> : null} */}
                         </div>
                     </div>
                 </div>

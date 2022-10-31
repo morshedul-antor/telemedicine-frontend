@@ -1,7 +1,7 @@
 import { faAward, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
-import { Auth } from '../../../../allContext'
+import { Auth, UserInfo } from '../../../../allContext'
 import SkeletonProfileDetail from '../../../Skeletons/SkeletonProfileDetail'
 import classes from './Membership.module.css'
 import Update from './UpdateMembership/Update'
@@ -12,6 +12,8 @@ export default function Membership() {
 
     const [memberships, setMemberships] = useState([])
     const { stateAuth } = useContext(Auth)
+    const { stateUser } = useContext(UserInfo)
+    const userInfo = stateUser.info
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
@@ -25,7 +27,7 @@ export default function Membership() {
     useEffect(() => {
         setTimeout(() => {
             let infoFunc = async () => {
-                let infoFetch = await fetch(`${apiV1}/doctors/membership/?skip=0&limit=50`, {
+                let infoFetch = await fetch(`${apiV1}/doctors/membership/${userInfo?.id}?skip=0&limit=50`, {
                     headers: {
                         Accept: 'application/json',
                         'Content-Type': 'application/json',
@@ -43,7 +45,7 @@ export default function Membership() {
                 setIsLoading(false)
             } catch (e) {}
         }, 1000)
-    }, [apiV1, token, name, position])
+    }, [apiV1, token, name, position, userInfo?.id])
 
     const handleSubmit = async (e) => {
         e.preventDefault()

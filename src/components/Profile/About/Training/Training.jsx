@@ -1,7 +1,7 @@
 import { faEdit, faLandmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
-import { Auth } from '../../../../allContext'
+import { Auth, UserInfo } from '../../../../allContext'
 import SkeletonProfileDetail from '../../../Skeletons/SkeletonProfileDetail'
 import classes from './Training.module.css'
 import Update from './UpdateTraining/Update'
@@ -13,6 +13,8 @@ export default function Training() {
     const [trainings, setTrainings] = useState([])
 
     const { stateAuth } = useContext(Auth)
+    const { stateUser } = useContext(UserInfo)
+    const userInfo = stateUser.info
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
@@ -27,7 +29,7 @@ export default function Training() {
     useEffect(() => {
         setTimeout(() => {
             let infoFunc = async () => {
-                let infoFetch = await fetch(`${apiV1}/doctors/training/?skip=0&limit=100`, {
+                let infoFetch = await fetch(`${apiV1}/doctors/training/${userInfo?.id}?skip=0&limit=100`, {
                     headers: {
                         Accept: 'application/json',
                         'Content-Type': 'application/json',
@@ -45,7 +47,7 @@ export default function Training() {
                 setIsLoading(false)
             } catch (e) {}
         }, 1000)
-    }, [apiV1, token, topic, place])
+    }, [apiV1, token, topic, place, userInfo?.id])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
