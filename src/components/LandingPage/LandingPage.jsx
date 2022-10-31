@@ -41,6 +41,7 @@ export default function LandingPage() {
                             <div className={classes.navList}>
                                 <a href="#features">Features</a>
                                 <a href="#benefits">Benefits</a>
+                                <a href="#subscription">Subscription</a>
                                 <a href="#faq">FAQ</a>
                                 <Link to="/login">Get Started</Link>
                             </div>

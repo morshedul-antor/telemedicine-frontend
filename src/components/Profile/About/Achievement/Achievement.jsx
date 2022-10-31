@@ -1,7 +1,7 @@
 import { faEdit, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
-import { Auth } from '../../../../allContext'
+import { Auth, UserInfo } from '../../../../allContext'
 import SkeletonProfileDetail from '../../../Skeletons/SkeletonProfileDetail'
 import classes from './Achievement.module.css'
 import Update from './UpdateAchievement/Update'
@@ -13,6 +13,8 @@ export default function Achievement() {
     const apiV1 = process.env.REACT_APP_API_V1
     const { stateAuth } = useContext(Auth)
     const token = stateAuth.token
+    const { stateUser } = useContext(UserInfo)
+    const userInfo = stateUser.info
 
     const [isLoading, setIsLoading] = useState(false)
     const [formOpen, setFormOpen] = useState(false)
@@ -21,14 +23,17 @@ export default function Achievement() {
     useEffect(() => {
         setTimeout(() => {
             let infoFunc = async () => {
-                let infoFetch = await fetch(`${apiV1}/doctors/others-activity/?skip=0&limit=50&topic=achievement`, {
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${token}`,
-                    },
-                    method: 'GET',
-                })
+                let infoFetch = await fetch(
+                    `${apiV1}/doctors/others-activity/${userInfo?.id}?skip=0&limit=50&topic=achievement`,
+                    {
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json',
+                            Authorization: `Bearer ${token}`,
+                        },
+                        method: 'GET',
+                    }
+                )
                 let infoJson = await infoFetch.json()
                 if (infoFetch.ok) {
                     setAchievements(infoJson)
@@ -39,7 +44,7 @@ export default function Achievement() {
                 setIsLoading(false)
             } catch (e) {}
         }, 1000)
-    }, [apiV1, token, title])
+    }, [apiV1, token, title, userInfo?.id])
 
     const handleSubmit = async (e) => {
         e.preventDefault()

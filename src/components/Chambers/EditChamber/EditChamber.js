@@ -1,8 +1,8 @@
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useContext } from 'react'
-import { Auth } from '../../../../allContext'
-import districts from '../../../../utils/districts.json'
+import { Auth } from '../../../allContext'
+import districts from '../../../utils/districts.json'
 import classes from './EditChamber.module.css'
 
 const EditChamber = ({ chamber, chamberId, msg, setMsg }) => {

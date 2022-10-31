@@ -1,6 +1,6 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import districts from '../../../../../utils/districts.json'
+import districts from '../../../../utils/districts.json'
 import classes from './AddChamberForm.module.css'
 
 const AddChanberForm = ({

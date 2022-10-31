@@ -1,4 +1,12 @@
-import { faCog, faUser, faSignOutAlt, faTableColumns, faClock } from '@fortawesome/free-solid-svg-icons'
+import {
+    faCog,
+    faUser,
+    faSignOutAlt,
+    faTableColumns,
+    faClock,
+    faBriefcaseMedical,
+    faHeartbeat,
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
@@ -41,20 +49,31 @@ const Sidebar = () => {
                     E-Prescription
                 </a>
             </div>
+            <span className={classes.beta}>(coming soon)</span>
             <ul>
                 <li className={location.pathname === '/home' ? classes.active : ''}>
                     <Link to="/home">
-                        <FontAwesomeIcon icon={faTableColumns} /> Dashboard
+                        <FontAwesomeIcon icon={faTableColumns} /> Dashboard <span>(beta version)</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/profile' ? classes.active : ''}>
                     <Link to="/profile">
-                        <FontAwesomeIcon icon={faUser} /> Profile
+                        <FontAwesomeIcon icon={faUser} /> Profile <span>(complete profile)</span>
+                    </Link>
+                </li>
+                <li className={location.pathname === '/chamber' ? classes.active : ''}>
+                    <Link to="/chamber">
+                        <FontAwesomeIcon icon={faBriefcaseMedical} /> Chamber <span>(add chamber)</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/schedule' ? classes.active : ''}>
                     <Link to="/schedule">
-                        <FontAwesomeIcon icon={faClock} /> Schedule
+                        <FontAwesomeIcon icon={faClock} /> Schedule <span>(setup schedule)</span>
+                    </Link>
+                </li>
+                <li className={location.pathname === '/patient-list' ? classes.active : ''}>
+                    <Link to="/home">
+                        <FontAwesomeIcon icon={faHeartbeat} /> Patient List <span>(coming soon)</span>
                     </Link>
                 </li>
             </ul>

@@ -27,7 +27,7 @@ export default function About() {
                             <button>Register</button>
                         </Link>
                     </div>
-                    <div className={classes.counterWrapper}>
+                    {/* <div className={classes.counterWrapper}>
                         <div>
                             <CountUp start={10} end={1000} duration={3} useEasing={true} className={classes.counter} />
                             <p>Doctors</p>
@@ -44,7 +44,7 @@ export default function About() {
                             <CountUp start={10} end={5000} duration={3} useEasing={true} className={classes.counter} />
                             <p>Consultations</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={classes.box}>
                     <img src={a1} className={classes.bgImg} alt="" />

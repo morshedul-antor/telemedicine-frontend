@@ -1,7 +1,7 @@
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useContext } from 'react'
-import { Auth } from '../../../../allContext'
+import { Auth } from '../../../allContext'
 import classes from './DeleteChamber.module.css'
 
 const DeleteChamber = ({ chamberId, msg, setMsg }) => {
