@@ -2,9 +2,9 @@ import { faArrowRight, faHandSparkles, faSignInAlt } from '@fortawesome/free-sol
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'
-import env from 'react-dotenv'
 import { Link, useHistory } from 'react-router-dom'
 import { Auth } from '../../allContext'
+import Logo from '../../assets/logo/logo.png'
 import { statusCheck } from '../../utils/statusCheck'
 import BG from '.././../assets/img/background-doc-table.jpg'
 import classes from './Login.module.css'
@@ -18,8 +18,6 @@ const Login = () => {
     const [password, setPassword] = useState('')
 
     const [alert, setAlert] = useState([])
-
-    // const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
     const apiV1 = process.env.REACT_APP_API_V1
 
     const submit = async (e) => {
@@ -78,6 +76,9 @@ const Login = () => {
             }
 
             <div className={classes.Wrapper}>
+                <Link to="" className={classes.logo}>
+                    <img src={Logo} alt="" />
+                </Link>
                 <div className={classes.left}>
                     <div>
                         <h2>
