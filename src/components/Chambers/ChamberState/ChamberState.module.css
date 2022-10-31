@@ -1,0 +1,71 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 10px;
+    margin: 4px 0 -4px 0px;
+}
+.switch > button {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.switch > span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--red);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 300ms;
+    padding: 6px;
+}
+.switch > span::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 2px;
+    left: 2px;
+    border-radius: 50px;
+    background: var(--light);
+    transition: 300ms;
+}
+/* .switch > button:active + span::before {
+    transform: translateX(20px);
+} */
+
+.switch > button:active + span::before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* .switch > button:active + span {
+    background: var(--green);
+} */
+
+.switch > .spanActive {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--green);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 300ms;
+}
+.switch > .spanDeactive {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--red);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 300ms;
+}
