@@ -82,6 +82,7 @@
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 6px;
+    text-align: left;
 }
 
 .grid div > p > div > span {
@@ -99,6 +100,7 @@
     font-weight: 400;
     padding: 4px 0px;
     text-transform: capitalize;
+    text-align: left;
 }
 
 @media (max-width: 420px) {
