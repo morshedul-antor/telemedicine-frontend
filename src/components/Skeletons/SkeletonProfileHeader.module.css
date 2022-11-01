@@ -36,17 +36,30 @@
 .headLeftWrapper > h2 {
     position: absolute;
     margin: 0;
-    top: 10px;
+    top: 4px;
     left: 170px;
     font-weight: 500;
-    color: var(--dark-grey);
+    color: var(--dark);
 }
+
 .headLeftWrapper > p {
     position: relative;
     margin: 0;
     top: 45px;
     left: 170px;
     font-size: 0.9em;
+    color: var(--dark);
+    padding-right: 150px;
+}
+
+.headLeftWrapper > p:nth-child(3) {
+    max-width: 32em;
+    margin-top: -16px;
+}
+
+.headLeftWrapper > p:last-child {
+    margin-top: 8px;
+    font-weight: 500;
     color: var(--dark-grey);
 }
 
