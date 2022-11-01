@@ -12,6 +12,7 @@ import {
     EcardPage,
     PatientProfilePage,
     ChamberPage,
+    PatientPage,
 } from './pages/index'
 import { authReducer, authState, userReducer, userState } from './reducer'
 import ProtectedRoute from './routes/ProtectedRoute'
@@ -32,6 +33,7 @@ const App = () => {
                             <ProtectedRoute path="/settings" component={SettingsPage} />
                             <ProtectedRoute path="/schedule" component={SchedulePage} />
                             <ProtectedRoute path="/chamber" component={ChamberPage} />
+                            <ProtectedRoute path="/patient-list" component={PatientPage} />
                             <ProtectedRoute path="/patient/:id" component={PatientProfilePage} />
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />

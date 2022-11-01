@@ -64,6 +64,8 @@
     margin: 0;
     padding: 0;
     margin: 20px 0 0 0;
+    overflow-x: auto;
+    height: 200px;
 }
 .Sidebar ul > li {
     border-left: 6px solid var(--white);
@@ -99,11 +101,15 @@
     color: var(--grey);
 }
 
+.Sidebar ul > li > a > svg {
+    padding-right: 8px;
+}
+
 .secondUl {
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: 40px;
+    bottom: -80px;
 }
 .secondUl::before {
     content: '';

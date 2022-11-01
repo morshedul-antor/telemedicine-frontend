@@ -24,11 +24,12 @@ const Appointment = () => {
                 <p>Patient Name</p>
                 <p>Sex</p>
                 <p>Age</p>
+                <p>Patient Type</p>
                 <p>Cause of Consultation</p>
                 <p>Time</p>
                 <p>Profile</p>
             </div>
-            {arr.map((v, i) => {
+            {/* {arr.map((v, i) => {
                 return (
                     <div className={classes.body} key={i}>
                         <p>{v.no}</p>
@@ -44,7 +45,7 @@ const Appointment = () => {
                         </p>
                     </div>
                 )
-            })}
+            })} */}
         </div>
     )
 }

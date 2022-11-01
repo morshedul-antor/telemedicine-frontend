@@ -49,7 +49,7 @@ const Sidebar = () => {
                     E-Prescription
                 </a>
             </div>
-            <span className={classes.beta}>(coming soon)</span>
+            <span className={classes.beta}>(under development)</span>
             <ul>
                 <li className={location.pathname === '/home' ? classes.active : ''}>
                     <Link to="/home">
@@ -72,7 +72,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className={location.pathname === '/patient-list' ? classes.active : ''}>
-                    <Link to="/home">
+                    <Link to="/patient-list">
                         <FontAwesomeIcon icon={faHeartbeat} /> Patient List <span>(coming soon)</span>
                     </Link>
                 </li>
@@ -86,7 +86,7 @@ const Sidebar = () => {
                 </li>
                 <li>
                     <span onClick={(e) => logout(e)}>
-                        <FontAwesomeIcon icon={faSignOutAlt} /> Logout
+                        <FontAwesomeIcon icon={faSignOutAlt} style={{ paddingRight: '8px' }} /> Logout
                     </span>
                 </li>
             </ul>
