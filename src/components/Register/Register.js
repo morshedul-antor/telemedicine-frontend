@@ -197,6 +197,10 @@ const Register = () => {
                             providing the digital platform based Telehealth. Home healthcare & Cloud based EHR
                             (Electronic Health Record) services for the Patients.
                         </p>
+                        <div>
+                            <span>For Any Issue Please Call at</span>
+                            <a href="tel:+8801322658481">+88 01322658481</a>
+                        </div>
                     </div>
                 </div>
             </div>
