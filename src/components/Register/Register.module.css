@@ -263,6 +263,24 @@
     padding-left: 8px;
 }
 
+.left .support {
+    margin-top: 40px;
+    display: none;
+}
+
+.support > span {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}
+
+.support > a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary);
+}
+
 .right {
     font-size: 14px;
     color: var(--white);
@@ -270,6 +288,14 @@
     border-radius: 0 5px 5px 0;
     padding: 20px 40px;
 }
+.right > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
 .right > div > h2 > svg {
     font-size: 32px;
 }
@@ -288,6 +314,7 @@
     display: block;
     text-align: center;
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 .right a {
@@ -296,7 +323,7 @@
     background-color: var(--primary);
     padding: 10px 30px;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .right a:hover {
@@ -329,6 +356,11 @@
     .left > div > h2 {
         margin: 10px 0 10px 0;
     }
+
+    .left .support {
+        display: block;
+    }
+
     .Address h3 {
         margin-top: -2px;
     }

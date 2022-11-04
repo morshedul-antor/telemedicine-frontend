@@ -82,6 +82,13 @@
     border-radius: 5px 0 0 5px;
     padding: 80px 40px;
 }
+
+.left > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .left > div > h2 > svg {
     font-size: 32px;
 }
