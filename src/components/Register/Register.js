@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'
+import Doc from '../../assets/img/cds.png'
 import Logo from '../../assets/logo/logo.png'
 import { statusCheck } from '../../utils/statusCheck'
 import BG from '.././../assets/img/background-doc-table.jpg'
@@ -187,15 +188,13 @@ const Register = () => {
                 </div>
                 <div className={classes.right}>
                     <div>
+                        <div>
+                            <img src={Doc} alt="" />
+                        </div>
                         <h2>
                             <FontAwesomeIcon icon={faHandSparkles} /> Welcome to HEALTHx
                         </h2>
-                        <p>
-                            With a mission to ‘Drive the digitalization of healthcare of Bangladesh, HEALTHx is aspired
-                            to be the largest digital health platform in Bangladesh providing the digital platform based
-                            Telehealth, Home healthcare & Cloud based EHR (Electronic Health Record) services for the
-                            Patients.
-                        </p>
+                        <p>Register yourself as a Doctor!</p>
                         <div>
                             <span>For Any Support Please Call at</span>
                             <a href="tel:+8801322658481">+88 01322658481</a>

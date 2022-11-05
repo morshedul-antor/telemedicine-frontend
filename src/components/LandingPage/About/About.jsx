@@ -19,12 +19,15 @@ export default function About() {
                         online & offline prescription, Patient history-medical record, health data analytics, clinical &
                         medical education etc.
                     </p>
+                    <div>
+                        <p>Are you a BMDC register Doctor?</p>
+                        {/* <Link to="/register">Please click for Free Registration</Link> */}
+                    </div>
                     <div className={classes.buttonContainer}>
-                        <Link to="/login">
-                            <button>Login</button>
-                        </Link>
                         <Link to="/register">
-                            <button>Register</button>
+                            <button>
+                                Please Click here for free Registration <span>&#8594;</span>
+                            </button>
                         </Link>
                     </div>
                     {/* <div className={classes.counterWrapper}>
