@@ -293,16 +293,30 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 70vh;
+}
+
+.right > div > h2 {
+    font-size: 26px;
+    margin: 0;
+    margin-top: 14px;
+    margin-bottom: -50px;
+}
+
+.right > div > div:nth-child(1) > img {
+    width: 60%;
+    margin-top: 0px;
+    opacity: 0.95;
 }
 
 .right > div > h2 > svg {
     font-size: 32px;
 }
 .right p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
     text-align: justify;
+    margin-top: 54px;
 }
 
 .right > div > div {
@@ -315,6 +329,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 16px;
+    margin-top: 0px;
 }
 
 .right a {
