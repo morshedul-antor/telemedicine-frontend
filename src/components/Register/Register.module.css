@@ -69,7 +69,7 @@
     padding: 0;
     box-shadow: 0 20px 30px var(--grey);
     border-radius: 5px;
-    width: 1000px;
+    width: 1100px;
     margin: 0 auto;
     z-index: 50;
     transition: 200ms;
@@ -158,6 +158,7 @@
     padding: 7px 20px;
     cursor: pointer;
     margin: 10px 0 0 0;
+    font-size: 16px;
 }
 
 .emailPhone {
@@ -194,36 +195,43 @@
     outline: 0;
 }
 
-.sexWrapper {
+.sexWrapper,
+.grid,
+.gridTwo {
     display: grid;
     grid-template-columns: minmax(0, 50%) minmax(0, 50%);
     gap: 20px;
 }
-.sexWrapper > div {
+.sexWrapper > div,
+.grid > div {
     position: relative;
 }
-.sexWrapper > div > select {
+.sexWrapper > div > select,
+.grid > div > select {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    background: var(--light);
+    background: var(--light-low);
     border: none;
-    color: var(--dark-blue);
+    color: var(--dark);
     padding: 0 5px 0 5px;
-    min-height: 30px;
+    min-height: 28px;
     appearance: none;
     -webkit-appearance: none;
     position: relative;
     cursor: pointer;
 }
 
-.sexWrapper > div > select {
+.sexWrapper > div > select,
+.grid > div > select {
     padding: 10px;
 }
-.sexWrapper > div > select:focus {
+.sexWrapper > div > select:focus,
+.grid > div > select:focus {
     outline: 0;
 }
-.sexWrapper > div > select + span {
+.sexWrapper > div > select + span,
+.grid > div > select + span {
     width: 0;
     height: 0;
     position: relative;
@@ -236,18 +244,21 @@
     z-index: 100;
     pointer-events: none;
 }
-.sexWrapper > div > label {
+.sexWrapper > div > label,
+.grid > div > label {
     color: var(--grey);
     font-size: 14px;
     margin: 0 0 0 5px;
 }
 
-.left > div > form > .sexWrapper > div > input + label::before {
+.left > div > form > .sexWrapper > div > input + label::before,
+.left > div > form > .grid > div > input + label::before {
     bottom: 48px;
 }
-.sexWrapper > div:nth-child(2) {
+.sexWrapper > div:nth-child(2),
+.grid > div:nth-child(2) {
     position: relative;
-    bottom: -25px;
+    bottom: -23px;
 }
 
 .linkText {
@@ -320,7 +331,7 @@
 }
 
 .right > div > div {
-    margin-top: 5em;
+    margin-top: 4em;
     text-align: center;
 }
 
@@ -346,6 +357,22 @@
     transition: 200ms;
 }
 
+.star {
+    color: var(--red) !important;
+}
+
+.gridTwo > div > input[type='date'] {
+    font-size: 12px;
+    padding: 8px 2px;
+    color: var(--dark);
+    background-color: var(--white);
+    margin-top: -2px;
+}
+
+.sublabel {
+    font-size: 10px !important;
+}
+
 @media (max-width: 420px) {
     .right {
         display: none;
@@ -366,7 +393,7 @@
         gap: 0px;
     }
     .left {
-        margin: 30px 0 60px 32px;
+        margin: 30px 0 40px 32px;
     }
     .left > div > h2 {
         margin: 10px 0 10px 0;
@@ -385,13 +412,15 @@
         border: 2px solid var(--light);
         border-radius: 2px;
     }
-    .sexWrapper > div > select {
+    .sexWrapper > div > select,
+    .grid > div > select {
         padding: 10px;
         background-color: var(--white);
         border: 2px solid var(--light);
         border-radius: 2px;
     }
-    .sexWrapper > div > select + span {
+    .sexWrapper > div > select + span,
+    .grid > div > select + span {
         top: -18%;
         left: 88%;
     }

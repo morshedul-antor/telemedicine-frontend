@@ -13,6 +13,7 @@ import classes from './Register.module.css'
 const Register = () => {
     const { stateAuth } = useContext(Auth)
 
+    const [title, setTitle] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -22,6 +23,10 @@ const Register = () => {
     const [speciality, setSpeciality] = useState('')
     const [qualification, setQualification] = useState('')
     const [bmdc, setBmdc] = useState('')
+
+    const [position, setPosition] = useState('')
+    const [institute, setInstitute] = useState('')
+    const [date, setDate] = useState('')
 
     const [alert, setAlert] = useState([])
     const history = useHistory()
@@ -52,6 +57,11 @@ const Register = () => {
                 speciality,
                 qualification,
                 bmdc,
+                dr_title: title,
+
+                institute,
+                position,
+                start_date: date,
             }),
         })
 
@@ -99,47 +109,60 @@ const Register = () => {
                             Register
                         </h2>
                         <form onSubmit={submit}>
-                            <div>
-                                <input type="text" onChange={(e) => setName(e.target.value)} required />
-                                <label>
-                                    <span>Name</span>
-                                </label>
+                            <div className={classes.grid}>
+                                <div>
+                                    <label>
+                                        Designation <span className={classes.star}>*</span>
+                                    </label>
+                                    <select value={title} onChange={(e) => setTitle(e.target.value)} required>
+                                        <option value="">Select</option>
+                                        <option value="Dr.">Dr.</option>
+                                        <option value="Prof. Dr.">Prof. Dr.</option>
+                                        <option value="Assoc. Prof. Dr.">Assoc. Prof. Dr.</option>
+                                        <option value="Asst. Prof. Dr.">Asst. Prof. Dr.</option>
+                                    </select>
+                                    <span></span>
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        required
+                                    />
+                                    <label>
+                                        <span>Name</span> <span className={classes.star}>*</span>
+                                    </label>
+                                </div>
                             </div>
                             <div className={classes.emailPhone}>
                                 <div>
                                     <input type="email" onChange={(e) => setEmail(e.target.value)} required />
                                     <label>
-                                        <span>Email</span>
+                                        <span>Email</span> <span className={classes.star}>*</span>
                                     </label>
                                 </div>
                                 <div>
                                     <input
-                                        type="text"
-                                        pattern="[0-9]{11}"
+                                        type="tel"
+                                        pattern="[0][1][0-9]{9}"
+                                        minLength={11}
+                                        maxLength={11}
                                         onChange={(e) => setPhone(e.target.value)}
                                         required
                                     />
                                     <label>
-                                        <span>Phone [11 digit]</span>
+                                        <span>Phone</span> <span className={classes.sublabel}>(11 digit)</span>{' '}
+                                        <span className={classes.star}>*</span>
                                     </label>
                                 </div>
-                            </div>
-                            <div>
-                                <input type="password" onChange={(e) => setPassword(e.target.value)} required />
-                                <label>
-                                    <span>Password</span>
-                                </label>
-                            </div>
-                            <div>
-                                <input type="password" onChange={(e) => setCnfPassword(e.target.value)} required />
-                                <label>
-                                    <span>Confirm password</span>
-                                </label>
                             </div>
 
                             <div className={classes.sexWrapper}>
                                 <div>
-                                    <label>Sex</label>
+                                    <label>
+                                        Sex <span className={classes.star}>*</span>
+                                    </label>
                                     <select value={sex} onChange={(e) => setSex(e.target.value)}>
                                         <option value="male" defaultValue={true}>
                                             Male
@@ -151,7 +174,7 @@ const Register = () => {
                                 <div>
                                     <input type="number" onChange={(e) => setBmdc(e.target.value)} required />
                                     <label>
-                                        <span>BMDC number</span>
+                                        <span>BMDC number</span> <span className={classes.star}>*</span>
                                     </label>
                                 </div>
                             </div>
@@ -159,15 +182,51 @@ const Register = () => {
                             <div>
                                 <input type="text" onChange={(e) => setQualification(e.target.value)} required />
                                 <label>
-                                    <span>Qualifications</span>
+                                    <span>Qualifications</span> <span className={classes.star}>*</span>
                                 </label>
                             </div>
 
                             <div>
                                 <input type="text" onChange={(e) => setSpeciality(e.target.value)} required />
                                 <label>
-                                    <span>Speciality</span>
+                                    <span>Speciality</span> <span className={classes.star}>*</span>
                                 </label>
+                            </div>
+
+                            <div>
+                                <input type="text" onChange={(e) => setInstitute(e.target.value)} />
+                                <label>
+                                    <span>Working Institute</span>{' '}
+                                    <span className={classes.sublabel}>(hospital, clinic, lab or diagnostic)</span>
+                                </label>
+                            </div>
+
+                            <div className={classes.gridTwo}>
+                                <div>
+                                    <input type="text" onChange={(e) => setPosition(e.target.value)} />
+                                    <label>
+                                        <span>Position</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="date" onChange={(e) => setDate(e.target.value)} />
+                                    <label></label>
+                                </div>
+                            </div>
+
+                            <div className={classes.gridTwo}>
+                                <div>
+                                    <input type="password" onChange={(e) => setPassword(e.target.value)} required />
+                                    <label>
+                                        <span>Password</span> <span className={classes.star}>*</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="password" onChange={(e) => setCnfPassword(e.target.value)} required />
+                                    <label>
+                                        <span>Confirm password</span> <span className={classes.star}>*</span>
+                                    </label>
+                                </div>
                             </div>
 
                             <button>Register</button>
