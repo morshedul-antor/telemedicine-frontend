@@ -110,17 +110,17 @@
     margin: 0;
     box-sizing: border-box;
     color: var(--dark-blue);
-    border-bottom: 3px solid var(--grey2);
+    border-bottom: 2px solid var(--grey2);
     position: relative;
 }
 .left > div > form > div > input + label::before,
 .left > div > form > div > div > input + label::before {
     content: '';
     position: absolute;
-    bottom: 23px;
+    top: 35px;
     left: 0;
     width: 0;
-    height: 3px;
+    height: 2px;
     background: var(--primary);
     transition: 200ms;
 }
@@ -133,7 +133,7 @@
     font-size: 14px;
     color: var(--grey);
     position: relative;
-    top: -30px;
+    top: -32px;
     pointer-events: none;
     transition: 200ms;
 }
@@ -161,52 +161,15 @@
     font-size: 16px;
 }
 
-.emailPhone {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 50%));
-    gap: 20px;
-}
-.emailPhone > input {
-    box-sizing: border-box;
-    width: 100%;
-}
-.Address {
-    padding: 0 0 20px 0;
-}
-.Address h3 {
-    font-weight: 400;
-    color: var(--grey);
-    margin: 5px 0;
-}
-.Address > div {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 50%));
-    gap: 20px;
-}
-.Address > div > select {
-    appearance: none;
-    -webkit-appearance: none;
-    background: var(--light);
-    color: var(--dark-blue);
-    border: none;
-    padding: 10px;
-}
-.Address > div > select:focus {
-    outline: 0;
-}
-
-.sexWrapper,
 .grid,
 .gridTwo {
     display: grid;
     grid-template-columns: minmax(0, 50%) minmax(0, 50%);
     gap: 20px;
 }
-.sexWrapper > div,
 .grid > div {
     position: relative;
 }
-.sexWrapper > div > select,
 .grid > div > select {
     display: block;
     width: 100%;
@@ -222,15 +185,14 @@
     cursor: pointer;
 }
 
-.sexWrapper > div > select,
 .grid > div > select {
     padding: 10px;
 }
-.sexWrapper > div > select:focus,
+
 .grid > div > select:focus {
     outline: 0;
 }
-.sexWrapper > div > select + span,
+
 .grid > div > select + span {
     width: 0;
     height: 0;
@@ -244,21 +206,23 @@
     z-index: 100;
     pointer-events: none;
 }
-.sexWrapper > div > label,
 .grid > div > label {
     color: var(--grey);
     font-size: 14px;
     margin: 0 0 0 5px;
 }
 
-.left > div > form > .sexWrapper > div > input + label::before,
 .left > div > form > .grid > div > input + label::before {
     bottom: 48px;
 }
-.sexWrapper > div:nth-child(2),
+
 .grid > div:nth-child(2) {
     position: relative;
-    bottom: -23px;
+    bottom: -26px;
+}
+
+.grid > div:nth-child(2) input + label span {
+    left: -4px;
 }
 
 .linkText {
@@ -308,7 +272,7 @@
 }
 
 .right > div > h2 {
-    font-size: 26px;
+    font-size: 22px;
     margin: 0;
     margin-top: 14px;
     margin-bottom: -50px;
@@ -403,23 +367,17 @@
         display: block;
     }
 
-    .Address h3 {
-        margin-top: -2px;
+    .left > div > form > div > input + label span,
+    .left > div > form > div > div > input + label span {
+        font-size: 12px;
     }
-    .Address > div > select {
-        padding: 10px;
-        background-color: var(--white);
-        border: 2px solid var(--light);
-        border-radius: 2px;
-    }
-    .sexWrapper > div > select,
+
     .grid > div > select {
         padding: 10px;
         background-color: var(--white);
         border: 2px solid var(--light);
         border-radius: 2px;
     }
-    .sexWrapper > div > select + span,
     .grid > div > select + span {
         top: -18%;
         left: 88%;

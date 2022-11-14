@@ -135,7 +135,7 @@ const Register = () => {
                                     </label>
                                 </div>
                             </div>
-                            <div className={classes.emailPhone}>
+                            <div className={classes.gridTwo}>
                                 <div>
                                     <input type="email" onChange={(e) => setEmail(e.target.value)} required />
                                     <label>
@@ -158,7 +158,7 @@ const Register = () => {
                                 </div>
                             </div>
 
-                            <div className={classes.sexWrapper}>
+                            <div className={classes.grid}>
                                 <div>
                                     <label>
                                         Sex <span className={classes.star}>*</span>
@@ -251,7 +251,7 @@ const Register = () => {
                             <img src={Doc} alt="" />
                         </div>
                         <h2>
-                            <FontAwesomeIcon icon={faHandSparkles} /> Welcome to HEALTHx
+                            <FontAwesomeIcon icon={faHandSparkles} /> Welcome to Smart Doctor Solution
                         </h2>
                         <p>Register yourself as a Doctor!</p>
                         <div>
