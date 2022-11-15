@@ -1,3 +1,4 @@
+import ChangePassword from './ChangePassword/ChangePassword'
 import ForgotPassword from './ForgotPassword/ForgotPassword'
 
-export { ForgotPassword }
+export { ForgotPassword, ChangePassword }

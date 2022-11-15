@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Countdown from 'react-countdown'
 import { Link } from 'react-router-dom'
 import Logo from '../../../assets/logo/logo.png'
 import Pic from '../../../assets/password/pass.png'
 import classes from './ForgotPassword.module.css'
 
 export default function ForgotPassword() {
+    const [hide, setHide] = useState(false)
+
     return (
         <div className={classes.wraper}>
             <Link to="/login">
@@ -34,19 +37,31 @@ export default function ForgotPassword() {
                         />
                         <button type="submit">Next</button>
                     </form>
-
-                    <span>OTP has been sent to your number!</span>
+                    <button onClick={() => setHide(!hide)}>Submit</button>
 
                     <div className={classes.show}>
-                        <p>OTP</p>
-                        <div>
-                            <input type="tel" name="" id="" maxLength={1} minLength={1} />
-                            <input type="tel" name="" id="" maxLength={1} minLength={1} />
-                            <input type="tel" name="" id="" maxLength={1} minLength={1} />
-                            <input type="tel" name="" id="" maxLength={1} minLength={1} />
-                            <input type="tel" name="" id="" maxLength={1} minLength={1} />
-                            <input type="tel" name="" id="" maxLength={1} minLength={1} />
-                        </div>
+                        {hide && (
+                            <>
+                                <span>OTP has been sent to your number!</span>
+                                <p className={classes.time}>
+                                    {hide && (
+                                        <span>
+                                            <Countdown date={Date.now() + 5 * 60 * 1000} />
+                                        </span>
+                                    )}
+                                </p>
+                                <p>OTP</p>
+                                <div>
+                                    <input type="tel" name="" id="" maxLength={1} minLength={1} />
+                                    <input type="tel" name="" id="" maxLength={1} minLength={1} />
+                                    <input type="tel" name="" id="" maxLength={1} minLength={1} />
+                                    <input type="tel" name="" id="" maxLength={1} minLength={1} />
+                                    <input type="tel" name="" id="" maxLength={1} minLength={1} />
+                                    <input type="tel" name="" id="" maxLength={1} minLength={1} />
+                                </div>
+                                <button>Confirm OTP</button>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
