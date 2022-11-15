@@ -150,7 +150,7 @@ const Register = () => {
                                         required
                                     />
                                     <label>
-                                        <span>Phone</span> <span className={classes.sublabel}>(11 digit)</span>{' '}
+                                        <span>Phone</span> <span className={classes.sublabel}>(11 Digit)</span>{' '}
                                         <span className={classes.star}>*</span>
                                     </label>
                                 </div>
@@ -195,7 +195,7 @@ const Register = () => {
                                 <input type="text" onChange={(e) => setInstitute(e.target.value)} />
                                 <label>
                                     <span>Working Institute</span>{' '}
-                                    <span className={classes.sublabel}>(hospital, clinic, lab or diagnostic)</span>
+                                    <span className={classes.sublabel}>(Hospital, Clinic, Lab or Diagnostic)</span>
                                 </label>
                             </div>
 
