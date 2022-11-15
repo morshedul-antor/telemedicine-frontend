@@ -60,8 +60,6 @@ const Register = () => {
                 dr_title: title,
 
                 institute,
-                position,
-                start_date: date,
             }),
         })
 
@@ -201,7 +199,7 @@ const Register = () => {
                                 </label>
                             </div>
 
-                            <div className={classes.gridTwo}>
+                            {/* <div className={classes.gridTwo}>
                                 <div>
                                     <input type="text" onChange={(e) => setPosition(e.target.value)} />
                                     <label>
@@ -212,7 +210,7 @@ const Register = () => {
                                     <input type="date" onChange={(e) => setDate(e.target.value)} />
                                     <label></label>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className={classes.gridTwo}>
                                 <div>

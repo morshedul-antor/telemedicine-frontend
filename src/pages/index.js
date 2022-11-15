@@ -1,6 +1,7 @@
 import ChamberPage from './ChamberPage'
 import DashboardPage from './DashboardPage'
 import EcardPage from './EcardPage'
+import ForgotPasswordPage from './ForgotPasswordPage'
 import HomePage from './HomePage'
 import LoginPage from './LoginPage'
 import PatientPage from './PatientPage'
@@ -22,4 +23,5 @@ export {
     PatientProfilePage,
     ChamberPage,
     PatientPage,
+    ForgotPasswordPage,
 }

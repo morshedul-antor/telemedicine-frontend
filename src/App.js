@@ -13,6 +13,7 @@ import {
     PatientProfilePage,
     ChamberPage,
     PatientPage,
+    ForgotPasswordPage,
 } from './pages/index'
 import { authReducer, authState, userReducer, userState } from './reducer'
 import ProtectedRoute from './routes/ProtectedRoute'
@@ -38,6 +39,7 @@ const App = () => {
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />
                             <Route path="/e-card/:id" component={EcardPage} />
+                            <Route path="/forgot-password" component={ForgotPasswordPage} />
                         </Switch>
                     </Router>
                 </UserInfo.Provider>
