@@ -143,7 +143,7 @@ const Login = () => {
                             <button>Login</button>
                         </form>
 
-                        <Link to="#">Forgot Password?</Link>
+                        <Link to="/forgot-password">Forgot Password?</Link>
 
                         <p className={classes.linkText}>
                             Don't have an account?{' '}
