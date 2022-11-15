@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Auth, UserInfo } from '../../../allContext'
-import img from '../.././../assets/img/logo.svg'
+import img from '../.././../assets/logo/logo.png'
 import classes from './Sidebar.module.css'
 
 const Sidebar = () => {
