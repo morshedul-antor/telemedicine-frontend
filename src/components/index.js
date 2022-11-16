@@ -1,6 +1,7 @@
 import Chambers from './Chambers/Chambers'
 import Dashboard from './Dashboard/Dashboard'
 import Ecard from './Ecard/Ecard'
+import Error from './Error/Error'
 import Login from './Login/Login'
 import { ForgotPassword } from './PasswordReset'
 import { ChangePassword } from './PasswordReset'
@@ -13,6 +14,7 @@ import Schedule from './ScheduleV2/Schedule'
 import Settings from './Settings/Settings'
 
 export {
+    Error,
     Login,
     Register,
     Profile,
