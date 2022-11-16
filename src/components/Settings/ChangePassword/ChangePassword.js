@@ -40,6 +40,7 @@ const ChangePassword = () => {
             setMsg('Something went wrong.')
         }
     }
+
     return (
         <div className={classes.changePassword}>
             <form onSubmit={submit}>
