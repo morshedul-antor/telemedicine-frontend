@@ -134,3 +134,9 @@
     color: var(--dark);
     margin-top: -6px;
 }
+
+@media (max-width: 420px) {
+    .Sidebar {
+        display: none;
+    }
+}

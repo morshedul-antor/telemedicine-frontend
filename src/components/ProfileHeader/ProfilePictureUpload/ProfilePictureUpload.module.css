@@ -126,3 +126,10 @@
 .Control > .Upload span {
     margin-left: 5px;
 }
+
+@media (max-width: 420px) {
+    .changePP button {
+        top: 70px;
+        left: 70px;
+    }
+}

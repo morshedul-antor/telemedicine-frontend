@@ -1,7 +1,7 @@
 .Snapshot {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 3fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin: 20px 0 0 0;
 }
@@ -77,4 +77,67 @@
     font-size: 16px;
     padding-left: 4px;
     color: var(--dark);
+}
+
+@media (max-width: 420px) {
+    .Snapshot {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 76px 10px;
+        margin: 20px 0 10px 0;
+    }
+
+    .Snapshot > div {
+        padding: 24px 0 0 0;
+        border-radius: 10px;
+        color: var(--dark-blue);
+        box-shadow: 5px 5px 10px var(--light);
+        font-size: 12px;
+        position: relative;
+        height: 70px;
+    }
+    .Snapshot > div:nth-child(2) {
+        margin-top: -1px;
+    }
+
+    .Snapshot > div > div {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        background-color: var(--white);
+        padding: 2px 20px 10px 20px;
+        border-radius: 0 0 8px 8px;
+        position: relative;
+        min-height: 120px;
+    }
+
+    .Snapshot > div > div > svg {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: var(--light-grey);
+        font-size: 26px;
+        opacity: 0.8;
+    }
+
+    .Snapshot > div > div > div > p {
+        font-size: 10px;
+    }
+
+    .Snapshot > div > div > div > p:first-child {
+        font-size: 12px;
+        color: var(--primary);
+        font-weight: 500;
+    }
+
+    .Snapshot div > div:nth-child(2) > p {
+        text-align: center;
+    }
+
+    .Snapshot b {
+        font-size: 14px;
+        padding-left: 4px;
+        color: var(--dark);
+    }
 }

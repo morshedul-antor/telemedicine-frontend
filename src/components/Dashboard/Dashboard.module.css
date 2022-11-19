@@ -72,3 +72,21 @@
     margin: 0 0 0 5px;
     font-size: 14px;
 } */
+
+@media (max-width: 420px) {
+    .Dashboard {
+        grid-template-columns: minmax(0, 100%);
+        width: 100%;
+        position: relative;
+    }
+
+    .Dashboard > div:first-child {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .Dashboard .Content {
+        margin: 16px;
+    }
+}
