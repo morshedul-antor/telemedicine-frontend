@@ -2,6 +2,7 @@ import Chambers from './Chambers/Chambers'
 import Dashboard from './Dashboard/Dashboard'
 import Ecard from './Ecard/Ecard'
 import Error from './Error/Error'
+import Layout from './Layout/Layout'
 import Login from './Login/Login'
 import { ForgotPassword } from './PasswordReset'
 import { ChangePassword } from './PasswordReset'
@@ -27,4 +28,5 @@ export {
     Patient,
     ForgotPassword,
     ChangePassword,
+    Layout,
 }
