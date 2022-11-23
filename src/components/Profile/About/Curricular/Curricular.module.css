@@ -163,3 +163,52 @@
     opacity: 0.8;
     transition: 200ms;
 }
+
+@media (max-width: 420px) {
+    .Curricular {
+        margin: 10px;
+        font-size: 12px;
+    }
+
+    .Basic {
+        padding: 0px 10px;
+    }
+
+    .Basic > div > h2 {
+        font-size: 14px;
+    }
+
+    .infoTable {
+        font-size: 12px;
+    }
+
+    .formWrap {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .Basic .button {
+        margin-top: -20px;
+    }
+
+    .list {
+        margin-bottom: -10px;
+    }
+
+    .list > ol {
+        margin-left: -12px;
+    }
+
+    .list > ol > li {
+        font-size: 12px;
+        padding-bottom: 10px;
+    }
+
+    .list > ol > li > span {
+        padding-left: 14px;
+        font-size: 10px;
+    }
+
+    .Basic > button {
+        margin-top: 28px;
+    }
+}

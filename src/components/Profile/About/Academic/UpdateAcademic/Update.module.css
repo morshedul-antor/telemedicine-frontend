@@ -138,7 +138,7 @@
     }
 
     .formWrapper {
-        width: 18em;
+        width: 24em;
         padding: 30px 20px;
         box-shadow: 1px 1px var(--light-low);
         background-color: var(--light);
@@ -160,7 +160,7 @@
     }
 
     .formWrapper label {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .formWrapper input[type='text'],
@@ -171,7 +171,7 @@
     .formWrapper .button {
         margin-top: 10px;
         margin-bottom: -20px;
-        font-size: 12px;
+        font-size: 10px;
         padding: 8px 12px;
     }
 }

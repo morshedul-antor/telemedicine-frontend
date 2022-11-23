@@ -94,7 +94,7 @@ export default function Curricular() {
                                 <ol>
                                     {curriculars[1] &&
                                         curriculars[1].map((curricular, index) => (
-                                            <li>
+                                            <li key={index}>
                                                 {curricular.title}
                                                 <span>
                                                     <FontAwesomeIcon icon={faEdit} onClick={() => setIsOpen(index)} />
