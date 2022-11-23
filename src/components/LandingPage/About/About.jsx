@@ -20,7 +20,7 @@ export default function About() {
                         medical education etc.
                     </p>
                     <div>
-                        <p>Are you a BMDC register Doctor?</p>
+                        <p>Are you a BMDC registered Doctor?</p>
                         {/* <Link to="/register">Please click for Free Registration</Link> */}
                     </div>
                     <div className={classes.buttonContainer}>

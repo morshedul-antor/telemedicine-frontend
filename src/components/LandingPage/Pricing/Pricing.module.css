@@ -346,8 +346,9 @@
         font-size: 1.5em;
     }
     .tablePricing {
-        font-size: 2em;
+        font-size: 22px;
         margin-top: 7px;
+        gap: 20px;
     }
     /* 
         ** Four Grids ** */
