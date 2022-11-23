@@ -59,3 +59,51 @@
     margin: 0px 5px;
     border-radius: 2px;
 }
+
+@media (max-width: 420px) {
+    .Profile {
+        background: var(--light);
+        display: grid;
+        grid-template-columns: minmax(0, 20%) minmax(0, 80%);
+        gap: 20px;
+        min-height: 100vh;
+    }
+
+    .Profile {
+        background: var(--light-low);
+        grid-template-columns: minmax(0, 100%);
+        gap: 0px;
+        margin: 16px;
+        margin-bottom: 8em;
+    }
+    .Profile > div:first-child {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .profileWrapper {
+        margin: 0px;
+    }
+
+    .head {
+        display: grid;
+        grid-template-columns: minmax(0, 100%);
+        color: var(--white);
+        background-image: linear-gradient(to right, var(--dark-blue), var(--primary), var(--secondary));
+        border-radius: 2px 2px 0 0;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 0 15px;
+        margin: 0 0 0 0;
+        text-align: center;
+    }
+    .body {
+        font-size: 12px;
+        display: grid;
+        grid-template-columns: minmax(0, 100%);
+        padding: 0 15px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}

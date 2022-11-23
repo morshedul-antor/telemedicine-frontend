@@ -49,7 +49,9 @@ export default function MobileNav() {
                 </ul>
             </div>
             {sideOpen && <MobileSide setSideOpen={setSideOpen} />}
-            <Popup />
+            <div>
+                <Popup />
+            </div>
         </div>
     )
 }

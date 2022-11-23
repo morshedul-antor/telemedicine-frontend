@@ -28,6 +28,10 @@
     z-index: 50;
 }
 
+.header {
+    position: relative;
+}
+
 .ImgUploader > .container > .header > .Title {
     color: var(--dark-blue);
     text-align: center;
@@ -129,7 +133,71 @@
 
 @media (max-width: 420px) {
     .changePP button {
-        top: 70px;
-        left: 70px;
+        top: 60px;
+        left: 60px;
+    }
+
+    .ImgUploader > .container {
+        position: relative;
+        background: var(--white);
+        border: 1px solid var(--light);
+        bottom: 0%;
+        left: 0px;
+        line-height: 1.4;
+        padding: 14px 28px;
+        border-radius: 10px;
+        min-width: 15em;
+        z-index: 50;
+        top: 230px;
+        left: 46%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ImgUploader > .container > .UploadForm {
+        width: 100%;
+        background: var(--light-low);
+        z-index: 100;
+    }
+
+    .ImgUploader > .container > .UploadForm > .SelectedImg {
+        height: 210px;
+    }
+
+    .UploadForm > .SelectedImg div .PreviewContainer {
+        width: 100%;
+        background: none;
+    }
+
+    .UploadForm > .SelectedImg div > .PreviewContainer > .ImgPreview {
+        object-fit: cover;
+        height: 190px;
+        width: 190px;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+    }
+
+    .ImgUploader > .container > .header > .Title {
+        color: var(--primary);
+        margin-bottom: -10px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .ImgUploader > .container > .header > .Close {
+        position: relative;
+        font-weight: 700;
+        font-size: 12px;
+        bottom: 16px;
+        left: 19.4em;
     }
 }

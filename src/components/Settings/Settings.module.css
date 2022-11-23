@@ -4,7 +4,7 @@
     gap: 20px;
 }
 .Wrapper {
-    background: var(--light);
+    background: var(--light-low);
 }
 .Wrapper > div {
     background: var(--white);
@@ -37,4 +37,39 @@
 .activeNav {
     background: var(--secondary);
     color: var(--white);
+}
+@media (max-width: 420px) {
+    .Settings {
+        display: grid;
+        grid-template-columns: minmax(0, 100%);
+        gap: 10px;
+        padding: 0px;
+    }
+
+    .Settings > div:first-child {
+        display: none;
+    }
+
+    .Wrapper {
+        padding: 0;
+        margin: 0px;
+        padding-left: 20px;
+        padding-bottom: 120px;
+    }
+
+    .Nav {
+        padding: 0px 10px 0 0px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    .Nav > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px 10px;
+        font-size: 12px;
+        margin: 0 0 0px 0px;
+    }
 }

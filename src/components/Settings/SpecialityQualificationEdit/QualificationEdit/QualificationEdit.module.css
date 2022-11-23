@@ -94,3 +94,33 @@
     text-align: center;
     color: var(--red);
 }
+
+@media (max-width: 420px) {
+    .Qualification .sectionHeader {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .Qualification label {
+        font-size: 12px;
+    }
+
+    .Qualification input {
+        font-size: 11px;
+    }
+
+    .Qualification > .sectionHeader {
+        margin-top: 3em;
+        font-size: 14px;
+    }
+
+    .Qualification .Badge {
+        padding: 10px 20px;
+        font-size: 12px;
+        margin-right: 0px;
+    }
+
+    .Qualification .formWrap {
+        padding: 20px;
+    }
+}

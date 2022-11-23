@@ -94,3 +94,33 @@
     text-align: center;
     color: var(--red);
 }
+
+@media (max-width: 420px) {
+    .Speciality .sectionHeader {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .Speciality label {
+        font-size: 12px;
+    }
+
+    .Speciality input {
+        font-size: 11px;
+    }
+
+    .Speciality > .sectionHeader {
+        margin-top: 3em;
+        font-size: 14px;
+    }
+
+    .Speciality .Badge {
+        padding: 10px 20px;
+        font-size: 12px;
+        margin-right: 0px;
+    }
+
+    .Speciality .formWrap {
+        padding: 20px;
+    }
+}

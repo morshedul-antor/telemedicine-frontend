@@ -98,3 +98,51 @@
 .bmdcInput > span {
     visibility: hidden;
 }
+
+@media (max-width: 420px) {
+    .formGrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+    .General {
+        width: 95%;
+        padding: 10px 0px;
+        margin: 20px auto;
+        background-color: var(--white);
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .General label {
+        font-size: 12px;
+    }
+
+    .General input,
+    .General select {
+        font-size: 12px;
+    }
+    .General .bmdcInput {
+        font-size: 12px;
+    }
+
+    .General .formHeader {
+        color: var(--secondary2);
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .General .formWrap {
+        padding: 20px;
+        background: var(--light-low);
+        border-radius: 6px;
+        margin-bottom: 20px;
+    }
+
+    .General .Button {
+        padding: 10px 30px;
+        font-size: 12px;
+        overflow: hidden;
+        margin-bottom: -30px;
+    }
+}

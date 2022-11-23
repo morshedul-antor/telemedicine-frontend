@@ -113,7 +113,7 @@ export default function Ecard() {
                 <img src={Logo} alt="" />
                 <div>
                     <img src={QR} alt="" className={classes.qr} />
-                    <span>{info.user?.name}</span>
+                    <span>{`${info.doctor?.dr_title || ''} ${info.user?.name || ''}`}</span>
                     <p>
                         <FontAwesomeIcon icon={faStethoscope} /> {info?.specialities?.map((item) => item.speciality)}
                     </p>

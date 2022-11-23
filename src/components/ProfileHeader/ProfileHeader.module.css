@@ -181,17 +181,17 @@
         position: absolute;
         margin: 0;
         top: 4px;
-        left: 110px;
+        left: 94px;
         font-weight: 500;
         color: var(--dark);
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .headLeftWrapper > p {
         position: relative;
         margin: 0;
         top: 34px;
-        left: 110px;
+        left: 94px;
         font-size: 10px;
         color: var(--dark);
         padding-right: 12px;
@@ -209,8 +209,8 @@
     }
 
     .profilePic > .Image {
-        height: 90px;
-        width: 90px;
+        height: 80px;
+        width: 80px;
         border: 2px solid var(--white);
     }
 
@@ -233,6 +233,7 @@
 
     .header > .Chamber {
         margin-left: 0em;
+        z-index: 10;
     }
 
     .header > .Chamber div {

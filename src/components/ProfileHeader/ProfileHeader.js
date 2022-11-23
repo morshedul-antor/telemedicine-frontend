@@ -45,7 +45,7 @@ const ProfileHeader = () => {
             }
 
             let infoFunc = async () => {
-                let infoFetch = await fetch(`${apiV1}/doctors/ `, {
+                let infoFetch = await fetch(`${apiV1}/doctors/`, {
                     headers: {
                         Accept: 'application/json',
                         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const ProfileHeader = () => {
             }
 
             let qualFunc = async () => {
-                let qualFetch = await fetch(`${apiV1}/doctors/qualifications `, {
+                let qualFetch = await fetch(`${apiV1}/doctors/qualifications`, {
                     headers: {
                         Accept: 'application/json',
                         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const ProfileHeader = () => {
             }
 
             let specialityFunc = async () => {
-                let specialityFetch = await fetch(`${apiV1}/doctors/specialities `, {
+                let specialityFetch = await fetch(`${apiV1}/doctors/specialities`, {
                     headers: {
                         Accept: 'application/json',
                         'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ const ProfileHeader = () => {
                                         <ProfilePictreUpload msg={msg} setMsg={setMsg} />
                                     </>
                                 </div>
-                                <h2>{stateUser.info?.name}</h2>
+                                <h2>{`${doctorDetail.dr_title || ''} ${stateUser.info?.name || ''}`}</h2>
                                 <p>{qualification?.qualification}</p>
                                 <p>{speciality?.speciality}</p>
                             </div>
