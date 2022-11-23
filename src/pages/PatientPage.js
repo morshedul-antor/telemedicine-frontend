@@ -1,10 +1,9 @@
-import React from 'react'
-import { Patient } from '../components'
+import { Layout, Patient } from '../components'
 
 export default function PatientPage() {
     return (
-        <div>
+        <Layout>
             <Patient />
-        </div>
+        </Layout>
     )
 }

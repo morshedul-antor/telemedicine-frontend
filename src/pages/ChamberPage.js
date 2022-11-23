@@ -1,10 +1,10 @@
 import React from 'react'
-import { Chambers } from '../components'
+import { Chambers, Layout } from '../components'
 
 export default function ChamberPage() {
     return (
-        <div>
+        <Layout>
             <Chambers />
-        </div>
+        </Layout>
     )
 }
