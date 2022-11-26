@@ -166,10 +166,13 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
 
                         <p className={classes.timeTitle}>Fill Schedule Time Range</p>
                         <div className={classes.timePicker}>
+                            <div className={classes.to}>
+                                <p>From</p>
+                            </div>
                             <label>
                                 <input
                                     type="number"
-                                    placeholder="HH"
+                                    placeholder="Hours"
                                     min={1}
                                     max={12}
                                     value={startHour}
@@ -185,7 +188,7 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
                             <label>
                                 <input
                                     type="number"
-                                    placeholder="MM"
+                                    placeholder="Minutes"
                                     min={0}
                                     max={59}
                                     value={startMinute}
@@ -212,7 +215,7 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
                             <label>
                                 <input
                                     type="number"
-                                    placeholder="HH"
+                                    placeholder="Hours"
                                     min={1}
                                     max={12}
                                     value={endHour}
@@ -228,7 +231,7 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
                             <label>
                                 <input
                                     type="number"
-                                    placeholder="MM"
+                                    placeholder="Minutes"
                                     min={0}
                                     max={59}
                                     value={endMinute}
