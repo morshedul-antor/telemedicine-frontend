@@ -36,7 +36,7 @@ const App = () => {
                             <ProtectedRoute path="/settings" component={SettingsPage} />
                             <ProtectedRoute path="/schedule" component={SchedulePage} />
                             <ProtectedRoute path="/chamber" component={ChamberPage} />
-                            <ProtectedRoute path="/patient-list" component={PatientPage} />
+                            <ProtectedRoute path="/appointment-list" component={PatientPage} />
                             <ProtectedRoute path="/patient/:id" component={PatientProfilePage} />
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />

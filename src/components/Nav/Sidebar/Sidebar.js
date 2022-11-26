@@ -53,7 +53,7 @@ const Sidebar = () => {
             <ul>
                 <li className={location.pathname === '/home' ? classes.active : ''}>
                     <Link to="/home">
-                        <FontAwesomeIcon icon={faTableColumns} /> Dashboard <span>(beta version)</span>
+                        <FontAwesomeIcon icon={faTableColumns} /> Home <span>(beta version)</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/profile' ? classes.active : ''}>
@@ -71,9 +71,9 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={faClock} /> Schedule <span>(setup schedule)</span>
                     </Link>
                 </li>
-                <li className={location.pathname === '/patient-list' ? classes.active : ''}>
-                    <Link to="/patient-list">
-                        <FontAwesomeIcon icon={faHeartbeat} /> Patient List <span>(coming soon)</span>
+                <li className={location.pathname === '/appointment-list' ? classes.active : ''}>
+                    <Link to="/appointment-list">
+                        <FontAwesomeIcon icon={faHeartbeat} /> Appointment List <span>(coming soon)</span>
                     </Link>
                 </li>
             </ul>

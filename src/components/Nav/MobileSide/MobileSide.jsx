@@ -24,7 +24,7 @@ export default function MobileSide({ setSideOpen }) {
                     <p>{userDetail.name}</p>
                     <Link to="/home">
                         <FontAwesomeIcon icon={faHome} className={classes.marginIcon1} />
-                        <span className={classes.textMargin1}>Dashboard</span>
+                        <span className={classes.textMargin1}>Home</span>
                     </Link>
                     <Link to="/profile">
                         <FontAwesomeIcon icon={faUserAlt} /> <span>Profile</span>

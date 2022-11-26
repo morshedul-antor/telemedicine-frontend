@@ -87,7 +87,7 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
                         setActive(2)
                         setOnline(false)
                     }}>
-                    <span>Chamber (offline) Schedule</span>
+                    <span>Chamber (Offline) Schedule</span>
                 </div>
                 <div
                     className={active === 1 ? `${classes.on}` : `${classes.off}`}
