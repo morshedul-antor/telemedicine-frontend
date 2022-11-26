@@ -93,3 +93,30 @@
     cursor: pointer;
     transition: 200ms;
 }
+
+@media (max-width: 420px) {
+    .container {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-right: 0px;
+        padding: 10px;
+    }
+
+    .wrapper {
+        grid-gap: 30px 0px;
+        padding: 10px 0px;
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+
+    .slotBody > .slotButtons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px 1px;
+    }
+
+    .slotButtons > .slotButton > button {
+        font-size: 10px;
+    }
+}

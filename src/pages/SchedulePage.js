@@ -1,10 +1,10 @@
-import { Schedule } from '../components'
+import { Schedule, Layout } from '../components'
 
 const SchedulePage = () => {
     return (
-        <div>
+        <Layout>
             <Schedule />
-        </div>
+        </Layout>
     )
 }
 export default SchedulePage
