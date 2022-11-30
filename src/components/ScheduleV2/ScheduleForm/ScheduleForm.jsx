@@ -2,6 +2,7 @@ import { faThumbtack } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import Select from 'react-select'
+import GridLoader from 'react-spinners/GridLoader'
 import { refreshPage } from '../../../utils/refreshPage'
 import classes from './ScheduleForm.module.css'
 
@@ -9,17 +10,19 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
     const [active, setActive] = useState(2)
     const [selected, setSelected] = useState([])
 
-    const [startDate, setStartDate] = useState()
-    const [endDate, setEndDate] = useState()
-    const [slot, setSlot] = useState()
-    const [startHour, setStartHour] = useState()
-    const [endHour, setEndHour] = useState()
-    const [startMinute, setStartMinute] = useState()
+    const [startDate, setStartDate] = useState('')
+    const [endDate, setEndDate] = useState('')
+    const [slot, setSlot] = useState('')
+    const [startHour, setStartHour] = useState('')
+    const [endHour, setEndHour] = useState('')
+    const [startMinute, setStartMinute] = useState('')
     const [endMinute, setEndMinute] = useState()
     const [startAmPm, setStartAmPm] = useState('am')
     const [endAmPm, setEndAmPm] = useState('pm')
     const [chamber, setChamber] = useState(null)
     const [online, setOnline] = useState(false)
+
+    const [loading, setLoading] = useState(false)
 
     const options = [
         { label: 'Sunday', value: 'sun' },
@@ -46,32 +49,40 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const details = {
-            date_start: startDate,
-            date_end: endDate,
-            time_start: `${startHour}:${startMinute}`,
-            time_end: `${endHour}:${endMinute}`,
-            time_start_am_pm: startAmPm,
-            time_end_am_pm: endAmPm,
-            week_day: selected.map((item) => item.value),
-            online: online,
-            chamber_id: chamber,
-            booked_by_patient_id: 0,
-            duration_min: slot,
-        }
+        if (selected.length > 0) {
+            setLoading(true)
 
-        let schedulePost = await fetch(`${apiV1}/doctor/schedules/range/`, {
-            headers: {
-                Accept: 'appllication/json',
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-            },
-            method: 'POST',
-            body: JSON.stringify(details),
-        })
-        if (schedulePost.ok) {
-            // setMsg([...msg, 'New Chamber added.'])
-            refreshPage()
+            const details = {
+                date_start: startDate,
+                date_end: endDate,
+                time_start: `${startHour}:${startMinute}`,
+                time_end: `${endHour}:${endMinute}`,
+                time_start_am_pm: startAmPm,
+                time_end_am_pm: endAmPm,
+                week_day: selected.map((item) => item.value),
+                online: online,
+                chamber_id: chamber,
+                booked_by_patient_id: 0,
+                duration_min: slot,
+            }
+
+            let schedulePost = await fetch(`${apiV1}/doctor/schedules/range/`, {
+                method: 'POST',
+                headers: {
+                    Accept: 'appllication/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify(details),
+            })
+            if (schedulePost.ok) {
+                // setMsg([...msg, 'New Chamber added.'])
+                refreshPage()
+            } else {
+                setLoading(false)
+            }
+        } else {
+            setLoading(false)
         }
     }
 
@@ -254,9 +265,24 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
                             </label>
                         </div>
                     </div>
-                    <button className={classes.button} type="submit">
-                        {active === 2 ? 'Create Chamber Schedule' : 'Create Online Schedule'}
-                    </button>
+
+                    {loading ? (
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                marginTop: '10px',
+                            }}>
+                            <GridLoader color="#419CD9" size={10} loading={loading} />
+                            <span style={{ color: 'var(--primary)' }}>Please Wait!</span>
+                        </div>
+                    ) : (
+                        <button className={classes.button} type="submit">
+                            {active === 2 ? 'Create Chamber Schedule' : 'Create Online Schedule'}
+                        </button>
+                    )}
                 </form>
             </div>
         </div>
