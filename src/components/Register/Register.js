@@ -63,13 +63,15 @@ const Register = () => {
             }),
         })
 
-        // let registrationJson = await registrationFetch.json()
+        let registrationJson = await registrationFetch.json()
+
         if (registrationFetch.ok) {
             history.push('/login')
         } else {
             let err = statusCheck(registrationFetch, [
-                { sts: 400, msg: 'User email/phone number or Password not correct.' },
+                { sts: 400, msg: `${registrationJson.context}` },
                 { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
+                { sts: 500, msg: 'Server Error!' },
             ])
             setAlert([...alert, err.msg])
         }
