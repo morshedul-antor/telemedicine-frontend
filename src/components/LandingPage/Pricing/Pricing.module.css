@@ -16,6 +16,12 @@
     font-size: 16px;
 }
 
+.logo > p {
+    font-size: 14px;
+    color: var(--dark);
+    font-weight: 400;
+}
+
 .pricingTable {
     margin: 0px auto;
     padding: 0 10em;
@@ -95,6 +101,11 @@
     grid-gap: 10px 40px;
 }
 
+.gridBox {
+    display: grid;
+    padding: 10px 18em;
+}
+
 .table {
     background-color: var(--white);
     display: inline-block;
@@ -124,7 +135,7 @@
     position: relative;
 }
 
-.table:nth-of-type(2):before {
+.table:nth-of-type(1):before {
     content: 'Most Popular';
     position: absolute;
     color: var(--white);
@@ -186,7 +197,7 @@
 }
 
 .tableOptions > p {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -281,6 +292,18 @@
     font-size: 16px;
 }
 
+.listOL {
+    margin-top: 34px;
+    text-align: justify;
+    margin-left: -20px;
+}
+
+.listOL > li {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--dark);
+}
+
 /* For mobile view  */
 @media (max-width: 420px) {
     .wrapper {
@@ -361,6 +384,10 @@
 
     .gridFour > li:first-child {
         margin-right: 0px;
+    }
+
+    .gridBox {
+        padding: 10px;
     }
 
     .list {
