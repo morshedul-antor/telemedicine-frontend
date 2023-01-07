@@ -14,18 +14,25 @@ export default function Faq() {
                     <label htmlFor="q4" className={classes.question}>
                         What is Smart Doctor solution?
                     </label>
-                    <div className={classes.answers}>One stop Digital solution for the Doctors.</div>
+                    <div className={classes.answers}>
+                        Smart Doctor is aimed to be a one-stop digital healthcare solution for physicians and allied
+                        healthcare professionals for telemedicine consultations with patients, e-prescription handling
+                        and storing, patient medical records handling and storing, patient serial and appointment
+                        management. We are also currently developing various other solutions to be used as adjunct in
+                        Smart Doctor such as medical news portal, case discussion lounge, CME news and updates and much
+                        more.
+                    </div>
                 </div>
 
                 <div>
                     <input type="checkbox" id="q5" className={classes.questions} />
                     <div className={classes.plus}>+</div>
                     <label htmlFor="q5" className={classes.question}>
-                        How can I register ?
+                        How can I register?
                     </label>
                     <div className={classes.answers}>
-                        By BMDC registration number, unique mobile number with some basic information, can register
-                        easily.
+                        You can register easily with your BMDC registration number, unique mobile number alongside some
+                        basic information regarding qualifications, experience etc.
                     </div>
                 </div>
 
@@ -36,8 +43,8 @@ export default function Faq() {
                         What are the benefits a doctor can get from this solution?
                     </label>
                     <div className={classes.answers}>
-                        Doctor Digital Profile, Doctor promotion, E-prescription, Patient Health record, medical
-                        Education content & many more.
+                        Doctor Digital Profile, Doctor Promotion, E-prescription, Patient Health Record, Medical
+                        Education Content & much more.
                     </div>
                 </div>
 
@@ -45,11 +52,12 @@ export default function Faq() {
                     <input type="checkbox" id="q8" className={classes.questions} />
                     <div className={classes.plus}>+</div>
                     <label htmlFor="q8" className={classes.question}>
-                        How will update my info & store any achievement in smart doctor solution?
+                        How will I update my information & store any achievement in Smart Doctor solution?
                     </label>
                     <div className={classes.answers}>
-                        As, Smart doctor Solution is for individual doctor, so one can easily update any sort of info by
-                        pressing into profile & can review, update & store achievement, whatever you want.
+                        Smart Doctor is for individual doctors, so one can easily update any sort of info by visiting
+                        our doctor portal to review, update & store all necessary information you wish to provide for
+                        patients to look you up.
                     </div>
                 </div>
 
@@ -57,11 +65,11 @@ export default function Faq() {
                     <input type="checkbox" id="q10" className={classes.questions} />
                     <div className={classes.plus}>+</div>
                     <label htmlFor="q10" className={classes.question}>
-                        Can I see any patients previous health record?
+                        Can I see any patient’s previous health record?
                     </label>
                     <div className={classes.answers}>
-                        Yes, though my health portal & patient health record, Doctor can easily excess into patient
-                        previous health record.
+                        Yes, every patient’s previous health records that has been registered on the platform and used
+                        our services or input their previous medical history can be seen.
                     </div>
                 </div>
 
@@ -72,8 +80,8 @@ export default function Faq() {
                         Can I prescribe through this solution?
                     </label>
                     <div className={classes.answers}>
-                        E-Prescription is one of the feature of smart doctor solution. Using E-prescription, doctor
-                        easily can prescribe for the patient.
+                        E-Prescription is one of the features of Smart Doctor. Using E-prescription, doctors can easily
+                        prescribe for the patient.
                     </div>
                 </div>
 
@@ -81,12 +89,13 @@ export default function Faq() {
                     <input type="checkbox" id="q13" className={classes.questions} />
                     <div className={classes.plus}>+</div>
                     <label htmlFor="q13" className={classes.question}>
-                        As a Doctor, how can i promote by smart doctor solution?
+                        As a Doctor, how can i be promoted by Smart Doctor solution?
                     </label>
                     <div className={classes.answers}>
-                        Patient can find a doctor from doctor portal, By static promotion through our website and also
-                        writing blogs, through recorded video of a doctor easily smart doctor solution will promote a
-                        doctor for patient engagement.
+                        There are numerous way for you to be promoted through our platform. Patient can find a doctor
+                        from doctor portal. By static promotion through our website and also writing blogs. You can
+                        subscribe to our premium packages to avail numerous extra benefits for promoting yourself to get
+                        more patient engagement.
                     </div>
                 </div>
 
@@ -94,10 +103,11 @@ export default function Faq() {
                     <input type="checkbox" id="q16" className={classes.questions} />
                     <div className={classes.plus}>+</div>
                     <label htmlFor="q16" className={classes.question}>
-                        For emergency support - how can I reach?
+                        For any kind of query or support - how can I reach you?
                     </label>
                     <div className={classes.answers}>
-                        Call to our contact number, send text at +8801322658481 or email us at contact@healthx.com.bd
+                        You can reach us either by calling or messaging our support center at +880 1322-658481 or
+                        emailing us at contact@healthx.com.bd
                     </div>
                 </div>
             </div>
