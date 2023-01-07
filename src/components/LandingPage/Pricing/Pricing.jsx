@@ -25,13 +25,13 @@ export default function Pricing() {
                             </div>
                         </p>
                         <ul className={classes.tableOptions}>
+                            <p>Free Forever</p>
                             <li>Doctor Digital Profile</li>
                             <li>Doctor Schedule Management</li>
-                            <p>Free Forever</p>
                         </ul>
-                        <Link to="register">
+                        {/* <Link to="register">
                             <button className={classes.tableStart}>Subscribe Now</button>
-                        </Link>
+                        </Link> */}
                     </li>
                 </ul>
                 {isOpen && <Popup setIsOpen={setIsOpen} />}
@@ -54,6 +54,7 @@ export default function Pricing() {
                             </div>
                         </p>
                         <ul className={classes.tableOptions}>
+                            <p>Free Trial For 1 Month</p>
                             <li>Everything in Basic Package +</li>
                             <li>Doctor Top Position Listing in Find Doctor Search</li>
                             <li>Patient Serial Management*</li>
@@ -61,7 +62,7 @@ export default function Pricing() {
                             <li>E-Prescription</li>
                             <li>Patient List</li>
                             <li>Dedicated Doctor Support Line for HealthX Profile Development</li>
-                            <p>Free Trail For 1 Month</p>
+                            <span>* Under Development</span>
                         </ul>
                         <Link to="#">
                             <button className={classes.tableStart} onClick={() => setIsOpen(true)}>

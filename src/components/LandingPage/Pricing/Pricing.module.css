@@ -117,7 +117,7 @@
     border: 1px solid var(--light);
     box-shadow: 1px 2px 4px var(--light);
     border-top: 4px solid var(--secondary);
-    padding-bottom: 80px;
+    padding-bottom: 40px;
     position: relative;
 }
 
@@ -135,7 +135,7 @@
     position: relative;
 }
 
-.table:nth-of-type(1):before {
+.gridFour .table:nth-of-type(1):before {
     content: 'Most Popular';
     position: absolute;
     color: var(--white);
@@ -192,13 +192,23 @@
     padding: 0px;
     padding-bottom: 14px;
     font-size: 0.9em;
-    border-bottom: 2px solid var(--light);
+    /* border-bottom: 2px solid var(--light); */
     margin-top: -14px;
 }
 
 .tableOptions > p {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--primary);
+}
+
+.tableOptions > span {
+    display: block;
+    text-align: left;
+    font-size: 10px;
+    margin: 10px 0 10px 4px;
+    color: var(--dark);
 }
 
 .tableOptions > li {
@@ -207,6 +217,23 @@
     text-align: left;
     font-weight: 400;
     text-transform: capitalize;
+}
+
+.listOL {
+    margin-top: 30px;
+    text-align: justify;
+    margin-left: -26px;
+    padding-bottom: 30px;
+}
+
+.listOL > li {
+    margin-bottom: 30px;
+    font-size: 10px;
+    color: var(--dark);
+}
+
+.gridBox .table {
+    padding-bottom: 12px;
 }
 
 .tableOptions > li:before {
@@ -290,18 +317,6 @@
     margin: 8px;
     margin-left: 20px;
     font-size: 16px;
-}
-
-.listOL {
-    margin-top: 34px;
-    text-align: justify;
-    margin-left: -20px;
-}
-
-.listOL > li {
-    margin-top: 20px;
-    font-size: 14px;
-    color: var(--dark);
 }
 
 /* For mobile view  */
