@@ -13,7 +13,7 @@ export default function PatientList({ patients }) {
                     <tr>
                         <th>Sl.</th>
                         <th>Patient Name</th>
-                        <th>Patient Sex</th>
+                        <th>Sex</th>
                         <th>Cause of Consultation</th>
                         <th>Date</th>
                         <th>Patient Profile</th>
