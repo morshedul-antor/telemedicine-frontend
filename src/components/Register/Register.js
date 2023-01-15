@@ -8,6 +8,7 @@ import Doc from '../../assets/img/cds.png'
 import Logo from '../../assets/logo/logo.png'
 import { statusCheck } from '../../utils/statusCheck'
 import BG from '.././../assets/img/background-doc-table.jpg'
+import Popup from './PopUp/Popup'
 import classes from './Register.module.css'
 
 const Register = () => {
@@ -29,6 +30,8 @@ const Register = () => {
     const [date, setDate] = useState('')
 
     const [alert, setAlert] = useState([])
+    const [alertInfo, setAlertInfo] = useState(false)
+    let [infoFetch, setInfoFetch] = useState({})
     const history = useHistory()
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -66,7 +69,9 @@ const Register = () => {
         let registrationJson = await registrationFetch.json()
 
         if (registrationFetch.ok) {
-            history.push('/login')
+            // history.push('/login')
+            setInfoFetch(registrationJson)
+            setAlertInfo(true)
         } else {
             let err = statusCheck(registrationFetch, [
                 { sts: 400, msg: `${registrationJson.context}` },
@@ -228,7 +233,14 @@ const Register = () => {
                                     </label>
                                 </div>
                             </div>
-
+                            <div>
+                                <div>
+                                    <div className={classes.terms}>
+                                        <input type="checkbox" required />
+                                        <label>I have read and understood HEALTHx's <span>Privacy Policy</span> and <span>Doctor Terms of Service</span></label>
+                                    </div>
+                                </div>
+                            </div>
                             <button>Register</button>
                         </form>
 
@@ -260,6 +272,7 @@ const Register = () => {
                         </div>
                     </div>
                 </div>
+                {alertInfo && <Popup infoFetch={infoFetch} setIsOpen={setAlertInfo} history={history} />}
             </div>
         </div>
     )
