@@ -49,7 +49,7 @@ const Sidebar = () => {
                     E-Prescription
                 </a>
             </div>
-            <span className={classes.beta}>(under development)</span>
+            <span className={classes.beta}>(Beta Version 0.1.3)</span>
             <ul>
                 <li className={location.pathname === '/home' ? classes.active : ''}>
                     <Link to="/home">

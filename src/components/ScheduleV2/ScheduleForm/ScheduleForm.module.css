@@ -251,6 +251,14 @@
     margin-top: 8px;
 }
 
+.warning {
+    text-align: center;
+    margin: 0;
+    margin-top: 20px;
+    color: var(--red);
+    font-size: 14px;
+}
+
 @media (max-width: 420px) {
     .formWrapper {
         width: 88%;

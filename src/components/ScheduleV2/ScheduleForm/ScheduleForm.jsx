@@ -264,6 +264,9 @@ export default function ScheduleForm({ apiV1, token, chambers }) {
                                 </select>
                             </label>
                         </div>
+                        <p className={classes.warning}>
+                            *N.B. Please do not set a schedule for more than one (1) month
+                        </p>
                     </div>
 
                     {loading ? (
