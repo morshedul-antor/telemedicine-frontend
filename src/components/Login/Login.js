@@ -46,7 +46,7 @@ const Login = () => {
         if (!loginFetch.ok) {
             let err = statusCheck(loginFetch, [
                 { sts: 400, msg: 'User email/phone number or Password not correct.' },
-                { sts: 404, msg: 'You are not acive user!' },
+                { sts: 404, msg: 'Your profile is not yet verified!' },
                 { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
             ])
             setAlert([...alert, err.msg])
