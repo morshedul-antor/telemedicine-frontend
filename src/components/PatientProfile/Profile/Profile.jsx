@@ -16,13 +16,15 @@ export default function Profile({ api, patientId, patient, picture }) {
     const [menu, setMenu] = useState(1)
 
     const profileImage = `${api}/images/profile/${picture}`
+    const demoId = parseInt(process.env.REACT_APP_DEMO_ID)
 
     return (
         <div className={classes.wrapper}>
             <Link to="/home">
                 <img src={Logo} alt="Logo" title="Home" />
             </Link>
-            {patient.role_name === 'patient' && patient.id !== 3681 ? (
+
+            {patient.role_name !== 'admin' && patient.id !== demoId ? (
                 <div className={classes.profile}>
                     <div className={classes.info}>
                         <img src={BG} alt="" />
