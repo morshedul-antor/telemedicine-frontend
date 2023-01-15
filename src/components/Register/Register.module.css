@@ -336,7 +336,12 @@
 .sublabel {
     font-size: 10px !important;
 }
-
+.terms{
+    font-size: 14px;
+}
+.terms>label>span{
+    color: var(--secondary);
+}
 @media (max-width: 420px) {
     .right {
         display: none;

@@ -1,0 +1,104 @@
+.popup,
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    left: 0;
+    top: 0;
+}
+
+.overlay {
+    background: rgb(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40em;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    box-sizing: border-box;
+    box-shadow: 1px 1px var(--light);
+    border-radius: 10px;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.container .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transition: all 200ms;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--red);
+    cursor: pointer;
+}
+
+.container .close:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.container > div:last-child {
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.container p {
+    margin-top: 0px;
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.call {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+.call > a {
+    text-decoration: none;
+    color: var(--green);
+}
+.successMessage > a {
+    text-decoration: none;
+    padding: 0.4em 3em;
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 500;
+    border-radius: 7px;
+}
+@media (max-width: 420px) {
+    .container {
+        width: 20em;
+    }
+
+    .container .close {
+        font-size: 16px;
+    }
+
+    .container p {
+        font-size: 12px;
+    }
+
+    .container a {
+        font-size: 14px;
+    }
+    .call {
+        column-gap: 5px;
+    }
+    .call > a {
+        font-size: 12px;
+    }
+    .successMessage > a {
+        padding: 0.4em 2em;
+        font-size: 12px;
+        border-radius: 4px;
+    }
+}
