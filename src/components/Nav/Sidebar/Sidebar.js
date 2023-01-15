@@ -6,6 +6,8 @@ import {
     faClock,
     faBriefcaseMedical,
     faHeartbeat,
+    faEdit,
+    faPrescription,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
@@ -73,7 +75,7 @@ const Sidebar = () => {
                 </li>
                 <li className={location.pathname === '/appointment-list' ? classes.active : ''}>
                     <Link to="/appointment-list">
-                        <FontAwesomeIcon icon={faHeartbeat} /> Appointment List <span>(coming soon)</span>
+                        <FontAwesomeIcon icon={faPrescription} /> Prescription List <span></span>
                     </Link>
                 </li>
             </ul>
