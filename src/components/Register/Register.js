@@ -237,7 +237,10 @@ const Register = () => {
                                 <div>
                                     <div className={classes.terms}>
                                         <input type="checkbox" required />
-                                        <label>I have read and understood HEALTHx's <span>Privacy Policy</span> and <span>Doctor Terms of Service</span></label>
+                                        <label>
+                                            I have read and understood HEALTHx's <span>Privacy Policy</span> and{' '}
+                                            <span>Doctor Terms of Service</span>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
