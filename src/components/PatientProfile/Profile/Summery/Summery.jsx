@@ -10,7 +10,7 @@ export default function Summery() {
             <div className={classes.gridBox}>
                 <div className={classes.box}>
                     <p>
-                        O+
+                        --
                         <FontAwesomeIcon icon={faHeartbeat} />
                     </p>
                     <p>
@@ -19,7 +19,7 @@ export default function Summery() {
                 </div>
                 <div className={classes.box}>
                     <p>
-                        6'2"
+                        --
                         <FontAwesomeIcon icon={faWaveSquare} />
                     </p>
                     <p>
@@ -28,7 +28,7 @@ export default function Summery() {
                 </div>
                 <div className={classes.box}>
                     <p>
-                        83 kg
+                        --
                         <FontAwesomeIcon icon={faWalking} />
                     </p>
                     <p>
@@ -37,7 +37,7 @@ export default function Summery() {
                 </div>
                 <div className={classes.box}>
                     <p>
-                        23.5
+                        --
                         <FontAwesomeIcon icon={faRandom} />
                     </p>
                     <p>

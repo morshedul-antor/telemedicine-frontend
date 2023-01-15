@@ -22,19 +22,19 @@ export default function Profile({ api, patientId, patient, picture }) {
             <Link to="/home">
                 <img src={Logo} alt="Logo" title="Home" />
             </Link>
-            {patient.role_name === 'patient' ? (
+            {patient.role_name === 'patient' && patient.id !== 3681 ? (
                 <div className={classes.profile}>
                     <div className={classes.info}>
                         <img src={BG} alt="" />
                         <img src={picture.toString().length < 16 ? Pic : profileImage} alt="" />
                         <div>
                             <h2>{patient.name}</h2>
-                            <span>(25 Years)</span>
+                            <span>(-- Year's)</span>
                             <p>
                                 <FontAwesomeIcon icon={faPhone} /> +88 {patient.phone}
                             </p>
                             <p>
-                                <FontAwesomeIcon icon={faLocationDot} /> Block F, Bashundhara R/A, Dhaka
+                                <FontAwesomeIcon icon={faLocationDot} />
                             </p>
                             <p>New Patient</p>
                         </div>

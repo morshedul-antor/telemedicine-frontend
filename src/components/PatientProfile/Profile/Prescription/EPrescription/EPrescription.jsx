@@ -32,7 +32,7 @@ export default function EPrescription() {
                             </td>
                         </tr>
 
-                        <tr className={classes.row}>
+                        {/* <tr className={classes.row}>
                             <td>2</td>
                             <td>Dr Rashadul Hasan</td>
                             <td>Chest Pain</td>
@@ -50,7 +50,7 @@ export default function EPrescription() {
                             <td>
                                 <FontAwesomeIcon icon={faEye} />
                             </td>
-                        </tr>
+                        </tr> */}
                     </tbody>
                 </table>
             </div>
