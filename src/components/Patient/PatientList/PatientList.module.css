@@ -30,15 +30,18 @@
         content: 'Patient';
     }
     .row td:nth-of-type(3):before {
-        content: 'Cause';
+        content: 'Sex';
     }
     .row td:nth-of-type(4):before {
-        content: 'Date';
+        content: 'Cause';
     }
     .row td:nth-of-type(5):before {
-        content: 'Remarks';
+        content: 'Date';
     }
     .row td:nth-of-type(6):before {
-        content: 'Details';
+        content: 'Profile';
+    }
+    .row td:nth-of-type(7):before {
+        content: 'Prescription';
     }
 }
