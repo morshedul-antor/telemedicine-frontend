@@ -24,7 +24,7 @@
 
 .pricingTable {
     margin: 0px auto;
-    padding: 0 10em;
+    padding: 0 4em;
 }
 
 .pricingTable .headerFlex {
@@ -96,9 +96,9 @@
 
 .gridFour {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px 4em;
-    grid-gap: 10px 40px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 1em;
+    grid-gap: 10px 20px;
 }
 
 .gridBox {
@@ -135,7 +135,7 @@
     position: relative;
 }
 
-.gridFour .table:nth-of-type(1):before {
+.gridFour .table:nth-of-type(2):before {
     content: 'Most Popular';
     position: absolute;
     color: var(--white);

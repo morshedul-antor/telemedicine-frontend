@@ -32,9 +32,9 @@ export default function LandingPage() {
                 <div className={classes.wrapper}>
                     <div className={classes.nav}>
                         <div className={classes.topNavbar}>
-                            <div className={classes.logo}>
+                            <a target="__blank" href='https://healthxbd.com/' className={classes.logo}>
                                 <img src={Logo} alt="" />
-                            </div>
+                            </a>
                             <div className={classes.logoMobile}>
                                 <img src={LogoMobile} alt="" />
                             </div>
@@ -43,7 +43,7 @@ export default function LandingPage() {
                                 <a href="#benefits">Benefits</a>
                                 <a href="#subscription">Subscription</a>
                                 <a href="#faq">FAQ</a>
-                                <Link to="/login">Get Started</Link>
+                                <Link to="/login">Login</Link>
                             </div>
                         </div>
                     </div>

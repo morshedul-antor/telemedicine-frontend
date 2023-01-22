@@ -38,7 +38,7 @@
     margin-top: -1.4em;
 }
 
-.footer > div > div > img {
+.footer > div > div >a> img {
     height: 20px;
     cursor: pointer;
     padding: 0 10px;
