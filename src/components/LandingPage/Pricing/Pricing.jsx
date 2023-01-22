@@ -14,7 +14,7 @@ export default function Pricing() {
             </div>
 
             <div className={classes.pricingTable}>
-                <ul className={classes.gridBox}>
+                <ul className={classes.gridFour}>
                     <li className={classes.table}>
                         <h1 className={classes.tableHeader}>Basic Package</h1>
                         <p className={classes.tablePricing}>
@@ -29,16 +29,10 @@ export default function Pricing() {
                             <li>Doctor Digital Profile</li>
                             <li>Doctor Schedule Management</li>
                         </ul>
-                        {/* <Link to="register">
-                            <button className={classes.tableStart}>Subscribe Now</button>
-                        </Link> */}
+                        <Link to="register">
+                            <button className={classes.tableStart}>Register Now</button>
+                        </Link>
                     </li>
-                </ul>
-                {isOpen && <Popup setIsOpen={setIsOpen} />}
-            </div>
-
-            <div className={classes.pricingTable}>
-                <ul className={classes.gridFour}>
                     <li className={classes.table}>
                         <h1 className={classes.tableHeader}>Silver Package</h1>
                         <p className={classes.tablePricing}>
@@ -57,11 +51,11 @@ export default function Pricing() {
                             <p>Free Trial For 1 Month</p>
                             <li>Everything in Basic Package +</li>
                             <li>Doctor Top Position Listing in Find Doctor Search</li>
-                            <li>Patient Serial Management*</li>
-                            <li>Patient Health Record</li>
+                            <li>Dedicated Doctor Support Line for HealthX Profile Development</li>
                             <li>E-Prescription</li>
                             <li>Patient List</li>
-                            <li>Dedicated Doctor Support Line for HealthX Profile Development</li>
+                            <li>Patient Health Record</li>
+                            <li>Patient Serial Management*</li>
                             <span>* Under Development</span>
                         </ul>
                         <Link to="#">

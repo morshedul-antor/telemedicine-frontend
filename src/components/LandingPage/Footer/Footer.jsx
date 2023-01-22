@@ -2,7 +2,7 @@ import React from 'react'
 import Love from '../../../assets/img/LOVE.png'
 import footerImg from '../../../assets/img/footer.png'
 import fb from '../../../assets/img/social/fb.png'
-import link from '../../../assets/img/social/link.png'
+import insta from '../../../assets/img/social/insta.png'
 import yt from '../../../assets/img/social/yt.png'
 import classes from './Footer.module.css'
 
@@ -14,11 +14,17 @@ export default function Footer() {
             <div>
                 <p>Smart Doctor Solution</p>
                 <div>
-                    <img src={fb} alt="" />
-                    <img src={link} alt="" />
-                    <img src={yt} alt="" />
+                    <a target="__blank" href="https://www.facebook.com/Healthx.BD/">
+                        <img src={fb} alt="" />
+                    </a>
+                    <a target="__blank" href="https://instagram.com/healthx.bd?igshid=YmMyMTA2M2Y=">
+                        <img src={insta} alt="" />
+                    </a>
+                    <a target="__blank" href="https://www.youtube.com/@healthxbd">
+                        <img src={yt} alt="" />
+                    </a>
                 </div>
-                <span>© HEALTHX Ventures. All rights reserved.</span>
+                <span>© HEALTHX VENTURES LTD. All rights reserved.</span>
             </div>
         </div>
     )
