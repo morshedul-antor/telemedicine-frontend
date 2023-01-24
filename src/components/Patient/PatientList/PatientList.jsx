@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Table from '../../Resource/Table/Table'
 import classes from './PatientList.module.css'
 
@@ -21,9 +20,9 @@ export default function PatientList({ patients }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {patients[1]?.map((ep, index) => ( */}
-                    <tr className={classes.row}>
-                        {/* <td>{index + 1}</td>
+                    {patients[1]?.map((ep, index) => (
+                        <tr className={classes.row}>
+                            <td>{index + 1}</td>
                             <td>{ep.patient_name || '-'}</td>
                             <td>{ep.patient_sex || '-'}</td>
                             <td>{ep.cause_of_consultation}</td>
@@ -37,40 +36,9 @@ export default function PatientList({ patients }) {
                                 <a href={`${epV1}/ep/hxep${ep.id + 100000}`}>
                                     <button>View</button>
                                 </a>
-                            </td> */}
-                        <td>1</td>
-                        <td>Antor</td>
-                        <td>Male</td>
-                        <td>Headache</td>
-                        <td>2022-01-21</td>
-                        <td>Profile</td>
-                        <td>View</td>
-                    </tr>
-                    <tr className={classes.row}>
-                        {/* <td>{index + 1}</td>
-                            <td>{ep.patient_name || '-'}</td>
-                            <td>{ep.patient_sex || '-'}</td>
-                            <td>{ep.cause_of_consultation}</td>
-                            <td>{ep.created_at !== null ? ep.created_at.slice(0, 10) : '-'}</td>
-                            <td>
-                                <a href={`/patient/${ep.patient_id}`}>
-                                    <button>Click</button>
-                                </a>
                             </td>
-                            <td>
-                                <a href={`${epV1}/ep/hxep${ep.id + 100000}`}>
-                                    <button>View</button>
-                                </a>
-                            </td> */}
-                        <td>1</td>
-                        <td>Antor</td>
-                        <td>Male</td>
-                        <td>Headache</td>
-                        <td>2022-01-21</td>
-                        <td>Profile</td>
-                        <td>View</td>
-                    </tr>
-                    {/* ))} */}
+                        </tr>
+                    ))}
                 </tbody>
             </Table>
         </div>
