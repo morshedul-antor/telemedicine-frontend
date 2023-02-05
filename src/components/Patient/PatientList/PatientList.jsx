@@ -21,7 +21,7 @@ export default function PatientList({ patients }) {
                 </thead>
                 <tbody>
                     {patients[1]?.map((ep, index) => (
-                        <tr className={classes.row}>
+                        <tr className={classes.row} key={index}>
                             <td>{index + 1}</td>
                             <td>{ep.patient_name || '-'}</td>
                             <td>{ep.patient_sex || '-'}</td>

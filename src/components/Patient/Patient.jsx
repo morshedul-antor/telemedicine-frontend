@@ -13,7 +13,7 @@ export default function Patient() {
 
     useEffect(() => {
         let fetchData = async () => {
-            let response = await fetch(`${apiV1}/ep/doctor/ep/?skip=0&limit=10`, {
+            let response = await fetch(`${apiV1}/ep/doctor/?skip=0&limit=100`, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
@@ -25,7 +25,6 @@ export default function Patient() {
 
             if (response.ok) {
                 setPatients(data)
-                console.log('data', data)
             }
         }
         try {
