@@ -12,7 +12,7 @@ export default function Popup({ setIsOpen }) {
 
                 <div>
                     <p>For Subscriptions Please Call at</p>
-                    <a href="tel:+8801322658481">+88 01322658481</a>
+                    <a href="tel:+8801969908180">+88 01969908180</a>
                 </div>
             </div>
         </div>
