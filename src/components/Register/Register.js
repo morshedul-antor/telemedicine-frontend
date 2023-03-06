@@ -256,7 +256,7 @@ const Register = () => {
 
                         <div className={classes.support}>
                             <span>For Any Support Please Call at</span>
-                            <a href="tel:+8801322658481">+88 01322658481</a>
+                            <a href="tel:+8801969908180">+88 01969908180</a>
                         </div>
                     </div>
                 </div>
@@ -271,7 +271,7 @@ const Register = () => {
                         <p>Register yourself as a Doctor!</p>
                         <div>
                             <span>For Any Support Please Call at</span>
-                            <a href="tel:+8801322658481">+88 01322658481</a>
+                            <a href="tel:+8801969908180">+88 01969908180</a>
                         </div>
                     </div>
                 </div>
