@@ -3,8 +3,8 @@ import EPrescription from './EPrescription/EPrescription'
 import UploadList from './UploadList/UploadList'
 
 export default function Prescription({ patientId }) {
-    const [prescriptionOpen, setPrescriptionOpen] = useState(true)
-    const [uploadOpen, setUploadOpen] = useState(false)
+    const [, setPrescriptionOpen] = useState(true)
+    const [, setUploadOpen] = useState(false)
 
     return (
         <div>

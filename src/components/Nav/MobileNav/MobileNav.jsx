@@ -38,12 +38,12 @@ export default function MobileNav() {
                         </Link>
                     </li>
                     <li className={classes.list}>
-                        <a>
+                        <Link to="#">
                             <span className={classes.icon}>
                                 <FontAwesomeIcon icon={faBars} onClick={() => setSideOpen(!sideOpen)} />
                             </span>
                             <span className={classes.text}>Menu</span>
-                        </a>
+                        </Link>
                     </li>
                     <div className={classes.indicator}></div>
                 </ul>
