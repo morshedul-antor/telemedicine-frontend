@@ -21,10 +21,6 @@ export default function Popup({ setIsOpen, history }) {
                         <p className={classes.success}>Registration Completed!</p>
                     </div>
                     <p>Please wait while your profile is being verified and activated.</p>
-                    <div className={classes.call}>
-                        <p className={classes.call}>For any queries you can call at</p>
-                        <a href="tel:+8801322658481">+88 01322658481</a>
-                    </div>
                     <Link to="/login">OK</Link>
                 </div>
             </div>
