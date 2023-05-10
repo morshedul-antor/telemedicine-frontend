@@ -1,22 +1,26 @@
 .service {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
-    margin-top: 11em;
+    margin-top: 14em;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    color: var(--blue);
+    font-weight: 600;
 }
 
 .boxWrapper {
-    margin-top: 100px;
+    margin-top: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
 }
 
 .service .box {
     border-radius: 10px;
-    border: 1px solid var(--light);
-    background-color: var(--white);
-    box-shadow: 2px 4px 6px var(--light-low);
-    padding: 20px 30px;
+    padding: 10px 20px;
     transition: 300ms;
 }
 
@@ -28,7 +32,7 @@
 }
 
 .service .box > p {
-    font-size: 2.6em;
+    font-size: 2em;
     font-weight: 500;
     margin-top: -10px;
     color: var(--light);
@@ -42,22 +46,23 @@
     display: block;
     margin: 0 auto;
     margin-top: -5em;
+    opacity: 0.8;
 }
 
 .service .box > span {
     display: block;
     margin-top: 12px;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     font-weight: 500;
-    color: var(--dark-blue);
+    color: var(--secondary);
     margin-bottom: 14px;
 }
 
 .service .box:hover {
     transition: 200ms;
     cursor: pointer;
-    box-shadow: 10px 20px 30px var(--light);
+    box-shadow: 2px 4px 8px var(--light);
 }
 
 .service .box:hover > .number {
@@ -73,13 +78,20 @@
 @media (max-width: 420px) {
     .service {
         width: 82%;
-        margin-top: 2em;
+        margin-top: 60px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 24px;
+        color: var(--blue);
+        font-weight: 500;
     }
 
     .boxWrapper {
-        margin-top: 0px;
+        margin-top: 10px;
         grid-template-columns: 1fr;
-        grid-gap: 20px 0px;
+        grid-gap: 2px 0px;
     }
 
     .service .box {

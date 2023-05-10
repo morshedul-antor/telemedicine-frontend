@@ -1,17 +1,11 @@
-import React from 'react'
+import { faStethoscope } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import bgnew from '../../assets/img/plus-bg.png'
-import Logo from '../../assets/logo/hx-blue-fit.png'
-import LogoMobile from '../../assets/logo/logo.png'
 import About from './About/About'
-import Benefits from './Benefits/Benefits'
-import Faq from './Faq/Faq'
-import Features from './Features/Features'
 import Footer from './Footer/Footer'
 import classes from './LandingPage.module.css'
-import Pricing from './Pricing/Pricing'
 import Service from './Service/Service'
-import Video from './Video/Video'
 
 export default function LandingPage() {
     return (
@@ -32,18 +26,16 @@ export default function LandingPage() {
                 <div className={classes.wrapper}>
                     <div className={classes.nav}>
                         <div className={classes.topNavbar}>
-                            <a target="__blank" href='https://healthxbd.com/' className={classes.logo}>
-                                <img src={Logo} alt="" />
-                            </a>
-                            <div className={classes.logoMobile}>
-                                <img src={LogoMobile} alt="" />
-                            </div>
+                            <Link to="#" className={classes.logo}>
+                                <FontAwesomeIcon icon={faStethoscope} />
+                                <span>LiveDoc</span>
+                            </Link>
                             <div className={classes.navList}>
-                                <a href="#features">Features</a>
-                                <a href="#benefits">Benefits</a>
-                                <a href="#subscription">Subscription</a>
-                                <a href="#faq">FAQ</a>
+                                <a href="#features">How It works</a>
+                                <a href="#departments">Departments</a>
+                                <a href="#faq">Contact Us</a>
                                 <Link to="/login">Login</Link>
+                                <Link to="/register">Registration</Link>
                             </div>
                         </div>
                     </div>
@@ -51,11 +43,6 @@ export default function LandingPage() {
 
                     <About />
                     <Service />
-                    <Video />
-                    <Features />
-                    <Benefits />
-                    <Pricing />
-                    <Faq />
                     <Footer />
                 </div>
             </div>

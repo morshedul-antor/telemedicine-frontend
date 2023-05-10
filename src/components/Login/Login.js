@@ -1,12 +1,18 @@
-import { faArrowRight, faEye, faEyeSlash, faHandSparkles, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import {
+    faArrowRight,
+    faEye,
+    faEyeSlash,
+    faHandSparkles,
+    faSignInAlt,
+    faStethoscope,
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Auth } from '../../allContext'
-import Logo from '../../assets/logo/logo.png'
+import Doc from '../../assets/img/doctor/doctors.png'
 import { statusCheck } from '../../utils/statusCheck'
-import BG from '.././../assets/img/background-doc-table.jpg'
 import classes from './Login.module.css'
 
 const Login = () => {
@@ -68,9 +74,7 @@ const Login = () => {
     }, [stateAuth, history])
 
     return (
-        <div
-            className={classes.Login}
-            style={{ background: `url(${BG})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+        <div className={classes.Login}>
             {
                 <>
                     {alert.length !== 0 ? (
@@ -81,28 +85,26 @@ const Login = () => {
                 </>
             }
 
+            <Link to="/" className={classes.logo}>
+                <FontAwesomeIcon icon={faStethoscope} /> LiveDoc
+            </Link>
+
             <div className={classes.Wrapper}>
-                <Link to="" className={classes.logo}>
-                    <img src={Logo} alt="" />
-                </Link>
                 <div className={classes.left}>
                     <div>
+                        <div>
+                            <img src={Doc} alt="" />
+                        </div>
                         <h2>
-                            <FontAwesomeIcon icon={faHandSparkles} /> Welcome to HEALTHx
+                            <FontAwesomeIcon icon={faStethoscope} /> LiveDoc
                         </h2>
-                        <p>
-                            With a mission to ‘Drive the digitalization of healthcare of Bangladesh, HEALTHx is aspired
-                            to be the largest digital health platform in Bangladesh providing the digital platform based
-                            Telehealth. Home healthcare & Cloud based EHR (Electronic Health Record) services for the
-                            Patients.
-                        </p>
                     </div>
                 </div>
                 <div className={classes.right}>
                     <div>
                         <h2>
-                            <FontAwesomeIcon icon={faSignInAlt} />
-                            Login
+                            <FontAwesomeIcon icon={faStethoscope} />
+                            Login as Doctor
                         </h2>
                         <form onSubmit={submit}>
                             <div>
@@ -143,8 +145,6 @@ const Login = () => {
 
                             <button>Login</button>
                         </form>
-
-                        <Link to="/forgot-password">Forgot Password?</Link>
 
                         <p className={classes.linkText}>
                             Don't have an account?{' '}

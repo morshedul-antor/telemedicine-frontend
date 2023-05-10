@@ -1,13 +1,11 @@
-import { faRegistered, faHandSparkles, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faRegistered, faArrowRight, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'
-import Doc from '../../assets/img/cds.png'
-import Logo from '../../assets/logo/logo.png'
+import Doc from '../../assets/img/doctor/doctors.png'
 import { statusCheck } from '../../utils/statusCheck'
-import BG from '.././../assets/img/background-doc-table.jpg'
 import Popup from './PopUp/Popup'
 import classes from './Register.module.css'
 
@@ -90,9 +88,7 @@ const Register = () => {
     }, [stateAuth, history])
 
     return (
-        <div
-            className={classes.Register}
-            style={{ background: `url(${BG})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+        <div className={classes.Register}>
             {
                 <>
                     {alert.length !== 0 ? (
@@ -104,14 +100,11 @@ const Register = () => {
             }
 
             <div className={classes.Wrapper}>
-                <Link to="" className={classes.logo}>
-                    <img src={Logo} alt="" />
-                </Link>
                 <div className={classes.left}>
                     <div>
                         <h2>
-                            <FontAwesomeIcon icon={faRegistered} />
-                            Register
+                            <FontAwesomeIcon icon={faStethoscope} />
+                            Register as Doctor
                         </h2>
                         <form onSubmit={submit}>
                             <div className={classes.grid}>
@@ -198,27 +191,6 @@ const Register = () => {
                                 </label>
                             </div>
 
-                            <div>
-                                <input type="text" onChange={(e) => setInstitute(e.target.value)} />
-                                <label>
-                                    <span>Working Institute</span>{' '}
-                                    <span className={classes.sublabel}>(Hospital, Clinic, Lab or Diagnostic)</span>
-                                </label>
-                            </div>
-
-                            {/* <div className={classes.gridTwo}>
-                                <div>
-                                    <input type="text" onChange={(e) => setPosition(e.target.value)} />
-                                    <label>
-                                        <span>Position</span>
-                                    </label>
-                                </div>
-                                <div>
-                                    <input type="date" onChange={(e) => setDate(e.target.value)} />
-                                    <label></label>
-                                </div>
-                            </div> */}
-
                             <div className={classes.gridTwo}>
                                 <div>
                                     <input type="password" onChange={(e) => setPassword(e.target.value)} required />
@@ -233,17 +205,6 @@ const Register = () => {
                                     </label>
                                 </div>
                             </div>
-                            <div>
-                                <div>
-                                    <div className={classes.terms}>
-                                        <input type="checkbox" required />
-                                        <label>
-                                            I have read and understood HEALTHx's <span>Privacy Policy</span> and{' '}
-                                            <span>Doctor Terms of Service</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
                             <button>Register</button>
                         </form>
 
@@ -253,11 +214,6 @@ const Register = () => {
                                 Login <FontAwesomeIcon icon={faArrowRight} />
                             </Link>
                         </p>
-
-                        <div className={classes.support}>
-                            <span>For Any Support Please Call at</span>
-                            <a href="tel:+8801969908180">+88 01969908180</a>
-                        </div>
                     </div>
                 </div>
                 <div className={classes.right}>
@@ -266,13 +222,9 @@ const Register = () => {
                             <img src={Doc} alt="" />
                         </div>
                         <h2>
-                            <FontAwesomeIcon icon={faHandSparkles} /> Welcome to Smart Doctor Solution
+                            <FontAwesomeIcon icon={faStethoscope} /> LiveDoc
                         </h2>
                         <p>Register yourself as a Doctor!</p>
-                        <div>
-                            <span>For Any Support Please Call at</span>
-                            <a href="tel:+8801969908180">+88 01969908180</a>
-                        </div>
                     </div>
                 </div>
                 {alertInfo && <Popup infoFetch={infoFetch} setIsOpen={setAlertInfo} history={history} />}

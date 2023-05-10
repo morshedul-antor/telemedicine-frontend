@@ -6,17 +6,9 @@
     justify-content: center;
     position: relative;
     background-repeat: no-repeat;
+    background-color: var(--white);
 }
-.Login::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(231, 226, 250, 0.8);
-    z-index: 10;
-}
+
 .statusMsg {
     position: absolute;
     top: 80px;
@@ -45,48 +37,46 @@
 .logo {
     position: absolute;
     top: 30px;
-    left: 34px;
+    left: 44px;
+    color: var(--secondary);
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-.logo > img {
-    height: 48px;
-    width: 48px;
-    transition: 300ms;
-}
-
-.logo > img:hover {
-    cursor: pointer;
-    opacity: 0.9;
-    transform: scale(1.1);
-    transition: 300ms;
+.logo:hover {
+    opacity: 0.8;
 }
 
 .Wrapper {
     display: grid;
     grid-template-columns: minmax(0, 50%) minmax(0, 50%);
     gap: 40px;
-    background: var(--white);
     padding: 0;
-    box-shadow: 0 20px 30px var(--grey);
     border-radius: 5px;
-    width: 800px;
+    width: 100%;
     margin: 0 auto;
     z-index: 50;
     transition: 200ms;
+    padding: 2em 8em;
 }
 
 .left {
     font-size: 14px;
-    color: var(--white);
-    background: rgb(69, 125, 195, 0.8);
-    border-radius: 5px 0 0 5px;
-    padding: 80px 40px;
+    color: var(--secondary);
 }
 
 .left > div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.left img {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
 }
 
 .left > div > h2 > svg {
@@ -97,6 +87,7 @@
     line-height: 24px;
     text-align: justify;
 }
+
 .right {
     display: flex;
     align-items: center;
@@ -169,10 +160,10 @@
     -moz-appearance: none;
     border: none;
     outline: 0;
-    border-radius: 2px;
-    padding: 7px 20px;
+    border-radius: 50px;
+    padding: 10px;
     cursor: pointer;
-    margin: 10px 0 0 0;
+    font-size: 16px;
 }
 .linkText {
     color: var(--dark-blue);
@@ -237,6 +228,7 @@
     .Wrapper {
         grid-template-columns: 90%;
         gap: 0px;
+        padding: 0;
     }
     .right {
         margin: 40px 0 60px 34px;

@@ -17,7 +17,7 @@
     top: 0;
 }
 
-.nav .topNavbar {
+.topNavbar {
     background-color: var(--white);
     height: 80px;
     display: flex;
@@ -27,28 +27,36 @@
     box-shadow: 0px 0px 10px var(--light);
 }
 
-.nav .topNavbar .logo > img {
-    width: 150px;
-    padding-left: 40px;
+.logo {
+    text-decoration: none;
 }
 
-.nav .topNavbar .logo:hover {
+.logo:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.nav .topNavbar .logoMobile {
-    display: none;
+.logo > svg {
+    padding-left: 40px;
+    font-size: 30px;
+    color: var(--secondary);
 }
 
-.nav .topNavbar .navList {
+.logo > span {
+    font-size: 24px;
+    color: var(--secondary);
+    padding-left: 2px;
+    font-weight: 600;
+}
+
+.navList {
     padding: 0 2rem;
     display: flex;
     align-items: center;
     background-color: transparent;
 }
 
-.nav .topNavbar .navList a {
+.navList a {
     font-size: 16px;
     color: var(--dark);
     padding-left: 30px;
@@ -56,52 +64,57 @@
     text-decoration: none;
 }
 
-.nav .topNavbar .navList a:last-child {
+.navList a:nth-child(4),
+.navList a:nth-child(5) {
     background-color: var(--secondary);
     margin-left: 30px;
-    padding: 10px 20px;
+    padding: 6px 20px;
     color: var(--white);
     border-radius: 4px;
+    display: block;
+    margin-right: -10px;
 }
 
-.nav .topNavbar .navList a:hover {
+.navList a:hover {
     color: var(--secondary);
 }
 
-.nav .topNavbar .navList a:last-child:hover {
+.navList a:nth-child(4):hover,
+.navList a:nth-child(5):hover {
     color: var(--white);
     opacity: 0.8;
 }
 
 @media (max-width: 420px) {
-    .nav .topNavbar {
+    .topNavbar {
         height: 60px;
         padding: 0;
-        margin-right: -20px;
     }
 
-    .nav .topNavbar .logo {
-        display: none;
-    }
-
-    .nav .topNavbar .logoMobile {
-        display: block;
-    }
-
-    .nav .topNavbar .logoMobile > img {
-        width: 30px;
+    .logo > svg {
         padding-left: 20px;
-        padding-top: 4px;
+        font-size: 20px;
+        color: var(--secondary);
     }
 
-    .nav .topNavbar .navList a {
+    .logo > span {
+        font-size: 16px;
+        color: var(--secondary);
+        padding-left: 2px;
+        font-weight: 600;
+    }
+
+    .navList a {
         display: none;
     }
 
-    .nav .topNavbar .navList a:last-child {
-        padding: 8px 14px;
-        font-size: 12px;
-        display: block;
-        letter-spacing: 0.6px;
+    .navList a:nth-child(4),
+    .navList a:nth-child(5) {
+        padding: 6px 20px;
+        font-size: 14px;
+    }
+
+    .navList a:nth-child(5) {
+        display: none;
     }
 }

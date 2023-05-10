@@ -1,30 +1,44 @@
-import React from 'react'
-import Love from '../../../assets/img/LOVE.png'
-import footerImg from '../../../assets/img/footer.png'
-import fb from '../../../assets/img/social/fb.png'
-import insta from '../../../assets/img/social/insta.png'
-import yt from '../../../assets/img/social/yt.png'
+import { faStethoscope } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classes from './Footer.module.css'
 
 export default function Footer() {
     return (
         <div className={classes.footer}>
-            <img src={Love} className={classes.loveImg} alt="" />
-            <img src={footerImg} className={classes.footerImg1} alt="" />
-            <div>
-                <p>Smart Doctor Solution</p>
+            <p>
+                <FontAwesomeIcon icon={faStethoscope} />
+                LiveDoc
+            </p>
+            <div className={classes.infoGrid}>
                 <div>
-                    <a target="__blank" href="https://www.facebook.com/Healthx.BD/">
-                        <img src={fb} alt="" />
-                    </a>
-                    <a target="__blank" href="https://instagram.com/healthx.bd?igshid=YmMyMTA2M2Y=">
-                        <img src={insta} alt="" />
-                    </a>
-                    <a target="__blank" href="https://www.youtube.com/@healthxbd">
-                        <img src={yt} alt="" />
-                    </a>
+                    We are developing a healthcare system around you. Our aim is to make the procedure as simple as
+                    possible for our patients and to offer better and healthy treatments.
                 </div>
-                <span>© HEALTHX VENTURES LTD. All rights reserved.</span>
+                <div>
+                    <span>Company</span>
+                    <p>About Us</p>
+                    <p>Contact Us</p>
+                </div>
+                <div>
+                    <span>Doctors</span>
+                    <p>Join as Doctor</p>
+                    <p>Doctor Access</p>
+                </div>
+                <div>
+                    <span>Patients</span>
+                    <p>Join as Patient</p>
+                    <p>Patient Access</p>
+                </div>
+            </div>
+            <div className={classes.infoFlex}>
+                <div>
+                    <span>&#169; LiveDoc 2022.</span> All rights reserved
+                </div>
+                <div>
+                    <span>Terms & Conditions</span>
+                    <span>Privacy</span>
+                    <span>Sitemap</span>
+                </div>
             </div>
         </div>
     )
