@@ -31,10 +31,9 @@
     padding: 6px 20px;
     width: 430px;
     border: none;
-    background-image: linear-gradient(#93a7c5, #21527d);
     border-radius: 4px;
     outline: none;
-    color: var(--white);
+    color: var(--secondary);
     font-size: 14px;
     cursor: pointer;
 }

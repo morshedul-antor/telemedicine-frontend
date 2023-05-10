@@ -8,7 +8,7 @@ export default function UploadList({ patientId }) {
         <div className={classes.upload}>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faList} /> Uploaded Prescription List
+                    <FontAwesomeIcon icon={faList} /> Uploaded List
                 </p>
             </div>
             <ReportFetch patientId={patientId} address={`patient_prescription`} />

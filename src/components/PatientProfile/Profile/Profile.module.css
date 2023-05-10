@@ -17,14 +17,14 @@
     grid-template-columns: 2fr 4fr;
     grid-gap: 0 30px;
     margin: 2.8em 10em;
+    background-color: var(--light-low);
 }
 
 .info,
 .indicator {
     border-radius: 10px;
-    background-color: var(--white);
-    box-shadow: 10px 20px 30px var(--light);
-    border: 1px solid var(--light);
+    background-color: var(--light-low);
+    border: 1px solid var(--light-low);
 }
 
 .info {
@@ -73,24 +73,12 @@
     margin-bottom: -10px;
 }
 
-.info > div > p:last-child {
-    background-color: var(--primary);
-    padding: 6px;
-    color: var(--white);
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 14px;
-    margin-top: 50px;
-    margin-bottom: 0px;
-}
-
 .info > div > p > svg {
     padding-right: 4px;
 }
 
 .navbar {
     margin-top: 10px;
-    border-bottom: 1px solid var(--light-grey);
     padding: 20px 20px 6px 10px;
 }
 .navbar > span {
