@@ -1,11 +1,4 @@
-import {
-    faArrowRight,
-    faEye,
-    faEyeSlash,
-    faHandSparkles,
-    faSignInAlt,
-    faStethoscope,
-} from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faEye, faEyeSlash, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'

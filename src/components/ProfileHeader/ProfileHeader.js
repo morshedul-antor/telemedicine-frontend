@@ -1,12 +1,9 @@
 import { faHouseChimneyMedical, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Auth, UserInfo } from '../../allContext'
 import doc from '../../assets/img/doc-df.jpg'
-import cover from '../../assets/img/doctor/bg.jpg'
 import { toMonthNameLong } from '../../utils/date'
-import SkeletonProfileHeader from '../Skeletons/SkeletonProfileHeader'
 import classes from './ProfileHeader.module.css'
 import ProfilePictreUpload from './ProfilePictureUpload/ProfilePictureUpload'
 

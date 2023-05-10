@@ -1,4 +1,4 @@
-import { faRegistered, faArrowRight, faStethoscope } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
@@ -22,10 +22,6 @@ const Register = () => {
     const [speciality, setSpeciality] = useState('')
     const [qualification, setQualification] = useState('')
     const [bmdc, setBmdc] = useState('')
-
-    const [position, setPosition] = useState('')
-    const [institute, setInstitute] = useState('')
-    const [date, setDate] = useState('')
 
     const [alert, setAlert] = useState([])
     const [alertInfo, setAlertInfo] = useState(false)
@@ -59,8 +55,6 @@ const Register = () => {
                 qualification,
                 bmdc,
                 dr_title: title,
-
-                institute,
             }),
         })
 
