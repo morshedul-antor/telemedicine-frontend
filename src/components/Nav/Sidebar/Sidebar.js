@@ -8,6 +8,7 @@ import {
     faHeartbeat,
     faEdit,
     faPrescription,
+    faStethoscope,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
@@ -40,25 +41,24 @@ const Sidebar = () => {
         <div className={classes.Sidebar} style={{ width: '20%' }}>
             <div className={classes.header}>
                 <Link to="/">
-                    <img src={img} alt="" />
                     <h2>
-                        Smart <span>Doctor</span>
+                        <FontAwesomeIcon icon={faStethoscope} />
+                        LiveDoc
                     </h2>
                 </Link>
             </div>
             <div className={classes.ep}>
                 <a rel="noreferrer" target={'_blank'} href={`${ep}/auth/${stateAuth.token}`}>
-                    E-Prescription
+                    Create Prescription
                 </a>
             </div>
-            <span className={classes.beta}>(Beta Version 0.1.3)</span>
             <ul>
                 <li className={location.pathname === '/home' ? classes.active : ''}>
                     <Link to="/home">
-                        <FontAwesomeIcon icon={faTableColumns} /> Home <span>(beta version)</span>
+                        <FontAwesomeIcon icon={faTableColumns} /> Dashboard
                     </Link>
                 </li>
-                <li className={location.pathname === '/profile' ? classes.active : ''}>
+                {/* <li className={location.pathname === '/profile' ? classes.active : ''}>
                     <Link to="/profile">
                         <FontAwesomeIcon icon={faUser} /> Profile <span>(complete profile)</span>
                     </Link>
@@ -72,20 +72,20 @@ const Sidebar = () => {
                     <Link to="/schedule">
                         <FontAwesomeIcon icon={faClock} /> Schedule <span>(setup schedule)</span>
                     </Link>
-                </li>
+                </li> */}
                 <li className={location.pathname === '/appointment-list' ? classes.active : ''}>
                     <Link to="/appointment-list">
                         <FontAwesomeIcon icon={faPrescription} /> Prescription List <span></span>
                     </Link>
                 </li>
-            </ul>
-
-            <ul className={classes.secondUl}>
                 <li className={location.pathname === '/settings' ? classes.active : ''}>
                     <Link to="/settings">
                         <FontAwesomeIcon icon={faCog} /> Settings
                     </Link>
                 </li>
+            </ul>
+
+            <ul className={classes.secondUl}>
                 <li>
                     <span onClick={(e) => logout(e)}>
                         <FontAwesomeIcon icon={faSignOutAlt} style={{ paddingRight: '8px' }} /> Logout

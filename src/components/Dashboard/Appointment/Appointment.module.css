@@ -1,83 +1,47 @@
-.Appointment {
-    position: relative;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 7em;
-}
-.head {
-    display: grid;
-    grid-template-columns:
-        minmax(0, 5%) minmax(0, 25%) minmax(0, 5%) minmax(0, 15%) minmax(0, 10%) minmax(0, 25%) minmax(0, 10%)
-        minmax(0, 10%);
-    color: var(--white);
-    background-image: linear-gradient(to right, var(--dark-blue), var(--primary), var(--secondary));
-    border-radius: 10px 10px 0 0;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 0 15px;
-    margin: 20px 0 0 0;
-}
-.Appointment > .body {
-    font-size: 12px;
-    display: grid;
-    grid-template-columns: minmax(0, 5%) minmax(0, 25%) minmax(0, 10%) minmax(0, 15%) minmax(0, 30%) minmax(0, 10%) minmax(
-            0,
-            5%
-        );
-    padding: 2px 15px;
-    margin-top: 6px;
-    background-color: var(--white);
-    box-shadow: 4px 6px 8px var(--light);
-}
-
-.Appointment > .body > p:nth-last-child(1) > a > svg {
-    color: var(--primary);
-    cursor: pointer;
-}
-
-.Appointment > .body > p:nth-child(2):hover {
-    cursor: pointer;
-    color: var(--primary);
-    transition: 200ms;
-}
-
-.Appointment > .body:nth-child(odd) {
-    /* background: var(--light); */
-}
-.Appointment > .body:nth-child(even) {
-    background: var(--white);
-}
-.Appointment > .body:nth-last-child(1) {
-    border-radius: 0 0 10px 10px;
-}
-
 @media (max-width: 420px) {
-    .Appointment {
-        position: relative;
-        border-radius: 10px;
-        text-align: center;
-        margin-top: 5.6em;
-        margin-bottom: 6em;
+    .list {
+        margin-top: -30px;
+        padding: 14px 4px;
     }
 
-    .head {
-        display: grid;
-        grid-template-columns: minmax(0, 100%);
-        color: var(--white);
-        background-image: linear-gradient(to right, var(--dark-blue), var(--primary), var(--secondary));
-        border-radius: 10px 10px 0 0;
+    .row td {
+        display: flex;
+        border: none;
+        position: relative;
+        border-bottom: 1px solid var(--white);
         font-size: 12px;
-        font-weight: 600;
-        padding: 0 15px;
-        margin: 20px 0 0 0;
+        justify-content: center;
+        padding-left: 200px;
     }
-    .Appointment > .body {
+
+    .row td:before {
+        position: absolute;
+        top: 10px;
+        left: 26px;
+        padding-right: 10px;
+        white-space: nowrap;
         font-size: 12px;
-        display: grid;
-        grid-template-columns: minmax(0, 100%);
-        padding: 2px 15px;
-        margin-top: 6px;
-        background-color: var(--white);
-        box-shadow: 4px 6px 8px var(--light);
+    }
+
+    .row td:nth-of-type(1):before {
+        content: 'Serial';
+    }
+    .row td:nth-of-type(2):before {
+        content: 'Patient';
+    }
+    .row td:nth-of-type(3):before {
+        content: 'Sex';
+    }
+    .row td:nth-of-type(4):before {
+        content: 'Cause';
+    }
+    .row td:nth-of-type(5):before {
+        content: 'Date';
+    }
+    .row td:nth-of-type(6):before {
+        content: 'Profile';
+    }
+    .row td:nth-of-type(7):before {
+        content: 'Prescription';
     }
 }

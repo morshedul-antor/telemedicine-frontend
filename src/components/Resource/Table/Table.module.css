@@ -16,7 +16,7 @@
 .tableMain tr th {
     font-size: 14px;
     padding: 12px;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     border-radius: 2px;
     color: var(--white);
 }

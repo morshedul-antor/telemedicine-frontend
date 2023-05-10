@@ -11,7 +11,7 @@ const Dashboard = () => {
             </div>
             <div className={classes.Content}>
                 <ProfileHeader />
-                <Snapshot />
+                {/* <Snapshot /> */}
                 <Appointment />
             </div>
         </div>

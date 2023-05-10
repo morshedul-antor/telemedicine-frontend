@@ -1,4 +1,4 @@
-import { faHouseChimneyMedical } from '@fortawesome/free-solid-svg-icons'
+import { faHouseChimneyMedical, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -120,82 +120,60 @@ const ProfileHeader = () => {
 
     return (
         <>
-            {isLoading ? (
-                <SkeletonProfileHeader />
-            ) : (
-                <>
-                    <div
-                        className={classes.header}
-                        style={{
-                            background: `url(${cover})`,
-                            backgroundPosition: 'center',
-                            backgroundSize: 'cover',
-                        }}>
-                        <div>
-                            <div className={classes.headLeftWrapper}>
-                                <div className={classes.profilePic}>
-                                    <img
-                                        className={classes.Image}
-                                        src={profileImage.toString().length < 16 ? doc : profileImageUrl}
-                                        alt="pp"
-                                    />
-                                    <>
-                                        <ProfilePictreUpload msg={msg} setMsg={setMsg} />
-                                    </>
-                                </div>
-                                <h2>{`${doctorDetail.dr_title || ''} ${stateUser.info?.name || ''}`}</h2>
-                                <p>{qualification?.qualification}</p>
-                                <p>{speciality?.speciality}</p>
-                            </div>
+            <div className={classes.header}>
+                <div>
+                    <div className={classes.headLeftWrapper}>
+                        <div className={classes.profilePic}>
+                            <img
+                                className={classes.Image}
+                                src={profileImage.toString().length < 16 ? doc : profileImageUrl}
+                                alt="pp"
+                            />
+                            <>
+                                <ProfilePictreUpload msg={msg} setMsg={setMsg} />
+                            </>
                         </div>
-                        <div className={classes.Chamber}>
-                            <div>
-                                <h2>
-                                    <FontAwesomeIcon icon={faHouseChimneyMedical} />
-                                    &#160;
-                                    {activeChamber?.name}
-                                </h2>
-                                <p>{activeChamber?.detail_address}</p>
-                            </div>
-                        </div>
+                        <h2>{`${doctorDetail.dr_title || ''} ${stateUser.info?.name || ''}`}</h2>
+                        <p>{qualification?.qualification}</p>
+                        <p>{speciality?.speciality}</p>
                     </div>
-                    <div className={classes.infoWrapper}>
-                        <div className={classes.Info}>
-                            <div>
-                                <p className={classes.Title}>BMDC Number</p>
-                                <span className={classes.Info}>{doctorDetail.bmdc}</span>
-                            </div>
-                            <div>
-                                <p className={classes.Title}>Total Experience</p>
-                                <span className={classes.Info}>{doctorDetail.exp_year}+ Years</span>
-                            </div>
-                            {/* <div>
-                                <p className={classes.Title}>Total Consultations</p>
-                                <span className={classes.Info}>50</span>
-                            </div>
-                            <div>
-                                <p className={classes.Title}>Ratings(1)</p>
-                                <span className={classes.Info}>
-                                    4.5 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
-                                </span>
-                            </div> */}
-                            <div>
-                                <p className={classes.Title}>Joined date</p>
-                                <span className={classes.Info}>
-                                    {toMonthNameLong(doctor[0]?.created_at.slice(5, 7))}{' '}
-                                    {doctor[0]?.created_at.slice(0, 4)}
-                                </span>
-                            </div>
-                            <div>
-                                <p className={classes.Title}>e-VisitingCard</p>
-                                <span className={classes.Info}>
-                                    <Link to={`/e-card/${stateUser.info?.id + 1000}`}>Download</Link>
-                                </span>
-                            </div>
-                        </div>
+                </div>
+                <div className={classes.Chamber}>
+                    <div>
+                        <h2>
+                            <FontAwesomeIcon icon={faHouseChimneyMedical} />
+                            &#160;
+                            {activeChamber?.name}
+                        </h2>
+                        <p>{activeChamber?.detail_address}</p>
                     </div>
-                </>
-            )}
+                </div>
+            </div>
+            <div className={classes.infoWrapper}>
+                <div className={classes.Info}>
+                    <div>
+                        <p className={classes.Title}>BMDC Number</p>
+                        <span className={classes.Info}>{doctorDetail.bmdc}</span>
+                    </div>
+                    <div>
+                        <p className={classes.Title}>Total Experience</p>
+                        <span className={classes.Info}>{doctorDetail.exp_year}+ Years</span>
+                    </div>
+
+                    <div>
+                        <p className={classes.Title}>Ratings(1)</p>
+                        <span className={classes.Info}>
+                            4.5 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
+                        </span>
+                    </div>
+                    <div>
+                        <p className={classes.Title}>Joined date</p>
+                        <span className={classes.Info}>
+                            {toMonthNameLong(doctor[0]?.created_at.slice(5, 7))} {doctor[0]?.created_at.slice(0, 4)}
+                        </span>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
