@@ -54,7 +54,7 @@ const Login = () => {
             dispatchAuth({ type: 'token', payload: loginJson.access_token })
 
             if (stateAuth.auth === true) {
-                history.push('/home')
+                history.push('/dashboard')
             }
         }
     }
@@ -62,7 +62,7 @@ const Login = () => {
     // if already logged in
     useEffect(() => {
         if (stateAuth.auth === true) {
-            history.push('/home')
+            history.push('/dashboard')
         }
     }, [stateAuth, history])
 
