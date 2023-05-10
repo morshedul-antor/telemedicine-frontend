@@ -41,13 +41,13 @@ const Sidebar = () => {
                 </a>
             </div>
             <ul>
-                <li className={location.pathname === '/home' ? classes.active : ''}>
-                    <Link to="/home">
+                <li className={location.pathname === '/dashboard' ? classes.active : ''}>
+                    <Link to="/dashboard">
                         <FontAwesomeIcon icon={faTableColumns} /> Dashboard
                     </Link>
                 </li>
-                <li className={location.pathname === '/appointment-list' ? classes.active : ''}>
-                    <Link to="/appointment-list">
+                <li className={location.pathname === '/prescription-list' ? classes.active : ''}>
+                    <Link to="/prescription-list">
                         <FontAwesomeIcon icon={faPrescription} /> Prescription List <span></span>
                     </Link>
                 </li>

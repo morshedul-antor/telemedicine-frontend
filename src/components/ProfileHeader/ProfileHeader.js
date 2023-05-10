@@ -1,4 +1,4 @@
-import { faHouseChimneyMedical, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
 import { Auth, UserInfo } from '../../allContext'
@@ -15,7 +15,6 @@ const ProfileHeader = () => {
     const token = stateAuth.token
 
     const [isLoading, setIsLoading] = useState(true)
-    const [activeChamber, setActiveChamber] = useState({})
     const [doctorDetail, setDoctorDetail] = useState({})
     const [doctor, setDoctor] = useState([])
     const [qualification, setQualification] = useState({})
@@ -87,27 +86,11 @@ const ProfileHeader = () => {
                 }
             }
 
-            let activeChamberFunc = async (e) => {
-                let activeChamberFetch = await fetch(`${apiV1}/doctors/chamber/active`, {
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${token}`,
-                    },
-                    method: 'GET',
-                })
-                let activeChamberJson = await activeChamberFetch.json()
-                if (activeChamberFetch.ok) {
-                    setActiveChamber(activeChamberJson)
-                }
-            }
-
             try {
                 ProfileImgFunc()
                 infoFunc()
                 qualFunc()
                 specialityFunc()
-                activeChamberFunc()
                 setIsLoading(false)
             } catch (e) {}
         }, 1000)
@@ -136,14 +119,8 @@ const ProfileHeader = () => {
                     </div>
                 </div>
                 <div className={classes.Chamber}>
-                    <div>
-                        <h2>
-                            <FontAwesomeIcon icon={faHouseChimneyMedical} />
-                            &#160;
-                            {activeChamber?.name}
-                        </h2>
-                        <p>{activeChamber?.detail_address}</p>
-                    </div>
+                    <h2>৳{doctorDetail.online_fees || ''}</h2>
+                    <p>Consultation Fee</p>
                 </div>
             </div>
             <div className={classes.infoWrapper}>
@@ -158,9 +135,9 @@ const ProfileHeader = () => {
                     </div>
 
                     <div>
-                        <p className={classes.Title}>Ratings(1)</p>
+                        <p className={classes.Title}>Ratings(10)</p>
                         <span className={classes.Info}>
-                            4.5 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
+                            4.8 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
                         </span>
                     </div>
                     <div>
