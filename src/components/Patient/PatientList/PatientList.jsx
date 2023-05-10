@@ -38,7 +38,7 @@ export default function PatientList({ patients }) {
                                 </a>
                             </td>
                             <td>
-                                <a href={`${epV1}/ep/hxep${ep.id + 100000}`}>
+                                <a href={`${epV1}/prescription/live${ep.id + 100000}`}>
                                     <button>View</button>
                                 </a>
                             </td>
