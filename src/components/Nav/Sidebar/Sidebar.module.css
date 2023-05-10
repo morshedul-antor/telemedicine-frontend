@@ -57,6 +57,11 @@
     background-color: var(--secondary);
     border-radius: 4px;
     width: 100%;
+    z-index: 100;
+}
+
+.ep > a:hover {
+    opacity: 0.9;
 }
 
 .Sidebar ul {
