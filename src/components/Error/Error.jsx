@@ -9,7 +9,7 @@ export default function Error() {
             <img src={error} alt="" />
             <p>Page Not Found!</p>
             <div>
-                <Link to="/home">Back to Home</Link>
+                <Link to="/dashboard">Back to Home</Link>
             </div>
         </div>
     )

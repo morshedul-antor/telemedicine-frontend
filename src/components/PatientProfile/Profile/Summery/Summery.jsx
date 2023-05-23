@@ -1,4 +1,4 @@
-import { faHeartbeat, faRandom, faWalking, faWaveSquare } from '@fortawesome/free-solid-svg-icons'
+import { faRandom, faWalking, faWaveSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import BG from '../../../../assets/img/bg.jpg'
 import classes from './Summery.module.css'
@@ -8,15 +8,6 @@ export default function Summery() {
         <div className={classes.summery}>
             <img src={BG} alt="" />
             <div className={classes.gridBox}>
-                <div className={classes.box}>
-                    <p>
-                        --
-                        <FontAwesomeIcon icon={faHeartbeat} />
-                    </p>
-                    <p>
-                        <span>Blood Group</span>
-                    </p>
-                </div>
                 <div className={classes.box}>
                     <p>
                         --

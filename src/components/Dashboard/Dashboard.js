@@ -1,4 +1,4 @@
-import { Snapshot, Appointment } from '.'
+import { Appointment } from '.'
 import { Sidebar } from '../Nav'
 import ProfileHeader from '../ProfileHeader/ProfileHeader'
 import classes from './Dashboard.module.css'
@@ -11,7 +11,6 @@ const Dashboard = () => {
             </div>
             <div className={classes.Content}>
                 <ProfileHeader />
-                {/* <Snapshot /> */}
                 <Appointment />
             </div>
         </div>

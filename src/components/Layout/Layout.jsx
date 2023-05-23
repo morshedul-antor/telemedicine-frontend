@@ -1,5 +1,5 @@
 import React from 'react'
-import { MobileNav, Navbar, SidebarV2 } from '../Nav'
+import { MobileNav } from '../Nav'
 import classes from './Layout.module.css'
 
 export default function Layout({ children, side }) {

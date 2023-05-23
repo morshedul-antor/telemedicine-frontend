@@ -1,11 +1,4 @@
-import {
-    faArrowRight,
-    faEye,
-    faEyeSlash,
-    faHandSparkles,
-    faSignInAlt,
-    faStethoscope,
-} from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faEye, faEyeSlash, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'
@@ -61,7 +54,7 @@ const Login = () => {
             dispatchAuth({ type: 'token', payload: loginJson.access_token })
 
             if (stateAuth.auth === true) {
-                history.push('/home')
+                history.push('/dashboard')
             }
         }
     }
@@ -69,7 +62,7 @@ const Login = () => {
     // if already logged in
     useEffect(() => {
         if (stateAuth.auth === true) {
-            history.push('/home')
+            history.push('/dashboard')
         }
     }, [stateAuth, history])
 

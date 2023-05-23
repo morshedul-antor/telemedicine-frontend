@@ -29,7 +29,7 @@ const General = () => {
                 Authorization: `Bearer ${token}`,
             },
             dataType: 'json',
-            method: 'PUT',
+            method: 'PATCH',
             body: JSON.stringify({
                 name,
                 email,

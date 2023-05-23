@@ -8,14 +8,6 @@ import classes from './TransparentNav.module.css'
 const TransparntNav = () => {
     const { stateAuth, dispatchAuth } = useContext(Auth)
     const { dispatchUser } = useContext(UserInfo)
-    const { stateUser } = useContext(UserInfo)
-
-    const hx = 'hxds100000'
-    const array = hx.split('s')
-
-    const [prefix, id] = array
-    const idInt = parseInt(id) + stateUser.info?.id
-    const url = prefix + idInt
 
     const [logShow, setLogShow] = useState(false)
 

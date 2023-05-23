@@ -1,4 +1,5 @@
-import React from 'react'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Table from '../../Resource/Table/Table'
 import classes from './PatientList.module.css'
 
@@ -7,6 +8,10 @@ export default function PatientList({ patients }) {
 
     return (
         <div className={classes.list}>
+            <div className={classes.title}>
+                <FontAwesomeIcon icon={faBars} />
+                <span>Prescription List</span>
+            </div>
             <Table>
                 <thead>
                     <tr>
@@ -33,7 +38,7 @@ export default function PatientList({ patients }) {
                                 </a>
                             </td>
                             <td>
-                                <a href={`${epV1}/ep/hxep${ep.id + 100000}`}>
+                                <a href={`${epV1}/prescription/live${ep.id + 100000}`}>
                                     <button>View</button>
                                 </a>
                             </td>

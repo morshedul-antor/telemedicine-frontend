@@ -17,7 +17,7 @@ export default function MobileSide({ setSideOpen }) {
     const { stateUser } = useContext(UserInfo)
     const userDetail = stateUser.info
 
-    const { stateAuth, dispatchAuth } = useContext(Auth)
+    const { dispatchAuth } = useContext(Auth)
     const { dispatchUser } = useContext(UserInfo)
 
     const logout = (e) => {
@@ -56,7 +56,8 @@ export default function MobileSide({ setSideOpen }) {
 
                     <div className={classes.call}>
                         <span onClick={(e) => logout(e)}>
-                            <FontAwesomeIcon icon={faSignOutAlt} />Logout
+                            <FontAwesomeIcon icon={faSignOutAlt} />
+                            Logout
                         </span>
                         <a href="tel:01322658481">
                             For Any Queries Call <b>01322658481</b>
