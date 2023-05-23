@@ -5,7 +5,7 @@ import classes from './Layout.module.css'
 export default function Layout({ children, side }) {
     return (
         <div className={classes.layout}>
-            <MobileNav />
+            {/* <MobileNav /> */}
             <div>{children}</div>
         </div>
     )
